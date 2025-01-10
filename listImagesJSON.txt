@@ -1,0 +1,81 @@
+ var youtubeTitleList = [ 
+
+"Nick Lowe - Cruel To Be Kind ~  Nick Lowe ~  1979" ,
+"Oldies Mix - Rare Rock n Roll Tracks 50s 60s" ,
+"Toto - Rosanna (Official HD Video)" ,
+"Toto - Hold The Line (Official Video)" ,
+"Boston - More Than A Feeling - Remastered" ,
+"Four Seasons - 1976 HITS ARCHIVE: December~  1963 (Oh~  What A Night) - Four Seasons (a #1 record--stereo 45)" ,
+"Four Seasons - December~  1963 (Oh~  What a Night) (2006 Remaster)" ,
+"Jerry Lee Lewis - Great Balls Of Fire! (1957)" ,
+"Jerry Lee Lewis - Whole Lotta Shakin Goin On ~  Real Wild Child ~  Great Balls Of Fire - Live Concert" ,
+"Georgia Satellites - Keep Your Hands To Yourself (Official Music Video) HQ Audio" ,
+"Van Morrison - Song by Van Morrison - Dancing in The Moonlight" ,
+"Moondance (2013 Remaster)" ,
+"Van Morrison - Greatest Hits Full Album 2022 - Best Songs of Van Morrison" ,
+"Steely Dan -Do It Again"
+];
+
+ var youtubeURLsList = [ 
+"https://www.youtube.com/embed/FQdxGpV5aV8" ,
+"https://www.youtube.com/embed/vPAoWDIJa2Y" ,
+"https://www.youtube.com/embed/qmOLtTGvsbM" ,
+"https://www.youtube.com/embed/htgr3pvBr-I" ,
+"https://www.youtube.com/embed/zOILAZHf2pE" ,
+"https://www.youtube.com/embed/EEcqS1LhBfs" ,
+"https://www.youtube.com/embed/q6iD0Wo5J9Y" ,
+"https://www.youtube.com/embed/23sl0uo9so0" ,
+"https://www.youtube.com/embed/gjZgUVv95no" ,
+"https://www.youtube.com/embed/WonOudGMSdc" ,
+"https://www.youtube.com/embed/QTIGhUgJJ14" ,
+"https://www.youtube.com/embed/7kfYOGndVfU" ,
+"https://www.youtube.com/embed/slfz5jscr4M" ,
+"https://www.youtube.com/embed/jmdiKePVUy8" 
+];
+
+ var youtubeIDList = [ 
+"Boston - zOILAZHf2pE" ,
+"Four_Seasons - EEcqS1LhBfs" ,
+"Four_Seasons - q6iD0Wo5J9Y" ,
+"Georgia_Satellites - WonOudGMSdc" ,
+"Jerry_Lee_Lewis - 23sl0uo9so0" ,
+"Jerry_Lee_Lewis - gjZgUVv95no" ,
+"Nick_Lowe - FQdxGpV5aV8" ,
+"Rock_n_Roll_50s_60s - vPAoWDIJa2Y" ,
+"Rolling_Stones - G3dFpQzu54w" ,
+"Steely_Dan  - jmdiKePVUy8" ,
+"Toto - htgr3pvBr-I" ,
+"Toto - qmOLtTGvsbM" ,
+"Van_Morrison - 7kfYOGndVfU" ,
+"Van_Morrison - QTIGhUgJJ14" ,
+"Van_Morrison - slfz5jscr4M" ,
+"Dennis - Lgq7-id5Md4" ,
+"Dennis - f3IyPHkyX00" 
+
+];
+
+const mapVideoDetails = [ 
+/* ['TagClass', 'ID' , 'Title' , 'Author' , 'Image' , 'URL' ], */
+['Boston', 'zOILAZHf2pE', 'Boston - More Than A Feeling - Remastered', 'Brian Martens Music', 'https://i.ytimg.com/vi/zOILAZHf2pE/hqdefault.jpg', 'https://www.youtube.com/watch?v=zOILAZHf2pE'],
+['Four_Seasons', 'EEcqS1LhBfs', '1976 HITS ARCHIVE: December, 1963 (Oh, What A Night) - Four Seasons (a #1 record--stereo 45)', 'AnotherProf', 'https://i.ytimg.com/vi/EEcqS1LhBfs/hqdefault.jpg', 'https://www.youtube.com/watch?v=EEcqS1LhBfs'],
+['Four_Seasons', 'q6iD0Wo5J9Y', 'December, 1963 (Oh, What a Night) (2006 Remaster)', 'Frankie Valli and the Four Seasons - Topic', 'https://i.ytimg.com/vi/q6iD0Wo5J9Y/hqdefault.jpg', 'https://www.youtube.com/watch?v=q6iD0Wo5J9Y'],
+['Georgia_Satellites', 'WonOudGMSdc', 'Georgia Satellites - Keep Your Hands To Yourself (Official Music Video) [HQ Audio],', 'RHINO', 'https://i.ytimg.com/vi/WonOudGMSdc/hqdefault.jpg', 'https://www.youtube.com/watch?v=WonOudGMSdc'],
+['Jerry_Lee_Lewis', '23sl0uo9so0', 'Jerry Lee Lewis - Great Balls Of Fire! (1957)', "Cruisin' FM with Good Time Oldies", 'https://i.ytimg.com/vi/23sl0uo9so0/hqdefault.jpg', 'https://www.youtube.com/watch?v=23sl0uo9so0'],
+['Jerry_Lee_Lewis', 'gjZgUVv95no', "Jerry Lee Lewis - Whole Lotta Shakin Goin' On , Real Wild Child , Great Balls Of Fire - Live Concert", 'Vintage Märklin & Motor Classics', 'https://i.ytimg.com/vi/gjZgUVv95no/hqdefault.jpg', 'https://www.youtube.com/watch?v=gjZgUVv95no'],
+['Nick_Lowe', 'FQdxGpV5aV8', 'Cruel To Be Kind , Nick Lowe , 1979', 'Toni Davey', 'https://i.ytimg.com/vi/FQdxGpV5aV8/hqdefault.jpg', 'https://www.youtube.com/watch?v=FQdxGpV5aV8'],
+['Rock_n_Roll_50s_60s', 'vPAoWDIJa2Y', "Rare Rock n Roll Tracks 50s 60s 🔥 Oldies Mix Rock n Roll 50s 60s 🔥 Rock 'n' Roll TV 50s 60s", "Rock 'n' Roll TV", 'https://i.ytimg.com/vi/vPAoWDIJa2Y/hqdefault.jpg', 'https://www.youtube.com/watch?v=vPAoWDIJa2Y'],
+['Rolling_Stones', 'G3dFpQzu54w', 'The Rolling Stones - Jumpin’ Jack Flash (Official Lyric Video)', 'ABKCOVEVO', 'https://i.ytimg.com/vi/G3dFpQzu54w/hqdefault.jpg', 'https://www.youtube.com/watch?v=G3dFpQzu54w'],
+['Steely_Dan', 'jmdiKePVUy8', 'Do It Again', 'Steely Dan - Topic', 'https://i.ytimg.com/vi/jmdiKePVUy8/hqdefault.jpg', 'https://www.youtube.com/watch?v=jmdiKePVUy8'],
+['Toto', 'htgr3pvBr-I', 'Toto - Hold The Line (Official Video)', 'TotoVEVO', 'https://i.ytimg.com/vi/htgr3pvBr-I/hqdefault.jpg', 'https://www.youtube.com/watch?v=htgr3pvBr-I'],
+['Toto', 'qmOLtTGvsbM', 'Toto - Rosanna (Official HD Video)', 'TotoVEVO', 'https://i.ytimg.com/vi/qmOLtTGvsbM/hqdefault.jpg', 'https://www.youtube.com/watch?v=qmOLtTGvsbM'],
+['Van_Morrison', '7kfYOGndVfU', 'Moondance (2013 Remaster)', 'Van Morrison - Topic', 'https://i.ytimg.com/vi/7kfYOGndVfU/hqdefault.jpg', 'https://www.youtube.com/watch?v=7kfYOGndVfU'],
+['Van_Morrison', 'QTIGhUgJJ14', 'Song by Van Morrison - Dancing in The Moonlight', 'Elizabeth Weiner', 'https://i.ytimg.com/vi/QTIGhUgJJ14/hqdefault.jpg', 'https://www.youtube.com/watch?v=QTIGhUgJJ14'],
+['Van_Morrison', 'slfz5jscr4M', 'Van Morrison Greatest Hits Full Album 2022 - Best Songs of Van Morrison', 'Fidgatube', 'https://i.ytimg.com/vi/slfz5jscr4M/hqdefault.jpg', 'https://www.youtube.com/watch?v=slfz5jscr4M']
+
+/*
+['Dennis', 'Lgq7-id5Md4', 'Dennis Dreher - Twinkle Toes', 'Dennis John Dreher', 'https://i.ytimg.com/vi/Lgq7-id5Md4/hqdefault.jpg', 'https://www.youtube.com/watch?v=Lgq7-id5Md4'],
+['Dennis', 'f3IyPHkyX00', 'Dennis Dreher - Like an Old Friend', 'Dennis John Dreher', 'https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg', 'https://www.youtube.com/watch?v=f3IyPHkyX00']
+*/
+];
+
+
