@@ -239,7 +239,7 @@ const mapVideoDetails = [
 ['Dreher_Spiritual','tj3E8PZeTWw','Slice of Heaven','Dennis John Dreher','https://i.ytimg.com/vi/tj3E8PZeTWw/hqdefault.jpg','https://www.youtube.com/watch?v=tj3E8PZeTWw'], 
 ['Dreher_Spiritual','fjwEJvGXmNA','The Other Side','Dennis John Dreher','https://i.ytimg.com/vi/fjwEJvGXmNA/hqdefault.jpg','https://www.youtube.com/watch?v=fjwEJvGXmNA'], 
 ['Dreher_Spiritual','x8v0AQHXru4','the last embrace','Dennis John Dreher','https://i.ytimg.com/vi/x8v0AQHXru4/hqdefault.jpg','https://www.youtube.com/watch?v=x8v0AQHXru4'],
-['Dreher_Must_See','6o2-hEGKwuA','Leo Kottke - Live - After concert chat - MUST SEE','Dennis John Dreher','https://i.ytimg.com/vi/6o2-hEGKwuA/hqdefault.jpg','https://www.youtube.com/watch?v=6o2-hEGKwuA'], 
+['Dreher_Must_See','6o2-hEGKwuA','Leo Kottke - Daryls House - After concert chat - MUST SEE','Dennis John Dreher','https://i.ytimg.com/vi/6o2-hEGKwuA/hqdefault.jpg','https://www.youtube.com/watch?v=6o2-hEGKwuA'], 
 ['Dreher_Must_See','NPVxiK01Ddw','The Last Train - Music part of movie https://www.youtube.com/@redtruck204','Dennis John Dreher','https://i.ytimg.com/vi/NPVxiK01Ddw/hqdefault.jpg','https://www.youtube.com/watch?v=NPVxiK01Ddw'] 
 
 ];
