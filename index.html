@@ -20,7 +20,7 @@
 
 <body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
 
-<h3 class="text-center">Johnnys Picks (v1.0)</h3>
+<h3 class="text-center">Johnny's Music Picks</h3>
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
 
@@ -29,7 +29,6 @@
 
          <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
          <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
-         <button class="btn border border-light btn-primary btn-Dennis"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dennis"      aria-controls = ".multi-collapse-Dennis"      >Dennis   </button>      
          <button class="btn border border-light btn-primary btn-Boston"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Boston"   aria-controls = ".multi-collapse-Boston"   >Boston</button>
          <button class="btn border border-light btn-primary btn-Four_Seasons" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Four_Seasons" aria-controls = ".multi-collapse-Four_Seasons" >Four_Seasons</button>
          <button class="btn border border-light btn-primary btn-Georgia_Satellites"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Georgia_Satellites"   aria-controls = ".multi-collapse-Georgia_Satellites"   >Georgia_Satellites</button>
@@ -41,6 +40,12 @@
          <button class="btn border border-light btn-primary btn-Rolling_Stones"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Rolling_Stones"    aria-controls = ".multi-collapse-Rolling_Stones"    >Rolling_Stones </button>
          <button class="btn border border-light btn-primary btn-Steely_Dan"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Steely_Dan"    aria-controls = ".multi-collapse-Steely_Dan"    >Steely_Dan </button>
          <button class="btn border border-light btn-primary btn-Van_Morrison"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Van_Morrison"    aria-controls = ".multi-collapse-Van_Morrison"    >Van_Morrison </button>
+
+         <button class="btn border border-light btn-primary btn-Dennis"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dennis"      aria-controls = ".multi-collapse-Dennis"      >Dreher_Promo</button>      
+         <button class="btn border border-light btn-primary btn-Dreher_Family"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dreher_Family"    aria-controls = ".multi-collapse-Dreher_Family"    >Dreher_Family </button>
+         <button class="btn border border-light btn-primary btn-Dreher_Instrumentals"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dreher_Instrumentals"    aria-controls = ".multi-collapse-Dreher_Instrumentals"    >Dreher_Instrumentals </button>
+         <button class="btn border border-light btn-primary btn-Dreher_Spiritual"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dreher_Spiritual"    aria-controls = ".multi-collapse-Dreher_Spiritual"    >Dreher_Spiritual </button>
+         <button class="btn border border-light btn-primary btn-Dreher_Must_See"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dreher_Must_See"    aria-controls = ".multi-collapse-Dreher_Must_See"    >Dreher_Must_See </button>
 
       </div>
    </div>
@@ -77,8 +82,11 @@
     </div>
 
     <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
-        <div class="text-center">                                                                    Website designed by 
-        <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >John Meistrell NJ (v1.0)</a>
+        <div class="text-center">                                                                    Website designed by John Meistrell NJ
+        <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
+        <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
+        Version(v1.1)
+
        </div>
     </div>
 
@@ -271,6 +279,11 @@ $(document).ready(function(){
   $(".btn-Van_Morrison").click(function(){  $(".collapse").removeClass("show");  });
  
   $(".btn-Toto").click(function(){  $(".collapse").removeClass("show");  });
+
+  $(".btn-Dreher_Family").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Dreher_Instrumentals").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Dreher_Spiritual").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Dreher_Must_See").click(function(){  $(".collapse").removeClass("show");  });
 
 });
 </script>
