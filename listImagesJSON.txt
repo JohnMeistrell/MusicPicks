@@ -33,7 +33,7 @@
 "https://www.youtube.com/embed/jmdiKePVUy8" 
 ];
 
- var youtubeIDListxx = [ 
+ var youtubeIDList = [ 
 "Boston - zOILAZHf2pE" ,
 "Four_Seasons - EEcqS1LhBfs" ,
 "Four_Seasons - q6iD0Wo5J9Y" ,
@@ -49,6 +49,27 @@
 "Van_Morrison - 7kfYOGndVfU" ,
 "Van_Morrison - QTIGhUgJJ14" ,
 "Van_Morrison - slfz5jscr4M" ,
+
+"Bachman - 4cia_v4vxfE" ,
+"Al_Stewart - Yxy1eF_w7sU" ,
+"Sugarloaf - YG8FFJQYoTM" ,
+"Atlantic_R - wzCdSJu5xqI" ,
+"Tommy_James - TZLInDZv-Mc" ,
+"Doobie_Bro - m4oZCtfmh44" ,
+"Grand_Funk - l3yxGmQvuoo" ,
+"Joe Walsh - NIzyTk1fuf0" ,
+"Steppenwolf - eGkGNCUQtWY" ,
+"Brewer_Shipley - hibuSPzhTAE" ,
+"Travel_Wilburys - UMVjToYOjbM" ,
+"Travel_Wilburys - 1o4s1KVJaVA" ,
+"Orleans - _-IXJLgRnvs" ,
+"Thorogood - --AvCsh48bk" ,
+"Thorogood - KDd7wBXTIRc" ,
+"Thorogood - Ms6sf0XfQNc" ,
+"Thorogood - BluAyFvdhWg" ,
+"Creedence - wCCfc2vAuDU" ,
+"Foghat - DfwsXn5n8HU" ,
+
 "Dennisx - Lgq7-id5Md4" ,
 "Dennisx - f3IyPHkyX00" ,
 "Dennis - _02Z3TtKuSs" ,
@@ -136,28 +157,8 @@
 "Dennis - Z8Qg8cO2y1Y" ,
 "Dennis - Zf7Oh99Qp4k" ,
 "Dennis - zr-vdYUWXd0" 
-];
 
- var youtubeIDList = [ 
-"Bachman - 4cia_v4vxfE" ,
-"Al_Stewart - Yxy1eF_w7sU" ,
-"Sugarloaf - YG8FFJQYoTM" ,
-"Atlantic_R - wzCdSJu5xqI" ,
-"Tommy_James - TZLInDZv-Mc" ,
-"Doobie_Bro - m4oZCtfmh44" ,
-"Grand_Funk - l3yxGmQvuoo" ,
-"Joe Walsh - NIzyTk1fuf0" ,
-"Steppenwolf - eGkGNCUQtWY" ,
-"Brewer_Shipley - hibuSPzhTAE" ,
-"Travel_Wilburys - UMVjToYOjbM" ,
-"Travel_Wilburys - 1o4s1KVJaVA" ,
-"Orleans - _-IXJLgRnvs" ,
-"Thorogood - --AvCsh48bk" ,
-"Thorogood - KDd7wBXTIRc" ,
-"Thorogood - Ms6sf0XfQNc" ,
-"Thorogood - BluAyFvdhWg" ,
-"Creedence - wCCfc2vAuDU" ,
-"Foghat - DfwsXn5n8HU" 
+
 
 ];
 
