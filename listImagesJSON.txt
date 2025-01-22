@@ -33,7 +33,7 @@
 "https://www.youtube.com/embed/jmdiKePVUy8" 
 ];
 
- var youtubeIDList = [ 
+ var youtubeIDListxx = [ 
 "Boston - zOILAZHf2pE" ,
 "Four_Seasons - EEcqS1LhBfs" ,
 "Four_Seasons - q6iD0Wo5J9Y" ,
@@ -136,7 +136,28 @@
 "Dennis - Z8Qg8cO2y1Y" ,
 "Dennis - Zf7Oh99Qp4k" ,
 "Dennis - zr-vdYUWXd0" 
+];
 
+ var youtubeIDList = [ 
+"Bachman - 4cia_v4vxfE" ,
+"Al_Stewart - Yxy1eF_w7sU" ,
+"Sugarloaf - YG8FFJQYoTM" ,
+"Atlantic_R - wzCdSJu5xqI" ,
+"Tommy_James - TZLInDZv-Mc" ,
+"Doobie_Bro - m4oZCtfmh44" ,
+"Grand_Funk - l3yxGmQvuoo" ,
+"Joe Walsh - NIzyTk1fuf0" ,
+"Steppenwolf - eGkGNCUQtWY" ,
+"Brewer_Shipley - hibuSPzhTAE" ,
+"Travel_Wilburys - UMVjToYOjbM" ,
+"Travel_Wilburys - 1o4s1KVJaVA" ,
+"Orleans - _-IXJLgRnvs" ,
+"Thorogood - --AvCsh48bk" ,
+"Thorogood - KDd7wBXTIRc" ,
+"Thorogood - Ms6sf0XfQNc" ,
+"Thorogood - BluAyFvdhWg" ,
+"Creedence - wCCfc2vAuDU" ,
+"Foghat - DfwsXn5n8HU" 
 
 ];
 
@@ -157,6 +178,27 @@ const mapVideoDetails = [
 ['Van_Morrison', '7kfYOGndVfU', 'Moondance (2013 Remaster)', 'Van Morrison - Topic', 'https://i.ytimg.com/vi/7kfYOGndVfU/hqdefault.jpg', 'https://www.youtube.com/watch?v=7kfYOGndVfU'],
 ['Van_Morrison', 'QTIGhUgJJ14', 'Song by Van Morrison - Dancing in The Moonlight', 'Elizabeth Weiner', 'https://i.ytimg.com/vi/QTIGhUgJJ14/hqdefault.jpg', 'https://www.youtube.com/watch?v=QTIGhUgJJ14'],
 ['Van_Morrison', 'slfz5jscr4M', 'Van Morrison Greatest Hits Full Album 2022 - Best Songs of Van Morrison', 'Fidgatube', 'https://i.ytimg.com/vi/slfz5jscr4M/hqdefault.jpg', 'https://www.youtube.com/watch?v=slfz5jscr4M'],
+
+['Al_Stewart', 'Yxy1eF_w7sU', 'Year of the Cat (2001 Remaster)', 'Al Stewart - Topic', 'https://i.ytimg.com/vi/Yxy1eF_w7sU/hqdefault.jpg', 'https://www.youtube.com/watch?v=Yxy1eF_w7sU'] ,
+['Atlantic', 'wzCdSJu5xqI', 'So Into You', 'Atlanta Rhythm Section - Topic', 'https://i.ytimg.com/vi/wzCdSJu5xqI/hqdefault.jpg', 'https://www.youtube.com/watch?v=wzCdSJu5xqI'] ,
+['Bachman', '4cia_v4vxfE', 'Bachman Turner Overdrive - You Aint Seen Nothing Yet 1974 Video Sound HQ', 'NEA ZIXNH', 'https://i.ytimg.com/vi/4cia_v4vxfE/hqdefault.jpg', 'https://www.youtube.com/watch?v=4cia_v4vxfE'] ,
+['Brewer', 'hibuSPzhTAE', 'People Love Each Other', 'Brewer & Shipley - Topic', 'https://i.ytimg.com/vi/hibuSPzhTAE/hqdefault.jpg', 'https://www.youtube.com/watch?v=hibuSPzhTAE'] ,
+['Creedence', 'wCCfc2vAuDU', 'Creedence Clearwater Revival - I Heard It Through The Grapevine (Official Music Video)', 'CCRVEVO', 'https://i.ytimg.com/vi/wCCfc2vAuDU/hqdefault.jpg', 'https://www.youtube.com/watch?v=wCCfc2vAuDU'] ,
+['Doobie', 'm4oZCtfmh44', 'The Doobie Brothers - Black Water (Official Music Video)', 'The Doobie Brothers', 'https://i.ytimg.com/vi/m4oZCtfmh44/hqdefault.jpg', 'https://www.youtube.com/watch?v=m4oZCtfmh44'] ,
+['Foghat', 'DfwsXn5n8HU', 'Foghat - Slow Ride (Official Audio)', 'RHINO', 'https://i.ytimg.com/vi/DfwsXn5n8HU/hqdefault.jpg', 'https://www.youtube.com/watch?v=DfwsXn5n8HU'] ,
+['Grand_Funk', 'l3yxGmQvuoo', 'Im Your Captain Closer To Home (Remastered 2002)', 'Grand Funk Railroad - Topic', 'https://i.ytimg.com/vi/l3yxGmQvuoo/hqdefault.jpg', 'https://www.youtube.com/watch?v=l3yxGmQvuoo'] ,
+['Joe Walsh', 'NIzyTk1fuf0', 'Joe Walsh - Lifes Been Good (Live Spoken Word Version)', 'Joe Walsh', 'https://i.ytimg.com/vi/NIzyTk1fuf0/hqdefault.jpg', 'https://www.youtube.com/watch?v=NIzyTk1fuf0'] ,
+['Orleans', '_-IXJLgRnvs', 'Orleans  - Dance With Me', 'KlassikRocker', 'https://i.ytimg.com/vi/_-IXJLgRnvs/hqdefault.jpg', 'https://www.youtube.com/watch?v=_-IXJLgRnvs'] ,
+['Steppenwolf', 'eGkGNCUQtWY', 'Magic Carpet Ride', 'Steppenwolf - Topic', 'https://i.ytimg.com/vi/eGkGNCUQtWY/hqdefault.jpg', 'https://www.youtube.com/watch?v=eGkGNCUQtWY'] ,
+['Sugarloaf', 'YG8FFJQYoTM', 'Green-Eyed Lady', 'Sugarloaf - Topic', 'https://i.ytimg.com/vi/YG8FFJQYoTM/hqdefault.jpg', 'https://www.youtube.com/watch?v=YG8FFJQYoTM'] ,
+['Thorogood', '--AvCsh48bk', 'George Thorogood - One Bourbon, One Scotch, One Beer - 7/5/1984 - Capitol Theatre (Official)', 'GeorgeThorogood on MV', 'https://i.ytimg.com/vi/--AvCsh48bk/hqdefault.jpg', 'https://www.youtube.com/watch?v=--AvCsh48bk'] ,
+['Thorogood', 'BluAyFvdhWg', 'George Thorogood   One Bourbon, One Scotch, One Beer   7 5 1984   Capitol Theatre Official', 'CCG THE BEST CLASSIC ROCK', 'https://i.ytimg.com/vi/BluAyFvdhWg/hqdefault.jpg', 'https://www.youtube.com/watch?v=BluAyFvdhWg'] ,
+['Thorogood', 'KDd7wBXTIRc', 'George Thorogood - Full Concert - 07/05/84 - Capitol Theatre (OFFICIAL)', 'GeorgeThorogood on MV', 'https://i.ytimg.com/vi/KDd7wBXTIRc/hqdefault.jpg', 'https://www.youtube.com/watch?v=KDd7wBXTIRc'] ,
+['Thorogood', 'Ms6sf0XfQNc', 'George Thorogood - Who Do You Love? - 7/5/1984 - Capitol Theatre (Official)', 'GeorgeThorogood on MV', 'https://i.ytimg.com/vi/Ms6sf0XfQNc/hqdefault.jpg', 'https://www.youtube.com/watch?v=Ms6sf0XfQNc'] ,
+['Tommy_James', 'TZLInDZv-Mc', 'Tommy James - Draggin the Line (Dick Clark Show 1972)', 'Tommy James', 'https://i.ytimg.com/vi/TZLInDZv-Mc/hqdefault.jpg', 'https://www.youtube.com/watch?v=TZLInDZv-Mc'] ,
+['Wilburys', '1o4s1KVJaVA', 'The Traveling Wilburys - Handle With Care (Official Video)', 'OfficialWilburyVEVO', 'https://i.ytimg.com/vi/1o4s1KVJaVA/hqdefault.jpg', 'https://www.youtube.com/watch?v=1o4s1KVJaVA'] ,
+['Wilburys', 'UMVjToYOjbM', 'The Traveling Wilburys - End Of The Line (Official 4K Music Video)', 'OfficialWilburyVEVO', 'https://i.ytimg.com/vi/UMVjToYOjbM/hqdefault.jpg', 'https://www.youtube.com/watch?v=UMVjToYOjbM'] ,
+
 ['Dreher_Cover','1gukVfBalT0','Allman Brothers - Little Martha Allman Brothers Band Cover','Jerrys_Guitar_Bar','https://i.ytimg.com/vi/1gukVfBalT0/hqdefault.jpg','https://www.youtube.com/watch?v=1gukVfBalT0'], 
 ['Dreher_Cover','TpDn0ks5KI0','Beatles - Beatles  and I love her','Dennis_John_Dreher','https://i.ytimg.com/vi/TpDn0ks5KI0/hqdefault.jpg','https://www.youtube.com/watch?v=TpDn0ks5KI0'], 
 ['Dreher_Cover','pHomZxDM5Aw','Beatles - Good Day Sunshine','Dennis_John_Dreher','https://i.ytimg.com/vi/pHomZxDM5Aw/hqdefault.jpg','https://www.youtube.com/watch?v=pHomZxDM5Aw'], 
