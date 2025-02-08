@@ -164,6 +164,14 @@
 
 const mapVideoDetails = [ 
 /* ['TagClass', 'ID' , 'Title' , 'Author' , 'Image' , 'URL' ], */
+
+['LEARN', '23sl0uo9so0', 'Jerry Lee Lewis - Great Balls Of Fire! (1957)', "Cruisin' FM with Good Time Oldies", 'https://i.ytimg.com/vi/23sl0uo9so0/hqdefault.jpg', 'https://www.youtube.com/watch?v=23sl0uo9so0'],
+['LEARN', 'WonOudGMSdc', 'Georgia Satellites - Keep Your Hands To Yourself (Official Music Video) [HQ Audio],', 'RHINO', 'https://i.ytimg.com/vi/WonOudGMSdc/hqdefault.jpg', 'https://www.youtube.com/watch?v=WonOudGMSdc'],
+['LEARN', 'DfwsXn5n8HU', 'Foghat - Slow Ride (Official Audio)', 'RHINO', 'https://i.ytimg.com/vi/DfwsXn5n8HU/hqdefault.jpg', 'https://www.youtube.com/watch?v=DfwsXn5n8HU'] ,
+['LEARN', 'YG8FFJQYoTM', 'Sugarloaf Green-Eyed Lady', 'Sugarloaf - Topic', 'https://i.ytimg.com/vi/YG8FFJQYoTM/hqdefault.jpg', 'https://www.youtube.com/watch?v=YG8FFJQYoTM'] ,
+['LEARN', '--AvCsh48bk', 'George Thorogood - One Bourbon, One Scotch, One Beer - 7/5/1984 - Capitol Theatre (Official)', 'GeorgeThorogood on MV', 'https://i.ytimg.com/vi/--AvCsh48bk/hqdefault.jpg', 'https://www.youtube.com/watch?v=--AvCsh48bk'] ,
+['LEARN', 'G3dFpQzu54w', 'The Rolling Stones - Jumpin’ Jack Flash (Official Lyric Video)', 'ABKCOVEVO', 'https://i.ytimg.com/vi/G3dFpQzu54w/hqdefault.jpg', 'https://www.youtube.com/watch?v=G3dFpQzu54w'],
+
 ['Boston', 'zOILAZHf2pE', 'Boston - More Than A Feeling - Remastered', 'Brian Martens Music', 'https://i.ytimg.com/vi/zOILAZHf2pE/hqdefault.jpg', 'https://www.youtube.com/watch?v=zOILAZHf2pE'],
 ['Four_Seasons', 'EEcqS1LhBfs', '1976 HITS ARCHIVE: December, 1963 (Oh, What A Night) - Four Seasons (a #1 record--stereo 45)', 'AnotherProf', 'https://i.ytimg.com/vi/EEcqS1LhBfs/hqdefault.jpg', 'https://www.youtube.com/watch?v=EEcqS1LhBfs'],
 ['Four_Seasons', 'q6iD0Wo5J9Y', 'December, 1963 (Oh, What a Night) (2006 Remaster)', 'Frankie Valli and the Four Seasons - Topic', 'https://i.ytimg.com/vi/q6iD0Wo5J9Y/hqdefault.jpg', 'https://www.youtube.com/watch?v=q6iD0Wo5J9Y'],

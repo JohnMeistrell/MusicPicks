@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! v1.6 0112u 1145pm -->
+    <! v1.7 01208a 0207pm -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,6 +29,9 @@
 
          <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
          <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
+
+<button class="btn border border-light btn-primary btn-LEARN"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-LEARN"    aria-controls = ".multi-collapse-LEARN"    >LEARN </button>
+
 
 <button class="btn border border-light btn-primary btn-Al_Stewart"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Al_Stewart"               aria-controls = ".multi-collapse-Al_Stewart"               >Al_Stewart</button>      
 <button class="btn border border-light btn-primary btn-Atlantic"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Atlantic"               aria-controls = ".multi-collapse-Atlantic"               >Atlantic</button>      
@@ -101,7 +104,7 @@
         <div class="text-center">                                                                    Website designed by John Meistrell NJ
         <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
         <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
-        Version(v1.6)
+        Version(v1.7)
 
        </div>
     </div>
@@ -281,6 +284,8 @@ $(document).ready(function(){
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
   $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
+
+  $(".btn-LEARN").click(function(){  $(".collapse").removeClass("show");  });
 
   $(".btn-Boston").click(function(){  $(".collapse").removeClass("show");  });
   $(".btn-Georgia_Satellites").click(function(){  $(".collapse").removeClass("show");  });
