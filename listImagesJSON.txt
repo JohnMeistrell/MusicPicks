@@ -34,6 +34,11 @@
 ];
 
  var youtubeIDList = [ 
+
+"Orleans - SdfW_2frXnE" ,
+"Hollies - g8XiNKsKyVk" ,
+"Steve_Miller - JHa1hiFYbFQ" ,
+
 "Boston - zOILAZHf2pE" ,
 "Four_Seasons - EEcqS1LhBfs" ,
 "Four_Seasons - q6iD0Wo5J9Y" ,
@@ -171,6 +176,10 @@ const mapVideoDetails = [
 ['LEARN', 'YG8FFJQYoTM', 'Sugarloaf Green-Eyed Lady', 'Sugarloaf - Topic', 'https://i.ytimg.com/vi/YG8FFJQYoTM/hqdefault.jpg', 'https://www.youtube.com/watch?v=YG8FFJQYoTM'] ,
 ['LEARN', '--AvCsh48bk', 'George Thorogood - One Bourbon, One Scotch, One Beer - 7/5/1984 - Capitol Theatre (Official)', 'GeorgeThorogood on MV', 'https://i.ytimg.com/vi/--AvCsh48bk/hqdefault.jpg', 'https://www.youtube.com/watch?v=--AvCsh48bk'] ,
 ['LEARN', 'G3dFpQzu54w', 'The Rolling Stones - Jumpin’ Jack Flash (Official Lyric Video)', 'ABKCOVEVO', 'https://i.ytimg.com/vi/G3dFpQzu54w/hqdefault.jpg', 'https://www.youtube.com/watch?v=G3dFpQzu54w'],
+
+['LEARN', 'JHa1hiFYbFQ', 'Steve Miller - Jet Airliner', 'Steve Miller Band - Topic', 'https://i.ytimg.com/vi/JHa1hiFYbFQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=JHa1hiFYbFQ'],
+['LEARN', 'SdfW_2frXnE', 'Orleans - Still the One', 'Orleans - Topic', 'https://i.ytimg.com/vi/SdfW_2frXnE/hqdefault.jpg', 'https://www.youtube.com/watch?v=SdfW_2frXnE'],
+['LEARN', 'g8XiNKsKyVk', 'Hollies - Long Cool Woman (In a Black Dress) (Official Audio)', 'RHINO', 'https://i.ytimg.com/vi/g8XiNKsKyVk/hqdefault.jpg', 'https://www.youtube.com/watch?v=g8XiNKsKyVk'],
 
 ['Boston', 'zOILAZHf2pE', 'Boston - More Than A Feeling - Remastered', 'Brian Martens Music', 'https://i.ytimg.com/vi/zOILAZHf2pE/hqdefault.jpg', 'https://www.youtube.com/watch?v=zOILAZHf2pE'],
 ['Four_Seasons', 'EEcqS1LhBfs', '1976 HITS ARCHIVE: December, 1963 (Oh, What A Night) - Four Seasons (a #1 record--stereo 45)', 'AnotherProf', 'https://i.ytimg.com/vi/EEcqS1LhBfs/hqdefault.jpg', 'https://www.youtube.com/watch?v=EEcqS1LhBfs'],
