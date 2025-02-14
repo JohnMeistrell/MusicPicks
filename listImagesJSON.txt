@@ -36,6 +36,8 @@
  var youtubeIDList = [ 
 
 "Orleans - SdfW_2frXnE" ,
+
+/*
 "Hollies - g8XiNKsKyVk" ,
 "Steve_Miller - JHa1hiFYbFQ" ,
 
@@ -161,6 +163,27 @@
 "Dennis - yMongOV1cN0" ,
 "Dennis - Z8Qg8cO2y1Y" ,
 "Dennis - Zf7Oh99Qp4k" ,
+*/
+"Theory - 42BBdzzgPNM" ,
+"Theory - 4cia_v4vxfE" ,
+"Theory - w3fRBzRngdc" ,
+"Theory - nqAvFx3NxUM" ,
+"Theory - YtD3oOzkFp8" ,
+"Theory - BHqj3boMwaQ" ,
+"Theory - 7PCkvCPvDXk" ,
+"Theory - gpvcEP0u2P8" ,
+"Theory - ZWQgT2YeV1k" ,
+"Theory - z0vCwGUZe1I" ,
+"Theory - PeYSesLA5K4" ,
+"Theory - IsDEveFxlv8" ,
+"Theory - 06pyLmYs-1g" ,
+"Theory - CyNiY1jzOuQ" ,
+"Theory - WyVqf3H1hGs" ,
+"Theory - HrT6ksJu584" ,
+"Theory - DsdyAJ_fjbQ" ,
+"Theory - 4qla4LC71xE" ,
+"Theory - PX2Lfy319Xo" ,
+
 "Dennis - zr-vdYUWXd0" 
 
 
@@ -169,6 +192,23 @@
 
 const mapVideoDetails = [ 
 /* ['TagClass', 'ID' , 'Title' , 'Author' , 'Image' , 'URL' ], */
+
+['Theory', 'PeYSesLA5K4', 'Piano Lessons for Beginners: Part 3 - More important chords you should know', 'MangoldProject', 'https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg', 'https://www.youtube.com/watch?v=PeYSesLA5K4'] ,
+['Theory', 'IsDEveFxlv8', 'ANGIE - THE ROLLING STONES - GUITAR PLAY ALONG', 'Guitar Pilgrim', 'https://i.ytimg.com/vi/IsDEveFxlv8/hqdefault.jpg', 'https://www.youtube.com/watch?v=IsDEveFxlv8'] ,
+['Theory', '4qla4LC71xE', '8 Essential Skills That Will Make You a GREAT Musician', 'MangoldProject', 'https://i.ytimg.com/vi/4qla4LC71xE/hqdefault.jpg', 'https://www.youtube.com/watch?v=4qla4LC71xE'] ,
+['Theory', 'PX2Lfy319Xo', '19 Must-Know Tips for Beginner Players (Intermediate, Too!)', 'MangoldProject', 'https://i.ytimg.com/vi/PX2Lfy319Xo/hqdefault.jpg', 'https://www.youtube.com/watch?v=PX2Lfy319Xo'] ,
+['Theory', '06pyLmYs-1g', 'How To Memorize Every Major & Minor Chord On Piano', 'Piano From Scratch', 'https://i.ytimg.com/vi/06pyLmYs-1g/hqdefault.jpg', 'https://www.youtube.com/watch?v=06pyLmYs-1g'] ,
+['Theory', 'CyNiY1jzOuQ', 'Learn EVERY Chord and Chord Symbol - The 7 Systems', 'Musicians Inspired', 'https://i.ytimg.com/vi/CyNiY1jzOuQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=CyNiY1jzOuQ'] ,
+['Theory', 'DsdyAJ_fjbQ', 'Writing Blackbird: A Lesson in Diatonic and Chromatic Motion', 'MangoldProject', 'https://i.ytimg.com/vi/DsdyAJ_fjbQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=DsdyAJ_fjbQ'] ,
+['Theory', 'gpvcEP0u2P8', 'The 30 Guitar Riffs Everyone Should Know', 'Paul Davids', 'https://i.ytimg.com/vi/gpvcEP0u2P8/hqdefault.jpg', 'https://www.youtube.com/watch?v=gpvcEP0u2P8'] ,
+['Theory', 'WyVqf3H1hGs', 'How to Practice Music Theory - And Other Questions Musicians Face (Q&A #1)', 'MangoldProject', 'https://i.ytimg.com/vi/WyVqf3H1hGs/hqdefault.jpg', 'https://www.youtube.com/watch?v=WyVqf3H1hGs'] ,
+['Theory', 'HrT6ksJu584', "Dancing on the Piano: A Beginner's Tutorial on SMOOTH Chords", 'MangoldProject', 'https://i.ytimg.com/vi/HrT6ksJu584/hqdefault.jpg', 'https://www.youtube.com/watch?v=HrT6ksJu584'] ,
+['Theory', 'BHqj3boMwaQ', 'Learn African Rhythms for any instrument: Kevin Nathaniel - It’s All About Rhythm', 'Didge Project', 'https://i.ytimg.com/vi/BHqj3boMwaQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=BHqj3boMwaQ'] ,
+['Theory', 'YtD3oOzkFp8', "Learn Rhythm Basics with these 6 exercises: Kevin Nathaniel - It's All About Rhythm", 'Didge Project', 'https://i.ytimg.com/vi/YtD3oOzkFp8/hqdefault.jpg', 'https://www.youtube.com/watch?v=YtD3oOzkFp8'] ,
+
+
+
+['LEARN', 'ZWQgT2YeV1k', 'The Association - Cherish (1966)(Stereo)', "Kelly's Classics", 'https://i.ytimg.com/vi/ZWQgT2YeV1k/hqdefault.jpg', 'https://www.youtube.com/watch?v=ZWQgT2YeV1k'] ,
 
 ['LEARN', '23sl0uo9so0', 'Jerry Lee Lewis - Great Balls Of Fire! (1957)', "Cruisin' FM with Good Time Oldies", 'https://i.ytimg.com/vi/23sl0uo9so0/hqdefault.jpg', 'https://www.youtube.com/watch?v=23sl0uo9so0'],
 ['LEARN', 'WonOudGMSdc', 'Georgia Satellites - Keep Your Hands To Yourself (Official Music Video) [HQ Audio],', 'RHINO', 'https://i.ytimg.com/vi/WonOudGMSdc/hqdefault.jpg', 'https://www.youtube.com/watch?v=WonOudGMSdc'],
