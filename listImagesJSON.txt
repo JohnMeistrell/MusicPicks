@@ -35,9 +35,32 @@
 
  var youtubeIDList = [ 
 
-"Orleans - SdfW_2frXnE" ,
+"LEARN - JmWC70SLOQY" ,
 
 /*
+"Beat - ZhHKyfZX7Gk" ,
+"Beat - Pdb5DRgTxqk" ,
+"Beat - oLol1qtbEeQ" ,
+"Beat - lFV6mqP7rfY" ,
+"Beat - F0aqmVXfcCk" ,
+"Beat - -vXWs0bTRR8" ,
+"Beat - vRJfV4pG3Do" ,
+"Beat - u2dzd0By_Tw" ,
+"Beat - FlGzy_AgCVY" ,
+"Beat - HrT6ksJu584" ,
+"Beat - a9alKoLrgEc" ,
+"Beat - IyLnRB04QF8" ,
+"Beat - Jl5vi9ir49g" ,
+"Beat - eUWZqbumaZo" ,
+"Beat - U6mfjLXDI1I" ,
+"Beat - vxtzcnlpVIw" ,
+"Beat - 5lRWXHomzF0" ,
+"Beat - cggAhMzbSuM" ,
+*/
+
+/*
+
+"Orleans - SdfW_2frXnE" ,
 "Hollies - g8XiNKsKyVk" ,
 "Steve_Miller - JHa1hiFYbFQ" ,
 
@@ -163,7 +186,7 @@
 "Dennis - yMongOV1cN0" ,
 "Dennis - Z8Qg8cO2y1Y" ,
 "Dennis - Zf7Oh99Qp4k" ,
-*/
+
 "Theory - 42BBdzzgPNM" ,
 "Theory - 4cia_v4vxfE" ,
 "Theory - w3fRBzRngdc" ,
@@ -183,7 +206,7 @@
 "Theory - DsdyAJ_fjbQ" ,
 "Theory - 4qla4LC71xE" ,
 "Theory - PX2Lfy319Xo" ,
-
+*/
 "Dennis - zr-vdYUWXd0" 
 
 
@@ -192,6 +215,29 @@
 
 const mapVideoDetails = [ 
 /* ['TagClass', 'ID' , 'Title' , 'Author' , 'Image' , 'URL' ], */
+
+
+['BEAT', '-vXWs0bTRR8', 'BEAT - Drum - Rock Funk Syncopated - 92 BPM - DRUM TRACK', 'Drums Tracker', 'https://i.ytimg.com/vi/-vXWs0bTRR8/hqdefault.jpg', 'https://www.youtube.com/watch?v=-vXWs0bTRR8'] ,
+['BEAT', 'F0aqmVXfcCk', 'SAX - Hidden Nomination  - Oriental Folk Song | Wayne Shorter', 'HPattSax', 'https://i.ytimg.com/vi/F0aqmVXfcCk/hqdefault.jpg', 'https://www.youtube.com/watch?v=F0aqmVXfcCk'] ,
+['BEAT', 'FlGzy_AgCVY', 'BEAT - Drum - Funk | Drum Metronome Loop | 80 BPM', 'Talent Progression', 'https://i.ytimg.com/vi/FlGzy_AgCVY/hqdefault.jpg', 'https://www.youtube.com/watch?v=FlGzy_AgCVY'] ,
+['BEAT', 'lFV6mqP7rfY', 'BEAT - Blues Shuffle in A', 'Guitare Improvisation', 'https://i.ytimg.com/vi/lFV6mqP7rfY/hqdefault.jpg', 'https://www.youtube.com/watch?v=lFV6mqP7rfY'] ,
+['BEAT', 'oLol1qtbEeQ', 'BEAT - Blues - 12 Bar Blues Drum Backing Track (80 BPM)', 'Dirty Drums', 'https://i.ytimg.com/vi/oLol1qtbEeQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=oLol1qtbEeQ'] ,
+['BEAT', 'Pdb5DRgTxqk', 'BEAT - Drum - Powerful Hard Rock Drum Track 100 BPM [HD]', 'Infinite Drum Tracks', 'https://i.ytimg.com/vi/Pdb5DRgTxqk/hqdefault.jpg', 'https://www.youtube.com/watch?v=Pdb5DRgTxqk'] ,
+['BEAT', 'u2dzd0By_Tw', 'BEAT - Drum - 93 BPM Rock Drum Beat for Guitar, Bass and Instrumental Practise', 'Drum Beat Factory', 'https://i.ytimg.com/vi/u2dzd0By_Tw/hqdefault.jpg', 'https://www.youtube.com/watch?v=u2dzd0By_Tw'] ,
+['BEAT', 'vRJfV4pG3Do', 'BEAT - Drum Track - Groove Funk Beat | 92 BPM', 'Backing Tracks Channel', 'https://i.ytimg.com/vi/vRJfV4pG3Do/hqdefault.jpg', 'https://www.youtube.com/watch?v=vRJfV4pG3Do'] ,
+['BEAT', 'ZhHKyfZX7Gk', 'BEAT - Blues - Dirty Blues Rock Guitar Backing Track in E Major', 'Backing Tracks Center', 'https://i.ytimg.com/vi/ZhHKyfZX7Gk/hqdefault.jpg', 'https://www.youtube.com/watch?v=ZhHKyfZX7Gk'] ,
+
+['LEARN', '5lRWXHomzF0', "Grass Roots - Let's Live For Today", 'joelynny', 'https://i.ytimg.com/vi/5lRWXHomzF0/hqdefault.jpg', 'https://www.youtube.com/watch?v=5lRWXHomzF0'] ,
+['LEARN', 'a9alKoLrgEc', 'Surfaris - Wipe Out (Hit Version / Extended Ending)', 'The Surfaris - Topic', 'https://i.ytimg.com/vi/a9alKoLrgEc/hqdefault.jpg', 'https://www.youtube.com/watch?v=a9alKoLrgEc'] ,
+['LEARN', 'cggAhMzbSuM', "Grass Roots - Let's Live For Today (Lyric Video)", 'LyricsforEveryone', 'https://i.ytimg.com/vi/cggAhMzbSuM/hqdefault.jpg', 'https://www.youtube.com/watch?v=cggAhMzbSuM'] ,
+['LEARN', 'eUWZqbumaZo', 'Hollies: He Ain’t Heavy, He’s My Brother (2019 Remaster Video)', 'The Hollies', 'https://i.ytimg.com/vi/eUWZqbumaZo/hqdefault.jpg', 'https://www.youtube.com/watch?v=eUWZqbumaZo'] ,
+['LEARN', 'IyLnRB04QF8', 'George Thorogood And The Destroyers - One Bourbon, One Scotch, One Beer (Official Audio)', 'George Thorogood & The Destroyers Official', 'https://i.ytimg.com/vi/IyLnRB04QF8/hqdefault.jpg', 'https://www.youtube.com/watch?v=IyLnRB04QF8'] ,
+['LEARN', 'Jl5vi9ir49g', "Hollies - He Ain't Heavy, He's My Brother", 'thecatkeaton', 'https://i.ytimg.com/vi/Jl5vi9ir49g/hqdefault.jpg', 'https://www.youtube.com/watch?v=Jl5vi9ir49g'] ,
+['LEARN', 'U6mfjLXDI1I', 'Hollies - He Ain’t Heavy, He’s My Brother (Lyrics)', 'ALL MIXED', 'https://i.ytimg.com/vi/U6mfjLXDI1I/hqdefault.jpg', 'https://www.youtube.com/watch?v=U6mfjLXDI1I'] ,
+['LEARN', 'vxtzcnlpVIw', 'Hollies - The Air That I Breathe (lyrics)', 'Jeffrey Frentzen', 'https://i.ytimg.com/vi/vxtzcnlpVIw/hqdefault.jpg', 'https://www.youtube.com/watch?v=vxtzcnlpVIw'] ,
+['Theory', 'HrT6ksJu584', "PIANO - Dancing on the Piano: A Beginner's Tutorial on SMOOTH Chords", 'MangoldProject', 'https://i.ytimg.com/vi/HrT6ksJu584/hqdefault.jpg', 'https://www.youtube.com/watch?v=HrT6ksJu584'] ,
+['LEARN', 'JmWC70SLOQY', 'George Thorogood - Move It On Over & Johnny Be Good 1979', 'VJTonyCtba', 'https://i.ytimg.com/vi/JmWC70SLOQY/hqdefault.jpg', 'https://www.youtube.com/watch?v=JmWC70SLOQY'] ,
+
 
 ['Theory', 'PeYSesLA5K4', 'Piano Lessons for Beginners: Part 3 - More important chords you should know', 'MangoldProject', 'https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg', 'https://www.youtube.com/watch?v=PeYSesLA5K4'] ,
 ['Theory', 'IsDEveFxlv8', 'ANGIE - THE ROLLING STONES - GUITAR PLAY ALONG', 'Guitar Pilgrim', 'https://i.ytimg.com/vi/IsDEveFxlv8/hqdefault.jpg', 'https://www.youtube.com/watch?v=IsDEveFxlv8'] ,
