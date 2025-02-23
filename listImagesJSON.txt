@@ -35,9 +35,19 @@
 
  var youtubeIDList = [ 
 
-"LEARN - JmWC70SLOQY" ,
+
+"Theory - pb_HDDOdnxE" ,
+
+"Theory - O4TmWCLVWCg" ,
+"Theory - mJ1NDedMTR0" ,
+"Theory - 0W-DBiuxv3E" ,
+
+
 
 /*
+
+
+"LEARN - JmWC70SLOQY" ,
 "Beat - ZhHKyfZX7Gk" ,
 "Beat - Pdb5DRgTxqk" ,
 "Beat - oLol1qtbEeQ" ,
@@ -226,6 +236,12 @@ const mapVideoDetails = [
 ['BEAT', 'u2dzd0By_Tw', 'BEAT - Drum - 93 BPM Rock Drum Beat for Guitar, Bass and Instrumental Practise', 'Drum Beat Factory', 'https://i.ytimg.com/vi/u2dzd0By_Tw/hqdefault.jpg', 'https://www.youtube.com/watch?v=u2dzd0By_Tw'] ,
 ['BEAT', 'vRJfV4pG3Do', 'BEAT - Drum Track - Groove Funk Beat | 92 BPM', 'Backing Tracks Channel', 'https://i.ytimg.com/vi/vRJfV4pG3Do/hqdefault.jpg', 'https://www.youtube.com/watch?v=vRJfV4pG3Do'] ,
 ['BEAT', 'ZhHKyfZX7Gk', 'BEAT - Blues - Dirty Blues Rock Guitar Backing Track in E Major', 'Backing Tracks Center', 'https://i.ytimg.com/vi/ZhHKyfZX7Gk/hqdefault.jpg', 'https://www.youtube.com/watch?v=ZhHKyfZX7Gk'] ,
+
+['Theory', 'pb_HDDOdnxE', 'PIANO - Chord Progressions: ULTIMATE Guide For Beginners (REAL GOOD)', 'Pianoly' , 'https://i.ytimg.com/vi/pb_HDDOdnxE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5ZI_-pXzdPf0f3FslA3uWLGFA9Q' , 'https://www.youtube.com/watch?v=pb_HDDOdnxE'] ,
+
+['Theory', '0W-DBiuxv3E', 'PIANO - This ONE Trick Makes Reading Music WAY Easier', 'PIANOLY', 'https://i.ytimg.com/vi/0W-DBiuxv3E/hqdefault.jpg', 'https://www.youtube.com/watch?v=0W-DBiuxv3E'] ,
+['Theory', 'O4TmWCLVWCg', 'PIANO - Ultimate Guide to Chord Extensions', 'Noah Kellman', 'https://i.ytimg.com/vi/O4TmWCLVWCg/hqdefault.jpg', 'https://www.youtube.com/watch?v=O4TmWCLVWCg'] ,
+['Theory', 'mJ1NDedMTR0', 'PIANO - Chord Charts 101: How to Sound PRO on PIANO!', 'The Keys Coach', 'https://i.ytimg.com/vi/mJ1NDedMTR0/hqdefault.jpg', 'https://www.youtube.com/watch?=mJ1NDedMTR0'] ,
 
 
 ['Theory', 'HrT6ksJu584', "PIANO - Dancing on the Piano: A Beginner's Tutorial on SMOOTH Chords", 'MangoldProject', 'https://i.ytimg.com/vi/HrT6ksJu584/hqdefault.jpg', 'https://www.youtube.com/watch?v=HrT6ksJu584'] ,
