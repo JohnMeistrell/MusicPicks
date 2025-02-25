@@ -35,18 +35,17 @@
 
  var youtubeIDList = [ 
 
+"LEARN - GM1kzbAgo_E" ,
 
+"LEARN - 2JGTKK5cMXM" ,
+
+
+/*
 "Theory - pb_HDDOdnxE" ,
 
 "Theory - O4TmWCLVWCg" ,
 "Theory - mJ1NDedMTR0" ,
 "Theory - 0W-DBiuxv3E" ,
-
-
-
-/*
-
-
 "LEARN - JmWC70SLOQY" ,
 "Beat - ZhHKyfZX7Gk" ,
 "Beat - Pdb5DRgTxqk" ,
@@ -277,6 +276,11 @@ const mapVideoDetails = [
 ['LEARN', 'JHa1hiFYbFQ', 'Steve Miller - Jet Airliner', 'Steve Miller Band - Topic', 'https://i.ytimg.com/vi/JHa1hiFYbFQ/hqdefault.jpg', 'https://www.youtube.com/watch?v=JHa1hiFYbFQ'],
 ['LEARN', 'SdfW_2frXnE', 'Orleans - Still the One', 'Orleans - Topic', 'https://i.ytimg.com/vi/SdfW_2frXnE/hqdefault.jpg', 'https://www.youtube.com/watch?v=SdfW_2frXnE'],
 ['LEARN', 'g8XiNKsKyVk', 'Hollies - Long Cool Woman (In a Black Dress) (Official Audio)', 'RHINO', 'https://i.ytimg.com/vi/g8XiNKsKyVk/hqdefault.jpg', 'https://www.youtube.com/watch?v=g8XiNKsKyVk'],
+
+['LEARN', 'GM1kzbAgo_E', "Nancy Sinatra - These Boots Are Made For Walkin' (Official Music Video)", 'Nancy Sinatra', 'https://i.ytimg.com/vi/GM1kzbAgo_E/hqdefault.jpg', 'https://www.youtube.com/watch?v=GM1kzbAgo_E'] ,
+['LEARN', '2JGTKK5cMXM', 'Peggy Lee - Fever - 1967', 'Peggy Lee', 'https://i.ytimg.com/vi/2JGTKK5cMXM/hqdefault.jpg', 'https://www.youtube.com/watch?v=2JGTKK5cMXM'] ,
+
+
 
 ['Boston', 'zOILAZHf2pE', 'Boston - More Than A Feeling - Remastered', 'Brian Martens Music', 'https://i.ytimg.com/vi/zOILAZHf2pE/hqdefault.jpg', 'https://www.youtube.com/watch?v=zOILAZHf2pE'],
 ['Four_Seasons', 'EEcqS1LhBfs', '1976 HITS ARCHIVE: December, 1963 (Oh, What A Night) - Four Seasons (a #1 record--stereo 45)', 'AnotherProf', 'https://i.ytimg.com/vi/EEcqS1LhBfs/hqdefault.jpg', 'https://www.youtube.com/watch?v=EEcqS1LhBfs'],
