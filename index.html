@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! v1.3 0222a 1031pm -->
+    <! v1.4 0421m 1031pm -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,6 +34,7 @@
 <button class="btn border border-light btn-primary btn-LEARN"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-LEARN"    aria-controls = ".multi-collapse-LEARN"      >Learn </button>
 <button class="btn border border-light btn-primary btn-Theory"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Theory"    aria-controls = ".multi-collapse-Theory"    >Theory</button>
 <button class="btn border border-light btn-primary btn-BEAT"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-BEAT"    aria-controls = ".multi-collapse-BEAT"        >Beat</button>
+<button class="btn border border-light btn-primary btn-MUST"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-MUST"    aria-controls = ".multi-collapse-MUST"        >Must</button>
 
   <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     More
@@ -187,7 +188,7 @@
         <div class="text-center">                                                                    Website designed by John Meistrell NJ
         <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
         <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
-        Version(v1.3)
+        Version(v1.4)
 
        </div>
     </div>
@@ -271,22 +272,35 @@ var saveR = [];
  
      var lastItemSelectionBuilt = ''
      const mapVV = mapVideoDetails.map(([ 
-         vtag, vID , vTitle , vAuthor , vImage , vURL  ]) => ({ 
-         vtag, vID , vTitle , vAuthor , vImage , vURL  }));
+         vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ]) => ({ 
+         vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate }));
 
-     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL ] of mapVideoDetails) {
+     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ] of mapVideoDetails) {
 
         /* console.log('hhhh ' + vID + ' ' +  vURL); */
+
+
+/* vRate MUST GOOD
+   vMix CIRCLE SCALE LOTS
+   vExpert ANY
+NAMES FINGERS LYRICS
+multi-
+
+ */
  
         tagClass = vtag;
 
         sName = vTitle;
 
-        /* -------------------------------------------------------------------- */     
-        /* 001 COMMON CODE START (MUST COPY see way below in from GITHUB section  */
-        /* -------------------------------------------------------------------- */     
+        tagRate = "";
+        if ( vRate == 'MUST' ) { tagRate = " multi-collapse-MUST .multi-collapse-MUST" ; }
 
-        E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
+         /* -------------------------------------------------------------------- */     
+        /* 001 COMMON CODE START (MUST COPY see way below in from GITHUB section  */
+        /* -------------------------------------------------------------------- */  
+
+
+        E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagRate + E2rowC ;
 
         colN = colN + 1;
         if ( lastItemSelectionBuilt == tagClass ) {
@@ -297,7 +311,8 @@ var saveR = [];
           } 
                codeBlock += E3CatA;
                codeBlock += E3CatB;
-               codeBlock += E3CatC + "multi-collapse-" + tagClass + " .multi-collapse-" + tagClass;
+               codeBlock += E3CatC + "multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagRate;
+
                codeBlock += E3CatD;
                codeBlock += E3CatE;
                codeBlock += E3CatF + tagClass ;
@@ -370,6 +385,7 @@ $(document).ready(function(){
 
   $(".btn-LEARN").click(function(){  $(".collapse").removeClass("show");  });
   $(".btn-BEAT").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-MUST").click(function(){  $(".collapse").removeClass("show");  });
 
   $(".btn-Boston").click(function(){  $(".collapse").removeClass("show");  });
   $(".btn-Georgia_Satellites").click(function(){  $(".collapse").removeClass("show");  });
