@@ -71,6 +71,8 @@
     <button class="btn border border-light btn-primary btn-LOTS"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-LOTS"     aria-controls = ".multi-collapse-LOTS"      >LOTS</button>
     <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-NAMES"    aria-controls = ".multi-collapse-NAMES"     >NAMES</button>
     <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-SCALE"    aria-controls = ".multi-collapse-SCALE"     >SCALE</button>
+    <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-SURF"     aria-controls = ".multi-collapse-SURF"      >SURF</button>
+
       </div>
    </div></div>
 </div>
@@ -317,10 +319,10 @@ let buttonClass = '';
  
      var lastItemSelectionBuilt = ''
      const mapVV = mapVideoDetails.map(([ 
-                 vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ]) => ({ 
-                 vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate }));
+                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ]) => ({ 
+                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate }));
 
-     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ] of mapVideoDetails) {
+     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ] of mapVideoDetails) {
 
         /* console.log('hhhh ' + vID + ' ' +  vURL); */
 
@@ -354,6 +356,8 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         tagClass = vtag;
 
         sName = vTitle;
+
+        console.log('jmTimes: ' + vTimes);
 
 
         let tagsAdd = "";
@@ -491,6 +495,8 @@ $(document).ready(function(){
   $(".btn-MUST").click(function(){  $(".collapse").removeClass("show");  }); 
   $(".btn-LOTS").click(function(){  $(".collapse").removeClass("show");  }); 
   $(".btn-SCALE").click(function(){  $(".collapse").removeClass("show");  }); 
+  $(".btn-SURF").click(function(){  $(".collapse").removeClass("show");  }); 
+
 
    $(".btn-AshleeYoung").click(function(){  $(".collapse").removeClass("show");  }); 
    $(".btn-FromScratch").click(function(){  $(".collapse").removeClass("show");  }); 
