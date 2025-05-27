@@ -39,15 +39,8 @@
   <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     More
   </button>
-
-
-
-
-<a target="_blank" href="https://www.chordie.com/"       >Lyrics n Chords</a>
-
-<a target="_blank" href="https://www.pianochord.org/two-hands.html"       >Chords</a>
-
-
+  <a target="_blank" href="https://www.chordie.com/"                        >Lyrics n Chords</a>
+  <a target="_blank" href="https://www.pianochord.org/two-hands.html"       >Chords</a>
 
 <div class="dropdown-menu customClassForDropDown" aria-labelledby="dropdownMenuButton">
 
@@ -214,12 +207,21 @@
           <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Twinkle Toes</h2>
           <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
           <a target="_blank" href="https://www.youtube.com/watch?v=Lgq7-id5Md4">
-          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"  src="https://i.ytimg.com/vi/Lgq7-id5Md4/hqdefault.jpg" alt="Photo1">
+          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
+               src="https://i.ytimg.com/vi/Lgq7-id5Md4/hqdefault.jpg" alt="Photo1">
           </a>
           </div>
        </div>
 
-      <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Dennis" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;"><h2 class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Like an Old Friend</h2><div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px"><a target="_blank" href="https://www.youtube.com/watch?v=f3IyPHkyX00"><img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" src="https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg" alt="Photo1"></a></div></div>
+      <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Dennis" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">
+          <h2 class="container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Like an Old Friend</h2>
+          <div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px; padding:0px; margin:0px">
+          <a target="_blank" href="https://www.youtube.com/watch?v=f3IyPHkyX00">
+          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" 
+               src="https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg" alt="Photo1">
+          </a>
+          </div>
+      </div>
 
     </div></div>
 
@@ -264,6 +266,11 @@ function Data(el,eItem)
 
 
 <script type="text/javascript">
+
+function isNotEmpty(value) {
+      return value != null && String(value).trim().length > 0;
+}
+
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -341,6 +348,20 @@ if (variable && variable.trim() !== "") {
 
  */
 
+  var codeStartAt = '';
+
+  const aTimesRow = vTimes.split("^");
+  if (aTimesRow[1]) {
+      aTimesRow.forEach((aTimeR, index, array) => {
+         if (index !== 0) {
+         const aTimesRowItem = aTimeR.split(" - ");
+         var aTimeRowAt    = aTimesRowItem[0];
+         var aTimeRowTitle = aTimesRowItem[1];
+         console.log('ffff: ' + aTimeRowAt + ' ' + aTimeRowTitle );
+         codeStartAt += '<a style="font-size: 80%" target="_blank" href="' + vURL + '&t=' + aTimeRowAt + '">' + aTimeRowTitle + '</a> ';
+         }
+      })
+  }
 
 
 /* List of tags to add buttons for */
@@ -357,7 +378,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
 
         sName = vTitle;
 
-        console.log('jmTimes: ' + vTimes);
+        /* console.log('jmTimes: ' + vTimes); */
 
 
         let tagsAdd = "";
@@ -374,7 +395,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
 
         E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagsAdd + E2rowC ;
 
-        console.log("JJJJ tagsAdd: " + tagsAdd);
+        /* console.log("JJJJ tagsAdd: " + tagsAdd); */
 
         colN = colN + 1;
         if ( lastItemSelectionBuilt == tagClass ) {
@@ -414,6 +435,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
         codeBlock += sName + '<p style="font-size: 30%" >' + tagsHDR + '</p>';    /* Card heading */
         codeBlock += E4itemE;
+        codeBlock += codeStartAt;
 
         /* SCR/IMG: --------------------- */
         codeBlock += E5scrol;   /* <div id="scrolP" class="scrolP   container-fluid ... */
@@ -450,16 +472,16 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
 
   /* List of tags to add buttons for. Sort and remove duplicates. */
   tagList.sort();
-  console.log('tagList: ' + tagList );
+  /* console.log('tagList: ' + tagList ); */
   const tagListUniqueSorted = [...new Set(tagList)];
   tagListUniqueSorted.sort();
-  console.log('tagListUniqueSorted: ' + tagListUniqueSorted );
+  /* console.log('tagListUniqueSorted: ' + tagListUniqueSorted ); */
 
 
   tagListUniqueSorted.forEach((aItem, index, array) => {
   
      let aThisItem = aItem.split("-");
-     console.log("aThisItem: " + aThisItem[0] + ' ' + aThisItem[1] );
+     /* console.log("aThisItem: " + aThisItem[0] + ' ' + aThisItem[1] ); */
 
      showClassScript +=  '   $(".btn-' + aThisItem[1] + '").click(function(){  $(".collapse").removeClass("show");  }); \r\n'; 
 

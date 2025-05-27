@@ -125,10 +125,13 @@ const mapVideoDetails = [
 ["Theory","CyNiY1jzOuQ","Learn EVERY Chord and Chord Symbol - The 7 Systems (GOOD SCALES LOTS)","Musicians Inspired","https://i.ytimg.com/vi/CyNiY1jzOuQ/hqdefault.jpg","https://www.youtube.com/watch?v=CyNiY1jzOuQ","jmTime","1","LOTS","","","","","Musicians","MUST"] ,
 ["Theory","gpvcEP0u2P8","The 30 Guitar Riffs Everyone Should Know","Paul Davids","https://i.ytimg.com/vi/gpvcEP0u2P8/hqdefault.jpg","https://www.youtube.com/watch?v=gpvcEP0u2P8","jmTime","1","","","","","","",""] ,
 
-["SURF", "N8aKFdK4eDc", "Dont Make This Huge and Common Surfing Mistake", "How to Rip", "https://i.ytimg.com/vi/N8aKFdK4eDc/hqdefault.jpg", "https://www.youtube.com/watch?v=N8aKFdK4eDc","jmTime","4","Surf","","","","","",""] ,
-["SURF", "67QNw2xQlsk", "Learn How To Surf In 10 Minutes (DRAW IN SAND 6 51)", "How to Rip", "https://i.ytimg.com/vi/67QNw2xQlsk/hqdefault.jpg", "https://www.youtube.com/watch?v=67QNw2xQlsk","jmTime ^ 4m57s - Look for foamy mushy wave ^ 6m39s - Pop up on sand ^ 7m06s - Pop on water ^ 7m39s - Low ^ 7m45s - Look point you go ^ 8m03s - Feet middle ish ^ 8m50s - Fall hands head ","4","Surf","","","","","",""] ,
-["SURF", "1_c_FCTX0gk", "I Learned How To Surf In 5 Days", "Tim Ferriss", "https://i.ytimg.com/vi/1_c_FCTX0gk/hqdefault.jpg", "https://www.youtube.com/watch?v=1_c_FCTX0gk","jmTime","4","Surf","","","","","",""] ,
-["SURF", "OHpG_rNj8eQ", "How To Surf From Beginner To Intermediate In 20 Minutes | Step by Step Tutorial", "Kale Brock (Kale Brock)", "https://i.ytimg.com/vi/OHpG_rNj8eQ/hqdefault.jpg", "https://www.youtube.com/watch?v=OHpG_rNj8eQ","jmTime","4","Surf","","","","","",""] ,
+["SURF", "N8aKFdK4eDc", "Dont Make This Huge and Common Surfing Mistake", "How to Rip", "https://i.ytimg.com/vi/N8aKFdK4eDc/hqdefault.jpg", "https://www.youtube.com/watch?v=N8aKFdK4eDc","jmTime^28s - Where UR^1m24s - Sink 2fwd^1m38s - Fall 2Left","4","Surf","","","","","",""] ,
+
+["SURF", "67QNw2xQlsk", "Learn How To Surf In 10 Minutes (DRAW IN SAND 6 51)", "How to Rip", "https://i.ytimg.com/vi/67QNw2xQlsk/hqdefault.jpg", "https://www.youtube.com/watch?v=67QNw2xQlsk","jmTime^4m57s - Look Foam^6m39s - Pop Sand^7m06s - Pop Water^7m39s - Low^7m45s - Point Go^8m03s - Feet Middle^8m50s - Fall Hands Head","4","Surf","","","","","",""] ,
+
+["SURF", "1_c_FCTX0gk", "I Learned How To Surf In 5 Days", "Tim Ferriss", "https://i.ytimg.com/vi/1_c_FCTX0gk/hqdefault.jpg", "https://www.youtube.com/watch?v=1_c_FCTX0gk","jmTime^4m59s - Under Out^5m47s - Left^6m17s - Body Surf^11m11s - Walk xPump^18m23s - Spread Fingers^21m37s - Web,","4","Surf","","","","","",""] ,
+
+["SURF", "OHpG_rNj8eQ", "How To Surf From Beginner To Intermediate In 20 Minutes | Step by Step Tutorial", "Kale Brock (Kale Brock)", "https://i.ytimg.com/vi/OHpG_rNj8eQ/hqdefault.jpg", "https://www.youtube.com/watch?v=OHpG_rNj8eQ","jmTime^37s - Above^8m32s - Streach^9m30s - Back^10m40s - Look4^11m19s - Peak^11m41s - Test^14m7s - Paddle Tech^14m43s - Home^15m36s - On Wave^16m54s - Skate^17m24s - Freeze^17m45s - Turn","4","Surf","","","","","",""] ,
 
 ["Al_Stewart","Yxy1eF_w7sU","Year of the Cat (2001 Remaster)","Al Stewart - Topic","https://i.ytimg.com/vi/Yxy1eF_w7sU/hqdefault.jpg","https://www.youtube.com/watch?v=Yxy1eF_w7sU","jmTime","2","Al_Stewart","","","","","",""] ,
 ["Atlantic","wzCdSJu5xqI","So Into You","Atlanta Rhythm Section - Topic","https://i.ytimg.com/vi/wzCdSJu5xqI/hqdefault.jpg","https://www.youtube.com/watch?v=wzCdSJu5xqI","jmTime","2","Atlantic","","","","","",""] ,
