@@ -1,3 +1,5 @@
+var contact1 = "me";
+
  var youtubeTitleList = [ 
 
 "Nick Lowe - Cruel To Be Kind ~  Nick Lowe ~  1979" ,
@@ -22,17 +24,16 @@
 ];
 
  var youtubeIDList = [ 
-"SURF - 67QNw2xQlsk" ,
-"SURF - N8aKFdK4eDc" ,
-"SURF - 1_c_FCTX0gk" ,
-"SURF - 1_c_FCTX0gk" ,
-"SURF - OHpG_rNj8eQ" ,
-"SURF - 67QNw2xQlsk" ,
+"SURF - fV4CI5qBp-s" ,
+"SURF - 3sXrWz763J8" ,
+"SURF - 8WLvbHprtaE" ,
+"SURF - juE9ISgFsTg" ,
+"SURF - My2AKeFwLuI" ,
+"SURF - TFUbAAUsTOc" ,
+"SURF - hA8TU9rDMms" ,
+"SURF - L-GgqNbxIhw" ,
+"SURF - FdNtyv15SJ0" ,
 "Dennis - zr-vdYUWXd0" 
-
-
-
-
 
 ];
 
@@ -40,6 +41,17 @@ const mapVideoDetails = [
 
 /* ["Tag-PRIM","ID","Title","Author","Image","URL","jmTimes","Cat-Tags","Tag-Mix","Tag-Names","Tag-Fingers","Tag-Instrument","Tag-Lyrics","Expert","Rate"] ,
 */
+
+
+["Theory", "8WLvbHprtaE", "Elvis - STOPPED entire concert for dying 7-year old - what happened next left 18000 in TEARS"    , "Elvis Presley The Untold Legacy", "https://i.ytimg.com/vi/8WLvbHprtaE/hqdefault.jpg", "https://www.youtube.com/watch?v=8WLvbHprtaE","jmTime","1","","","","","","","MUST"] ,
+["Theory", "3sXrWz763J8", "How - to Play By Ear INSTANTLY Ear Training Explained"                                           , "Piano with Corey"               , "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","","","","","","","MUST"] ,
+["Theory", "fV4CI5qBp-s", "Celestial Ground - Native American Flute for Deep Relaxation, Energy Cleansing  Inner Peace"   , "Chief Vibes"                    , "https://i.ytimg.com/vi/fV4CI5qBp-s/hqdefault.jpg", "https://www.youtube.com/watch?v=fV4CI5qBp-s","jmTime","1","","","","","","","MUST"] ,
+["Theory", "TFUbAAUsTOc", "Deep Healing Flute - Native American Flute Music with Rain for Sleep Meditation  Stress Relief", "24Relax"                        , "https://i.ytimg.com/vi/TFUbAAUsTOc/hqdefault.jpg", "https://www.youtube.com/watch?v=TFUbAAUsTOc","jmTime","1","","","","","","","MUST"] ,
+["Theory", "hA8TU9rDMms", "Coupon Code Song - Science 2 The Complete Songwriting Chord Guide"    , "Musicians Inspired", "https://i.ytimg.com/vi/hA8TU9rDMms/hqdefault.jpg", "https://www.youtube.com/watch?v=hA8TU9rDMms","jmTime","1","","","","","","","MUST"] ,
+["Theory", "FdNtyv15SJ0", "Coupon Code Song - Science 4 Mastering Modulation in Your Songwriting", "Musicians Inspired", "https://i.ytimg.com/vi/FdNtyv15SJ0/hqdefault.jpg", "https://www.youtube.com/watch?v=FdNtyv15SJ0","jmTime","1","","","","","","","MUST"] ,
+["Theory", "L-GgqNbxIhw", "Coupon Code Song - Science 3 How to Build Contemporary Song Forms"    , "Musicians Inspired", "https://i.ytimg.com/vi/L-GgqNbxIhw/hqdefault.jpg", "https://www.youtube.com/watch?v=L-GgqNbxIhw","jmTime","1","","","","","","","MUST"] ,
+["Theory", "My2AKeFwLuI", "Simple Songwriting Formula - that Changed Everything for Me"      , "How To Write Songs", "https://i.ytimg.com/vi/My2AKeFwLuI/hqdefault.jpg", "https://www.youtube.com/watch?v=My2AKeFwLuI","jmTime","1","","","","","","","MUST"] ,
+
 
 ["BEAT","oLol1qtbEeQ","BEAT - Blues - 12 Bar Blues Drum Backing Track (80 BPM)","Dirty Drums","https://i.ytimg.com/vi/oLol1qtbEeQ/hqdefault.jpg","https://www.youtube.com/watch?v=oLol1qtbEeQ","jmTime","1","","","","BLUES","","",""] ,
 ["BEAT","ZhHKyfZX7Gk","BEAT - Blues - Dirty Blues Rock Guitar Backing Track in E Major","Backing Tracks Center","https://i.ytimg.com/vi/ZhHKyfZX7Gk/hqdefault.jpg","https://www.youtube.com/watch?v=ZhHKyfZX7Gk","jmTime","1","","","","BLUES","","",""] ,
