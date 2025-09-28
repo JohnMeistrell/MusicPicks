@@ -24,15 +24,8 @@ var contact1 = "me";
 ];
 
  var youtubeIDList = [ 
-"SURF - fV4CI5qBp-s" ,
-"SURF - 3sXrWz763J8" ,
-"SURF - 8WLvbHprtaE" ,
-"SURF - juE9ISgFsTg" ,
-"SURF - My2AKeFwLuI" ,
-"SURF - TFUbAAUsTOc" ,
-"SURF - hA8TU9rDMms" ,
-"SURF - L-GgqNbxIhw" ,
-"SURF - FdNtyv15SJ0" ,
+"SURF - Z_Pz-b9AnsM" ,
+"SURF - HX8C0lOkibs" ,
 "Dennis - zr-vdYUWXd0" 
 
 ];
@@ -41,6 +34,42 @@ const mapVideoDetails = [
 
 /* ["Tag-PRIM","ID","Title","Author","Image","URL","jmTimes","Cat-Tags","Tag-Mix","Tag-Names","Tag-Fingers","Tag-Instrument","Tag-Lyrics","Expert","Rate"] ,
 */
+
+
+["LEARN","nK-hzAyTgn0", "Alice Cooper - Brownsville Station Smokin In The Boys Room - 1973", "Georgy Porgys Favorites", "https://i.ytimg.com/vi/nK-hzAyTgn0/hqdefault.jpg", "https://www.youtube.com/watch?v=nK-hzAyTgn0","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","Hxfu2Crmer0", "Alice Cooper - SMOKIN IN THE BOYS ROOM - BROWNSVILLE STATION - LYRICS", "JBS MUSIC VIDEOS", "https://i.ytimg.com/vi/Hxfu2Crmer0/hqdefault.jpg", "https://www.youtube.com/watch?v=Hxfu2Crmer0","jmTime","1","","","","","LYRICS","","GOOD"] ,
+["LEARN","baZ-gldNO0w", "Alice Cooper - Smokin In The Boys Room - Brownsville Station - Stereo 1973", "Smurfstools Oldies Music Time Machine", "https://i.ytimg.com/vi/baZ-gldNO0w/hqdefault.jpg", "https://www.youtube.com/watch?v=baZ-gldNO0w","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","HX8C0lOkibs", "BB King - Paying The Cost To Be The Boss", "B.B. King - Topic", "https://i.ytimg.com/vi/HX8C0lOkibs/hqdefault.jpg", "https://www.youtube.com/watch?v=HX8C0lOkibs","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","Z_Pz-b9AnsM", "BB King - Regal Blues (A Tribute to the King)", "The BB King Blues Band - Topic", "https://i.ytimg.com/vi/Z_Pz-b9AnsM/hqdefault.jpg", "https://www.youtube.com/watch?v=Z_Pz-b9AnsM","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","gxEPV4kolz0", "Billy Joel - Piano Man - Official HD Video", "billyjoelVEVO", "https://i.ytimg.com/vi/gxEPV4kolz0/hqdefault.jpg", "https://www.youtube.com/watch?v=gxEPV4kolz0","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","GB4YjpLk4nk", "Billy Joel - Piano Man -Lyrics", "7clouds Rock", "https://i.ytimg.com/vi/GB4YjpLk4nk/hqdefault.jpg", "https://www.youtube.com/watch?v=GB4YjpLk4nk","jmTime","1","","","","","LYRICS","","GOOD"] ,
+["LEARN","GB4YjpLk4nk", "Billy Joel - Piano Man (Lyrics)", "7clouds Rock", "https://i.ytimg.com/vi/GB4YjpLk4nk/hqdefault.jpg", "https://www.youtube.com/watch?v=GB4YjpLk4nk","jmTime","1","","","","","LYRICS","","GOOD"] ,
+["LEARN","4YP4b51l_Rw", "Johnny Rivers - Pneumonia and the Boogie Woogie (1973)", "Johnny Rivers - Rockin", "https://img.youtube.com/vi/4YP4b51l_Rw/0.jpg", "https://www.youtube.com/watch?v=4YP4b51l_Rw","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","03o-6To7xMQ", "Johnny Rivers - Rockin Pneumonia The Boogie Woogie Flu - Huey - Piano Smith 1957", "60s70sTheBest", "https://i.ytimg.com/vi/03o-6To7xMQ/hqdefault.jpg", "https://www.youtube.com/watch?v=03o-6To7xMQ","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","ABfQuZqq8wg", "Marvin Gaye - Aint No Mountain High Enough", "Marvin Gaye - Topic", "https://i.ytimg.com/vi/ABfQuZqq8wg/hqdefault.jpg", "https://www.youtube.com/watch?v=ABfQuZqq8wg","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","WZn9QZykx10", "Neil Young - Heart of Gold - Live - Harvest 50th Anniversary", "neilyoungchannel", "https://i.ytimg.com/vi/WZn9QZykx10/hqdefault.jpg", "https://www.youtube.com/watch?v=WZn9QZykx10","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","__ziwctF1I0", "Neil Young - Heart Of Gold - Lyrics", "ALL MIXED", "https://i.ytimg.com/vi/__ziwctF1I0/hqdefault.jpg", "https://www.youtube.com/watch?v=__ziwctF1I0","jmTime","1","","","","","LYRICS","","GOOD"] ,
+["LEARN","c7eB7Wns1-M", "Neil Young - Heart of Gold -Official Audio", "neilyoungchannel", "https://i.ytimg.com/vi/c7eB7Wns1-M/hqdefault.jpg", "https://www.youtube.com/watch?v=c7eB7Wns1-M","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","vRFo72wuU6w", "Norman Greenbaum - Spirit In The Sky - 1970", "Polydor 1000", "https://i.ytimg.com/vi/vRFo72wuU6w/hqdefault.jpg", "https://www.youtube.com/watch?v=vRFo72wuU6w","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","YqYN-1vMM9k", "Norman Greenbaum - Spirit In The Sky -Official Music Video", "NormanGreenbaumVEVO", "https://i.ytimg.com/vi/YqYN-1vMM9k/hqdefault.jpg", "https://www.youtube.com/watch?v=YqYN-1vMM9k","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","-7zuygYJBCA", "Rasberries - GO ALL THE WAY - LIVE IN STUDIO - RASPBERRIES", "lazy poker", "https://i.ytimg.com/vi/-7zuygYJBCA/hqdefault.jpg", "https://www.youtube.com/watch?v=-7zuygYJBCA","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","0PNEKeh59Rw", "Rasberries - Go All the Way - Raspberries - Lyrics ", "Megan Smith", "https://i.ytimg.com/vi/0PNEKeh59Rw/hqdefault.jpg", "https://www.youtube.com/watch?v=0PNEKeh59Rw","jmTime","1","","","","","LYRICS","","GOOD"] ,
+["LEARN","ULL7apmAJTE", "Rasberries - Go All The Way", "Joel Gustafsson", "https://i.ytimg.com/vi/ULL7apmAJTE/hqdefault.jpg", "https://www.youtube.com/watch?v=ULL7apmAJTE","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","rtp8WSAzrGw", "Rasberries - Go All The Way", "Raspberries - Topic", "https://i.ytimg.com/vi/rtp8WSAzrGw/hqdefault.jpg", "https://www.youtube.com/watch?v=rtp8WSAzrGw","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","iJalkmTEol8", "Raspberries - Go All The Way - Official ", "All Seasons Music", "https://i.ytimg.com/vi/iJalkmTEol8/hqdefault.jpg", "https://www.youtube.com/watch?v=iJalkmTEol8","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","Z04-QKlATw0", "Searchers - Love Potion Number Nine - Stereo Version", "The Searchers - Topic", "https://i.ytimg.com/vi/Z04-QKlATw0/hqdefault.jpg", "https://www.youtube.com/watch?v=Z04-QKlATw0","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","3Ab0b_YoOK0", "Searchers - Love Potion Number Nine 1964", "THE MUSIC ENHANCEMENT CHANNEL", "https://i.ytimg.com/vi/3Ab0b_YoOK0/hqdefault.jpg", "https://www.youtube.com/watch?v=3Ab0b_YoOK0","jmTime","1","","","","","","","GOOD"] ,
+["LEARN","D6QF4sB40gU", "Supremes - Baby Love -Lyric Video", "TheSupremesVEVO", "https://i.ytimg.com/vi/D6QF4sB40gU/hqdefault.jpg", "https://www.youtube.com/watch?v=D6QF4sB40gU","jmTime","1","","","","","LYRICS","","GOOD"] ,
+
+["Theory","3sXrWz763J8", "Piano Corey Billy Joel - How to Play By Ear INSTANTLY - Ear Training Explained - GOOD MUST Billy Joel Pianno Man", "Piano With Corey", "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","","","","","","","MUST"] ,
+["Theory","SE6zBaKWzWQ", "Piano Musicains Inspired - Coupon Code Song Science #1: How Pros Use 6 Chords to Write Hit Songs", "Musicians Inspired", "https://i.ytimg.com/vi/SE6zBaKWzWQ/hqdefault.jpg", "https://www.youtube.com/watch?v=SE6zBaKWzWQ","jmTime","1","","","","","","","MUST"] ,
+["Theory","X1coZlJRrx8", "Piano Musicains Inspired - How Piano Rhythm Patterns Work - plus learn 2 patterns", "Musicians Inspired", "https://i.ytimg.com/vi/X1coZlJRrx8/hqdefault.jpg", "https://www.youtube.com/watch?v=X1coZlJRrx8","jmTime","1","","","","","","","MUST"] ,
+["Theory","jSOU-J9KHbg", "Piano Musicains Inspired - How to Read Notes Fast - The Landmark System", "Musicians Inspired", "https://i.ytimg.com/vi/jSOU-J9KHbg/hqdefault.jpg", "https://www.youtube.com/watch?v=jSOU-J9KHbg","jmTime","1","","","","","","","MUST"] ,
+
+
+
+
+
 
 
 ["Theory", "8WLvbHprtaE", "Elvis - STOPPED entire concert for dying 7-year old - what happened next left 18000 in TEARS"    , "Elvis Presley The Untold Legacy", "https://i.ytimg.com/vi/8WLvbHprtaE/hqdefault.jpg", "https://www.youtube.com/watch?v=8WLvbHprtaE","jmTime","1","","","","","","","MUST"] ,
@@ -76,7 +105,7 @@ const mapVideoDetails = [
 ["LEARN","w3e8SXWjNg4","Peaches Herb - Shake Your Groove Thing","Peaches & Herb - Topic","https://i.ytimg.com/vi/w3e8SXWjNg4/hqdefault.jpg","https://www.youtube.com/watch?v=w3e8SXWjNg4","jmTime","1","Peaches_Herb","","","","","",""] ,
 ["LEARN","nZdCTMTnFSg","Beatles - Hey Jude - EASY Piano Tutorial","PHianonize","https://i.ytimg.com/vi/nZdCTMTnFSg/hqdefault.jpg","https://www.youtube.com/watch?v=nZdCTMTnFSg","jmTime","1","Beatles","","","","","",""] ,
 ["LEARN","5iv2OMKAAUo","Beatles - Hey Jude - The Beatles - Beginner Piano Tuturial and Sheet Music by Betacustic","Betacustic","https://i.ytimg.com/vi/5iv2OMKAAUo/hqdefault.jpg","https://www.youtube.com/watch?v=5iv2OMKAAUo","jmTime","1","Beatles","","","","","",""] ,
-["LEARN","2dKKZevjn48","Beatles - Hey Jude (Easy Piano Tutorial)","Atlantic Notes","https://i.ytimg.com/vi/2dKKZevjn48/hqdefault.jpg","https://www.youtube.com/watch?v=2dKKZevjn48","jmTime","1","Beatles","","","","","",""] ,
+["LEARN","2dKKZevjn48","Beatles - Hey Jude (Easy Piano Tutorial) - GOOD MUST Notes falling","Atlantic Notes","https://i.ytimg.com/vi/2dKKZevjn48/hqdefault.jpg","https://www.youtube.com/watch?v=2dKKZevjn48","jmTime","1","Beatles","","","","","",""] ,
 ["LEARN","OnJqFrVD3uE","Redbone - Come And Get Your Love (Live on The Midnight Special) HQ","RedboneOfficial","https://i.ytimg.com/vi/OnJqFrVD3uE/hqdefault.jpg","https://www.youtube.com/watch?v=OnJqFrVD3uE","jmTime","1","Redbone","","","","","",""] ,
 ["LEARN","2JGTKK5cMXM","Peggy Lee - Fever - 1967","Peggy Lee","https://i.ytimg.com/vi/2JGTKK5cMXM/hqdefault.jpg","https://www.youtube.com/watch?v=2JGTKK5cMXM","jmTime","1","Peggy_Lee","","","","","",""] ,
 ["LEARN","JmWC70SLOQY","George Thorogood - Move It On Over - Johnny Be Good 1979","VJTonyCtba","https://i.ytimg.com/vi/JmWC70SLOQY/hqdefault.jpg","https://www.youtube.com/watch?v=JmWC70SLOQY","jmTime","1","Thorogood","","","","","",""] ,
@@ -123,7 +152,7 @@ const mapVideoDetails = [
 ["Theory","4qla4LC71xE","Mangold - 8 Essential Skills That Will Make You a GREAT Musician (LOTS SHEET LABLES C1-C8 CORDS)","MangoldProject","https://i.ytimg.com/vi/4qla4LC71xE/hqdefault.jpg","https://www.youtube.com/watch?v=4qla4LC71xE","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","HrT6ksJu584","Mangold - Dancing on the Piano: A Beginners Tutorial on SMOOTH Chords","MangoldProject","https://i.ytimg.com/vi/HrT6ksJu584/hqdefault.jpg","https://www.youtube.com/watch?v=HrT6ksJu584","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","WyVqf3H1hGs","Mangold - How to Practice Music Theory - And Other Questions Musicians Face (Q&A #1)","MangoldProject","https://i.ytimg.com/vi/WyVqf3H1hGs/hqdefault.jpg","https://www.youtube.com/watch?v=WyVqf3H1hGs","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
-["Theory","PeYSesLA5K4","Mangold - Lessons for Beginners: Part 3 - More important chords you should know","MangoldProject","https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg","https://www.youtube.com/watch?v=PeYSesLA5K4","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
+["Theory","PeYSesLA5K4","Mangold - Lessons for Beginners: Part 3 - More important chords should know - GOOD MUST - Learn chords - Practice with video","MangoldProject","https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg","https://www.youtube.com/watch?v=PeYSesLA5K4","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","DsdyAJ_fjbQ","Mangold - Writing Blackbird: A Lesson in Diatonic and Chromatic Motion (LOTS SHEET LABLES C1-C8 CORDS)","MangoldProject","https://i.ytimg.com/vi/DsdyAJ_fjbQ/hqdefault.jpg","https://www.youtube.com/watch?v=DsdyAJ_fjbQ","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","mJ1NDedMTR0","PIANO - Chord Charts 101: How to Sound PRO on PIANO! (GOOD LOTS)","The Keys Coach","https://i.ytimg.com/vi/mJ1NDedMTR0/hqdefault.jpg","https://www.youtube.com/watch?v=mJ1NDedMTR0","jmTime","1","","","FINGERS","PIANO","","KeysCoach","MUST"] ,
 ["Theory","WcUflyhiFeE","PIANO - Learn *EVERY* Piano Chord Quickly in 2 Steps (FREE PDF!)","Ashlee Young Piano Studio","https://i.ytimg.com/vi/WcUflyhiFeE/hqdefault.jpg","https://www.youtube.com/watch?v=WcUflyhiFeE","jmTime","1","SCALE","","FINGERS","PIANO","","AshleeYoung","GOOD"] ,
