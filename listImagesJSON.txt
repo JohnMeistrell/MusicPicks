@@ -24,8 +24,8 @@ var contact1 = "me";
 ];
 
  var youtubeIDList = [ 
-"SURF - Z_Pz-b9AnsM" ,
-"SURF - HX8C0lOkibs" ,
+"NEW - ASvQ-bNURn4" ,
+"NEW - 0pZrxxvB66k" ,
 "Dennis - zr-vdYUWXd0" 
 
 ];
@@ -34,6 +34,10 @@ const mapVideoDetails = [
 
 /* ["Tag-PRIM","ID","Title","Author","Image","URL","jmTimes","Cat-Tags","Tag-Mix","Tag-Names","Tag-Fingers","Tag-Instrument","Tag-Lyrics","Expert","Rate"] ,
 */
+
+
+["NEW", "0pZrxxvB66k", "Hawaii Five-O Theme Song ", "The Ventures - Topic", "https://i.ytimg.com/vi/0pZrxxvB66k/hqdefault.jpg", "https://www.youtube.com/watch?v=0pZrxxvB66k","jmTime","1","","","","","","",""] ,
+["NEW", "ASvQ-bNURn4", "Hawaii Five O Theme Song (Original)", "MultiOmps", "https://i.ytimg.com/vi/ASvQ-bNURn4/hqdefault.jpg", "https://www.youtube.com/watch?v=ASvQ-bNURn4","jmTime","1","","","","","","",""] ,
 
 
 ["LEARN","nK-hzAyTgn0", "Alice Cooper - Brownsville Station Smokin In The Boys Room - 1973", "Georgy Porgys Favorites", "https://i.ytimg.com/vi/nK-hzAyTgn0/hqdefault.jpg", "https://www.youtube.com/watch?v=nK-hzAyTgn0","jmTime","1","","","","","","","GOOD"] ,
