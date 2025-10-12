@@ -14,7 +14,18 @@
 
     <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
 
-    <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
+    <script src="listImagesJSON.txt"> /* List images on C drive */ </script>  
+
+<style>
+.customClassForDropDown {
+  z-index: 1050; /* A value higher than Bootstrap's modal z-index */
+}
+
+.dropdown-backdrop{
+position: static;
+}
+
+</style>
 
 
 
@@ -36,7 +47,10 @@
 <button class="btn border border-light btn-primary btn-BEAT"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-BEAT"    aria-controls = ".multi-collapse-BEAT"        >Beat</button>
 <button class="btn border border-light btn-primary btn-MUST"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-MUST"    aria-controls = ".multi-collapse-MUST"        >Must</button>
 
-  <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+
+  <button class=" btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-display="static" position-static >
     More
   </button>
   <a target="_blank" href="https://www.chordie.com/"                        >Lyrics n Chords</a>
@@ -44,7 +58,7 @@
   <a target="_blank" href="https://www.hanon-online.com/">Hannon</a>
   <a target="_blank" href="https://johnmeistrell.github.io/GuessPianoNotes/">Guess</a>
 
-<div class="dropdown-menu customClassForDropDown" aria-labelledby="dropdownMenuButton">
+<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
 
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
