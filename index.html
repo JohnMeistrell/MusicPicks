@@ -53,6 +53,7 @@
     <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-NAMES"    aria-controls = ".multi-collapse-NAMES"   data-dismiss="modal"  >NAMES</button>
     <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-SCALE"    aria-controls = ".multi-collapse-SCALE"   data-dismiss="modal"  >SCALE</button>
     <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-SURF"     aria-controls = ".multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
+    <button class="btn border border-light btn-primary btn-RIFFS"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-RIFFS"     aria-controls = ".multi-collapse-RIFFS"       data-dismiss="modal"  >RIFFS</button>
     <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-NEW"     aria-controls = ".multi-collapse-NEW"       data-dismiss="modal"  >NEW</button>
 
       </div>
@@ -189,6 +190,10 @@
 <button class="btn border border-light btn-primary btn-Theory"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Theory"  aria-controls = ".multi-collapse-Theory"    data-dismiss="modal"  >Theory</button>
 <button class="btn border border-light btn-primary btn-BEAT"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-BEAT"    aria-controls = ".multi-collapse-BEAT"      data-dismiss="modal"  >Beat</button>
 <button class="btn border border-light btn-primary btn-MUST"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-MUST"    aria-controls = ".multi-collapse-MUST"      data-dismiss="modal"  >Must</button>
+
+
+<button class="btn border border-light btn-primary btn-Daily"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Daily"   aria-controls = ".multi-collapse-Daily"     data-dismiss="modal"  >Daily</button>
+
 
 <button class="btn border border-light btn-primary btn-MODAL"     type="button" data-toggle="modal" data-target="#myModal">More</button>
 
@@ -538,7 +543,12 @@ $(document).ready(function(){
   $(".btn-LOTS").click(function(){  $(".collapse").removeClass("show");  }); 
   $(".btn-SCALE").click(function(){  $(".collapse").removeClass("show");  }); 
   $(".btn-SURF").click(function(){  $(".collapse").removeClass("show");  }); 
+  $(".btn-RIFFS").click(function(){  $(".collapse").removeClass("show");  }); 
   $(".btn-NEW").click(function(){  $(".collapse").removeClass("show"); $('#myModal').modal('hide');  }); 
+
+  $(".btn-Daily").click(function(){  $(".collapse").removeClass("show");  }); 
+
+
 
    $(".btn-AshleeYoung").click(function(){  $(".collapse").removeClass("show");  }); 
    $(".btn-FromScratch").click(function(){  $(".collapse").removeClass("show");  }); 

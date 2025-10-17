@@ -24,8 +24,7 @@ var contact1 = "me";
 ];
 
  var youtubeIDList = [ 
-"NEW - ASvQ-bNURn4" ,
-"NEW - 0pZrxxvB66k" ,
+"RIFFS - tcHNHRGPkkw" ,
 "Dennis - zr-vdYUWXd0" 
 
 ];
@@ -36,8 +35,60 @@ const mapVideoDetails = [
 */
 
 
+["RIFFS","3pVQj2v7tBI","Smoke on the Water (2024 Remaster)","Deep Purple - Topic","https://i.ytimg.com/vi/3pVQj2v7tBI/hqdefault.jpg","https://www.youtube.com/watch?v=3pVQj2v7tBI","jmTime","1","","","","","","",""] ,
+["RIFFS","2KPEHohJMuw","Led Zeppelin - Black Dog (Official Audio)","Led Zeppelin","https://i.ytimg.com/vi/2KPEHohJMuw/hqdefault.jpg","https://www.youtube.com/watch?v=2KPEHohJMuw","jmTime","1","","","","","","",""] ,
+["RIFFS","SwYN7mTi6HM","Van Halen - Jump (Official Music Video) HD","Van Halen","https://i.ytimg.com/vi/SwYN7mTi6HM/hqdefault.jpg","https://www.youtube.com/watch?v=SwYN7mTi6HM","jmTime","1","","","","","","",""] ,
+["RIFFS","QfZHEJ5HwZ8","John Mayer - Slow Dancing In A Burning Room (Lyrics)","Ethereal Music","https://i.ytimg.com/vi/QfZHEJ5HwZ8/hqdefault.jpg","https://www.youtube.com/watch?v=QfZHEJ5HwZ8","jmTime","1","","","","","","",""] ,
+["RIFFS","8fO8jVZ3T9g","Beat It - Michael Jackson (Lyrics)","Art of Yourself","https://i.ytimg.com/vi/8fO8jVZ3T9g/hqdefault.jpg","https://www.youtube.com/watch?v=8fO8jVZ3T9g","jmTime","1","","","","","","",""] ,
+["RIFFS","Q2FzZSBD5LE","Deep Purple - Smoke On the Water (Official Music Video)","Deep Purple Official","https://i.ytimg.com/vi/Q2FzZSBD5LE/hqdefault.jpg","https://www.youtube.com/watch?v=Q2FzZSBD5LE","jmTime","1","","","","","","",""] ,
+["RIFFS","WbZq5idUJcI","Hang On Sloopy - Rick Derringer Video  The McCoys Audio HD Remaster PORTEGO Cut","PORTEGO MUSIC","https://i.ytimg.com/vi/WbZq5idUJcI/hqdefault.jpg","https://www.youtube.com/watch?v=WbZq5idUJcI","jmTime","1","","","","","","",""] ,
+["RIFFS","IYj2hex99gY","Righteous Brothers - Unchained Melody Live - Best Quality (1965)","DiscoBar80","https://i.ytimg.com/vi/IYj2hex99gY/hqdefault.jpg","https://www.youtube.com/watch?v=IYj2hex99gY","jmTime","1","","","","","","",""] ,
+["RIFFS","4hswHOEQfj8","Tequila","The Champs - Topic","https://i.ytimg.com/vi/4hswHOEQfj8/hqdefault.jpg","https://www.youtube.com/watch?v=4hswHOEQfj8","jmTime","1","","","","","","",""] ,
+["RIFFS","j8tZs6G_h7U","The Killers - Mr Brightside (Lyrics)","Lost Panda","https://i.ytimg.com/vi/j8tZs6G_h7U/hqdefault.jpg","https://www.youtube.com/watch?v=j8tZs6G_h7U","jmTime","1","","","","","","",""] ,
+["RIFFS","tcHNHRGPkkw","Peanuts Theme Song","Justin Kapr","https://i.ytimg.com/vi/tcHNHRGPkkw/hqdefault.jpg","https://www.youtube.com/watch?v=tcHNHRGPkkw","jmTime","1","","","","","","",""] ,
+["RIFFS","bX9RMdcFQAw","Jump (2015 Remaster)","Van Halen - Topic","https://i.ytimg.com/vi/bX9RMdcFQAw/hqdefault.jpg","https://www.youtube.com/watch?v=bX9RMdcFQAw","jmTime","1","","","","","","",""] ,
+["RIFFS","l482T0yNkeo","AC DC - Highway to Hell (Official Video)","acdcVEVO","https://i.ytimg.com/vi/l482T0yNkeo/hqdefault.jpg","https://www.youtube.com/watch?v=l482T0yNkeo","jmTime","1","","","","","","",""] ,
+["RIFFS","-p8GXZcdrIk","Lynyrd Skynyrd - Sweet Home Alabama (Lyric Video)","LynyrdSkynyrdVEVO","https://i.ytimg.com/vi/-p8GXZcdrIk/hqdefault.jpg","https://www.youtube.com/watch?v=-p8GXZcdrIk","jmTime","1","","","","","","",""] ,
+["RIFFS","gGdGFtwCNBE","The Killers - Mr. Brightside (Official Music Video)","TheKillersVEVO","https://i.ytimg.com/vi/gGdGFtwCNBE/hqdefault.jpg","https://www.youtube.com/watch?v=gGdGFtwCNBE","jmTime","1","","","","","","",""] ,
+["RIFFS","MM62wjLrgmA","TOOL - Schism (Official Video)","TOOLVEVO","https://i.ytimg.com/vi/MM62wjLrgmA/hqdefault.jpg","https://www.youtube.com/watch?v=MM62wjLrgmA","jmTime","1","","","","","","",""] ,
+["RIFFS","7MibW8t5DbI","Deep Purple - Smoke On The Water (Lyrics)","ALL MIXED","https://i.ytimg.com/vi/7MibW8t5DbI/hqdefault.jpg","https://www.youtube.com/watch?v=7MibW8t5DbI","jmTime","1","","","","","","",""] ,
+["RIFFS","iXQUu5Dti4g","Stairway to Heaven (Remaster)","Led Zeppelin - Topic","https://i.ytimg.com/vi/iXQUu5Dti4g/hqdefault.jpg","https://www.youtube.com/watch?v=iXQUu5Dti4g","jmTime","1","","","","","","",""] ,
+["RIFFS","5GroWAOn8h8","Worlds Best Classical Instrumental Music - Relaxing","Deep Relaxing Music","https://i.ytimg.com/vi/5GroWAOn8h8/hqdefault.jpg","https://www.youtube.com/watch?v=5GroWAOn8h8","jmTime","1","","","","","","",""] ,
+["RIFFS","65XSHM3jlAY","Edgar Winter,The Edgar Winter Group - Frankenstein (Audio)","EDGARWINTERVEVO","https://i.ytimg.com/vi/65XSHM3jlAY/hqdefault.jpg","https://www.youtube.com/watch?v=65XSHM3jlAY","jmTime","1","","","","","","",""] ,
+["RIFFS","TOWSqHzVgW0","AC DC - Highway To Hell (Lyrics)","ALL MIXED","https://i.ytimg.com/vi/TOWSqHzVgW0/hqdefault.jpg","https://www.youtube.com/watch?v=TOWSqHzVgW0","jmTime","1","","","","","","",""] ,
+["RIFFS","oRdxUFDoQe0","Michael Jackson - Beat It (Official 4K Video)","michaeljacksonVEVO","https://i.ytimg.com/vi/oRdxUFDoQe0/hqdefault.jpg","https://www.youtube.com/watch?v=oRdxUFDoQe0","jmTime","1","","","","","","",""] ,
+["RIFFS","QkF3oxziUI4","Led Zeppelin - Stairway To Heaven (Official Audio)","Led Zeppelin","https://i.ytimg.com/vi/QkF3oxziUI4/hqdefault.jpg","https://www.youtube.com/watch?v=QkF3oxziUI4","jmTime","1","","","","","","",""] ,
+["RIFFS","7wgm9dWIhgs","Tommy Emmanuels Tribute to Chet Atkins - Chets Ramble - LIVE in SLC UT 2007","dejablueguitar","https://i.ytimg.com/vi/7wgm9dWIhgs/hqdefault.jpg","https://www.youtube.com/watch?v=7wgm9dWIhgs","jmTime","1","","","","","","",""] ,
+["RIFFS","ajWS1YGUfUI","1973 HITS ARCHIVE Frankenstein - Edgar Winter Group","AnotherProf","https://i.ytimg.com/vi/ajWS1YGUfUI/hqdefault.jpg","https://www.youtube.com/watch?v=ajWS1YGUfUI","jmTime","1","","","","","","",""] ,
+["RIFFS","587oWTI9twM","Ghost - Unchained Melody - Righteous Brothers","Nostalgic Tributes","https://i.ytimg.com/vi/587oWTI9twM/hqdefault.jpg","https://www.youtube.com/watch?v=587oWTI9twM","jmTime","1","","","","","","",""] ,
+["RIFFS","xJ2ZsmGhX0U","The Shadows - Apache (Surf-Rock cover)","Mick Beaulieu","https://i.ytimg.com/vi/xJ2ZsmGhX0U/hqdefault.jpg","https://www.youtube.com/watch?v=xJ2ZsmGhX0U","jmTime","1","","","","","","",""] ,
+["RIFFS","oxqi8Ar16wU","Aint That Just Like A Woman","B.B. King - Topic","https://i.ytimg.com/vi/oxqi8Ar16wU/hqdefault.jpg","https://www.youtube.com/watch?v=oxqi8Ar16wU","jmTime","1","","","","","","",""] ,
+["RIFFS","yBuub4Xe1mw","Black Dog (Remaster)","Led Zeppelin - Topic","https://i.ytimg.com/vi/yBuub4Xe1mw/hqdefault.jpg","https://www.youtube.com/watch?v=yBuub4Xe1mw","jmTime","1","","","","","","",""] ,
+["RIFFS","MAB0QImjO-c","Ghost Unchained Melody The Righteous Brothers","HD Film Tributes","https://i.ytimg.com/vi/MAB0QImjO-c/hqdefault.jpg","https://www.youtube.com/watch?v=MAB0QImjO-c","jmTime","1","","","","","","",""] ,
+["RIFFS","NUTjBxSnkAs","Van Halen - Jump (Lyrics) BUGG Lyrics","BUGG Lyrics","https://i.ytimg.com/vi/NUTjBxSnkAs/hqdefault.jpg","https://www.youtube.com/watch?v=NUTjBxSnkAs","jmTime","1","","","","","","",""] ,
+["RIFFS","QBL2m1PNqJM","Tom Misch - Lost In Paris (feat. GoldLink) Official Audio","Tom Misch","https://i.ytimg.com/vi/QBL2m1PNqJM/hqdefault.jpg","https://www.youtube.com/watch?v=QBL2m1PNqJM","jmTime","1","","","","","","",""] ,
+["RIFFS","TbMls6pIwyY","Tommy Emmanuel Plays Classical Gas LIVE On TV","The Project","https://i.ytimg.com/vi/TbMls6pIwyY/hqdefault.jpg","https://www.youtube.com/watch?v=TbMls6pIwyY","jmTime","1","","","","","","",""] ,
+["RIFFS","H1VfndWjyno","Loggins Messina - Your Mama Dont Dance - Lyrics","Jennifer Wood","https://i.ytimg.com/vi/H1VfndWjyno/hqdefault.jpg","https://www.youtube.com/watch?v=H1VfndWjyno","jmTime","1","","","","","","",""] ,
+["RIFFS","MhAE3lQ_FHg","Righteous Brothers Unchained Melody From Movie Ghost","Einyel33","https://i.ytimg.com/vi/MhAE3lQ_FHg/hqdefault.jpg","https://www.youtube.com/watch?v=MhAE3lQ_FHg","jmTime","1","","","","","","",""] ,
+["RIFFS","c8H8a5Bab6o","Anything Goes","Guns N Roses - Topic","https://i.ytimg.com/vi/c8H8a5Bab6o/hqdefault.jpg","https://www.youtube.com/watch?v=c8H8a5Bab6o","jmTime","1","","","","","","",""] ,
+["RIFFS","IfFi4Q7ueA8","Slow Dancing In a Burning Room- John Mayer (With Lyrics)","EmandElMusic","https://i.ytimg.com/vi/IfFi4Q7ueA8/hqdefault.jpg","https://www.youtube.com/watch?v=IfFi4Q7ueA8","jmTime","1","","","","","","",""] ,
+["RIFFS","bcUNmNyU160","Tom Misch GoldLink - Lost In Paris (Lyrics)","Lyric Frame","https://i.ytimg.com/vi/bcUNmNyU160/hqdefault.jpg","https://www.youtube.com/watch?v=bcUNmNyU160","jmTime","1","","","","","","",""] ,
+["RIFFS","n4gXzxyQZj8","Tool - Schism (Lyrics)","Music Pills","https://i.ytimg.com/vi/n4gXzxyQZj8/hqdefault.jpg","https://www.youtube.com/watch?v=n4gXzxyQZj8","jmTime","1","","","","","","",""] ,
+["RIFFS","vqCWBgUl4Nk","I Like To Live The Love","B.B. King - Topic","https://i.ytimg.com/vi/vqCWBgUl4Nk/hqdefault.jpg","https://www.youtube.com/watch?v=vqCWBgUl4Nk","jmTime","1","","","","","","",""] ,
+["RIFFS","JpYk8UPTEwo","Sweet Home Alabama","Lynyrd Skynyrd - Topic","https://i.ytimg.com/vi/JpYk8UPTEwo/hqdefault.jpg","https://www.youtube.com/watch?v=JpYk8UPTEwo","jmTime","1","","","","","","",""] ,
+["RIFFS","q3sJVbHlcdQ","Tequila (Remastered)","The Champs - Topic","https://i.ytimg.com/vi/q3sJVbHlcdQ/hqdefault.jpg","https://www.youtube.com/watch?v=q3sJVbHlcdQ","jmTime","1","","","","","","",""] ,
+["RIFFS","iRU9VyXIgGo","Hang On Sloopy The McCoys - with lyrics","Chris Lyrics","https://i.ytimg.com/vi/iRU9VyXIgGo/hqdefault.jpg","https://www.youtube.com/watch?v=iRU9VyXIgGo","jmTime","1","","","","","","",""] ,
+["RIFFS","DbE3zpXIRvc","Exactly Like You","B.B. King - Topic","https://i.ytimg.com/vi/DbE3zpXIRvc/hqdefault.jpg","https://www.youtube.com/watch?v=DbE3zpXIRvc","jmTime","1","","","","","","",""] ,
+
+["RIFFS","5GroWAOn8h8","The Worlds Best Classical Instrumental Music Relaxing","Deep Relaxing Music","https://i.ytimg.com/vi/5GroWAOn8h8/hqdefault.jpg","https://www.youtube.com/watch?v=5GroWAOn8h8","jmTime","1","","","","","","",""] ,
+
+["RIFFS","gidjZO9t5JA","The Shadows - Apache (1981)","Shadows","https://media.snl.no/media/45899/standard_compressed_shadows.jpg","https://www.youtube.com/watch?v=gidjZO9t5JA","jmTime","1","","","","","","",""] ,
+["RIFFS","cx5f1Jtqsxo","The Shadows - Apache (1981)","Shadows","https://media.snl.no/media/45899/standard_compressed_shadows.jpg","https://www.youtube.com/watch?v=cx5f1Jtqsxo","jmTime","1","","","","","","",""] ,
+
+
 ["NEW", "0pZrxxvB66k", "Hawaii Five-O Theme Song ", "The Ventures - Topic", "https://i.ytimg.com/vi/0pZrxxvB66k/hqdefault.jpg", "https://www.youtube.com/watch?v=0pZrxxvB66k","jmTime","1","","","","","","",""] ,
 ["NEW", "ASvQ-bNURn4", "Hawaii Five O Theme Song (Original)", "MultiOmps", "https://i.ytimg.com/vi/ASvQ-bNURn4/hqdefault.jpg", "https://www.youtube.com/watch?v=ASvQ-bNURn4","jmTime","1","","","","","","",""] ,
+
 
 
 ["LEARN","nK-hzAyTgn0", "Alice Cooper - Brownsville Station Smokin In The Boys Room - 1973", "Georgy Porgys Favorites", "https://i.ytimg.com/vi/nK-hzAyTgn0/hqdefault.jpg", "https://www.youtube.com/watch?v=nK-hzAyTgn0","jmTime","1","","","","","","","GOOD"] ,
@@ -65,7 +116,7 @@ const mapVideoDetails = [
 ["LEARN","3Ab0b_YoOK0", "Searchers - Love Potion Number Nine 1964", "THE MUSIC ENHANCEMENT CHANNEL", "https://i.ytimg.com/vi/3Ab0b_YoOK0/hqdefault.jpg", "https://www.youtube.com/watch?v=3Ab0b_YoOK0","jmTime","1","","","","","","","GOOD"] ,
 ["LEARN","D6QF4sB40gU", "Supremes - Baby Love -Lyric Video", "TheSupremesVEVO", "https://i.ytimg.com/vi/D6QF4sB40gU/hqdefault.jpg", "https://www.youtube.com/watch?v=D6QF4sB40gU","jmTime","1","","","","","LYRICS","","GOOD"] ,
 
-["Theory","3sXrWz763J8", "Piano Corey Billy Joel - How to Play By Ear INSTANTLY - Ear Training Explained - GOOD MUST Billy Joel Pianno Man", "Piano With Corey", "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","","","","","","","MUST"] ,
+["Theory","3sXrWz763J8", "Piano Corey Billy Joel - How to Play By Ear INSTANTLY - Ear Training Explained - GOOD MUST Billy Joel Pianno Man", "Piano With Corey", "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","Daily","","","","","","MUST"] ,
 ["Theory","SE6zBaKWzWQ", "Piano Musicains Inspired - Coupon Code Song Science #1: How Pros Use 6 Chords to Write Hit Songs", "Musicians Inspired", "https://i.ytimg.com/vi/SE6zBaKWzWQ/hqdefault.jpg", "https://www.youtube.com/watch?v=SE6zBaKWzWQ","jmTime","1","","","","","","","MUST"] ,
 ["Theory","X1coZlJRrx8", "Piano Musicains Inspired - How Piano Rhythm Patterns Work - plus learn 2 patterns", "Musicians Inspired", "https://i.ytimg.com/vi/X1coZlJRrx8/hqdefault.jpg", "https://www.youtube.com/watch?v=X1coZlJRrx8","jmTime","1","","","","","","","MUST"] ,
 ["Theory","jSOU-J9KHbg", "Piano Musicains Inspired - How to Read Notes Fast - The Landmark System", "Musicians Inspired", "https://i.ytimg.com/vi/jSOU-J9KHbg/hqdefault.jpg", "https://www.youtube.com/watch?v=jSOU-J9KHbg","jmTime","1","","","","","","","MUST"] ,
@@ -109,7 +160,7 @@ const mapVideoDetails = [
 ["LEARN","w3e8SXWjNg4","Peaches Herb - Shake Your Groove Thing","Peaches & Herb - Topic","https://i.ytimg.com/vi/w3e8SXWjNg4/hqdefault.jpg","https://www.youtube.com/watch?v=w3e8SXWjNg4","jmTime","1","Peaches_Herb","","","","","",""] ,
 ["LEARN","nZdCTMTnFSg","Beatles - Hey Jude - EASY Piano Tutorial","PHianonize","https://i.ytimg.com/vi/nZdCTMTnFSg/hqdefault.jpg","https://www.youtube.com/watch?v=nZdCTMTnFSg","jmTime","1","Beatles","","","","","",""] ,
 ["LEARN","5iv2OMKAAUo","Beatles - Hey Jude - The Beatles - Beginner Piano Tuturial and Sheet Music by Betacustic","Betacustic","https://i.ytimg.com/vi/5iv2OMKAAUo/hqdefault.jpg","https://www.youtube.com/watch?v=5iv2OMKAAUo","jmTime","1","Beatles","","","","","",""] ,
-["LEARN","2dKKZevjn48","Beatles - Hey Jude (Easy Piano Tutorial) - GOOD MUST Notes falling","Atlantic Notes","https://i.ytimg.com/vi/2dKKZevjn48/hqdefault.jpg","https://www.youtube.com/watch?v=2dKKZevjn48","jmTime","1","Beatles","","","","","",""] ,
+["LEARN","2dKKZevjn48","Beatles - Hey Jude (Easy Piano Tutorial) - GOOD MUST Notes falling","Atlantic Notes","https://i.ytimg.com/vi/2dKKZevjn48/hqdefault.jpg","https://www.youtube.com/watch?v=2dKKZevjn48","jmTime","1","Beatles","Daily","","","","",""] ,
 ["LEARN","OnJqFrVD3uE","Redbone - Come And Get Your Love (Live on The Midnight Special) HQ","RedboneOfficial","https://i.ytimg.com/vi/OnJqFrVD3uE/hqdefault.jpg","https://www.youtube.com/watch?v=OnJqFrVD3uE","jmTime","1","Redbone","","","","","",""] ,
 ["LEARN","2JGTKK5cMXM","Peggy Lee - Fever - 1967","Peggy Lee","https://i.ytimg.com/vi/2JGTKK5cMXM/hqdefault.jpg","https://www.youtube.com/watch?v=2JGTKK5cMXM","jmTime","1","Peggy_Lee","","","","","",""] ,
 ["LEARN","JmWC70SLOQY","George Thorogood - Move It On Over - Johnny Be Good 1979","VJTonyCtba","https://i.ytimg.com/vi/JmWC70SLOQY/hqdefault.jpg","https://www.youtube.com/watch?v=JmWC70SLOQY","jmTime","1","Thorogood","","","","","",""] ,
@@ -133,7 +184,7 @@ const mapVideoDetails = [
 ["LEARN","vxtzcnlpVIw","Hollies - The Air That I Breathe (lyrics)","Jeffrey Frentzen","https://i.ytimg.com/vi/vxtzcnlpVIw/hqdefault.jpg","https://www.youtube.com/watch?v=vxtzcnlpVIw","jmTime","1","Hollies","","","","LYRICS","",""] ,
 ["LEARN","nrIPxlFzDi0","Rolling Stones - (I Cant Get No) Satisfaction (Official Lyric Video)", "ABKCOVEVO", "https://i.ytimg.com/vi/nrIPxlFzDi0/hqdefault.jpg", "https://www.youtube.com/watch?v=nrIPxlFzDi0","jmTime","1","","","","","LYRICS","",""] ,
 ["LEARN","G3dFpQzu54w","Rolling Stones - Jumpin Jack Flash (Official Lyric Video)","ABKCOVEVO","https://i.ytimg.com/vi/G3dFpQzu54w/hqdefault.jpg","https://www.youtube.com/watch?v=G3dFpQzu54w","jmTime","1","Stones","","","","LYRICS","",""] ,
-["LEARN","Dn5Pbug5nRw","Tommy James - Crystal Blue Persuasion - Tommy James Shondells (Lyrics)", "PERUVEN (Jorge Fuxa)", "https://i.ytimg.com/vi/Dn5Pbug5nRw/hqdefault.jpg", "https://www.youtube.com/watch?v=Dn5Pbug5nRw","jmTime","1","","","","","LYRICS","",""] ,
+["LEARN","Dn5Pbug5nRw","Tommy James - Crystal Blue Persuasion - Tommy James Shondells (Lyrics)", "PERUVEN (Jorge Fuxa)", "https://i.ytimg.com/vi/Dn5Pbug5nRw/hqdefault.jpg", "https://www.youtube.com/watch?v=Dn5Pbug5nRw","jmTime","1","Daily","","","","LYRICS","",""] ,
 ["LEARN","KDNKDFEvGk8","Tommy James - Draggin the Line - Tommy James - Lyrics", "Keith “Hollywood” Sousa", "https://i.ytimg.com/vi/KDNKDFEvGk8/hqdefault.jpg", "https://www.youtube.com/watch?v=KDNKDFEvGk8","jmTime","1","","","","","LYRICS","",""] ,
 ["LEARN","Q5f5YP79mfI","Tommy James - Draggin the Line  Lyrics", "Jeffrey Frentzen", "https://i.ytimg.com/vi/Q5f5YP79mfI/hqdefault.jpg", "https://www.youtube.com/watch?v=Q5f5YP79mfI","jmTime","1","","","","","LYRICS","",""] ,
 ["LEARN","xLfO738Ok5Y","Tommy James - Draggin the Line", "Don Stubbs", "https://i.ytimg.com/vi/xLfO738Ok5Y/hqdefault.jpg", "https://www.youtube.com/watch?v=xLfO738Ok5Y","jmTime","1","","","","","LYRICS","",""] ,
@@ -156,7 +207,7 @@ const mapVideoDetails = [
 ["Theory","4qla4LC71xE","Mangold - 8 Essential Skills That Will Make You a GREAT Musician (LOTS SHEET LABLES C1-C8 CORDS)","MangoldProject","https://i.ytimg.com/vi/4qla4LC71xE/hqdefault.jpg","https://www.youtube.com/watch?v=4qla4LC71xE","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","HrT6ksJu584","Mangold - Dancing on the Piano: A Beginners Tutorial on SMOOTH Chords","MangoldProject","https://i.ytimg.com/vi/HrT6ksJu584/hqdefault.jpg","https://www.youtube.com/watch?v=HrT6ksJu584","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","WyVqf3H1hGs","Mangold - How to Practice Music Theory - And Other Questions Musicians Face (Q&A #1)","MangoldProject","https://i.ytimg.com/vi/WyVqf3H1hGs/hqdefault.jpg","https://www.youtube.com/watch?v=WyVqf3H1hGs","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
-["Theory","PeYSesLA5K4","Mangold - Lessons for Beginners: Part 3 - More important chords should know - GOOD MUST - Learn chords - Practice with video","MangoldProject","https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg","https://www.youtube.com/watch?v=PeYSesLA5K4","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
+["Theory","PeYSesLA5K4","Mangold - Lessons for Beginners: Part 3 - More important chords should know - GOOD MUST - Learn chords - Practice with video","MangoldProject","https://i.ytimg.com/vi/PeYSesLA5K4/hqdefault.jpg","https://www.youtube.com/watch?v=PeYSesLA5K4","jmTime","1","Daily","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","DsdyAJ_fjbQ","Mangold - Writing Blackbird: A Lesson in Diatonic and Chromatic Motion (LOTS SHEET LABLES C1-C8 CORDS)","MangoldProject","https://i.ytimg.com/vi/DsdyAJ_fjbQ/hqdefault.jpg","https://www.youtube.com/watch?v=DsdyAJ_fjbQ","jmTime","1","","NAMES","FINGERS","GUTAR","LYRICS","Mangold","MUST"] ,
 ["Theory","mJ1NDedMTR0","PIANO - Chord Charts 101: How to Sound PRO on PIANO! (GOOD LOTS)","The Keys Coach","https://i.ytimg.com/vi/mJ1NDedMTR0/hqdefault.jpg","https://www.youtube.com/watch?v=mJ1NDedMTR0","jmTime","1","","","FINGERS","PIANO","","KeysCoach","MUST"] ,
 ["Theory","WcUflyhiFeE","PIANO - Learn *EVERY* Piano Chord Quickly in 2 Steps (FREE PDF!)","Ashlee Young Piano Studio","https://i.ytimg.com/vi/WcUflyhiFeE/hqdefault.jpg","https://www.youtube.com/watch?v=WcUflyhiFeE","jmTime","1","SCALE","","FINGERS","PIANO","","AshleeYoung","GOOD"] ,
