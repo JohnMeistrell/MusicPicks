@@ -50,7 +50,6 @@ const mapVideoDetails = [
 ["RIFFS","l482T0yNkeo","AC DC - Highway to Hell (Official Video)","acdcVEVO","https://i.ytimg.com/vi/l482T0yNkeo/hqdefault.jpg","https://www.youtube.com/watch?v=l482T0yNkeo","jmTime","1","","","","","","",""] ,
 ["RIFFS","-p8GXZcdrIk","Lynyrd Skynyrd - Sweet Home Alabama (Lyric Video)","LynyrdSkynyrdVEVO","https://i.ytimg.com/vi/-p8GXZcdrIk/hqdefault.jpg","https://www.youtube.com/watch?v=-p8GXZcdrIk","jmTime","1","","","","","","",""] ,
 ["RIFFS","gGdGFtwCNBE","The Killers - Mr. Brightside (Official Music Video)","TheKillersVEVO","https://i.ytimg.com/vi/gGdGFtwCNBE/hqdefault.jpg","https://www.youtube.com/watch?v=gGdGFtwCNBE","jmTime","1","","","","","","",""] ,
-["RIFFS","MM62wjLrgmA","TOOL - Schism (Official Video)","TOOLVEVO","https://i.ytimg.com/vi/MM62wjLrgmA/hqdefault.jpg","https://www.youtube.com/watch?v=MM62wjLrgmA","jmTime","1","","","","","","",""] ,
 ["RIFFS","7MibW8t5DbI","Deep Purple - Smoke On The Water (Lyrics)","ALL MIXED","https://i.ytimg.com/vi/7MibW8t5DbI/hqdefault.jpg","https://www.youtube.com/watch?v=7MibW8t5DbI","jmTime","1","","","","","","",""] ,
 ["RIFFS","iXQUu5Dti4g","Stairway to Heaven (Remaster)","Led Zeppelin - Topic","https://i.ytimg.com/vi/iXQUu5Dti4g/hqdefault.jpg","https://www.youtube.com/watch?v=iXQUu5Dti4g","jmTime","1","","","","","","",""] ,
 ["RIFFS","5GroWAOn8h8","Worlds Best Classical Instrumental Music - Relaxing","Deep Relaxing Music","https://i.ytimg.com/vi/5GroWAOn8h8/hqdefault.jpg","https://www.youtube.com/watch?v=5GroWAOn8h8","jmTime","1","","","","","","",""] ,
@@ -73,7 +72,6 @@ const mapVideoDetails = [
 ["RIFFS","c8H8a5Bab6o","Anything Goes","Guns N Roses - Topic","https://i.ytimg.com/vi/c8H8a5Bab6o/hqdefault.jpg","https://www.youtube.com/watch?v=c8H8a5Bab6o","jmTime","1","","","","","","",""] ,
 ["RIFFS","IfFi4Q7ueA8","Slow Dancing In a Burning Room- John Mayer (With Lyrics)","EmandElMusic","https://i.ytimg.com/vi/IfFi4Q7ueA8/hqdefault.jpg","https://www.youtube.com/watch?v=IfFi4Q7ueA8","jmTime","1","","","","","","",""] ,
 ["RIFFS","bcUNmNyU160","Tom Misch GoldLink - Lost In Paris (Lyrics)","Lyric Frame","https://i.ytimg.com/vi/bcUNmNyU160/hqdefault.jpg","https://www.youtube.com/watch?v=bcUNmNyU160","jmTime","1","","","","","","",""] ,
-["RIFFS","n4gXzxyQZj8","Tool - Schism (Lyrics)","Music Pills","https://i.ytimg.com/vi/n4gXzxyQZj8/hqdefault.jpg","https://www.youtube.com/watch?v=n4gXzxyQZj8","jmTime","1","","","","","","",""] ,
 ["RIFFS","vqCWBgUl4Nk","I Like To Live The Love","B.B. King - Topic","https://i.ytimg.com/vi/vqCWBgUl4Nk/hqdefault.jpg","https://www.youtube.com/watch?v=vqCWBgUl4Nk","jmTime","1","","","","","","",""] ,
 ["RIFFS","JpYk8UPTEwo","Sweet Home Alabama","Lynyrd Skynyrd - Topic","https://i.ytimg.com/vi/JpYk8UPTEwo/hqdefault.jpg","https://www.youtube.com/watch?v=JpYk8UPTEwo","jmTime","1","","","","","","",""] ,
 ["RIFFS","q3sJVbHlcdQ","Tequila (Remastered)","The Champs - Topic","https://i.ytimg.com/vi/q3sJVbHlcdQ/hqdefault.jpg","https://www.youtube.com/watch?v=q3sJVbHlcdQ","jmTime","1","","","","","","",""] ,
@@ -83,7 +81,7 @@ const mapVideoDetails = [
 ["RIFFS","5GroWAOn8h8","The Worlds Best Classical Instrumental Music Relaxing","Deep Relaxing Music","https://i.ytimg.com/vi/5GroWAOn8h8/hqdefault.jpg","https://www.youtube.com/watch?v=5GroWAOn8h8","jmTime","1","","","","","","",""] ,
 
 ["RIFFS","gidjZO9t5JA","The Shadows - Apache (1981)","Shadows","https://media.snl.no/media/45899/standard_compressed_shadows.jpg","https://www.youtube.com/watch?v=gidjZO9t5JA","jmTime","1","","","","","","",""] ,
-["RIFFS","cx5f1Jtqsxo","The Shadows - Apache (1981)","Shadows","https://media.snl.no/media/45899/standard_compressed_shadows.jpg","https://www.youtube.com/watch?v=cx5f1Jtqsxo","jmTime","1","","","","","","",""] ,
+["RIFFS","cx5f1Jtqsxo","BB King Live at Montreux","Shadows","https://i.ytimg.com/vi/cx5f1Jtqsxo/hqdefault.jpg","https://www.youtube.com/watch?v=cx5f1Jtqsxo","jmTime","1","","","","","","",""] ,
 
 
 ["NEW", "0pZrxxvB66k", "Hawaii Five-O Theme Song ", "The Ventures - Topic", "https://i.ytimg.com/vi/0pZrxxvB66k/hqdefault.jpg", "https://www.youtube.com/watch?v=0pZrxxvB66k","jmTime","1","","","","","","",""] ,
@@ -116,19 +114,16 @@ const mapVideoDetails = [
 ["LEARN","3Ab0b_YoOK0", "Searchers - Love Potion Number Nine 1964", "THE MUSIC ENHANCEMENT CHANNEL", "https://i.ytimg.com/vi/3Ab0b_YoOK0/hqdefault.jpg", "https://www.youtube.com/watch?v=3Ab0b_YoOK0","jmTime","1","","","","","","","GOOD"] ,
 ["LEARN","D6QF4sB40gU", "Supremes - Baby Love -Lyric Video", "TheSupremesVEVO", "https://i.ytimg.com/vi/D6QF4sB40gU/hqdefault.jpg", "https://www.youtube.com/watch?v=D6QF4sB40gU","jmTime","1","","","","","LYRICS","","GOOD"] ,
 
-["Theory","3sXrWz763J8", "Piano Corey Billy Joel - How to Play By Ear INSTANTLY - Ear Training Explained - GOOD MUST Billy Joel Pianno Man", "Piano With Corey", "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","Daily","","","","","","MUST"] ,
+["Theory","3sXrWz763J8", "Piano Corey Billy Joel - How to Play By Ear INSTANTLY - Ear Training Explained - GOOD MUST Billy Joel Pianno Man", "Piano With Corey", "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime^6m10s - DoRaMe^8m10s - Pic3^11m00s - Guess^12m06s - WWH^13m07s - Hear^13m58s - 80%^22m42s - HumBase^25m50s - FindKey^28m45s - Pivot^31m10s - All","1","Daily","","","","","","MUST"] ,
+
+
 ["Theory","SE6zBaKWzWQ", "Piano Musicains Inspired - Coupon Code Song Science #1: How Pros Use 6 Chords to Write Hit Songs", "Musicians Inspired", "https://i.ytimg.com/vi/SE6zBaKWzWQ/hqdefault.jpg", "https://www.youtube.com/watch?v=SE6zBaKWzWQ","jmTime","1","","","","","","","MUST"] ,
 ["Theory","X1coZlJRrx8", "Piano Musicains Inspired - How Piano Rhythm Patterns Work - plus learn 2 patterns", "Musicians Inspired", "https://i.ytimg.com/vi/X1coZlJRrx8/hqdefault.jpg", "https://www.youtube.com/watch?v=X1coZlJRrx8","jmTime","1","","","","","","","MUST"] ,
 ["Theory","jSOU-J9KHbg", "Piano Musicains Inspired - How to Read Notes Fast - The Landmark System", "Musicians Inspired", "https://i.ytimg.com/vi/jSOU-J9KHbg/hqdefault.jpg", "https://www.youtube.com/watch?v=jSOU-J9KHbg","jmTime","1","","","","","","","MUST"] ,
 
 
-
-
-
-
-
 ["Theory", "8WLvbHprtaE", "Elvis - STOPPED entire concert for dying 7-year old - what happened next left 18000 in TEARS"    , "Elvis Presley The Untold Legacy", "https://i.ytimg.com/vi/8WLvbHprtaE/hqdefault.jpg", "https://www.youtube.com/watch?v=8WLvbHprtaE","jmTime","1","","","","","","","MUST"] ,
-["Theory", "3sXrWz763J8", "How - to Play By Ear INSTANTLY Ear Training Explained"                                           , "Piano with Corey"               , "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime","1","","","","","","","MUST"] ,
+["Theory", "3sXrWz763J8", "How - to Play By Ear INSTANTLY Ear Training Explained"                                           , "Piano with Corey"               , "https://i.ytimg.com/vi/3sXrWz763J8/hqdefault.jpg", "https://www.youtube.com/watch?v=3sXrWz763J8","jmTime^6m10s - DoRaMe^8m10s - Pic3^11m00s - Guess^12m06s - WWH^13m07s - Hear^13m58s - 80%^22m42s - HumBase^25m50s - FindKey^28m45s - Pivot^31m10s - All","1","","","","","","","MUST"] ,
 ["Theory", "fV4CI5qBp-s", "Celestial Ground - Native American Flute for Deep Relaxation, Energy Cleansing  Inner Peace"   , "Chief Vibes"                    , "https://i.ytimg.com/vi/fV4CI5qBp-s/hqdefault.jpg", "https://www.youtube.com/watch?v=fV4CI5qBp-s","jmTime","1","","","","","","","MUST"] ,
 ["Theory", "TFUbAAUsTOc", "Deep Healing Flute - Native American Flute Music with Rain for Sleep Meditation  Stress Relief", "24Relax"                        , "https://i.ytimg.com/vi/TFUbAAUsTOc/hqdefault.jpg", "https://www.youtube.com/watch?v=TFUbAAUsTOc","jmTime","1","","","","","","","MUST"] ,
 ["Theory", "hA8TU9rDMms", "Coupon Code Song - Science 2 The Complete Songwriting Chord Guide"    , "Musicians Inspired", "https://i.ytimg.com/vi/hA8TU9rDMms/hqdefault.jpg", "https://www.youtube.com/watch?v=hA8TU9rDMms","jmTime","1","","","","","","","MUST"] ,
