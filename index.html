@@ -20,249 +20,235 @@
 
 <body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
 
-<h3 class="text-center">Johnny's Music Picks</h3>
+<h3 class="text-center">Johnny's Music Picks - <label id="curTag" >All</label></h3>
+
+<!-- MAIN CONTAINER TOP -->
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
 
-
-
-
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">      <button type="button" class="close" data-dismiss="modal">&times;</button>     </div>
-        <div class="modal-body">      
+  <div class="modal-dialog modal-lg">
+  <div class="modal-content">
+  <div class="modal-header">      
+     <button type="button" class="close" data-dismiss="modal">&times;</button>     
+  </div>
+  <div class="modal-body">      
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      Common:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-    <button class="btn border border-light btn-primary btn-GOOD"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-GOOD"     aria-controls = ".multi-collapse-GOOD"    data-dismiss="modal"  >GOOD</button>
-    <button class="btn border border-light btn-primary btn-MUST"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-MUST"     aria-controls = ".multi-collapse-MUST"    data-dismiss="modal"  >MUST</button>
-    <button class="btn border border-light btn-primary btn-FINGERS"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-FINGERS"  aria-controls = ".multi-collapse-FINGERS" data-dismiss="modal"  >FINGERS</button>
-    <button class="btn border border-light btn-primary btn-BLUES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-BLUES"    aria-controls = ".multi-collapse-BLUES"   data-dismiss="modal"  >BLUES</button>
-    <button class="btn border border-light btn-primary btn-DRUM"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-DRUM"     aria-controls = ".multi-collapse-DRUM"    data-dismiss="modal"  >DRUM</button>
-    <button class="btn border border-light btn-primary btn-GUTAR"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-GUTAR"    aria-controls = ".multi-collapse-GUTAR"   data-dismiss="modal"  >GUTAR</button>
-    <button class="btn border border-light btn-primary btn-PIANO"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-PIANO"    aria-controls = ".multi-collapse-PIANO"   data-dismiss="modal"  >PIANO</button>
-    <button class="btn border border-light btn-primary btn-LYRICS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-LYRICS"   aria-controls = ".multi-collapse-LYRICS"  data-dismiss="modal"  >LYRICS</button>
-    <button class="btn border border-light btn-primary btn-CIRCLE"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-CIRCLE"   aria-controls = ".multi-collapse-CIRCLE"  data-dismiss="modal"  >CIRCLE</button>
-    <button class="btn border border-light btn-primary btn-LOTS"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-LOTS"     aria-controls = ".multi-collapse-LOTS"    data-dismiss="modal"  >LOTS</button>
-    <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-NAMES"    aria-controls = ".multi-collapse-NAMES"   data-dismiss="modal"  >NAMES</button>
-    <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-SCALE"    aria-controls = ".multi-collapse-SCALE"   data-dismiss="modal"  >SCALE</button>
-    <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-SURF"     aria-controls = ".multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
-    <button class="btn border border-light btn-primary btn-RIFFS"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-RIFFS"     aria-controls = ".multi-collapse-RIFFS"       data-dismiss="modal"  >RIFFS</button>
-    <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-NEW"     aria-controls = ".multi-collapse-NEW"       data-dismiss="modal"  >NEW</button>
+           <!-- MORE UI - POP UP BUTTONS  -----------------------------------------------------------------------------------------------------  -->
 
-      </div>
-   </div></div>
-</div>
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 Common:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                   <button class="btn border border-light btn-primary btn-GOOD"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GOOD"     aria-controls = "multi-collapse-GOOD"    data-dismiss="modal"  >GOOD</button>
+                   <button class="btn border border-light btn-primary btn-MUST"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"     aria-controls = "multi-collapse-MUST"    data-dismiss="modal"  >MUST</button>
+                   <button class="btn border border-light btn-primary btn-FINGERS"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-FINGERS"  aria-controls = "multi-collapse-FINGERS" data-dismiss="modal"  >FINGERS</button>
+                   <button class="btn border border-light btn-primary btn-BLUES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BLUES"    aria-controls = "multi-collapse-BLUES"   data-dismiss="modal"  >BLUES</button>
+                   <button class="btn border border-light btn-primary btn-DRUM"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-DRUM"     aria-controls = "multi-collapse-DRUM"    data-dismiss="modal"  >DRUM</button>
+                   <button class="btn border border-light btn-primary btn-GUTAR"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GUTAR"    aria-controls = "multi-collapse-GUTAR"   data-dismiss="modal"  >GUTAR</button>
+                   <button class="btn border border-light btn-primary btn-PIANO"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-PIANO"    aria-controls = "multi-collapse-PIANO"   data-dismiss="modal"  >PIANO</button>
+                   <button class="btn border border-light btn-primary btn-LYRICS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LYRICS"   aria-controls = "multi-collapse-LYRICS"  data-dismiss="modal"  >LYRICS</button>
+                   <button class="btn border border-light btn-primary btn-CIRCLE"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-CIRCLE"   aria-controls = "multi-collapse-CIRCLE"  data-dismiss="modal"  >CIRCLE</button>
+                   <button class="btn border border-light btn-primary btn-LOTS"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LOTS"     aria-controls = "multi-collapse-LOTS"    data-dismiss="modal"  >LOTS</button>
+                   <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NAMES"    aria-controls = "multi-collapse-NAMES"   data-dismiss="modal"  >NAMES</button>
+                   <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SCALE"    aria-controls = "multi-collapse-SCALE"   data-dismiss="modal"  >SCALE</button>
+                   <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SURF"     aria-controls = "multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
+                   <button class="btn border border-light btn-primary btn-RIFFS"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-RIFFS"    aria-controls = "multi-collapse-RIFFS"   data-dismiss="modal"  >RIFFS</button>
+                   <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NEW"      aria-controls = "multi-collapse-NEW"     data-dismiss="modal"  >NEW</button>
+                 </div>
+              </div></div>
+           </div>
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      Expert:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 Expert:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                   <button class="btn border border-light btn-primary btn-AshleeYoung"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-AshleeYoung"  aria-controls = ".multi-collapse-AshleeYoung"  data-dismiss="modal" >AshleeYoung</button>
+                   <button class="btn border border-light btn-primary btn-FromScratch"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-FromScratch"  aria-controls = ".multi-collapse-FromScratch"  data-dismiss="modal" >FromScratch</button>
+                   <button class="btn border border-light btn-primary btn-KeysCoach"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-KeysCoach"    aria-controls = ".multi-collapse-KeysCoach"    data-dismiss="modal" >KeysCoach</button>
+                   <button class="btn border border-light btn-primary btn-Mangold"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Mangold"      aria-controls = ".multi-collapse-Mangold"      data-dismiss="modal" >Mangold</button>
+                   <button class="btn border border-light btn-primary btn-Musicians"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Musicians"    aria-controls = ".multi-collapse-Musicians"    data-dismiss="modal" >Musicians</button>
+                   <button class="btn border border-light btn-primary btn-Pianoly"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Pianoly"      aria-controls = ".multi-collapse-Pianoly"      data-dismiss="modal" >Pianoly</button>
+                </div>
+              </div></div>
+           </div>
 
-    <button class="btn border border-light btn-primary btn-AshleeYoung"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-AshleeYoung"  aria-controls = ".multi-collapse-AshleeYoung"  data-dismiss="modal" >AshleeYoung</button>
-    <button class="btn border border-light btn-primary btn-FromScratch"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-FromScratch"  aria-controls = ".multi-collapse-FromScratch"  data-dismiss="modal" >FromScratch</button>
-    <button class="btn border border-light btn-primary btn-KeysCoach"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-KeysCoach"    aria-controls = ".multi-collapse-KeysCoach"    data-dismiss="modal" >KeysCoach</button>
-    <button class="btn border border-light btn-primary btn-Mangold"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Mangold"      aria-controls = ".multi-collapse-Mangold"      data-dismiss="modal" >Mangold</button>
-    <button class="btn border border-light btn-primary btn-Musicians"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Musicians"    aria-controls = ".multi-collapse-Musicians"    data-dismiss="modal" >Musicians</button>
-    <button class="btn border border-light btn-primary btn-Pianoly"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Pianoly"      aria-controls = ".multi-collapse-Pianoly"      data-dismiss="modal" >Pianoly</button>
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 A-F:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                    <button class="btn border border-light btn-primary btn-Al_Stewart"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Al_Stewart"   aria-controls = "multi-collapse-Al_Stewart"    >Al_Stewart</button>      
+                    <button class="btn border border-light btn-primary btn-Atlantic"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Atlantic"     aria-controls = "multi-collapse-Atlantic"      >Atlantic</button>      
+                    <button class="btn border border-light btn-primary btn-Bachman"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Bachman"      aria-controls = "multi-collapse-Bachman"       >Bachman</button>      
+                    <button class="btn border border-light btn-primary btn-Boston"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Boston"       aria-controls = "multi-collapse-Boston"        >Boston</button>
+                    <button class="btn border border-light btn-primary btn-Brewer"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Brewer"       aria-controls = "multi-collapse-Brewer"        >Brewer</button>      
+                    <button class="btn border border-light btn-primary btn-Creedence"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Creedence"    aria-controls = "multi-collapse-Creedence"     >Creedence</button>      
+                    <button class="btn border border-light btn-primary btn-Doobie"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Doobie"       aria-controls = "multi-collapse-Doobie"        >Doobie</button>      
+                 </div>
+              </div></div>
+           </div>
 
-     </div>
-   </div></div>
-</div>
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 F-N:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                    <button class="btn border border-light btn-primary btn-Foghat"             type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Foghat"               aria-controls = "multi-collapse-Foghat"               >Foghat</button>      
+                    <button class="btn border border-light btn-primary btn-Four_Seasons"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Four_Seasons"         aria-controls = "multi-collapse-Four_Seasons"         >Four_Seasons</button>
+                    <button class="btn border border-light btn-primary btn-Georgia_Satellites" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Georgia_Satellites"   aria-controls = "multi-collapse-Georgia_Satellites"   >Georgia_Satellites</button>
+                    <button class="btn border border-light btn-primary btn-Grand_Funk"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Grand_Funk"           aria-controls = "multi-collapse-Grand_Funk"           >Grand_Funk</button>      
+                    <button class="btn border border-light btn-primary btn-Jerry_Lee_Lewis"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Jerry_Lee_Lewis"      aria-controls = "multi-collapse-Jerry_Lee_Lewis"      >Jerry_Lee_Lewis</button>
+                    <button class="btn border border-light btn-primary btn-Joe_Walsh"          type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Joe_Walsh"            aria-controls = "multi-collapse-Joe_Walsh"            >Joe_Walsh</button>      
+                    <button class="btn border border-light btn-primary btn-Nick_Lowe"          type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Nick_Lowe"            aria-controls = "multi-collapse-Nick_Lowe"            >Nick_Lowe </button>
+                 </div>
+              </div></div>
+           </div>
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      A-F:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-          <button class="btn border border-light btn-primary btn-Al_Stewart"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Al_Stewart"               aria-controls = ".multi-collapse-Al_Stewart"               >Al_Stewart</button>      
-          <button class="btn border border-light btn-primary btn-Atlantic"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Atlantic"               aria-controls = ".multi-collapse-Atlantic"               >Atlantic</button>      
-          <button class="btn border border-light btn-primary btn-Bachman"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Bachman"               aria-controls = ".multi-collapse-Bachman"               >Bachman</button>      
-          <button class="btn border border-light btn-primary btn-Boston"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Boston"       aria-controls = ".multi-collapse-Boston"   >Boston</button>
-          <button class="btn border border-light btn-primary btn-Brewer"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Brewer"               aria-controls = ".multi-collapse-Brewer"               >Brewer</button>      
-          <button class="btn border border-light btn-primary btn-Creedence"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Creedence"               aria-controls = ".multi-collapse-Creedence"               >Creedence</button>      
-          <button class="btn border border-light btn-primary btn-Doobie"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Doobie"               aria-controls = ".multi-collapse-Doobie"               >Doobie</button>      
-      </div>
-   </div></div>
-</div>
-
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      F-N:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-          <button class="btn border border-light btn-primary btn-Foghat"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Foghat"               aria-controls = ".multi-collapse-Foghat"               >Foghat</button>      
-          <button class="btn border border-light btn-primary btn-Four_Seasons" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Four_Seasons" aria-controls = ".multi-collapse-Four_Seasons" >Four_Seasons</button>
-          <button class="btn border border-light btn-primary btn-Georgia_Satellites"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Georgia_Satellites"   aria-controls = ".multi-collapse-Georgia_Satellites"   >Georgia_Satellites</button>
-          <button class="btn border border-light btn-primary btn-Grand_Funk"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Grand_Funk"               aria-controls = ".multi-collapse-Grand_Funk"               >Grand_Funk</button>      
-          <button class="btn border border-light btn-primary btn-Jerry_Lee_Lewis"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Jerry_Lee_Lewis"  aria-controls = ".multi-collapse-Jerry_Lee_Lewis"  >Jerry_Lee_Lewis</button>
-          <button class="btn border border-light btn-primary btn-Joe_Walsh"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Joe_Walsh"               aria-controls = ".multi-collapse-Joe_Walsh"               >Joe_Walsh</button>      
-          <button class="btn border border-light btn-primary btn-Nick_Lowe"            type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Nick_Lowe"            aria-controls = ".multi-collapse-Nick_Lowe"            >Nick_Lowe </button>
-
-
-      </div>
-   </div></div>
-</div>
-
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      O-S:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-          <button class="btn border border-light btn-primary btn-Orleans"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Orleans"               aria-controls = ".multi-collapse-Orleans"               >Orleans</button>      
-          <button class="btn border border-light btn-primary btn-Rock_n_Roll_50s_60s"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Rock_n_Roll_50s_60s"  aria-controls = ".multi-collapse-Rock_n_Roll_50s_60s"  >Rock_n_Roll_50s_60s </button>
-          <button class="btn border border-light btn-primary btn-Rolling_Stones"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Rolling_Stones"       aria-controls = ".multi-collapse-Rolling_Stones"       >Rolling_Stones </button>
-          <button class="btn border border-light btn-primary btn-Steely_Dan"           type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Steely_Dan"           aria-controls = ".multi-collapse-Steely_Dan"           >Steely_Dan </button>
-          <button class="btn border border-light btn-primary btn-Steppenwolf"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Steppenwolf"               aria-controls = ".multi-collapse-Steppenwolf"               >Steppenwolf</button>      
-          <button class="btn border border-light btn-primary btn-Sugarloaf"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Sugarloaf"               aria-controls = ".multi-collapse-Sugarloaf"               >Sugarloaf</button>      
-
-      </div>
-   </div></div>
-</div>
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 O-S:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                    <button class="btn border border-light btn-primary btn-Orleans"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Orleans"               aria-controls = "multi-collapse-Orleans"               >Orleans</button>      
+                    <button class="btn border border-light btn-primary btn-Rock_n_Roll_50s_60s"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Rock_n_Roll_50s_60s"   aria-controls = "multi-collapse-Rock_n_Roll_50s_60s"  >Rock_n_Roll_50s_60s </button>
+                    <button class="btn border border-light btn-primary btn-Rolling_Stones"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Rolling_Stones"        aria-controls = "multi-collapse-Rolling_Stones"       >Rolling_Stones </button>
+                    <button class="btn border border-light btn-primary btn-Steely_Dan"            type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Steely_Dan"            aria-controls = "multi-collapse-Steely_Dan"           >Steely_Dan </button>
+                    <button class="btn border border-light btn-primary btn-Steppenwolf"           type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Steppenwolf"           aria-controls = "multi-collapse-Steppenwolf"               >Steppenwolf</button>      
+                    <button class="btn border border-light btn-primary btn-Sugarloaf"             type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Sugarloaf"             aria-controls = "multi-collapse-Sugarloaf"               >Sugarloaf</button>      
+                 </div>
+              </div></div>
+           </div>
 
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      A-F:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid"><button class="btn border border-light btn-primary btn-Thorogood"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Thorogood"               aria-controls = ".multi-collapse-Thorogood"               >Thorogood</button>      
-          <button class="btn border border-light btn-primary btn-Tommy_James"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Tommy_James"               aria-controls = ".multi-collapse-Tommy_James"               >Tommy_James</button>      
-          <button class="btn border border-light btn-primary btn-Toto"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Toto"    aria-controls = ".multi-collapse-Toto"    >Toto </button>
-          <button class="btn border border-light btn-primary btn-Van_Morrison"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Van_Morrison"         aria-controls = ".multi-collapse-Van_Morrison"         >Van_Morrison </button>
-          <button class="btn border border-light btn-primary btn-Wilburys"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Wilburys"               aria-controls = ".multi-collapse-Wilburys"               >Wilburys</button>      
- 
- 
-      </div>
-   </div></div>
-</div>
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 A-F:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                    <button class="btn border border-light btn-primary btn-Thorogood"            type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Thorogood"            aria-controls = "multi-collapse-Thorogood"               >Thorogood</button>      
+                    <button class="btn border border-light btn-primary btn-Tommy_James"          type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Tommy_James"          aria-controls = "multi-collapse-Tommy_James"               >Tommy_James</button>      
+                    <button class="btn border border-light btn-primary btn-Toto"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Toto"                 aria-controls = "multi-collapse-Toto"    >Toto </button>
+                    <button class="btn border border-light btn-primary btn-Van_Morrison"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Van_Morrison"         aria-controls = "multi-collapse-Van_Morrison"         >Van_Morrison </button>
+                    <button class="btn border border-light btn-primary btn-Wilburys"             type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Wilburys"             aria-controls = "multi-collapse-Wilburys"               >Wilburys</button>      
+                 </div>
+              </div></div>
+           </div>
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-      <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-      Dreher:
-      </div>
-      <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-         <button class="btn border border-light btn-primary btn-Dennis"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dennis"               aria-controls = ".multi-collapse-Dennis"               >Dreher_Promo</button>      
-         <button class="btn border border-light btn-primary btn-Dreher_Cover"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dreher_Cover"        aria-controls = ".multi-collapse-Dreher_Cover"        >Dreher_Cover </button>
-         <button class="btn border border-light btn-primary btn-Dreher_Family"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dreher_Family"        aria-controls = ".multi-collapse-Dreher_Family"        >Dreher_Family </button>
-         <button class="btn border border-light btn-primary btn-Dreher_Instrumentals" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dreher_Instrumentals" aria-controls = ".multi-collapse-Dreher_Instrumentals" >Dreher_Instrumentals </button>
-         <button class="btn border border-light btn-primary btn-Dreher_Spiritual"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dreher_Spiritual"     aria-controls = ".multi-collapse-Dreher_Spiritual"     >Dreher_Spiritual </button>
-         <button class="btn border border-light btn-primary btn-Dreher_Must_See"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Dreher_Must_See"      aria-controls = ".multi-collapse-Dreher_Must_See"      >Dreher_Must_See </button>
-      </div>
-   </div></div>
-</div>
-
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 Dreher:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                    <button class="btn border border-light btn-primary btn-Dreher_Demo"          type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Demo"          aria-controls = "multi-collapse-Dreher_Demo"          >Dreher_Promo</button>      
+                    <button class="btn border border-light btn-primary btn-Dreher_Cover"         type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Cover"         aria-controls = "multi-collapse-Dreher_Cover"         >Dreher_Cover </button>
+                    <button class="btn border border-light btn-primary btn-Dreher_Family"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Family"        aria-controls = "multi-collapse-Dreher_Family"        >Dreher_Family </button>
+                    <button class="btn border border-light btn-primary btn-Dreher_Instrumentals" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Instrumentals" aria-controls = "multi-collapse-Dreher_Instrumentals" >Dreher_Instrumentals </button>
+                    <button class="btn border border-light btn-primary btn-Dreher_Spiritual"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Spiritual"     aria-controls = "multi-collapse-Dreher_Spiritual"     >Dreher_Spiritual </button>
+                    <button class="btn border border-light btn-primary btn-Dreher_Must_See"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Dreher_Must_See"      aria-controls = "multi-collapse-Dreher_Must_See"      >Dreher_Must_See </button>
+                 </div>
+              </div></div>
+           </div>
 
    
-        </div>
-      </div>
-    </div>
-  </div>
+  </div> <!-- <div class="modal-body">  -->
+  </div> <!-- <div class="modal-content"> -->
+  </div> <!-- <div class="modal-dialog modal-lg"> -->
+  </div> <!-- <div class="modal fade" id="myModal" role="dialog">  --
 
 
+              <!-- PRIME UI - BUTTONS MAIN - WEBS - DENNIS - FOOTER -----------------------------------------------------------------------------------------------------  -->
 
-   <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
-      <div class="dropdown">
+              <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
+              <div class="dropdown">
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
+                  <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
+                  <button class="btn border border-light btn-primary btn-LEARN"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LEARN"             aria-controls = "multi-collapse-LEARN"       >Favorites</button>
+                  <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
+                  <button class="btn border border-light btn-primary btn-BEAT"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BEAT"              aria-controls = "multi-collapse-BEAT"        >Beat</button>
+                  <button class="btn border border-light btn-primary btn-MUST"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"              aria-controls = "multi-collapse-MUST"        >Must</button>
+                  <button class="btn border border-light btn-primary btn-Daily"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Daily"             aria-controls = "multi-collapse-Daily"       >Daily</button>
+                  <button class="btn border border-light btn-primary btn-MODAL"                type= "button"  data-toggle="modal" data-target="#myModal">More</button>
+                  <a target="_blank" href="https://www.chordie.com/"                        >Lyrics n Chords</a>
+                  <a target="_blank" href="https://www.pianochord.org/two-hands.html"       >Chords</a>
+                  <a target="_blank" href="https://www.hanon-online.com/">Hannon</a>
+                  <a target="_blank" href="https://johnmeistrell.github.io/GuessPianoNotes/">Guess</a>
+              </div>
+              </div>
 
+              <!-- DENNIS STATIC VIDEOS -->
+              <div class="card card-body Dennis"  style="padding:0px; margin:0px; border:0px; "> 
+              <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show"> 
+              <h2                       class="         container-fluid text-center collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Dennis </h2>
+              </div>
+              <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" >
+                  <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid "     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
+                     <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis John Dreher - Last Train Home</h2>
+                     <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+                     <a target="_blank" href="https://youtu.be/FvRIkbZ8-yY?si=TGDTDOg43WicdKUC">
+                     <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
+                          src="./images/LastTrainHome.jpg" alt="Photo1">
+                     </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid "     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
+                     <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis John Dreher - Hobo Life - The Last Train</h2>
+                     <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+                     <a target="_blank" href="https://youtu.be/WpztuRsjHRg?si=e6o6HnS1nBeLwkHW">
+                     <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
+                          src="./images/HooBooTrain1Title.jpg" alt="Photo1">
+                     </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid " style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">
+                     <h2 class="container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Like an Old Friend</h2>
+                     <div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px; padding:0px; margin:0px">
+                     <a target="_blank" href="https://www.youtube.com/watch?v=f3IyPHkyX00">
+                     <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" 
+                          src="https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg" alt="Photo1">
+                     </a>
+                     </div>
+                  </div>
+              </div>
+              </div>
 
-         <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
-         <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
+              <!-- ADD VIDEOS from Javascript  -->
+              <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
+              </div>
 
-<button class="btn border border-light btn-primary btn-LEARN"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-LEARN"   aria-controls = ".multi-collapse-LEARN"     data-dismiss="modal"  >Favorites</button>
-<button class="btn border border-light btn-primary btn-Theory"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Theory"  aria-controls = ".multi-collapse-Theory"    data-dismiss="modal"  >Theory</button>
-<button class="btn border border-light btn-primary btn-BEAT"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-BEAT"    aria-controls = ".multi-collapse-BEAT"      data-dismiss="modal"  >Beat</button>
-<button class="btn border border-light btn-primary btn-MUST"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-MUST"    aria-controls = ".multi-collapse-MUST"      data-dismiss="modal"  >Must</button>
+              <textarea id="myTextBox1" rows="5" cols="50" style="display: none;" ></textarea>
+              <textarea id="myTextBox2" rows="5" cols="50" style="display: none;" ></textarea>
 
+              <!-- FOOTER  -->
+              <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
+                   <div class="text-center">                                                                    Website designed by John Meistrell NJ
+                   <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
+                   <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
+                   Version(v1.9)
+              </div>
+              </div>
 
-<button class="btn border border-light btn-primary btn-Daily"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-Daily"   aria-controls = ".multi-collapse-Daily"     data-dismiss="modal"  >Daily</button>
+<!-- MAIN CONTAINER BOT -->
+</div> <!-- <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"> -->
+</div> <!-- <div class="cc" > -->
 
-
-<button class="btn border border-light btn-primary btn-MODAL"     type="button" data-toggle="modal" data-target="#myModal">More</button>
-
-
-  <a target="_blank" href="https://www.chordie.com/"                        >Lyrics n Chords</a>
-  <a target="_blank" href="https://www.pianochord.org/two-hands.html"       >Chords</a>
-  <a target="_blank" href="https://www.hanon-online.com/">Hannon</a>
-  <a target="_blank" href="https://johnmeistrell.github.io/GuessPianoNotes/">Guess</a>
-
-
-
-      </div>
-   </div>
-
-
-   <div class="card card-body Dennis"  style="padding:0px; margin:0px; border:0px; "> 
-   <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show"> 
-   <h2                       class="         container-fluid text-center collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Dennis </h2>
-   </div>
-
-   <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" >
-
-
-       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
-          <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis John Dreher - Last Train Home</h2>
-          <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-          <a target="_blank" href="https://youtu.be/FvRIkbZ8-yY?si=TGDTDOg43WicdKUC">
-          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
-               src="./images/LastTrainHome.jpg" alt="Photo1">
-          </a>
-          </div>
-       </div>
-
-       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
-          <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis John Dreher - Hobo Life - The Last Train</h2>
-          <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-          <a target="_blank" href="https://youtu.be/WpztuRsjHRg?si=e6o6HnS1nBeLwkHW">
-          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
-               src="./images/HooBooTrain1Title.jpg" alt="Photo1">
-          </a>
-          </div>
-       </div>
-
-
-      <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Dennis" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">
-          <h2 class="container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Like an Old Friend</h2>
-          <div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px; padding:0px; margin:0px">
-          <a target="_blank" href="https://www.youtube.com/watch?v=f3IyPHkyX00">
-          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" 
-               src="https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg" alt="Photo1">
-          </a>
-          </div>
-      </div>
-
-    </div></div>
-
-    <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
-    </div>
-
-    <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
-        <div class="text-center">                                                                    Website designed by John Meistrell NJ
-        <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
-        <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
-        Version(v1.9)
-
-       </div>
-    </div>
-
-</div></div>
+<!--  -->
 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -303,38 +289,41 @@ var saveR = [];
 
   var codeBlock = ''; var colN = 0; var nItem = 0; var msgItem = ''; 
 
-  var E2row   = '';
-  var E2rowA  = '<div class="row mr-auto container-fluid collapse cc show' ;
+  var E2row   = ''; /* HEADING TAG */
+  var E2rowA  = '\n\n<div class="row mr-auto container-fluid collapse cc show' ;
   var E2rowB  = '';
   var E2rowC  = '">';
 
-  var E3CatA  = '<div class="card card-body"   style="padding:0px; margin:0px; border:0px; ">';
-  var E3CatB  = '<div class="row mr-auto container-fluid collapse cc ';
+  var E3CatA  = '\n<div class="card card-body"   style="padding:0px; margin:0px; border:0px; ">';
+  var E3CatB  = '\n\n     <div class="row mr-auto container-fluid collapse cc ';
   var E3CatC  = '';
   var E3CatD  = ' show">'; 
-  var E3CatE  = '<h2                       class="         container-fluid text-center " style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >';
+  var E3CatE  = '\n     <h2 class="container-fluid text-center" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >';
   var E3CatF  = '';
   var E3CatG  = '</h2>';
-  var E3CatH  = '</div>';
+  var E3CatH  = '\n     </div>';
+  var E3CatH2 = '\n</div>';
 
-  var E3colA  =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid '
-  var E3colB  = '"             style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">';  
+  var E3colA  =    '\n\n     <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid myCol ' /* 1022 this breaks it: collapse cc myCol show */
+  var E3colB  = '" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">';  
 
-  var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
-  var E4itemE =       '</h2>';
+  var E4itemB =  '\n     <h2  class="container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
+  var E4itemE =  '</h2>';
 
-  var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
+  var E5scrol =  '\n     <div class="scrolP container-fluid pre-scrollable" style="min-height: 390px; padding:0px; margin:0px">'
 
-  var E6imagB1  =          '<a target="_blank" href="';
-  var E6imagB2 =          '';
-  var E6imagB3 =          '"><img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" src="';           
-  var E6imagB4 =          '';
-  var E6imagBE =           '" alt="Photo1" ></a>';
+  var E6imagB1 = '\n       <a target="_blank" href="';
+  var E6imagB2 = '';
+  var E6imagB3 = '">\n       <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" src="';           
+  var E6imagB4 =  '';
+  var E6imagBE =  '" alt="Photo1" >\n       </a>';
 
-
-  var E7divE  =       '</div>'
-
-  var E8divE  =    '</div>';
+  var E7divEA  = '\n</div>' /* ROW end random WHY */
+  var E7divEB  = '\n     </div>' /* COL end */
+  var E7divEC  = '</div>'        /* COL HEADER end */
+  var E7divED  = '\n\n</div>'; /* ROW end */
+  var E7divEE  = '\n\n\n</div>'; /* NOT USED */
+  var E7divEF  = '\n\n</div>'; /* ROW end LAST */
 
   var ElemTest = '';
 
@@ -382,7 +371,6 @@ if (variable && variable.trim() !== "") {
          const aTimesRowItem = aTimeR.split(" - ");
          var aTimeRowAt    = aTimesRowItem[0];
          var aTimeRowTitle = aTimesRowItem[1];
-         console.log('ffff: ' + aTimeRowAt + ' ' + aTimeRowTitle );
          codeStartAt += '<a style="font-size: 80%" target="_blank" href="' + vURL + '&t=' + aTimeRowAt + '">' + aTimeRowTitle + '</a> ';
          }
       })
@@ -406,10 +394,12 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         /* console.log('jmTimes: ' + vTimes); */
 
 
+        let tagsCOL = "";
         let tagsAdd = "";
         let tagsHDR = "";
         tagThisOne.forEach((aItem, index, array) => {
-           tagsAdd += " multi-collapse-" + aItem + " .multi-collapse-" + aItem ;
+           tagsAdd += " multi-collapse-" + aItem + " .multi-collapse-" + aItem + " " + aItem + " " ;   /* 1022w added aItem */
+           tagsCOL +=  " " + aItem + " " ;   /* 1022w added aItem */
            tagsHDR += aItem + " ";
         }) ;
   
@@ -427,7 +417,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         } else {
           if ( colN > 1 ) {
                colN = 1;
-               codeBlock += E7divE;
+               codeBlock += E7divEA; /* </div> Closes off prior Video BOX */
           } 
                codeBlock += E3CatA;
                codeBlock += E3CatB;
@@ -452,7 +442,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         msgItem  = '"buyMsgID' + nItem + '"';
 
         /* COL ------------------------ */
-        codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+        codeBlock += E3colA + tagsCOL;    /* 1022w <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
         codeBlock += tagClass;
         codeBlock += E3colB;
 
@@ -469,13 +459,13 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
         codeBlock += E6imagB3;  /* '"><img id="imageP" class="container-fluid" style="min */
         codeBlock += vImage; 
         codeBlock += E6imagBE; /* '" alt="Photo1" ></a>'; */
-        codeBlock += E7divE;
+        codeBlock += E7divEB;
 
         /* COL ------------------------ */
-        codeBlock += E7divE;
+        codeBlock += E7divEC;
 
         /* ROW ------------------------ */
-        if (colN == 3 ) { codeBlock += E7divE; /* console.log("ROW END DIV" + colN); */ colN = 0; }
+        if (colN == 3 ) { codeBlock += E7divED; /* console.log("ROW END DIV" + colN); */ colN = 0; }
 
         /* -------------------------------------------------------------------- */
         /* 001 COMMON CODE END                                                  */
@@ -489,7 +479,7 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
   /* Image from GitHub C DRIVE (end) -----------------------------------------------------------------*/
 
 
-  codeBlock += 	E7divE; 
+  codeBlock += 	E7divEF; 
 
   const newNode = document.getElementById("wrapper");
 
@@ -508,15 +498,28 @@ if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThi
      let aThisItem = aItem.split("-");
      /* console.log("aThisItem: " + aThisItem[0] + ' ' + aThisItem[1] ); */
 
-     showClassScript +=  '   $(".btn-' + aThisItem[1] + '").click(function(){  $(".collapse").removeClass("show");  }); \r\n'; 
+     var aThisItemREG    = aThisItem[1].trim();                                         var aThisItemREGq    = aThisItemREG + '"';                 
+     var aThisItemLC     = aThisItem[1].trim().toLowerCase();                           var aThisItemLCq     = aThisItemLC + '"'; 
+     var aThisItemProper = aThisItemLC.charAt(0).toUpperCase() + aThisItemLC.slice(1);  var aThisItemProperq = aThisItemProper + '"'; 
+
+     aThisItemREG = aThisItemREG.padEnd(20); 
+     aThisItem30  = aThisItemProper.padEnd(20);
+
+     aThisItemREGq = aThisItemREGq.padEnd(20); 
+     aThisItem30q  = aThisItemProperq.padEnd(20);
+
+     showClassScript +=  '   $(".btn-' + aThisItemREGq  + ').click(function(){ ' 
+
+     showClassScript +=    ' $(".collapse").removeClass("show");';       showClassScript +=   ' $("#curTag").text("' + aThisItem30q + ');';  
+
+     showClassScript +=    ' $(".myCol").removeClass("collapse");';      showClassScript +=  ' $(".myCol:not(.' + aThisItem30 + ')").addClass("collapse");    }); \r\n'; 
 
      buttonClass     += '    <button class="btn border border-light btn-primary btn-' + aThisItem[1] + '"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal"data-target = ".multi-collapse-' + aThisItem[1] + '"    aria-controls = ".multi-collapse-' + aThisItem[1] + '"      >' + aThisItem[1] + '</button>\r\n'; 
 
   });
 
-console.log('ADDME: \r\n' + showClassScript) ;
-console.log('BUTTONS: \r\n' + buttonClass ) ;
-
+const textBox1 = document.getElementById("myTextBox1"); textBox1.value = showClassScript;
+const textBox2 = document.getElementById("myTextBox2"); textBox1.value = buttonClass;
 
 </script>
 
@@ -524,77 +527,89 @@ console.log('BUTTONS: \r\n' + buttonClass ) ;
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 $(document).ready(function(){
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-  $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
-  $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
-
-  $(".btn-LEARN").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-BEAT").click(function(){  $(".collapse").removeClass("show");  });
-
-  $(".btn-FINGERS").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-BLUES").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-DRUM").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-GUTAR").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-PIANO").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-LYRICS").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-CIRCLE").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-NAMES").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-GOOD").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-MUST").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-LOTS").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-SCALE").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-SURF").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-RIFFS").click(function(){  $(".collapse").removeClass("show");  }); 
-  $(".btn-NEW").click(function(){  $(".collapse").removeClass("show"); $('#myModal').modal('hide');  }); 
-
-  $(".btn-Daily").click(function(){  $(".collapse").removeClass("show");  }); 
 
 
-
-   $(".btn-AshleeYoung").click(function(){  $(".collapse").removeClass("show");  }); 
-   $(".btn-FromScratch").click(function(){  $(".collapse").removeClass("show");  }); 
-   $(".btn-KeysCoach").click(function(){  $(".collapse").removeClass("show");  }); 
-   $(".btn-Mangold").click(function(){  $(".collapse").removeClass("show");  }); 
-   $(".btn-Musicians").click(function(){  $(".collapse").removeClass("show");  }); 
-   $(".btn-Pianoly").click(function(){  $(".collapse").removeClass("show");  }); 
+/* $(".myCol:not(.Daily)").removeClass("show");    $(".myCol:not(.Daily)").addClass("collapse");   <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Theory collapse cc myCol show" style=  */
 
 
-  $(".btn-Boston").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Georgia_Satellites").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Four_Seasons").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Jerry_Lee_Lewis").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Dennis").click(function(){  $(".collapse").removeClass("show");  });
+/* $(".myCol:not(.Daily)").addClass("collapse"); $(".myCol:not(.Daily)").addClass("collapse"); $("#curTag").text("Daily"              ); */
 
-  $(".btn-Nick_Lowe").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Rock_n_Roll_50s_60s").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Rolling_Stones").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Steely_Dan").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Van_Morrison").click(function(){  $(".collapse").removeClass("show");  });
- 
-  $(".btn-Toto").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Theory").click(function(){  $(".collapse").removeClass("show");  });
+   $(".btn-all"                ).click(function(){  $(".collapse").addClass("show")   ;                                                     $(".myCol").removeClass("collapse");  });
+   $(".btn-none"               ).click(function(){  $(".collapse").removeClass("show");  });
 
-  $(".btn-Al_Stewart").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Atlantic").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Bachman").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Brewer").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Creedence").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Doobie").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Foghat").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Grand_Funk").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Joe_Walsh").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Orleans").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Steppenwolf").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Sugarloaf").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Thorogood").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Tommy_James").click(function(){  $(".collapse").removeClass("show");  });  
-  $(".btn-Wilburys").click(function(){  $(".collapse").removeClass("show");  });  
+   $(".btn-LEARN"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Favorites"          ); $(".myCol").removeClass("collapse");  }); 
+   $(".btn-Theory"             ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Theory"             ); $(".myCol").removeClass("collapse");  });
+   $(".btn-BEAT"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BEAT"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BEAT                )").addClass("collapse");    }); 
+   $(".btn-MUST"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("MUST"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.MUST                )").addClass("collapse");    }); 
+   $(".btn-Daily"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Daily"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Daily               )").addClass("collapse");    }); 
 
-  $(".btn-Dreher_Family").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Dreher_Cover").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Dreher_Instrumentals").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Dreher_Spiritual").click(function(){  $(".collapse").removeClass("show");  });
-  $(".btn-Dreher_Must_See").click(function(){  $(".collapse").removeClass("show");  });
+   $(".btn-FINGERS"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("FINGERS"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.FINGERS             )").addClass("collapse");    }); 
+   $(".btn-BLUES"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BLUES"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BLUES               )").addClass("collapse");    }); 
+   $(".btn-DRUM"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("DRUM"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.DRUM                )").addClass("collapse");    }); 
+   $(".btn-GUTAR"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("GUTAR"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.GUTAR               )").addClass("collapse");    }); 
+   $(".btn-PIANO"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("PIANO"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.PIANO               )").addClass("collapse");    }); 
+   $(".btn-LYRICS"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("LYRICS"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.LYRICS              )").addClass("collapse");    }); 
+   $(".btn-CIRCLE"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("CIRCLE"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.CIRCLE              )").addClass("collapse");    }); 
+   $(".btn-NAMES"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("NAMES"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NAMES               )").addClass("collapse");    }); 
+   $(".btn-GOOD"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("GOOD"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.GOOD                )").addClass("collapse");    }); 
+   $(".btn-LOTS"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("LOTS"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.LOTS                )").addClass("collapse");    }); 
+   $(".btn-SCALE"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("SCALE"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.SCALE               )").addClass("collapse");    }); 
+   $(".btn-SURF"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Surf"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Surf                )").addClass("collapse");    }); 
+   $(".btn-RIFFS"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("RIFFS"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.RIFFS               )").addClass("collapse");    });
+   $(".btn-NEW"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("NEW"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NEW                 )").addClass("collapse");    });
 
+   $(".btn-AshleeYoung"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Ashleeyoung"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Ashleeyoung         )").addClass("collapse");    }); 
+   $(".btn-FromScratch"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Fromscratch"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Fromscratch         )").addClass("collapse");    }); 
+   $(".btn-KeysCoach"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Keyscoach"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Keyscoach           )").addClass("collapse");    }); 
+   $(".btn-Mangold"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Mangold"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Mangold             )").addClass("collapse");    }); 
+   $(".btn-Musicians"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Musicians"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Musicians           )").addClass("collapse");    }); 
+   $(".btn-Pianoly"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Pianoly"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Pianoly             )").addClass("collapse");    }); 
+   $(".btn-Al_Stewart"         ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Al_Stewart"         ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Al_Stewart          )").addClass("collapse");    }); 
+   $(".btn-Association"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Association"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Association         )").addClass("collapse");    }); 
+   $(".btn-Atlantic"           ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Atlantic"           ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Atlantic            )").addClass("collapse");    }); 
+   $(".btn-Bachman"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Bachman"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Bachman             )").addClass("collapse");    }); 
+   $(".btn-Beatles"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Beatles"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Beatles             )").addClass("collapse");    }); 
+   $(".btn-Boston"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Boston"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Boston              )").addClass("collapse");    }); 
+   $(".btn-Brewer"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Brewer"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Brewer              )").addClass("collapse");    }); 
+   $(".btn-Creedence"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Creedence"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Creedence           )").addClass("collapse");    }); 
+   $(".btn-Doobie"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Doobie"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Doobie              )").addClass("collapse");    }); 
+   $(".btn-Foghat"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Foghat"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Foghat              )").addClass("collapse");    }); 
+   $(".btn-Four_Seasons"       ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Four_Seasons"       ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Four_Seasons        )").addClass("collapse");    }); 
+   $(".btn-Georgia_Satellites" ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Georgia_Satellites" ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Georgia_Satellites  )").addClass("collapse");    }); 
+   $(".btn-Grand_Funk"         ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Grand_Funk"         ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Grand_Funk          )").addClass("collapse");    }); 
+   $(".btn-Grass_Roots"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Grass_Roots"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Grass_Roots         )").addClass("collapse");    }); 
+   $(".btn-Hollies"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Hollies"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Hollies             )").addClass("collapse");    }); 
+   $(".btn-Jerry_Lee_Lewis"    ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Jerry_Lee_Lewis"    ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Jerry_Lee_Lewis     )").addClass("collapse");    }); 
+   $(".btn-Joe_Walsh"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Joe_Walsh"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Joe_Walsh           )").addClass("collapse");    }); 
+   $(".btn-KC_Sunshine"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Kc_Sunshine"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Kc_Sunshine         )").addClass("collapse");    }); 
+   $(".btn-Miller"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Miller"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Miller              )").addClass("collapse");    }); 
+   $(".btn-Mungo_Jerry"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Mungo_Jerry"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Mungo_Jerry         )").addClass("collapse");    }); 
+   $(".btn-Nick_Lowe"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Nick_Lowe"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Nick_Lowe           )").addClass("collapse");    }); 
+   $(".btn-Orleans"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Orleans"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Orleans             )").addClass("collapse");    }); 
+   $(".btn-Peaches_Herb"       ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Peaches_Herb"       ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Peaches_Herb        )").addClass("collapse");    }); 
+   $(".btn-Peggy_Lee"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Peggy_Lee"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Peggy_lee           )").addClass("collapse");    }); 
+   $(".btn-Redbone"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Redbone"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Redbone             )").addClass("collapse");    }); 
+   $(".btn-Rock_n_Roll_50s_60s").click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Rock_n_Roll_50s_60s"); $(".myCol").removeClass("collapse"); $(".myCol:not(.Rock_n_Roll_50s_60s )").addClass("collapse");    }); 
+   $(".btn-Sinatra"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Sinatra"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Sinatra             )").addClass("collapse");    }); 
+   $(".btn-Skifs"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Skifs"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Skifs               )").addClass("collapse");    }); 
+   $(".btn-Steely_Dan"         ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Steely_Dan"         ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Steely_Dan          )").addClass("collapse");    }); 
+   $(".btn-Steppenwolf"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Steppenwolf"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Steppenwolf         )").addClass("collapse");    }); 
+   $(".btn-Stones"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Stones"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Stones              )").addClass("collapse");    }); 
+   $(".btn-Sugarloaf"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Sugarloaf"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Sugarloaf           )").addClass("collapse");    }); 
+   $(".btn-Surfaris"           ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Surfaris"           ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Surfaris            )").addClass("collapse");    }); 
+   $(".btn-Thorogood"          ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Thorogood"          ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Thorogood           )").addClass("collapse");    }); 
+   $(".btn-Tommy_James"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Tommy_James"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Tommy_James         )").addClass("collapse");    }); 
+   $(".btn-Toto"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Toto"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Toto                )").addClass("collapse");    }); 
+   $(".btn-Van_Morrison"       ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Van_Morrison"       ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Van_Morrison        )").addClass("collapse");    }); 
+   $(".btn-Wilburys"           ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Wilburys"           ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Wilburys            )").addClass("collapse");    }); 
+   $(".btn-Wild_Cherry"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Wild_Cherry"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Wild_Cherry         )").addClass("collapse");    }); 
+
+  $(".btn-Dreher_Demo"         ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Promo"         ); $(".myCol").removeClass("collapse");  });
+  $(".btn-Dreher_Family"       ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Family"        ); $(".myCol").removeClass("collapse");  });
+  $(".btn-Dreher_Cover"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Cover"         ); $(".myCol").removeClass("collapse");  });
+  $(".btn-Dreher_Instrumentals").click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Instrumentals" ); $(".myCol").removeClass("collapse");  });
+  $(".btn-Dreher_Spiritual"    ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Spiritual"     ); $(".myCol").removeClass("collapse");  });
+  $(".btn-Dreher_Must_See"     ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Dreher_Must_See"      ); $(".myCol").removeClass("collapse");  });
 
 
 
