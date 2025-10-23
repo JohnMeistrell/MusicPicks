@@ -58,6 +58,15 @@
                    <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SURF"     aria-controls = "multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
                    <button class="btn border border-light btn-primary btn-RIFFS"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-RIFFS"    aria-controls = "multi-collapse-RIFFS"   data-dismiss="modal"  >RIFFS</button>
                    <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NEW"      aria-controls = "multi-collapse-NEW"     data-dismiss="modal"  >NEW</button>
+                   <br>
+                   <button class="btn border border-light btn-primary btn-Mon"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Mon"      aria-controls = "multi-collapse-Mon"     data-dismiss="modal"  >Mon</button>
+                   <button class="btn border border-light btn-primary btn-Tue"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Tue"      aria-controls = "multi-collapse-Tue"     data-dismiss="modal"  >Tue</button>
+                   <button class="btn border border-light btn-primary btn-Wed"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Wed"      aria-controls = "multi-collapse-Wed"     data-dismiss="modal"  >Wed</button>
+                   <button class="btn border border-light btn-primary btn-Thr"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Thr"      aria-controls = "multi-collapse-Thr"     data-dismiss="modal"  >Thr</button>
+                   <button class="btn border border-light btn-primary btn-Fri"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Fri"      aria-controls = "multi-collapse-Fri"     data-dismiss="modal"  >Fri</button>
+                   <button class="btn border border-light btn-primary btn-Sat"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Sat"      aria-controls = "multi-collapse-Sat"     data-dismiss="modal"  >Sat</button>
+
+
                  </div>
               </div></div>
            </div>
@@ -385,7 +394,19 @@ if ( vFingers    !== '') { tagList.push('vFingers  - '   + vFingers   ) ; tagThi
 if ( vInstrument !== '') { tagList.push('vInstrument - ' + vInstrument) ; tagThisOne.push(vInstrument );  };
 if ( vLyrics     !== '') { tagList.push('vLyrics  - '    + vLyrics    ) ; tagThisOne.push(vLyrics     );  };
 if ( vExpert     !== '') { tagList.push('vExpert  - '    + vExpert    ) ; tagThisOne.push(vExpert     );  };
-if ( vRate       !== '') { tagList.push('vRate - '       + vRate      ) ; tagThisOne.push(vRate       );  };
+if ( vRate       !== '') {
+     const vRateArray = vRate.split(" - ");
+     vRateArray.forEach((vRateItem, index, array) => {
+       if ( vRateItem.trim()  !== '') {
+          if (index = 0) {
+          tagList.push(  'vRate - '       + vRateItem      ) ; 
+          } else {
+          tagList.push(  'vMulti - '       + vRateItem      ) ; 
+          }
+          tagThisOne.push(vRateItem    );  
+       }
+     })
+};
 
         tagClass = vtag;
 
@@ -557,6 +578,15 @@ $(document).ready(function(){
    $(".btn-SURF"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Surf"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Surf                )").addClass("collapse");    }); 
    $(".btn-RIFFS"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("RIFFS"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.RIFFS               )").addClass("collapse");    });
    $(".btn-NEW"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("NEW"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NEW                 )").addClass("collapse");    });
+
+   $(".btn-Mon"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Mon"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Mon                 )").addClass("collapse");    });
+   $(".btn-Tue"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Tue"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Tue                 )").addClass("collapse");    });
+   $(".btn-Wed"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Wed"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Wed                 )").addClass("collapse");    });
+   $(".btn-Thr"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Thr"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Thr                 )").addClass("collapse");    });
+   $(".btn-Fri"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Fri"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Fri                 )").addClass("collapse");    });
+   $(".btn-Sat"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Sat"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Sat                 )").addClass("collapse");    });
+   $(".btn-Sun"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Sun"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Sun                 )").addClass("collapse");    });
+
 
    $(".btn-AshleeYoung"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Ashleeyoung"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Ashleeyoung         )").addClass("collapse");    }); 
    $(".btn-FromScratch"        ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Fromscratch"        ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Fromscratch         )").addClass("collapse");    }); 
