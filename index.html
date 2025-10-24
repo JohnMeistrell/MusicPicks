@@ -349,10 +349,10 @@ let buttonClass = '';
  
      var lastItemSelectionBuilt = ''
      const mapVV = mapVideoDetails.map(([ 
-                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ]) => ({ 
-                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate }));
+                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ]) => ({ 
+                 vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti }));
 
-     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate ] of mapVideoDetails) {
+     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ] of mapVideoDetails) {
 
         /* console.log('hhhh ' + vID + ' ' +  vURL); */
 
@@ -407,6 +407,22 @@ if ( vRate       !== '') {
        }
      })
 };
+
+if ( vMulti       !== '') {
+     const vMultiArray = vMulti.split(" - ");
+     vMultiArray.forEach((vMultiItem, index, array) => {
+       if ( vMultiItem.trim()  !== '') {
+          console.log("vMulti: " + vMultiItem.trim() + " " +  vtag  + " " +  vTitle);
+          if (index = 0) {
+          tagList.push(  'vMulti - '       + vMultiItem      ) ; 
+          } else {
+          tagList.push(  'vMulti - '       + vMultiItem      ) ; 
+          }
+          tagThisOne.push(vMultiItem    );  
+       }
+     })
+};
+
 
         tagClass = vtag;
 
