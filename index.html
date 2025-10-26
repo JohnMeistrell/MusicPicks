@@ -65,6 +65,8 @@
                    <button class="btn border border-light btn-primary btn-Thr"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Thr"      aria-controls = "multi-collapse-Thr"     data-dismiss="modal"  >Thr</button>
                    <button class="btn border border-light btn-primary btn-Fri"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Fri"      aria-controls = "multi-collapse-Fri"     data-dismiss="modal"  >Fri</button>
                    <button class="btn border border-light btn-primary btn-Sat"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Sat"      aria-controls = "multi-collapse-Sat"     data-dismiss="modal"  >Sat</button>
+                   <button class="btn border border-light btn-primary btn-Sun"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Sun"      aria-controls = "multi-collapse-Sun"     data-dismiss="modal"  >Sun</button>
+
 
 
                  </div>
@@ -412,7 +414,7 @@ if ( vMulti       !== '') {
      const vMultiArray = vMulti.split(" - ");
      vMultiArray.forEach((vMultiItem, index, array) => {
        if ( vMultiItem.trim()  !== '') {
-          console.log("vMulti: " + vMultiItem.trim() + " " +  vtag  + " " +  vTitle);
+          /* console.log("vMulti: " + vMultiItem.trim() + " " +  vtag  + " " +  vTitle); */
           if (index = 0) {
           tagList.push(  'vMulti - '       + vMultiItem      ) ; 
           } else {
