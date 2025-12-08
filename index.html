@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! v1.9 0930t 1112am -->
+    <! v1.1 1208m 1259pm -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,6 +58,7 @@
                    <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SURF"     aria-controls = "multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
                    <button class="btn border border-light btn-primary btn-RIFFS"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-RIFFS"    aria-controls = "multi-collapse-RIFFS"   data-dismiss="modal"  >RIFFS</button>
                    <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NEW"      aria-controls = "multi-collapse-NEW"     data-dismiss="modal"  >NEW</button>
+                   <button class="btn border border-light btn-primary btn-BGRASS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BGRASS"   aria-controls = "multi-collapse-BGRASS"  data-dismiss="modal"  >bGrass</button>
                    <br>
                    <button class="btn border border-light btn-primary btn-Mon"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Mon"      aria-controls = "multi-collapse-Mon"     data-dismiss="modal"  >Mon</button>
                    <button class="btn border border-light btn-primary btn-Tue"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Tue"      aria-controls = "multi-collapse-Tue"     data-dismiss="modal"  >Tue</button>
@@ -195,6 +196,7 @@
                   <button class="btn border border-light btn-primary btn-BEAT"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BEAT"              aria-controls = "multi-collapse-BEAT"        >Beat</button>
                   <button class="btn border border-light btn-primary btn-MUST"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"              aria-controls = "multi-collapse-MUST"        >Must</button>
                   <button class="btn border border-light btn-primary btn-Daily"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Daily"             aria-controls = "multi-collapse-Daily"       >Daily</button>
+                  <button class="btn border border-light btn-primary btn-Kayla"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Kayla"             aria-controls = "multi-collapse-Kayla"       >Kayla</button>
                   <button class="btn border border-light btn-primary btn-MODAL"                type= "button"  data-toggle="modal" data-target="#myModal">More</button>
                   <a target="_blank" href="https://www.chordie.com/"                        >Lyrics n Chords</a>
                   <a target="_blank" href="https://www.pianochord.org/two-hands.html"       >Chords</a>
@@ -251,7 +253,7 @@
                    <div class="text-center">                                                                    Website designed by John Meistrell NJ
                    <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >Email: J.MeistrellMA@gmail.com</a>
                    <a target="_blank" href="https://github.com/JohnMeistrell/MA/wiki"                           >Web: https://github.com/JohnMeistrell/MA/wiki</a>
-                   Version(v1.9)
+                   Version(v1.0)
               </div>
               </div>
 
@@ -581,6 +583,7 @@ $(document).ready(function(){
    $(".btn-BEAT"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BEAT"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BEAT                )").addClass("collapse");    }); 
    $(".btn-MUST"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("MUST"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.MUST                )").addClass("collapse");    }); 
    $(".btn-Daily"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Daily"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Daily               )").addClass("collapse");    }); 
+   $(".btn-Kayla"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Kayla"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Kayla               )").addClass("collapse");    }); 
 
    $(".btn-FINGERS"            ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("FINGERS"            ); $(".myCol").removeClass("collapse"); $(".myCol:not(.FINGERS             )").addClass("collapse");    }); 
    $(".btn-BLUES"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BLUES"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BLUES               )").addClass("collapse");    }); 
@@ -595,6 +598,10 @@ $(document).ready(function(){
    $(".btn-SCALE"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("SCALE"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.SCALE               )").addClass("collapse");    }); 
    $(".btn-SURF"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Surf"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Surf                )").addClass("collapse");    }); 
    $(".btn-RIFFS"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("RIFFS"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.RIFFS               )").addClass("collapse");    });
+   $(".btn-bGrass"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("bGrass"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.bGrass               )").addClass("collapse");    }); 
+   $(".btn-BGRASS"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BGRASS"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BGRASS               )").addClass("collapse");    }); 
+
+
    $(".btn-NEW"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("NEW"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NEW                 )").addClass("collapse");    });
 
    $(".btn-Mon"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Mon"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Mon                 )").addClass("collapse");    });
