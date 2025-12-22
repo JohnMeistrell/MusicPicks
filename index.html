@@ -300,6 +300,8 @@ function isNotEmpty(value) {
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 var saveR = [];
 
+  var aTagsList = [];
+
   var codeBlock = ''; var colN = 0; var nItem = 0; var msgItem = ''; 
 
   var E2row   = ''; /* HEADING TAG */
@@ -360,20 +362,7 @@ let buttonClass = '';
 
         /* console.log('hhhh ' + vID + ' ' +  vURL); */
 
-/* vRate MUST GOOD
-   vMix CIRCLE SCALE LOTS
-   vExpert ANY
-NAMES FINGERS LYRICS
-multi-
-
-notSpace = ''; 
-if (variable && variable.trim() !== "") {
-  // The variable is not null, undefined, or an empty string after removing leading/trailing spaces.
-  // Code to execute if the condition is true
-}
-
-
- */
+  aTagsList.push(vtag);
 
   var codeStartAt = '';
 
@@ -392,18 +381,18 @@ if (variable && variable.trim() !== "") {
 
 /* List of tags to add buttons for */
 let tagThisOne = [];
-if ( vMix        !== '') { tagList.push('vMix - '        + vMix       ) ; tagThisOne.push(vMix        );  };
-if ( vNames      !== '') { tagList.push('vNames - '      + vNames     ) ; tagThisOne.push(vNames      );  };
-if ( vFingers    !== '') { tagList.push('vFingers  - '   + vFingers   ) ; tagThisOne.push(vFingers    );  };
-if ( vInstrument !== '') { tagList.push('vInstrument - ' + vInstrument) ; tagThisOne.push(vInstrument );  };
-if ( vLyrics     !== '') { tagList.push('vLyrics  - '    + vLyrics    ) ; tagThisOne.push(vLyrics     );  };
-if ( vExpert     !== '') { tagList.push('vExpert  - '    + vExpert    ) ; tagThisOne.push(vExpert     );  };
+if ( vMix        !== '') { tagList.push('vMix - '        + vMix       ) ; aTagsList.push(vMix)        ; tagThisOne.push(vMix        );  };
+if ( vNames      !== '') { tagList.push('vNames - '      + vNames     ) ; aTagsList.push(vNames)      ; tagThisOne.push(vNames      );  };
+if ( vFingers    !== '') { tagList.push('vFingers  - '   + vFingers   ) ; aTagsList.push(vFingers)    ; tagThisOne.push(vFingers    );  };
+if ( vInstrument !== '') { tagList.push('vInstrument - ' + vInstrument) ; aTagsList.push(vInstrument) ; tagThisOne.push(vInstrument );  };
+if ( vLyrics     !== '') { tagList.push('vLyrics  - '    + vLyrics    ) ; aTagsList.push(vLyrics)     ; tagThisOne.push(vLyrics     );  };
+if ( vExpert     !== '') { tagList.push('vExpert  - '    + vExpert    ) ; aTagsList.push(vExpert)     ; tagThisOne.push(vExpert     );  };
 if ( vRate       !== '') {
      const vRateArray = vRate.split(" - ");
      vRateArray.forEach((vRateItem, index, array) => {
-       if ( vRateItem.trim()  !== '') {
+       if ( vRateItem.trim()  !== '') {    aTagsList.push(vRateItem) ; 
           if (index = 0) {
-          tagList.push(  'vRate - '       + vRateItem      ) ; 
+          tagList.push(  'vRate - '        + vRateItem      )  ; 
           } else {
           tagList.push(  'vMulti - '       + vRateItem      ) ; 
           }
@@ -415,7 +404,7 @@ if ( vRate       !== '') {
 if ( vMulti       !== '') {
      const vMultiArray = vMulti.split(" - ");
      vMultiArray.forEach((vMultiItem, index, array) => {
-       if ( vMultiItem.trim()  !== '') {
+       if ( vMultiItem.trim()  !== '') {    aTagsList.push(vMultiItem) ; 
           /* console.log("vMulti: " + vMultiItem.trim() + " " +  vtag  + " " +  vTitle); */
           if (index = 0) {
           tagList.push(  'vMulti - '       + vMultiItem      ) ; 
@@ -515,6 +504,20 @@ if ( vMulti       !== '') {
 
 
      } /* for (const */
+
+     var htmlTagButtons = ' '; var htmlJSbottom = ' '; 
+     var aTagsListSorted = [...new Set(aTagsList)].sort();  
+     var tempLine = '';
+     aTagsListSorted.forEach((aItem1, index1) => {
+       tempLine = '<button class="btn border border-light btn-primary btn-' +aItem1+ '" type= "button" data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-' +aItem1+ '" aria-controls = "multi-collapse-' +aItem1+ '" >' +aItem1+ '</button>';
+       htmlTagButtons += tempLine + '\n' ;
+       tempLine = '$(".btn-' +aItem1+ '").click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("' +aItem1+ '"); $(".myCol").removeClass("collapse"); $(".myCol:not(.' +aItem1+ ')").addClass("collapse");    });';
+       htmlJSbottom  += tempLine + '\n' ;
+     });
+
+     console.log(htmlTagButtons);
+     console.log(htmlJSbottom); 
+
  
   }
   /* Image from GitHub C DRIVE (end) -----------------------------------------------------------------*/
@@ -527,11 +530,9 @@ if ( vMulti       !== '') {
   document.getElementById("wrapper").innerHTML = codeBlock;
 
   /* List of tags to add buttons for. Sort and remove duplicates. */
-  tagList.sort();
-  /* console.log('tagList: ' + tagList ); */
+  tagList.sort();                                          /* console.log('tagList: ' + tagList ); */
   const tagListUniqueSorted = [...new Set(tagList)];
-  tagListUniqueSorted.sort();
-  /* console.log('tagListUniqueSorted: ' + tagListUniqueSorted ); */
+  tagListUniqueSorted.sort();                              /* console.log('tagListUniqueSorted: ' + tagListUniqueSorted ); */
 
 
   tagListUniqueSorted.forEach((aItem, index, array) => {
