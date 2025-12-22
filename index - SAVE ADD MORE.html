@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <! v1.5 1230m 450pm -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href= "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"   rel="stylesheet"   integrity= "sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"     crossorigin="anonymous"> 
+
+    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+
+    <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
+
+    <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
+
+
+<script type="text/javascript">
+
+  function myClean() {
+
+    const textarea = document.getElementById('RawList');
+    let text = textarea.value;
+    text = text.replaceAll("https://youtu.be/","jmTag ");
+    text = text.replaceAll("https://www.youtube.com/live/","jmTag ");
+    text = text.replaceAll("https://www.youtube.com/watch?v=","jmTag ");
+
+    text = text.replaceAll("?si=","   jmFix "); 
+    text = text.replaceAll("&list=","   jmFix "); 
+
+    const aLines = text.split(/\r?\n/);
+    const aNewTags = []; const aNewTags2 = []; 
+  
+    aLines.forEach((elem1, index) => {
+       if(elem1.substring(0,5) == "jmTag"){ 
+           var bbb = elem1.substring(5);
+           let aaa = bbb.split('jmFix');
+           var aaa1 = aaa[0];
+           aNewTags.push("NEW - " + aaa[0].trim());  aNewTags2.push('"NEW - ' + aaa[0].trim() + '" , ');
+       };
+   });
+
+    const textarea2 = document.getElementById('TagsList');
+    const newLineString = aNewTags2.join('\n');
+    textarea2.value = newLineString;
+
+/*
+https://youtu.be/GB4YjpLk4nk?si=wEX5sCbo6a55UOZ_
+https://youtu.be/gxEPV4kolz0?si=gIYRkm1nL36vftvF
+https://youtu.be/jSOU-J9KHbg?si=c-d9Bh94XSFLCL_0
+*/
+
+
+  }
+
+</script>
+
+
+<script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+      var saveRUU = [];
+      var saveTest = '';
+      var atextareaJSONlist = []; /* Cut TAG list for var youtubeIDList. */    var ttt = '';
+      const mapVideoDetailsBUILD = [   ['TagClass', 'ID' , 'Title' , 'Author' , 'Image' , 'URL' ]    ]; 
+      const mapV = mapVideoDetailsBUILD.map(([ 
+         vtag, vID , vTitle , vAuthor , vImage , vURL  ]) => ({ 
+         vtag, vID , vTitle , vAuthor , vImage , vURL  }));
+
+      /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+      async function getIt(tagID)      /* YOUTUBE SERVER   -   YOUTUBE SERVER   -   YOUTUBE SERVER   -  YOUTUBE SERVER  */
+      /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+      {
+        var sName = tagID;
+        var tagClass = ''; 
+        var nameArr = sName.split(' - ');
+        var trimTagX  = nameArr[0];
+        var youTubeID = nameArr[1];
+        if (trimTagX) {
+           var trimTagY = trimTagX.trim(); 
+           var tagArr = trimTagY.split('.');
+           tagClass = tagArr[0];
+        }
+
+        let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 1000)
+        });
+ 
+        var id = youTubeID;
+        const api_url    = "https://noembed.com/embed?url=https://www.youtube.com/watch?v=" +id;
+        try {
+            const response = await fetch(api_url);  
+            let objvalueU  = await response.json();
+            saveRU = objvalueU;
+
+            saveRU.title = saveRU.title.replaceAll( "'" , '' );            saveRU.title = saveRU.title.replaceAll( '"' , '' );
+            saveRU.title = saveRU.title.replaceAll( '.' , ' ' );           saveRU.title = saveRU.title.replaceAll( ',' , ' ' );
+            saveRU.title = saveRU.title.replaceAll( '(' , ' ');            saveRU.title = saveRU.title.replaceAll( ')' , ' ');
+            saveRU.title = saveRU.title.replaceAll( '[' , '-');            saveRU.title = saveRU.title.replaceAll( ']' , '-');
+            saveRU.title = saveRU.title.replaceAll( '{' , '-');            saveRU.title = saveRU.title.replaceAll( '}' , '-');
+            saveRU.title = saveRU.title.replaceAll( '-' , '-');            saveRU.title = saveRU.title.replaceAll( '/' , '-');
+            saveRU.title = saveRU.title.replaceAll( '|' , '-');            saveRU.title = saveRU.title.replaceAll( 'The' , '');
+            saveRU.title = saveRU.title.replaceAll( 'Audio' , '');         saveRU.title = saveRU.title.replaceAll( 'Video' , '');
+            saveRU.title = saveRU.title.replaceAll( '“' , '' );            saveRU.title = saveRU.title.replaceAll( '”' , '' );
+
+            saveRU.title = saveRU.title.replaceAll( '  ' , ' ' );
+            saveRU.title = saveRU.title.trim();
+
+            let vvv2 = [tagClass , id , saveRU.title , saveRU.author_name , saveRU.thumbnail_url , saveRU.url ];
+            /*
+            "thumbnail_url":"https://i.ytimg.com/vi/jSOU-J9KHbg/hqdefault.jpg",                 "title":"How to Read Notes Fast - The Landmark System","width":200,"provider_name":"YouTube",
+            "url":"https://www.youtube.com/watch?v=jSOU-J9KHbg",                                "author_name":"Musicians Inspired"
+            */
+
+            ttt = tagClass +","+ id +","+ saveRU.title +","+ saveRU.author_name +","+ saveRU.thumbnail_url +","+ saveRU.url + '\n';
+
+            ttt = '["' + tagClass +","+ id +","+ saveRU.title +","+ saveRU.author_name +","+ saveRU.thumbnail_url +","+ saveRU.url;
+            ttt = ttt.replaceAll( ',' , '","' );
+            ttt += '","jmTime","1","","","","Today","","","",""] ,' 
+
+            /* Cut TAG list for var youtubeIDList. */ 
+            atextareaJSONlist.push(ttt); 
+
+            mapV.push(vvv2);
+            } catch (error) {
+              console.error(error);
+        }
+     } 
+     /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+     /* -------------------------------------------------------------------------------------------- */
+     /* Artist n YouTube ID */
+     /* -------------------------------------------------------------------------------------------- */
+     youtubeIDList.forEach(value => {   /* "NEW - jSOU-J9KHbg" , "Dennis - zr-vdYUWXd0"     EACH */
+ 
+        var sName = value;
+        var id = sName;
+
+        var tagClass = ''; var youTubeID = "";
+        var nameArr = sName.split(' - ');
+        var trimTagX = nameArr[0];
+        youTubeID    = nameArr[1];
+
+        if (trimTagX) {
+           var trimTagY = trimTagX.trim(); 
+           var tagArr = trimTagY.split('.');
+           tagClass = tagArr[0];
+ 
+        }
+ 
+        getIt(tagClass + ' - ' + youTubeID , mapV);  /* Get INFO Youtube server API */
+
+        saveTest += youTubeID;
+
+   } ) ;
+   /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+   /* NEW JSON xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+   var newJSON = '';
+
+   console.log("mapV");
+   console.log(mapV);
+
+   aSorted = mapV;
+
+aSorted.sort((a, b) => {
+  if (a[2] < b[2]) return -1;
+  if (a[2] > b[2]) return 1;
+  return 0;
+});
+
+   console.log("aSorted");
+   console.log(aSorted);
+
+/*
+JAVASCript sort array of strings 3rd column
+*/
+
+
+  /* 
+  https://youtu.be/GB4YjpLk4nk?si=wEX5sCbo6a55UOZ_
+  https://youtu.be/gxEPV4kolz0?si=gIYRkm1nL36vftvF
+  https://youtu.be/jSOU-J9KHbg?si=c-d9Bh94XSFLCL_0
+  */
+
+/*
+     const mapVV3 = aSorted.map(([ 
+         v3tag, v3ID , v3Title , v3Author , v3Image , v3URL  ]) => ({ 
+         v3tag, v3ID , v3Title , v3Author , v3Image , v3URL  }));
+
+     for (const [v3tag, v3ID , v3Title , v3Author , v3Image , v3URL ] of mapVideoDetails) {
+
+        console.log(v3Title);
+
+     }
+*/
+
+/* WORKS 
+
+     const mapVV3 = mapVideoDetails.map(([ 
+         v3tag, v3ID , v3Title , v3Author , v3Image , v3URL  ]) => ({ 
+         v3tag, v3ID , v3Title , v3Author , v3Image , v3URL  }));
+
+     for (const [v3tag, v3ID , v3Title , v3Author , v3Image , v3URL ] of mapVideoDetails) {
+
+        console.log(v3Title);
+
+
+     }
+/*
+
+/*
+      const mapJSON = mapV.map(([ 
+      nTag, nID, nTitle, nAuthor, nImage, nURL, njmTimes, nCat-Tags, nTag-Mix, nTag-Names, nTagFingers, nTagInstrument, nTagLyrics, nExpert, nRate , nMulti ]) => ({ 
+      nTag, nID, nTitle, nAuthor, nImage, nURL, njmTimes, nCat-Tags, nTag-Mix, nTag-Names, nTagFingers, nTagInstrument, nTagLyrics, nExpert, nRate , nMulti }));
+*/
+
+
+/* console.log(mapJSON[3].nTitle); */ 
+  
+
+</script>
+
+<script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+async function getYouTubeTitle(e)
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+ {
+     var titleYT = e.parentNode.parentNode.firstElementChild.innerHTML;
+ } 
+</script>
+
+
+
+<body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
+
+<h3 class="text-center">Johnnys Picks (v1.0)</h3>
+
+<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+<div class="cc" >
+
+   <div class="card card-body sticky-top  BUILD" style="background-color:#feeb10; padding:5px;">
+      <div class="dropdown">
+
+         <span class="text-nowrap bd-highlight font-weight-bolder">New:</span>
+         <button class="btn border border-light btn-primary"  type= "button">Build</button>
+         <button class="btn border border-light btn-primary"  type= "button"onclick="myClean();" >Clean</button>
+         <br>
+         <textarea id="RawList"    name="rawlist1"  cols="40" rows="3">Paste raw Youtube. Press CLEAN.</textarea>
+         <textarea id="TagsList"   name="tagslist1" cols="40" rows="3">Cut TAG list for var youtubeIDList.</textarea>
+         <textarea id="CutJSON"    name="cutjson1"  cols="60" rows="3"></textarea>
+
+         <br>
+         <fieldset id="tagcheckbox" class="checkboxgroup">
+             <p>some label</p>
+             <label><input type="checkbox"> checkbox 1</label>
+             <label><input type="checkbox"> checkbox 2</label>
+             <label><input type="checkbox"> checkbox 3</label>
+             <label><input type="checkbox"> checkbox 4</label>
+         </fieldset>
+
+
+      </div>
+   </div>
+
+   <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
+      <div class="dropdown">
+
+         <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
+         <button class="btn border border-light btn-primary btn-all"  type= "button">All</button>
+         <button class="btn border border-light btn-primary btn-Dennis"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Dennis"      aria-controls = ".multi-collapse-Dennis"      >Dennis   </button>      
+         <button class="btn border border-light btn-primary btn-Boston"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Boston"   aria-controls = ".multi-collapse-Boston"   >Boston</button>
+         <button class="btn border border-light btn-primary btn-Four_Seasons" type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Four_Seasons" aria-controls = ".multi-collapse-Four_Seasons" >Four_Seasons</button>
+         <button class="btn border border-light btn-primary btn-Georgia_Satellites"   type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Georgia_Satellites"   aria-controls = ".multi-collapse-Georgia_Satellites"   >Georgia_Satellites</button>
+         <button class="btn border border-light btn-primary btn-Jerry_Lee_Lewis"  type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Jerry_Lee_Lewis"  aria-controls = ".multi-collapse-Jerry_Lee_Lewis"  >Jerry_Lee_Lewis</button>
+         <button class="btn border border-light btn-primary btn-Toto"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Toto"    aria-controls = ".multi-collapse-Toto"    >Toto </button>
+
+         <button class="btn border border-light btn-primary btn-Nick_Lowe"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Nick_Lowe"    aria-controls = ".multi-collapse-Nick_Lowe"    >Nick_Lowe </button>
+         <button class="btn border border-light btn-primary btn-Rock_n_Roll_50s_60s"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Rock_n_Roll_50s_60s"    aria-controls = ".multi-collapse-Rock_n_Roll_50s_60s"    >Rock_n_Roll_50s_60s </button>
+         <button class="btn border border-light btn-primary btn-Rolling_Stones"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Rolling_Stones"    aria-controls = ".multi-collapse-Rolling_Stones"    >Rolling_Stones </button>
+         <button class="btn border border-light btn-primary btn-Steely_Dan"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Steely_Dan"    aria-controls = ".multi-collapse-Steely_Dan"    >Steely_Dan </button>
+         <button class="btn border border-light btn-primary btn-Van_Morrison"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-target = ".multi-collapse-Van_Morrison"    aria-controls = ".multi-collapse-Van_Morrison"    >Van_Morrison </button>
+
+      </div>
+   </div>
+
+
+   <div class="card card-body Dennis"  style="padding:0px; margin:0px; border:0px; "> 
+   <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show"> 
+   <h2                       class="         container-fluid text-center collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Dennis </h2>
+   </div>
+
+   <div class="row mr-auto container-fluid collapse cc multi-collapse-Dennis .multi-collapse-Dennis show" >
+
+       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;">
+           <h2  id="titlePX" class="        container-fluid text-center"    style="                                 padding:0px; margin:0px; background-color:#fadadd;" >Dennis Dreher - Riff Raff</h2>
+           <div id="scrolPX" class="scrolP  container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+           <iframe  height="420px" class="  container-fluid"                src="https://www.youtube.com/embed/a1dF9MqdAMw" title="Sangisangy by Dama" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+           </div>
+       </div>
+
+       <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid"     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
+          <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Twinkle Toes</h2>
+          <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
+          <a target="_blank" href="https://www.youtube.com/watch?v=Lgq7-id5Md4">
+          <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"  src="https://i.ytimg.com/vi/Lgq7-id5Md4/hqdefault.jpg" alt="Photo1">
+          </a>
+          </div>
+       </div>
+
+      <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Dennis" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;"><h2 class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis Dreher - Like an Old Friend</h2><div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px"><a target="_blank" href="https://www.youtube.com/watch?v=f3IyPHkyX00"><img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" src="https://i.ytimg.com/vi/f3IyPHkyX00/hqdefault.jpg" alt="Photo1"></a></div></div>
+
+    </div></div>
+
+    <div id="wrapper" class="card card-body LIST"  style="padding:5px;">
+    </div>
+
+    <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
+        <div class="text-center">                                                                    Website designed by 
+        <a target="_blank" href="mailto:J.MeistrellMA@gmail.com"                                     >John Meistrell NJ (v1.0)</a>
+       </div>
+    </div>
+
+</div></div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function windowLoaded() 
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+  {
+   }
+</script>
+
+<script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function Data(el,eItem)
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+ {
+    var itemT =  el.name;
+    window.alert(eItem);
+
+ } 
+</script>
+
+
+
+<script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+var saveR = [];
+
+  var codeBlock = ''; var colN = 0; var nItem = 0; var msgItem = ''; 
+
+  var E2row   = '';
+  var E2rowA  = '<div class="row mr-auto container-fluid collapse cc show' ;
+  var E2rowB  = '';
+  var E2rowC  = '">';
+
+  var E3CatA  = '<div class="card card-body"   style="padding:0px; margin:0px; border:0px; ">';
+  var E3CatB  = '<div class="row mr-auto container-fluid collapse cc ';
+  var E3CatC  = '';
+  var E3CatD  = ' show">'; 
+  var E3CatE  = '<h2                       class="         container-fluid text-center " style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >';
+  var E3CatF  = '';
+  var E3CatG  = '</h2>';
+  var E3CatH  = '</div>';
+
+  var E3colA  =    '<div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid '
+  var E3colB  = '"             style="padding:0px; margin:0px; border:5px solid #000000; background-color:#fadadd;">';  
+
+  var E4itemB =       '<h2  class="                                    container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">';
+  var E4itemE =       '</h2>';
+
+  var tttt = "'Hi Richie, Asking about'";
+
+  var E9butB1  =       '<button type= "button" class="btn border border-light btn-primary btn-all">Ask-Text</button>';
+
+  /*               TEXT */
+  var E9butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="sms:';
+  var E9butB2b =       '';
+  var E9butB2c =       '?&amp;body=Hello Richie, I would like to buy ';
+  var E9butB2d =       '';
+  var E9butB2e =       '">Buy-Text</a>';
+
+
+  /* WORKS BIG https://mail.google.com/mail/u/1/?ui=2&fs=1&tf=cm&to=9082357304@vtext.com&su=Purchase#compose=new */
+
+  /*                EMAIL */
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all" href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&to='; /* ORIG */
+  var E10butB2a =       '<a type= "button" class="btn border border-light btn-primary btn-all emailcell" href="https://mail.google.com/mail/u/1/?ui=2&fs=1&tf=cm&to=';
+  var E10butB2b =       '';
+  var E10butB2c =       '@vtext.com&su=Purchase Request from Richies Sports Memorabilia and Collectibles&body=Hello Richie, I would like to buy ';
+  var E10butB2d =       '';
+  var E10butB2e =       '"target="_blank">Buy-eMail</a>';
+
+  var E5scrol =       '<div class="scrolP   container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">'
+
+  var E6imagB1  =          '<a target="_blank" href="';
+  var E6imagB2 =          '';
+  var E6imagB3 =          '"><img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px" src="';           
+  var E6imagB4 =          '';
+  var E6imagBE =           '" alt="Photo1" ></a>';
+
+
+  var E7divE  =       '</div>'
+
+  var E8divE  =    '</div>';
+
+  var ElemTest = '';
+
+  var sName = '';
+
+
+  /* Image from GitHub C DRIVE (start) -----------------------------------------------------------------*/
+  if ( imageSource == "Laptop" ) {
+ 
+     var lastItemSelectionBuilt = ''
+     const mapVV = mapVideoDetails.map(([ 
+         vtag, vID , vTitle , vAuthor , vImage , vURL  ]) => ({ 
+         vtag, vID , vTitle , vAuthor , vImage , vURL  }));
+
+     for (const [vtag, vID , vTitle , vAuthor , vImage , vURL ] of mapVideoDetails) {
+
+        tagClass = vtag;
+
+        sName = vTitle;
+
+        /* -------------------------------------------------------------------- */     
+        /* 001 COMMON CODE START (MUST COPY see way below in from GITHUB section  */
+        /* -------------------------------------------------------------------- */     
+
+        E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + E2rowC;
+
+        colN = colN + 1;
+        if ( lastItemSelectionBuilt == tagClass ) {
+        } else {
+          if ( colN > 1 ) {
+               colN = 1;
+               codeBlock += E7divE;
+          } 
+               codeBlock += E3CatA;
+               codeBlock += E3CatB;
+               codeBlock += E3CatC + "multi-collapse-" + tagClass + " .multi-collapse-" + tagClass;
+               codeBlock += E3CatD;
+               codeBlock += E3CatE;
+               codeBlock += E3CatF + tagClass ;
+               codeBlock += E3CatG;
+               codeBlock += E3CatH;
+               codeBlock += E3CatH;
+
+        }
+
+        lastItemSelectionBuilt = tagClass;
+
+
+        /* ROW ------------------------ */
+        if (colN == 1 ) { codeBlock += E2row; }
+
+        nItem = nItem + 1;
+        msgItem  = '"buyMsgID' + nItem + '"';
+
+        /* COL ------------------------ */
+        codeBlock += E3colA;    /* <div class="mcol-xs-5 col-sm-5 col-lg-5 col-xl-5 ... */
+        codeBlock += tagClass;
+        codeBlock += E3colB;
+
+        /* HDR --------------------- */
+        codeBlock += E4itemB;  /* <h2  id="titleM" class="         container-fluid ... */
+        codeBlock += sName;    /* Card heading */
+        codeBlock += E4itemE;
+
+        /* BUT/MSG: --------------------- */
+        E9butB2b = contact1;
+        E9butB2d = sName;
+
+        
+
+        E10butB2b = contact1;
+        E10butB2d = sName;
+
+
+        /* SCR/IMG: --------------------- */
+        codeBlock += E5scrol;   /* <div id="scrolP" class="scrolP   container-fluid ... */
+        codeBlock += E6imagB1;  /* '<a target="_blank" href="'; */
+        codeBlock += vURL; 
+        codeBlock += E6imagB3;  /* '"><img id="imageP" class="container-fluid" style="min */
+        codeBlock += vImage; 
+        codeBlock += E6imagBE; /* '" alt="Photo1" ></a>'; */
+        codeBlock += E7divE;
+
+        /* COL ------------------------ */
+        codeBlock += E7divE;
+
+        /* ROW ------------------------ */
+        if (colN == 3 ) { codeBlock += E7divE; colN = 0; }
+
+        /* -------------------------------------------------------------------- */
+        /* 001 COMMON CODE END                                                  */
+        /* -------------------------------------------------------------------- */
+
+
+
+     } /* for (const */
+ 
+  }
+  /* Image from GitHub C DRIVE (end) -----------------------------------------------------------------*/
+
+
+  codeBlock += 	E7divE; 
+
+  const newNode = document.getElementById("wrapper");
+
+  document.getElementById("wrapper").innerHTML = codeBlock;
+
+  /* ### TextArea - All NEW from Youtube SERVER --------------------------------------------------------------- */
+
+   /* Cut TAG list for var youtubeIDList. */ 
+   console.log('atextareaJSONlist');
+   console.log(atextareaJSONlist);
+
+   /* its not ready for api - WAIT FOR DONE status */ 
+   var textarea6 = document.getElementById('CutJSON');
+   var new66 = atextareaJSONlist.join('\n');
+   textarea6.value = new66;
+   debugger;
+
+</script>
+
+<script>
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+$(document).ready(function(){
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+  $(".btn-all").click(function(){  $(".collapse").addClass("show");  });
+  $(".btn-none").click(function(){  $(".collapse").removeClass("show");  });
+
+  $(".btn-Boston").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Georgia_Satellites").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Four_Seasons").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Jerry_Lee_Lewis").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Dennis").click(function(){  $(".collapse").removeClass("show");  });
+
+  $(".btn-Nick_Lowe").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Rock_n_Roll_50s_60s").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Rolling_Stones").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Steely_Dan").click(function(){  $(".collapse").removeClass("show");  });
+  $(".btn-Van_Morrison").click(function(){  $(".collapse").removeClass("show");  });
+ 
+  $(".btn-Toto").click(function(){  $(".collapse").removeClass("show");  });
+
+});
+
+/*
+        var cell1 = row.insertCell(0);
+        var element1 = document.createElement("input");
+        element1.type = "checkbox";
+        element1.id =  "id2" ;
+        cell1.appendChild(element1);
+
+        // Create label
+        var label = document.createElement("label");
+        label.for =  "id2" ;
+        cell1.appendChild(label);
+*/
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
