@@ -14,7 +14,7 @@
 
     <script src="locationImages.txt"> /* Use in different GitHub accounts */ </script>
 
-    <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
+    <script src="listImagesJSONnoNO.txt"> /* List images on C drive */ </script>
 
 
 
@@ -72,9 +72,15 @@
                   Random:
                   </div>
                   <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-                    <button class="btn border border-light btn-primary btn-Random1"               type= "button" onclick="playRandom('1')"  >1-Fav</button>
-                    <button class="btn border border-light btn-primary btn-Random2"               type= "button" onclick="playRandom('2')"  >2-Learn</button>
-                    <button class="btn border border-light btn-primary btn-Random3"               type= "button" onclick="playRandom('3')"  >3-Songs</button>
+                    <button class="btn border border-light btn-primary btn-Random1"               type= "button" onclick="playRandom('1')"  > 1-Learn  </button>
+                    <button class="btn border border-light btn-primary btn-Random2"               type= "button" onclick="playRandom('2')"  > 2-Pianno </button>
+                    <button class="btn border border-light btn-primary btn-Random3"               type= "button" onclick="playRandom('3')"  > 3-Theory </button>
+                    <button class="btn border border-light btn-primary btn-Random4"               type= "button" onclick="playRandom('4')"  > 4-Beat   </button>
+                    <button class="btn border border-light btn-primary btn-Random5"               type= "button" onclick="playRandom('5')"  > 5-Kayla  </button>
+                    <button class="btn border border-light btn-primary btn-Random6"               type= "button" onclick="playRandom('6')"  > 6-Bands (Stones...)</button>  
+                    <button class="btn border border-light btn-primary btn-Random7"               type= "button" onclick="playRandom('7')"  > 7-Nature </button>
+                    <button class="btn border border-light btn-primary btn-Random8"               type= "button" onclick="playRandom('8')"  > 8-Surf   </button>
+                    <button class="btn border border-light btn-primary btn-Random9"               type= "button" onclick="playRandom('9')"  > 9-Dennis </button>
                     <button class="btn border border-light btn-primary btn-Hide"                  type= "button" onclick="playRandom('Hide')"  >Hide</button>
                     <div    class="container-fluid "               style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" id="idSelBigBox" >
                        <h2  class="container-fluid text-center"    style="background-color:#fadadd;        padding:0px; margin:0px;" id="idSelTitle"    >Needs a title</h2>
@@ -98,22 +104,28 @@
                  Common:
                  </div>
                  <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-                   <button class="btn border border-light btn-primary btn-GOOD"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GOOD"     aria-controls = "multi-collapse-GOOD"    data-dismiss="modal"  >GOOD</button>
-                   <button class="btn border border-light btn-primary btn-MUST"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"     aria-controls = "multi-collapse-MUST"    data-dismiss="modal"  >MUST</button>
-                   <button class="btn border border-light btn-primary btn-FINGERS"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-FINGERS"  aria-controls = "multi-collapse-FINGERS" data-dismiss="modal"  >FINGERS</button>
-                   <button class="btn border border-light btn-primary btn-BLUES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BLUES"    aria-controls = "multi-collapse-BLUES"   data-dismiss="modal"  >BLUES</button>
-                   <button class="btn border border-light btn-primary btn-DRUM"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-DRUM"     aria-controls = "multi-collapse-DRUM"    data-dismiss="modal"  >DRUM</button>
-                   <button class="btn border border-light btn-primary btn-GUTAR"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GUTAR"    aria-controls = "multi-collapse-GUTAR"   data-dismiss="modal"  >GUTAR</button>
-                   <button class="btn border border-light btn-primary btn-PIANO"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-PIANO"    aria-controls = "multi-collapse-PIANO"   data-dismiss="modal"  >PIANO</button>
-                   <button class="btn border border-light btn-primary btn-LYRICS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LYRICS"   aria-controls = "multi-collapse-LYRICS"  data-dismiss="modal"  >LYRICS</button>
-                   <button class="btn border border-light btn-primary btn-CIRCLE"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-CIRCLE"   aria-controls = "multi-collapse-CIRCLE"  data-dismiss="modal"  >CIRCLE</button>
+                   <button class="btn border border-light btn-primary btn-GOOD"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GOOD"     aria-controls = "multi-collapse-GOOD"    data-dismiss="modal"  >Good</button>
+                   <button class="btn border border-light btn-primary btn-MUST"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"     aria-controls = "multi-collapse-MUST"    data-dismiss="modal"  >Must</button>
+                   <button class="btn border border-light btn-primary btn-FINGERS"    type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-FINGERS"  aria-controls = "multi-collapse-FINGERS" data-dismiss="modal"  >Fingers</button>
+                   <button class="btn border border-light btn-primary btn-BLUES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BLUES"    aria-controls = "multi-collapse-BLUES"   data-dismiss="modal"  >Blues</button>
+                   <button class="btn border border-light btn-primary btn-DRUM"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-DRUM"     aria-controls = "multi-collapse-DRUM"    data-dismiss="modal"  >Drum</button>
+                   <button class="btn border border-light btn-primary btn-GUTAR"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-GUTAR"    aria-controls = "multi-collapse-GUTAR"   data-dismiss="modal"  >Gutar</button>
+                   <button class="btn border border-light btn-primary btn-PIANO"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-PIANO"    aria-controls = "multi-collapse-PIANO"   data-dismiss="modal"  >Piano</button>
+                   <button class="btn border border-light btn-primary btn-LYRICS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LYRICS"   aria-controls = "multi-collapse-LYRICS"  data-dismiss="modal"  >Lyrics</button>
+                   <button class="btn border border-light btn-primary btn-CIRCLE"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-CIRCLE"   aria-controls = "multi-collapse-CIRCLE"  data-dismiss="modal"  >Circle</button>
                    <button class="btn border border-light btn-primary btn-LOTS"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LOTS"     aria-controls = "multi-collapse-LOTS"    data-dismiss="modal"  >LOTS</button>
-                   <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NAMES"    aria-controls = "multi-collapse-NAMES"   data-dismiss="modal"  >NAMES</button>
-                   <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SCALE"    aria-controls = "multi-collapse-SCALE"   data-dismiss="modal"  >SCALE</button>
-                   <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SURF"     aria-controls = "multi-collapse-SURF"    data-dismiss="modal"  >SURF</button>
-                   <button class="btn border border-light btn-primary btn-RIFFS"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-RIFFS"    aria-controls = "multi-collapse-RIFFS"   data-dismiss="modal"  >RIFFS</button>
+                   <button class="btn border border-light btn-primary btn-NAMES"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NAMES"    aria-controls = "multi-collapse-NAMES"   data-dismiss="modal"  >Names</button>
+                   <button class="btn border border-light btn-primary btn-SCALE"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SCALE"    aria-controls = "multi-collapse-SCALE"   data-dismiss="modal"  >Scale</button>
+                   <button class="btn border border-light btn-primary btn-SURF"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-SURF"     aria-controls = "multi-collapse-SURF"    data-dismiss="modal"  >Surf</button>
+                   <button class="btn border border-light btn-primary btn-RIFFS"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-RIFFS"    aria-controls = "multi-collapse-RIFFS"   data-dismiss="modal"  >Riffs</button>
                    <button class="btn border border-light btn-primary btn-NEW"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-NEW"      aria-controls = "multi-collapse-NEW"     data-dismiss="modal"  >NEW</button>
                    <button class="btn border border-light btn-primary btn-BGRASS"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BGRASS"   aria-controls = "multi-collapse-BGRASS"  data-dismiss="modal"  >bGrass</button>
+
+                   <button class="btn border border-light btn-primary btn-Energy"     type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Energy"   aria-controls = "multi-collapse-Energy"  data-dismiss="modal"  >Energy</button>
+                   <button class="btn border border-light btn-primary btn-Sprit"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Sprit"    aria-controls = "multi-collapse-Sprit"   data-dismiss="modal"  >Sprit</button>
+                   <button class="btn border border-light btn-primary btn-Top10"      type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Top10"    aria-controls = "multi-collapse-Top10"   data-dismiss="modal"  >Top10</button>
+                   <button class="btn border border-light btn-primary btn-Love"       type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Love"     aria-controls = "multi-collapse-Love"    data-dismiss="modal"  >Love</button>
+
                    <br>
                    <button class="btn border border-light btn-primary btn-Mon"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Mon"      aria-controls = "multi-collapse-Mon"     data-dismiss="modal"  >Mon</button>
                    <button class="btn border border-light btn-primary btn-Tue"        type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Tue"      aria-controls = "multi-collapse-Tue"     data-dismiss="modal"  >Tue</button>
@@ -334,9 +346,15 @@ function windowLoaded()
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ]) => ({ 
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti }));
 
-  const mapSet1 = mapRR.filter(user => user.vCat === '1');
-  const mapSet2 = mapRR.filter(user => user.vCat === '2');
-  const mapSet3 = mapRR.filter(user => user.vCat === '3');
+  const mapSet1 = mapRR.filter(user => user.vCat === '1'); /* -Learn  */
+  const mapSet2 = mapRR.filter(user => user.vCat === '2'); /* -Pianno */
+  const mapSet3 = mapRR.filter(user => user.vCat === '3'); /* -Theory */
+  const mapSet4 = mapRR.filter(user => user.vCat === '4'); /* -Beat   */
+  const mapSet5 = mapRR.filter(user => user.vCat === '5'); /* -Kayla  */
+  const mapSet6 = mapRR.filter(user => user.vCat === '6'); /* -Bands (Stones...) */ 
+  const mapSet7 = mapRR.filter(user => user.vCat === '7'); /* -Nature */
+  const mapSet8 = mapRR.filter(user => user.vCat === '8'); /* -Surf   */
+  const mapSet9 = mapRR.filter(user => user.vCat === '9'); /* -Dennis */
   var mapSet  = mapSet3;
 
   function playRandom(selSet) {
@@ -344,6 +362,23 @@ function windowLoaded()
      var idSelBigBox   = document.getElementById("idSelBigBox");
      idSelBigBox.hidden = false;
 
+
+     if        (selSet == '1') { mapSet = mapSet1;
+     } else if (selSet == '2') { mapSet = mapSet2;
+     } else if (selSet == '3') { mapSet = mapSet3;
+     } else if (selSet == '4') { mapSet = mapSet4;
+     } else if (selSet == '5') { mapSet = mapSet5;
+     } else if (selSet == '6') { mapSet = mapSet6;
+     } else if (selSet == '7') { mapSet = mapSet7;
+     } else if (selSet == '8') { mapSet = mapSet8;
+     } else if (selSet == '9') { mapSet = mapSet9;
+
+     } else if (selSet == 'Hide') { 
+       idSelBigBox.hidden = true;
+     } else {                    mapSet = mapSet3;
+     }
+
+/*
      if        (selSet == '1') { mapSet = mapSet1;
      } else if (selSet == '2') { mapSet = mapSet2;
      } else if (selSet == '3') { mapSet = mapSet3;
@@ -351,6 +386,8 @@ function windowLoaded()
        idSelBigBox.hidden = true;
      } else {                    mapSet = mapSet3;
      }
+*/
+
 
      var selRow   = Math.floor(Math.random() * mapSet.length);
      var selTitle = mapSet[selRow].vTitle;
@@ -700,11 +737,17 @@ $(document).ready(function(){
    $(".btn-SCALE"              ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("SCALE"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.SCALE               )").addClass("collapse");    }); 
    $(".btn-SURF"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("Surf"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Surf                )").addClass("collapse");    }); 
    $(".btn-RIFFS"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("RIFFS"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.RIFFS               )").addClass("collapse");    });
-   $(".btn-bGrass"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("bGrass"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.bGrass               )").addClass("collapse");    }); 
-   $(".btn-BGRASS"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BGRASS"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BGRASS               )").addClass("collapse");    }); 
+   $(".btn-bGrass"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("bGrass"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.bGrass              )").addClass("collapse");    }); 
+   $(".btn-BGRASS"             ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BGRASS"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BGRASS              )").addClass("collapse");    }); 
 
+   $(".btn-Energy"             ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Energy"             ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Energy              )").addClass("collapse");    });
+   $(".btn-Sprit"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Sprit"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Sprit               )").addClass("collapse");    });
+   $(".btn-Top10"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Top10"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Top10               )").addClass("collapse");    });
+   $(".btn-Love"               ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Love"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Love                )").addClass("collapse");    });
 
    $(".btn-NEW"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("NEW"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NEW                 )").addClass("collapse");    });
+
+
 
    $(".btn-Mon"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Mon"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Mon                 )").addClass("collapse");    });
    $(".btn-Tue"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Tue"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Tue                 )").addClass("collapse");    });
