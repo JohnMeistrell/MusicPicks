@@ -72,7 +72,7 @@
                   Random:
                   </div>
                   <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-                    <button class="btn border border-light btn-primary btn-Random1"               type= "button" onclick="playRandom('1')"  > 1-Learn  </button>
+                    <button class="btn border border-light btn-primary btn-Random1"               type= "button" onclick="playRandom('1')"  > 1-Favorite  </button>
                     <button class="btn border border-light btn-primary btn-Random2"               type= "button" onclick="playRandom('2')"  > 2-Pianno </button>
                     <button class="btn border border-light btn-primary btn-Random3"               type= "button" onclick="playRandom('3')"  > 3-Theory </button>
                     <button class="btn border border-light btn-primary btn-Random4"               type= "button" onclick="playRandom('4')"  > 4-Beat   </button>
@@ -258,7 +258,7 @@
               <div class="dropdown">
                   <span class="text-nowrap bd-highlight font-weight-bolder">Show:</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
-                  <button class="btn border border-light btn-primary btn-LEARN"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-LEARN"             aria-controls = "multi-collapse-LEARN"       >Favorites</button>
+                  <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
                   <button class="btn border border-light btn-primary btn-BEAT"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-BEAT"              aria-controls = "multi-collapse-BEAT"        >Beat</button>
                   <button class="btn border border-light btn-primary btn-MUST"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"              aria-controls = "multi-collapse-MUST"        >Must</button>
@@ -285,11 +285,11 @@
                      </div>
                   </div>
                   <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid "     style="background-color:#fadadd;        padding:0px; margin:0px; border:5px solid #000000;" >
-                     <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Dennis John Dreher - Hobo Life - The Last Train</h2>
+                     <h2                class="       container-fluid text-center" style="padding:0px; margin:0px; background-color:#fadadd">Ghost - Unchained Melody - Righteous Brothers</h2>
                      <div class=" container-fluid pre-scrollable" style="min-height: 390px;               padding:0px; margin:0px">
-                     <a target="_blank" href="https://youtu.be/WpztuRsjHRg?si=e6o6HnS1nBeLwkHW">
+                     <a target="_blank" href="https://www.youtube.com/watch?v=587oWTI9twM">
                      <img id="imageP" class="container-fluid" style="min-height: 100px; height: 100%; width: 100%; object-fit: contain; padding:0px; margin:0px"
-                          src="./images/HooBooTrain1Title.jpg" alt="Photo1">
+                          src="https://i.ytimg.com/vi/587oWTI9twM/hqdefault.jpg" alt="Photo1">
                      </a>
                      </div>
                   </div>
@@ -346,7 +346,7 @@ function windowLoaded()
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ]) => ({ 
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti }));
 
-  const mapSet1 = mapRR.filter(user => user.vCat === '1'); /* -Learn  */
+  const mapSet1 = mapRR.filter(user => user.vCat === '1'); /* -Favorite  */
   const mapSet2 = mapRR.filter(user => user.vCat === '2'); /* -Pianno */
   const mapSet3 = mapRR.filter(user => user.vCat === '3'); /* -Theory */
   const mapSet4 = mapRR.filter(user => user.vCat === '4'); /* -Beat   */
@@ -717,7 +717,7 @@ $(document).ready(function(){
    $(".btn-all"                ).click(function(){  $(".collapse").addClass("show")   ;                                                     $(".myCol").removeClass("collapse");  });
    $(".btn-none"               ).click(function(){  $(".collapse").removeClass("show");  });
 
-   $(".btn-LEARN"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Favorites"          ); $(".myCol").removeClass("collapse");  }); 
+   $(".btn-Favorite"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Favorites"          ); $(".myCol").removeClass("collapse");  }); 
    $(".btn-Theory"             ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Theory"             ); $(".myCol").removeClass("collapse");  });
    $(".btn-BEAT"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("BEAT"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.BEAT                )").addClass("collapse");    }); 
    $(".btn-MUST"               ).click(function(){  $(".collapse").removeClass("show"); $("#curTag").text("MUST"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.MUST                )").addClass("collapse");    }); 
