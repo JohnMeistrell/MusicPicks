@@ -25,7 +25,21 @@ var contact1 = "me";
 
  var youtubeIDList = [ 
 
-"NEW - d4TkXN5Js8E" , 
+"NEW - xWuy7yQgoxg" , 
+"NEW - QOLzURdopV4" , 
+"NEW - oq-13UXCsOk" , 
+"NEW - oq-13UXCsOk" , 
+"NEW - oq-13UXCsOk" , 
+"NEW - -0UrQXWj-m8" , 
+"NEW - -0UrQXWj-m8" , 
+"NEW - NEKHOzrasdg" , 
+"NEW - 92aGhx3l5TA" , 
+"NEW - 92aGhx3l5TA" , 
+"NEW - tL3Rj-1OmRA" , 
+"NEW - CAo6UaKBYwI" , 
+"NEW - U99X10Y4SX8" , 
+"NEW - Pd5HdKwDSY0" , 
+"NEW - mC6pUlcDq6Q" , 
 
 "Dennis - zr-vdYUWXd0" 
 
