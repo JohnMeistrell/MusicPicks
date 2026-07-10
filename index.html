@@ -115,325 +115,6 @@
               </div></div>
            </div>
 
-<div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-   <div class="card card-body" style="background-color:#fadadd">   
-   <div class="row mr-auto                 container-fluid">
-       <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
-       Trades:
-       </div>
-       <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-
-          <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
-          <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
-
-          <button class="btn border border-light btn-primary btn-Buy"   type= "button" onclick="FindTran('Buy')"  >Buy</button>
-          <button class="btn border border-light btn-primary btn-Sell"  type= "button" onclick="FindTran('Sell')" >Sell</button>
-          <button class="btn border border-light btn-primary btn-Div"   type= "button" onclick="FindTran('Div')"  >Div</button>
-          <button class="btn border border-light btn-primary btn-Fund"  type= "button" onclick="FindTran('Fund')" >Fund</button>
-       <br>
-          <button class="btn border border-light btn-primary btn-KHC"   type= "button" onclick="FindTran('KHC')"  >KHC</button>
-          <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
-          <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
-          <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
-          <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
-       <br>
-       <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" >Paste raw trade csv.</textarea>
-       <table style="border:1px solid black;">
-          <colgroup>
-             <col id="cg0" style="width: 3%;"> 
-             <col id="cg1" style="width: 15%;">     <col id="cg2" style="width:  5%;">     <col id="cg3" style="width: 10%;">  
-             <col id="cg4" style="width: 10%;">     <col id="cg5" style="width: 10%;">     <col id="cg6" style="width:  5%;">  
-             <col id="cg7" style="width: 10%;">     <col id="cg8" style="width: 10%;">     <col id="cg9" style="width: 20%;">  
-          </colgroup>
-          <thead>
-          <tr> 
-             <th style="border: 1px solid black;" >0<br>#     </th>
-             <th style="border: 1px solid black;" >1<br>Got     </th>   <th style="border: 1px solid black;" >2<br>#    </th>
-             <th style="border: 1px solid black;" >3<br>$       </th>   <th style="border: 1px solid black;" >4<br>$Tot </th>
-             <th style="border: 1px solid black;" >5<br>Sold    </th>   <th style="border: 1px solid black;" >6<br>#    </th>
-             <th style="border: 1px solid black;" >7<br>$       </th>   <th style="border: 1px solid black;" >8<br>$Tot </th>
-             <th style="border: 1px solid black;" >9<br>% $ Days</th>
-         </tr>
-         </thead>
-         <tbody id="myTrans">
-<tr class="tAll  Fund"> 
-<td style="border: 1px solid black;" >22</td> 
-<td style="border: 1px solid black;" >03/02/2026 as of 02/27/2026  MoneyLink Transfer</td> 
-<td style="border: 1px solid black;" > JOHN MEISTRELL</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll  Fund"> 
-<td style="border: 1px solid black;" >21</td> 
-<td style="border: 1px solid black;" >03/03/2026 as of 03/02/2026  MoneyLink Transfer</td> 
-<td style="border: 1px solid black;" > JOHN MEISTRELL</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll KHC Buy"> 
-<td style="border: 1px solid black;" >20</td> 
-<td style="border: 1px solid black;" >03/11/2026 KHC Buy</td> 
-<td style="border: 1px solid black;" >50</td> 
-<td style="border: 1px solid black;" >23.155</td> 
-<td style="border: 1px solid black;" >1157.75</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll KHC Buy"> 
-<td style="border: 1px solid black;" >19</td> 
-<td style="border: 1px solid black;" >03/12/2026 KHC Buy</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >22.51</td> 
-<td style="border: 1px solid black;" >562.75</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll WEN Buy"> 
-<td style="border: 1px solid black;" >18</td> 
-<td style="border: 1px solid black;" >03/27/2026 WEN Buy</td> 
-<td style="border: 1px solid black;" >75</td> 
-<td style="border: 1px solid black;" >6.785</td> 
-<td style="border: 1px solid black;" >508.88</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll CBRL Buy"> 
-<td style="border: 1px solid black;" >17</td> 
-<td style="border: 1px solid black;" >03/27/2026 CBRL Buy</td> 
-<td style="border: 1px solid black;" >50</td> 
-<td style="border: 1px solid black;" >26.7399</td> 
-<td style="border: 1px solid black;" >1337.00</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll CBRL Sell"> 
-<td style="border: 1px solid black;" >16</td> 
-<td style="border: 1px solid black;" >04/06/2026 CBRL Sell</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >29.335</td> 
-<td style="border: 1px solid black;" >733.36</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll KHC Sell"> 
-<td style="border: 1px solid black;" >15</td> 
-<td style="border: 1px solid black;" >05/07/2026 KHC Sell</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >23.345</td> 
-<td style="border: 1px solid black;" >583.62</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll SMG Buy"> 
-<td style="border: 1px solid black;" >14</td> 
-<td style="border: 1px solid black;" >05/07/2026 SMG Buy</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >62.565</td> 
-<td style="border: 1px solid black;" >1564.13</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll  Fund"> 
-<td style="border: 1px solid black;" >13</td> 
-<td style="border: 1px solid black;" >05/12/2026 as of 05/11/2026  MoneyLink Transfer</td> 
-<td style="border: 1px solid black;" > JOHN MEISTRELL</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll CBRL Div"> 
-<td style="border: 1px solid black;" >12</td> 
-<td style="border: 1px solid black;" >05/13/2026 CBRL Qualified Dividend</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" >6.25</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll WEN Sell"> 
-<td style="border: 1px solid black;" >11</td> 
-<td style="border: 1px solid black;" >05/13/2026 WEN Sell</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >8.095</td> 
-<td style="border: 1px solid black;" >202.38</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll SMG Buy"> 
-<td style="border: 1px solid black;" >10</td> 
-<td style="border: 1px solid black;" >06/02/2026 SMG Buy</td> 
-<td style="border: 1px solid black;" >15</td> 
-<td style="border: 1px solid black;" >54.1299</td> 
-<td style="border: 1px solid black;" >811.95</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll WEN Buy"> 
-<td style="border: 1px solid black;" >9</td> 
-<td style="border: 1px solid black;" >06/03/2026 WEN Buy</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >6.955</td> 
-<td style="border: 1px solid black;" >173.88</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll SMG Div"> 
-<td style="border: 1px solid black;" >8</td> 
-<td style="border: 1px solid black;" >06/05/2026 SMG Qualified Dividend</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" >16.50</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll WEN Buy"> 
-<td style="border: 1px solid black;" >7</td> 
-<td style="border: 1px solid black;" >06/05/2026 WEN Buy</td> 
-<td style="border: 1px solid black;" >15</td> 
-<td style="border: 1px solid black;" >6.65</td> 
-<td style="border: 1px solid black;" >99.75</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll WEN Div"> 
-<td style="border: 1px solid black;" >6</td> 
-<td style="border: 1px solid black;" >06/15/2026 WEN Qualified Dividend</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" >7.00</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll SMG Sell"> 
-<td style="border: 1px solid black;" >5</td> 
-<td style="border: 1px solid black;" >06/15/2026 SMG Sell</td> 
-<td style="border: 1px solid black;" >15</td> 
-<td style="border: 1px solid black;" >63.8467</td> 
-<td style="border: 1px solid black;" >957.68</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll CBRL Sell"> 
-<td style="border: 1px solid black;" >4</td> 
-<td style="border: 1px solid black;" >06/16/2026 CBRL Sell</td> 
-<td style="border: 1px solid black;" >5</td> 
-<td style="border: 1px solid black;" >44.34</td> 
-<td style="border: 1px solid black;" >221.70</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll SMG Sell"> 
-<td style="border: 1px solid black;" >3</td> 
-<td style="border: 1px solid black;" >06/25/2026 SMG Sell</td> 
-<td style="border: 1px solid black;" >10</td> 
-<td style="border: 1px solid black;" >70.25</td> 
-<td style="border: 1px solid black;" >702.49</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll KHC Div"> 
-<td style="border: 1px solid black;" >2</td> 
-<td style="border: 1px solid black;" >06/26/2026 KHC Qualified Dividend</td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" ></td> 
-<td style="border: 1px solid black;" >20.00</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-<tr class="tAll KHC Sell"> 
-<td style="border: 1px solid black;" >1</td> 
-<td style="border: 1px solid black;" >07/01/2026 KHC Sell</td> 
-<td style="border: 1px solid black;" >25</td> 
-<td style="border: 1px solid black;" >24.8951</td> 
-<td style="border: 1px solid black;" >622.37</td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-<td style="border: 1px solid black;" ></td>  
-</tr> 
-
-         </tbody>
-       </table>
-       <br>
-       <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" >Clean.</textarea>
-       <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" >JSON</textarea>
-       <textarea id="RowPick"  name="rowPick1" rows="1" class="container-fluid text-nowrap" ></textarea>
-
-       </div>
-   </div></div>
-</div>
-
-
-
            <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
               <div class="card card-body" style="background-color:#fadadd">   
               <div class="row mr-auto                 container-fluid">
@@ -633,10 +314,13 @@
                   <button class="btn border border-light btn-primary btn-MUST"                 type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-MUST"              aria-controls = "multi-collapse-MUST"        >Must</button>
                   <button class="btn border border-light btn-primary btn-Daily"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Daily"             aria-controls = "multi-collapse-Daily"       >Daily</button>
                   <button class="btn border border-light btn-primary btn-Kayla"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Kayla"             aria-controls = "multi-collapse-Kayla"       >Kayla</button>
+                  <button class="btn border border-light btn-primary btn-Stock"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Stock"             aria-controls = "multi-collapse-Stock"       >Stock</button>
                   <button class="btn border border-light btn-primary btn-MODAL"                type= "button"  data-toggle="modal" data-target="#myModal">More</button>
 
               </div>
               </div>
+
+
 
               <!-- DENNIS STATIC VIDEOS -->
               <div class="card card-body Dennis"  style="padding:0px; margin:0px; border:0px; "> 
@@ -681,6 +365,320 @@
               <textarea id="myTextBox1" rows="5" cols="50" style="display: none;" ></textarea>
               <textarea id="myTextBox2" rows="5" cols="50" style="display: none;" ></textarea>
 
+
+              <div class="card card-body Stock"  style="padding:0px; margin:0px; border:0px; "> 
+              <div class="row mr-auto container-fluid collapse cc multi-collapse-Stock .multi-collapse-Stock show"> 
+              <h2                       class="         container-fluid text-center collapse cc multi-collapse-Stock .multi-collapse-Stock show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Stock </h2>
+
+
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+              <div class="card card-body" style="background-color:#fadadd">   
+              <div class="row mr-auto                 container-fluid">
+                 <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
+                 Pick:
+                 </div>
+                 <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
+                   <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
+                   <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
+                   <button class="btn border border-light btn-primary btn-Buy"   type= "button" onclick="FindTran('Buy')"  >Buy</button>
+                   <button class="btn border border-light btn-primary btn-Sell"  type= "button" onclick="FindTran('Sell')" >Sell</button>
+                   <button class="btn border border-light btn-primary btn-Div"   type= "button" onclick="FindTran('Div')"  >Div</button>
+                   <button class="btn border border-light btn-primary btn-Fund"  type= "button" onclick="FindTran('Fund')" >Fund</button>
+                   <button class="btn border border-light btn-primary btn-KHC"   type= "button" onclick="FindTran('KHC')"  >KHC</button>
+                   <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
+                   <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
+                   <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
+                   <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
+                   <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="BuildTran()"  >BUILD</button>
+                </div>
+              </div></div>
+           </div>
+
+
+              </div>
+                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+                  <div class="card card-body" style="background-color:#fadadd"> 
+                  <div class="row mr-auto container-fluid">
+                  <table style="border:1px solid black; background-color: white; ">
+
+                  <tbody class="row mr-auto container-fluid px-1">
+
+<tr class="row mr-auto container-fluid tAll  Fund"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/02 02/27  ach</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"> jfm</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">22 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll  Fund"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/03 03/02  ach</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"> jfm</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">21 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/11 KHC Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">50</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">23.155</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">1157.75</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">20 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/12 KHC Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">22.51</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">562.75</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">19 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll WEN Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/27 WEN Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">75</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">6.785</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">508.88</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">18 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll CBRL Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/27 CBRL Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">50</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">26.7399</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">1337.00</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">17 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll CBRL Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">04/06 CBRL Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">29.335</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">733.36</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">16 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">05/07 KHC Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">23.345</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">583.62</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">15 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll SMG Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">05/07 SMG Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">62.565</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">1564.13</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">14 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll  Fund"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">05/12 05/11  ach</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"> jfm</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">13 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll CBRL Div"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">05/13 CBRL Div</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">6.25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">12 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll WEN Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">05/13 WEN Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">8.095</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">202.38</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">11 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll SMG Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/02 SMG Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">15</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">54.1299</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">811.95</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">10 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll WEN Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/03 WEN Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">6.955</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">173.88</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">9 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll SMG Div"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/05 SMG Div</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">16.50</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">8 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll WEN Buy"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/05 WEN Buy</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">15</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">6.65</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">99.75</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">7 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll WEN Div"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/15 WEN Div</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">7.00</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">6 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll SMG Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/15 SMG Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">15</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">63.8467</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">957.68</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">5 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll CBRL Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/16 CBRL Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">5</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">44.34</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">221.70</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">4 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll SMG Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/25 SMG Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">10</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">70.25</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">702.49</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">3 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Div"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">06/26 KHC Div</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;"></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">20.00</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">2 L10</td> 
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Sell"> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">07/01 KHC Sell</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">24.8951</td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">622.37</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> 
+<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">1 L10</td> 
+</tr> 
+
+                  </tbody></table>
+                  <br>
+
+                  <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" >Paste raw trade csv.</textarea>
+                  <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" >Clean.</textarea>
+                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" >JSON</textarea>
+                  <textarea id="RowPick"  name="rowPick1" rows="1" class="container-fluid text-nowrap" ></textarea>
+                  </div></div></div>
+              </div>
+
+
               <!-- FOOTER  -->
               <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
                    <div class="text-center">                                                                    Website designed by John Meistrell NJ
@@ -706,6 +704,56 @@
 function windowLoaded() 
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   {
+   }
+</script>
+
+<script type="text/javascript">
+
+function BuildTran() {
+
+  /* Get raw csv from 1st box. Should be free of commas. Remove double quotes and dollar signs. */
+  var textarea = document.getElementById('RawList'); /* remove($ , -) */ let text = textarea.value.trim();  text = text.replaceAll('"',''); text = text.replaceAll("$",''); text = text.replaceAll("-",''); 
+
+text = text.replaceAll('MoneyLink Transfer','ach');
+text = text.replaceAll('as of ',''); 
+text = text.replaceAll('/2026',''); 
+text = text.replaceAll('JOHN MEISTRELL','jfm'); 
+text = text.replaceAll('Qualified Dividend','Div'); 
+
+  var aNewTags2 = [];  var aLines = text.split(/\r?\n/);  
+  aLines.forEach((elem1,index) => { const uniqueId = index + 1; elem2 = uniqueId +","+ elem1;  aNewTags2.push( elem2 );  }); aNewTags2.reverse();
+  var textarea2 = document.getElementById('TagsList');   var newLineString = aNewTags2.join('\n'); textarea2.value = newLineString;
+
+  var dataArray2 = aNewTags2.map(row => row.split(","));
+
+  var dataArray = text   .trim()  .split("\n")  .map(row => row.split(",")); 
+
+  var codeBlock = ''; var classBlock = '';
+
+  /* Row and Columns */
+  var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
+
+  var nn = 0;
+  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount ] of dataArray2 ) {
+    nn += 1; classBlock = 'tAll ' + vSymbol; if ( vAction === 'Buy' ) { classBlock += ' Buy' } else if ( vAction === 'Sell' ) { classBlock += ' Sell' } else if ( vAction === 'Div' ) { classBlock += ' Div' } else if ( vAction === 'ach' ) { classBlock += ' Fund' } else classBlock += ' Oth'
+ 
+    codeBlock += '<tr class="row mr-auto container-fluid ' + classBlock + '"> \n'; /* Columns */
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 20%;">' + vDate + ' ' + vSymbol + ' ' + vAction + '</td> \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">' + vQuantity   +                           '</td> \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 22%;">' + vPrice      +                           '</td> \n';
+    codeBlock += '<td class="col-md-2" style="border: 1px solid black; max-width: 25%;">' + vAmount     +                           '</td> \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 15%; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ></td> \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 22%; background-color: green; " contenteditable="true" onmouseleave="calcTot(this)" ></td> \n';
+    codeBlock += '<td class="col-md-2" style="border: 1px solid black; max-width: 25%;"></td>  \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 15%;"></td>  \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">x0614</td> \n';
+    codeBlock += '<td class="col-md-1" style="border: 1px solid black; max-width: 15%;">' + vNN  + ' L10</td> \n';
+    codeBlock += '</tr> \n';
+
+  }
+  var textarea3 = document.getElementById('CutJSON');   textarea3.value = codeBlock ;
+  var myTrans = document.getElementById('myTrans'); 
+  myTrans.insertAdjacentHTML('beforeend', codeBlock );
    }
 </script>
 
@@ -1132,6 +1180,8 @@ $(document).ready(function(){
    $(".btn-Love"               ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Love"               ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Love                )").addClass("collapse");    });
 
    $(".btn-NEW"                ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("NEW"                ); $(".myCol").removeClass("collapse"); $(".myCol:not(.NEW                 )").addClass("collapse");    });
+
+   $(".btn-Stock"              ).click(function(){  $(".collapse").removeClass("show"); $('#curTag').text("Stock"              ); $(".myCol").removeClass("collapse"); $(".myCol:not(.Stock               )").addClass("collapse");    });
 
 
 
