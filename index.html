@@ -678,6 +678,30 @@
                   </div></div></div>
               </div>
 
+              </div>
+                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+                  <div class="card card-body" style="background-color:#fadadd"> 
+                  <div class="row mr-auto container-fluid">
+                  <table style="border:1px solid black; background-color: white; ">
+                  <tbody class="row mr-auto container-fluid px-1">
+</tr> 
+<tr class="row mr-auto container-fluid tAll KHC Sell"> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 20%;">07/01 KHC Sell</td> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 15%;">25</td> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 22%;">24.8951</td> 
+<td class="col-sm-8" style="border: 1px solid black; max-width: 25%;">622.37</td> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 15%; background-color: yellow;"  ></td> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 22%; background-color: green; "  ></td> 
+<td class="col-sm-8" style="border: 1px solid black; max-width: 25%;">FIX</td>  
+<td class="col-sm-4" style="border: 1px solid black; max-width: 15%;"></td>  
+<td class="col-sm-4" style="border: 1px solid black; max-width: 15%;">x0614</td> 
+<td class="col-sm-4" style="border: 1px solid black; max-width: 15%;">1 L10</td> 
+</tr> 
+                  </tbody></table>
+                  </div></div></div>
+              </div>
+
+
 
               <!-- FOOTER  -->
               <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
@@ -772,6 +796,68 @@ function FindTran(selSet) {
     console.log( eC );
     for (var eT of eC) { eT.hidden = false; }
  }
+</script>
+
+
+<script>
+
+function calcTot(e) {
+
+const getDaysBetween = (date1, date2) => {
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+  const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+  return Math.floor(Math.abs(utc2 - utc1) / msPerDay);
+};
+
+
+  var eRow = e.parentElement;
+  var eDateSymAct      = eRow.cells[0].textContent;
+  var eQuantity        = parseFloat(eRow.cells[1].textContent);
+  var ePrice           = parseFloat(eRow.cells[2].textContent);
+  var eTotAmt          = parseFloat(eRow.cells[3].textContent);
+
+  var eSellQuanity     = parseFloat(eRow.cells[4].textContent);
+  var eSellPrice       = parseFloat(eRow.cells[5].textContent);
+  var eSellDollar      = eRow.cells[6].textContent;
+
+  var eSellPercentDays = eRow.cells[7].textContent;
+  var eXdiv            = eRow.cells[8].textContent;
+  var eNNlot           = eRow.cells[9].textContent;
+
+  if ( ( typeof ePrice === 'number' && !isNaN( ePrice ) ) &&  ( typeof eSellPrice === 'number' && !isNaN( eSellPrice ) ) ) {
+
+     if ( isNaN( eSellQuanity ) ) { eSellQuanity = eQuantity ; eRow.cells[4].textContent = eQuantity  }
+
+     var nProfitShare = eSellPrice - ePrice ;
+     var nProfit      = ( nProfitShare * eSellQuanity ).toFixed(2);
+     var nPercent     = ( ( nProfitShare / ePrice ) * 100 ).toFixed(2);
+
+     var sDateBuymmdd = eDateSymAct .slice(0, 5); 
+
+     var [eDate , eSym , eAct] = eDateSymAct.split(' ');
+     var ymd = ( '2026/' + eDate ).replace("/", "-"); ;
+
+
+var d1 = new Date("2026-01-01"); d1 = new Date(ymd);
+var d2 = new Date("2026-07-11"); d2 = new Date("2026-05-07");
+var dd = getDaysBetween(d1, d2); 
+
+var inM = Math.trunc(dd / 30);
+var inD = dd % 30;
+
+     eRow.cells[6].textContent = nProfit;
+     eRow.cells[7].textContent = nPercent + '% ' + inM + "m" + inD + 'd' ;
+
+
+     console.log( eSellPrice +' '+ ePrice  +' '+ eProfitShare.toFixed(2) +' '+ eProfit   ); 
+  }
+
+}
+
+</script>
+
+
 </script>
 
 <script>
