@@ -16,6 +16,7 @@
 
     <script src="listImagesJSON.txt"> /* List images on C drive */ </script>
 
+    <script src="trans.txt"> </script>
 
 
 <body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
@@ -66,6 +67,16 @@
                                        <a target="_blank" href="https://virtualpiano.net/?instr=classical-piano"    >Pianno</a> -
                                        <a target="_blank" href="https://www.onlinepianist.com/virtual-piano"              >P</a></th>
                       </tr>
+
+                      <tr>
+                         <th style="border: 1px solid black; padding:3px;">      
+                                       <a target="_blank" href="https://portal.barnegatschools.com/schoolfi/portal?tab1=payroll&tab2=timesheets&tab3=list&action=form">BusESY</a></th>
+                         <th style="border: 1px solid black; padding:3px;"  >
+                                       <a target="_blank" href="https://barnegatschools-nj.safeschools.com/login/">School Trainning</a></th>
+                         <th style="border: 1px solid black; padding:3px;" ></th>
+
+                      </tr>
+
                       <tr>
                          <th style="border: 1px solid black; padding:3px;">      
                                        <a target="_blank" href="https://www.text2speech.org/"            >T2Speech</a></th>
@@ -76,6 +87,10 @@
                          <th style="border: 1px solid black; padding:3px;" >
                                        <a target="_blank" href="https://text-compare.com/"                    >Compare </a></th>
                       </tr>
+
+
+
+
                     </table>
                  </div>
               </div></div>
@@ -402,7 +417,7 @@
                   <div class="row mr-auto container-fluid">
                   <table style="border:1px solid black; background-color: white; ">
 
-                  <tbody class="row mr-auto container-fluid px-1">
+                  <tbody id='myTbl' class="row mr-auto container-fluid px-1">
 
 <tr class="row mr-auto container-fluid tAll  Fund"> 
 <td class="col-md-1" style="border: 1px solid black; max-width: 20%;">03/02 02/27  ach</td> 
@@ -676,6 +691,8 @@
                   <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" >Clean.</textarea>
                   <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" >JSON</textarea>
                   <textarea id="RowPick"  name="rowPick1" rows="1" class="container-fluid text-nowrap" ></textarea>
+                  <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe(this)"  > <input id='me2' type="text"style="width: 50px" onmouseleave="ckMe(this)"  >
+
                   </div></div></div>
               </div>
 
@@ -687,10 +704,10 @@
                   <tbody class="row mr-auto container-fluid px-1">
 </tr> 
 <tr class="row mr-auto container-fluid tAll KHC Sell"> 
-<td class="col-sm-4" style="border: 1px solid black; min-width: 25%; max-width: 32%;">07/01 KHC Sell</td> 
-<td class="col-sm-4" style="border: 1px solid black; min-width: 25%; max-width: 16%;">25</td> 
-<td class="col-sm-4" style="border: 1px solid black;                 max-width: 32%;">24.8951</td> 
-<td class="col-sm-8" style="border: 1px solid black;    width: 50px; max-width: 32%;">622.37</td> 
+<td class="col-sm-4" style="border: 1px solid black; min-width: 20%; max-width: 25%;">07/01 KHC Sell</td> 
+<td class="col-sm-4" style="border: 1px solid black; min-width: 10%; max-width: 15%;">25</td> 
+<td class="col-sm-4" style="border: 1px solid black; min-width: 20%; max-width: 25%;">24.8951</td> 
+<td class="col-sm-8" style="border: 1px solid black; min-width: 20%; max-width: 25%;">622.37</td> 
 <td class="col-sm-4" style="border: 1px solid black; max-width: 15%; background-color: yellow;"  ></td> 
 <td class="col-sm-4" style="border: 1px solid black; max-width: 30%; background-color: green; "  ></td> 
 <td class="col-sm-8" style="border: 1px solid black; max-width: 30%;">FIX</td>  
@@ -734,7 +751,23 @@ function windowLoaded()
 
 <script type="text/javascript">
 
+function ckMe(e) {
+
+ var tMeIn = document.getElementById('RawList');
+ var tMe1 = document.getElementById('me1').value;  
+ var tMe2 = document.getElementById('me2').value; 
+ if ( tMe1 === 'jj' && tMe2 === 'jj' ) {
+    if (tMeIn.value.trim() === "") {
+        tMeIn.value = transIn;
+        document.getElementById('myTbl').innerHTML = '';
+    }
+ }
+
+}
+
 function BuildTran() {
+
+
 
   /* Get raw csv from 1st box. Should be free of commas. Remove double quotes and dollar signs. */
   var textarea = document.getElementById('RawList'); /* remove($ , -) */ let text = textarea.value.trim();  text = text.replaceAll('"',''); text = text.replaceAll("$",''); text = text.replaceAll("-",''); 
@@ -779,15 +812,16 @@ text = text.replaceAll('Qualified Dividend','Div');
   var textarea3 = document.getElementById('CutJSON');   textarea3.value = codeBlock ;
   var myTrans = document.getElementById('myTrans'); 
   myTrans.insertAdjacentHTML('beforeend', codeBlock );
-   }
+}
 </script>
 
 <script>
+
 function FindTran2(selSet) {
      var eC = document.getElementsByClassName('tAll');
      if        (selSet == 'Hide') {    for (var eT of eC) { eT.hidden = true;  };     } 
      if        (selSet == 'All')  {    for (var eT of eC) { eT.hidden = false; };     } 
- }
+}
 
 function FindTran(selSet) {
     var eC = document.getElementsByClassName('tAll');
