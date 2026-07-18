@@ -327,7 +327,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.0)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -409,12 +409,13 @@
                    <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
                    <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
                    <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
+                   <button class="btn border border-light btn-primary btn-SPCX"  type= "button" onclick="FindTran('SPCX')" >SPCX</button>
                    <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
-                   <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="BuildTran()"  >BUILD</button>
+                   <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"  >BUILD</button>
+                   <input id='sellDate' type="text"  style="width: 100px" > 
                 </div>
               </div></div>
            </div>
-
 
               </div>
                   <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
@@ -438,41 +439,6 @@
                   </tbody></table>
                   </div></div></div>
               </div>
-
-
-<hr><br>ONE:  <br>  <!-- --------------------------------------------------------------- -->
-                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-                  <div class="card card-body" style="background-color:#fadadd"> 
-                  <div class="row mr-auto container-fluid">
-                  <table style="border:1px solid black; background-color: white; ">
-                  <tbody class="row mr-auto container-fluid px-1">
-                  <div class="row mr-auto container-fluid px-1 ">
-
-    <div class="col-sm-3">  <div class="row">
-         <!-- n        --> <div class="col-3"  style="border: 1px solid black;" >n22</div>
-         <!-- DTSymAct --> <div class="col-9" style="border: 1px solid black; " >07/01 KHC Sell</div> 
-    </div> </div>
-
-    <div class="col-sm-3">  <div class="row">
-         <!-- Shares   --> <div class="col-3" style="border: 1px solid black; " >25</div> 
-         <!-- Price    --> <div class="col-4" style="border: 1px solid black; " >24.8951</div> 
-         <!-- Tot      --> <div class="col-5" style="border: 1px solid black; " >622.37</div> 
-    </div> </div>
-
-    <div class="col-sm-3">  <div class="row">
-         <!-- Shares   --> <div class="col-3" style="border: 1px solid black; background-color: yellow;" >78</div> 
-         <!-- Price    --> <div class="col-4" style="border: 1px solid black; background-color: green; " >54.78</div> 
-         <!-- Tot      --> <div class="col-5" style="border: 1px solid black;" >783.92</div> 
-    </div> </div>
-
-    <div class="col-sm-3">  <div class="row">
-         <!-- Lot     -->  <div class="col-3"  style="border: 1px solid black;" >L10</div>
-         <!-- % 1m13d  --> <div class="col-4"  style="border: 1px solid black;" >2m14d</div>
-         <!-- xDiv %   --> <div class="col-5"  style="border: 1px solid black;" >x0614</div> 
-    </div> </div>
-
-</div>  </tbody></table>  </div></div></div>   </div>
-
 
               <!-- FOOTER  -->
               <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
@@ -502,6 +468,19 @@ function windowLoaded()
    }
 </script>
 
+<script type="text/javascript">
+  const today = new Date();
+
+  const formattedDate = new Intl.DateTimeFormat('en-US', {
+    month: '2-digit',
+    day: '2-digit',
+    year: 'numeric'
+  }).format(today);
+
+  console.log(formattedDate); // Outputs: 07/15/2026
+  var sellDateE = document.getElementById('sellDate'); sellDate.value = formattedDate;  
+
+</script>
 <script type="text/javascript">
 
 function ckMe() {
@@ -540,7 +519,7 @@ text = text.replaceAll('JOHN MEISTRELL','jfm');
 text = text.replaceAll('Qualified Dividend','Div'); 
 
   var aNewTags2 = [];  var aLines = text.split(/\r?\n/);  
-  aLines.forEach((elem1,index) => { const uniqueId = index + 1; elem2 = uniqueId +","+ elem1;  aNewTags2.push( elem2 );  }); aNewTags2.reverse();
+  aLines.forEach((elem1,index) => { if ( elem1.indexOf("jmInfo") === -1) { elem1 += ',jmInfo,,,,,'; }; const uniqueId = index + 1; elem2 = uniqueId +","+ elem1;  aNewTags2.push( elem2 );  }); aNewTags2.reverse();
   var textarea2 = document.getElementById('TagsList');   var newLineString = aNewTags2.join('\n'); textarea2.value = newLineString;
 
   var dataArray2 = aNewTags2.map(row => row.split(","));
@@ -566,7 +545,7 @@ text = text.replaceAll('Qualified Dividend','Div');
     </div> </div> 
     <div class="col-sm-3">  <div class="row"> \n
          <div class="col-3" style="border: 1px solid black; font-weight: bold;background-color: yellow;">sQ</div> 
-         <div class="col-4" style="border: 1px solid black; font-weight: bold;background-color: greenn;">sPrice</div> 
+         <div class="col-4" style="border: 1px solid black; font-weight: bold;background-color: lightgreen;">sPrice</div> 
          <div class="col-5" style="border: 1px solid black; font-weight: bold;">sTot</div>  
     </div> </div> 
     <div class="col-sm-3">  <div class="row"> \n
@@ -576,10 +555,10 @@ text = text.replaceAll('Qualified Dividend','Div');
     </div> </div> \n
 </div> \n `
 
-
-
   var nn = 0;
-  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount ] of dataArray2 ) {
+  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays ] of dataArray2 ) 
+  {
+    if (vJmInfo === 'undefined' ) { vJmInfo = ''; vSplit = ''; vInto = ''; vProf = ''; vLot = ''; vPerDays }
     nn += 1; classBlock = 'tAll ' + vSymbol; if ( vAction === 'Buy' ) { classBlock += ' Buy' } else if ( vAction === 'Sell' ) { classBlock += ' Sell' } else if ( vAction === 'Div' ) { classBlock += ' Div' } else if ( vAction === 'ach' ) { classBlock += ' Fund' } else classBlock += ' Oth'
  
     codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '"> \n'; /* Columns */
@@ -596,14 +575,24 @@ text = text.replaceAll('Qualified Dividend','Div');
     codeBlock += '    </div> </div> \n'; 
 
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
-    codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: yellow;" contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
-    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: green;"  contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
-    codeBlock += '         <div class="col-5" style="border: 1px solid black; " >783.92</div>  \n'; 
+    if ( vAction === 'Sell' ) { 
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: pink;"      contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightblue;" contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    } 
+    else if ( vAction === 'Buy' ) { 
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: yellow;"     contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightgreen;" contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    } else {
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; min-height: 20px; " ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; min-height: 20px; " ></div> \n';
+
+    }
+    codeBlock += '         <div class="col-5" style="border: 1px solid black; " ></div>  \n'; 
     codeBlock += '    </div> </div> \n'; 
 
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
-    codeBlock += '         <div class="col-3"  style="border: 1px solid black;" >L10  </div> \n';
-    codeBlock += '         <div class="col-4"  style="border: 1px solid black;" >     </div> \n';
+    codeBlock += '         <div class="col-3"  style="border: 1px solid black;" >' + vLot     + '</div> \n';
+    codeBlock += '         <div class="col-4"  style="border: 1px solid black;" >' + vPerDays + '</div> \n';
     codeBlock += '         <div class="col-5"  style="border: 1px solid black;" >x0614</div> \n'; 
     codeBlock += '    </div> </div> \n'; 
 
@@ -638,6 +627,9 @@ function FindTran(selSet) {
 <script>
 
 function calcTot(e) {
+
+var sellDate = document.getElementById('sellDate').value; 
+console.log(sellDate);
 
 const getDaysBetween = (date1, date2) => {
   const msPerDay = 1000 * 60 * 60 * 24;
@@ -698,11 +690,13 @@ const getDaysBetween = (date1, date2) => {
      var sDateBuymmdd = eDateSymAct .slice(0, 5); 
 
      var [eDate , eSym , eAct] = eDateSymAct.split(' ');
-     var ymd = ( '2026/' + eDate ).replace("/", "-"); ;
+     var ymdBuy = ( '2026/' + eDate ).replace("/", "-"); ;
+
+     var ymdSell = ( sellDate ).replace("/", "-"); ;
 
 
-     var d1 = new Date("2026-01-01"); d1 = new Date(ymd);
-     var d2 = new Date("2026-07-11"); d2 = new Date("2026-05-07");
+     var d1 = new Date("2026-01-01"); d1 = new Date(ymdBuy);
+     var d2 = new Date("2026-07-11"); d2 = new Date(ymdSell);
      var dd = getDaysBetween(d1, d2); 
 
      var inM = Math.trunc(dd / 30);
@@ -712,7 +706,7 @@ const getDaysBetween = (date1, date2) => {
      eSellPercentDaysE.textContent = nPercent + '% ' + inM + "m" + inD + 'd' ;
 
 
-     console.log( eSellPrice +' '+ ePrice  +' '+ eProfitShare.toFixed(2) +' '+ eProfit   ); 
+     console.log( eSellPrice +' '+ ePrice  +' '+ nProfitShare.toFixed(2) +' '+ nProfit   ); 
 
 
   }

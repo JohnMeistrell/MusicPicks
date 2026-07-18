@@ -16,7 +16,7 @@ var transIn = `
 "06/03/2026","Buy","WEN","WENDYS CO CLASS A","25","$6.955","","-$173.88"
 "06/02/2026","Buy","SMG","SCOTTS MIRACLE-GRO CO","15","$54.1299","","-$811.95"
 "05/18/2026 as of 05/15/2026","Bank Interest","","BANK INT ...526 TD BANK NA","","","","$0.04"
-"05/13/2026","Sell","WEN","WENDYS CO CLASS CLASS A","25","$8.095","","$202.38"
+"05/13/2026","Sell","WEN","WENDYS CO CLASS CLASS A","25","$8.095","","$202.38",jmInfo,,,,L01,
 "05/13/2026","Qualified Dividend","CBRL","CRACKER BARREL OLD CTRY","","","","$6.25"
 "05/12/2026 as of 05/11/2026","MoneyLink Transfer","","Tfr POLICE AND FIRE FE, JOHN MEISTRELL","","","","$2000.00"
 "05/07/2026","Buy","SMG","SCOTTS MIRACLE-GRO CO","25","$62.565","","-$1564.13"
@@ -24,7 +24,9 @@ var transIn = `
 "04/16/2026 as of 04/15/2026","Bank Interest","","BANK INT ...526 TD BANK NA","","","","$0.05"
 "04/06/2026","Sell","CBRL","CRACKER BARREL OLD CTRY","25","$29.335","$0.02","$733.36"
 "03/27/2026","Buy","CBRL","CRACKER BARREL OLD CTRY","50","$26.7399","","-$1337.00"
-"03/27/2026","Buy","WEN","WENDYS CO CLASS CLASS A","75","$6.785","","-$508.88"
+"03/27/2026","Buy","WEN","WENDYS CO CLASS CLASS A","75","$6.785","","-$508.88",jmInfo,split,orig,,,
+"03/27/2026","Buy","WEN","WENDYS CO CLASS CLASS A","25","$6.785","","-$508.88",jmInfo,split,into,98.25,L01,19.31% 1m17d
+"03/27/2026","Buy","WEN","WENDYS CO CLASS CLASS A","50","$6.785","","-$508.88"
 "03/16/2026 as of 03/15/2026","Bank Interest","","BANK INT ...526 TD BANK NA","","","","$0.04"
 "03/12/2026","Buy","KHC","KRAFT HEINZ CO","25","$22.51","","-$562.75"
 "03/11/2026","Buy","KHC","KRAFT HEINZ CO","50","$23.155","","-$1157.75"
