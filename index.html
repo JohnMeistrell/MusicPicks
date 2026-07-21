@@ -327,7 +327,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.2)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.3)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -409,11 +409,12 @@
                    <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
                    <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
                    <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
-                   <button class="btn border border-light btn-primary btn-WEN-Act"   type= "button" onclick="FindTran('WEN-Act')"  >WEN-Act</button>
-                   <button class="btn border border-light btn-primary btn-WEN-Lot"   type= "button" onclick="FindTran('WEN-Lot')"  >WEN-Lot</button>
+                   <button class="btn border border-light btn-primary btn-WEN-Act" type= "button" onclick="FindTran('WEN-Act')"  >WEN-Act</button>
+                   <button class="btn border border-light btn-primary btn-WEN-Lot" type= "button" onclick="FindTran('WEN-Lot')"  >WEN-Lot</button>
                    <button class="btn border border-light btn-primary btn-SPCX"  type= "button" onclick="FindTran('SPCX')" >SPCX</button>
                    <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
-                   <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"  >BUILD</button>
+                   <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"      >BUILD</button>
+                   <button class="btn border border-light btn-primary btn-SAVE"  type= "button" onclick="saveTrans()"       >SAVE</button>
                    <input id='sellDate' type="text"  style="width: 100px" > 
                 </div>
               </div></div>
@@ -467,10 +468,15 @@
 function windowLoaded() 
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   {
+
+var aLinesPart2 =  [];
+var aLines      =  []; 
    }
 </script>
 
 <script type="text/javascript">
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
   const today = new Date();
 
   const formattedDate = new Intl.DateTimeFormat('en-US', {
@@ -482,7 +488,9 @@ function windowLoaded()
   var sellDateE = document.getElementById('sellDate'); sellDate.value = formattedDate;  
 
 </script>
-<script type="text/javascript">
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function ckMe() {
 
@@ -504,7 +512,9 @@ function ckMe() {
 
 </script>
 
-<script type="text/javascript">
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function BuildTran() {
 
@@ -517,7 +527,7 @@ text = text.replaceAll('/2026','');
 text = text.replaceAll('JOHN MEISTRELL','jfm'); 
 text = text.replaceAll('Qualified Dividend','Div'); 
 
-  var aNewTags2 = [];  var aLines = text.split(/\r?\n/);  
+  var aNewTags2 = []; aLines = text.split(/\r?\n/); aLinesPart2 = Array.from({ length: aLines.length }, (_, index) => " ");
   aLines.forEach((elem1,index) => { if ( elem1.indexOf("jmInfo") === -1) { elem1 += ',jmInfo,,,,,'; }; const uniqueId = index + 1; elem2 = uniqueId +","+ elem1;  aNewTags2.push( elem2 );  }); aNewTags2.reverse();
   var textarea2 = document.getElementById('TagsList');   var newLineString = aNewTags2.join('\n'); textarea2.value = newLineString;
 
@@ -622,13 +632,20 @@ text = text.replaceAll('Qualified Dividend','Div');
 }
 </script>
 
-<script>
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function FindTran2(selSet) {
      var eC = document.getElementsByClassName('tAll');
      if        (selSet == 'Hide') {    for (var eT of eC) { eT.hidden = true;  };     } 
      if        (selSet == 'All')  {    for (var eT of eC) { eT.hidden = false; };     } 
 }
+</script>
+
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function FindTran(selSet) {
     var eC = document.getElementsByClassName('tAll');
@@ -641,7 +658,8 @@ function FindTran(selSet) {
 </script>
 
 
-<script>
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function calcTot(e) {
 
@@ -659,7 +677,7 @@ const getDaysBetween = (date1, date2) => {
 
   var aRowTcc  =  [...aRowTc[0].children];
   var aRowTccc = [...aRowTcc[0].children];
-  var eNN              = aRowTccc[0].textContent;
+  var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1;
   var eDateSymAct      = aRowTccc[1].textContent;
 
   var aRowTcc  =  [...aRowTc[1].children];
@@ -719,10 +737,12 @@ const getDaysBetween = (date1, date2) => {
      var inD = dd % 30;
 
      eSellDollarE.textContent = nProfit;
-     eSellPercentDaysE.textContent = nPercent + '% ' + inM + "m" + inD + 'd' ;
-
+     var nInDays = '% ' + inM + "m" + inD + 'd' ;      eSellPercentDaysE.textContent = nInDays;
 
      console.log( eSellPrice +' '+ ePrice  +' '+ nProfitShare.toFixed(2) +' '+ nProfit   ); 
+
+     aLinesPart2[iNN] = ',jmMEME,,,' + nProfit +',Lnn,' + nPercent +'  '+ nInDays;    
+     console.log( aLinesPart2[iNN] ) ;
 
 
   }
@@ -732,10 +752,31 @@ const getDaysBetween = (date1, date2) => {
 
 </script>
 
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
+
+function saveTrans() {
+
+  console.log('save Trans () aLines Bef'); console.log( aLines );
+  console.log('save Trans () aLinesPart2 Bef'); console.log( aLinesPart2 );
+
+  var aLinesSave = []; /* [...aLines]; */
+  aLines.forEach((user, index) => {
+      aLinesSave.push(aLines[index] + aLinesPart2[index]);
+  });
+  var textarea3 = document.getElementById('CutJSON');   textarea3.value = aLinesSave.join('\n') ;
+
+
+  console.log('save Trans () aLines Aft'); console.log( aLines );
+  console.log('save Trans () aLinesSave Aft'); console.log( aLinesSave );
+}
 </script>
 
-<script>
+
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
   const mapRR = mapVideoDetails.map(([ 
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ]) => ({ 
@@ -807,10 +848,10 @@ const getDaysBetween = (date1, date2) => {
 </script>
 
 
-<script type="text/javascript">
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+<script type="text/javascript">    
+
+
 function Data(el,eItem)
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
  {
     var itemT =  el.name;
     window.alert(eItem);
@@ -818,17 +859,17 @@ function Data(el,eItem)
  } 
 </script>
 
+<script type="text/javascript">    
 
-
-<script type="text/javascript">
 
 function isNotEmpty(value) {
       return value != null && String(value).trim().length > 0;
 }
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+</script>
 
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+<script type="text/javascript">  
+
 var saveR = [];
 
   var aTagsList = [];
@@ -1101,8 +1142,6 @@ const textBox2 = document.getElementById("myTextBox2"); textBox1.value = buttonC
 <script>
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 $(document).ready(function(){
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 
 /* $(".myCol:not(.Daily)").removeClass("show");    $(".myCol:not(.Daily)").addClass("collapse");   <div class="col-xs-4 col-sm-4 col-lg-4 col-xl-4 container-fluid Theory collapse cc myCol show" style=  */
 
