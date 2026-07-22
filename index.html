@@ -110,7 +110,7 @@
                   <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
                     <a target="_blank" href="https://www.google.com/search?q=stock+chart+khc" >KHC</a> <small> x0306 22 23 24</small>
                     <a target="_blank" href="https://www.google.com/search?q=stock+chart+CBRL">CBRL</a><small> x0116 25 27</small>
-                    <a target="_blank" href="https://www.google.com/search?q=stock+chart+EXC">EXC</a>  <small> x0302 35 43</small>
+                    <a target="_blank" href="https://www.google.com/search?q=excelon+stock+chart">EXC</a>  <small> x0302 35 43</small>
                     <a target="_blank" href="https://www.google.com/search?q=stock+chart+PEG">PEG</a>  <small> x0310 55 65</small>
                     <a target="_blank" href=" https://www.google.com/search?q=stock+chart+WEN">WEN</a>  <small> x0302 7</small>
                     <a target="_blank" href=" https://www.google.com/search?q=stock+chart+SMG">SMG Scott</a>
@@ -408,6 +408,7 @@
                    <button class="btn border border-light btn-primary btn-KHC"   type= "button" onclick="FindTran('KHC')"  >KHC</button>
                    <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
                    <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
+                   <button class="btn border border-light btn-primary btn-EXC"   type= "button" onclick="FindTran('EXC')"  >EXC</button>
                    <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
                    <button class="btn border border-light btn-primary btn-WEN-Act" type= "button" onclick="FindTran('WEN-Act')"  >WEN-Act</button>
                    <button class="btn border border-light btn-primary btn-WEN-Lot" type= "button" onclick="FindTran('WEN-Lot')"  >WEN-Lot</button>
@@ -415,7 +416,15 @@
                    <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
                    <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"      >BUILD</button>
                    <button class="btn border border-light btn-primary btn-SAVE"  type= "button" onclick="saveTrans()"       >SAVE</button>
+ 
+                   <input type="checkbox" id="myActive"   name="myActive"   value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Act')  ">Active</input>
+                   <input type="checkbox" id="myHistory"  name="myHistory"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">History</input>
+                   <input type="checkbox" id="myLot"  name="myLot"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">Lot</input>
+
                    <input id='sellDate' type="text"  style="width: 100px" > 
+
+                   <label id='lookFor' hidden="hidden">
+
                 </div>
               </div></div>
            </div>
@@ -432,10 +441,9 @@
                   </tbody></table>
                   <br>
 
-                  <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" >Paste raw trade csv.</textarea>
-                  <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" >Clean.</textarea>
-                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" >JSON</textarea>
-                  <textarea id="RowPick"  name="rowPick1" rows="1" class="container-fluid text-nowrap" ></textarea>
+                  <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;" >Paste raw trade csv.</textarea>
+                  <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Saved button puts updated trans here.</textarea>
+                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">JSON for Music Buttons</textarea>
                   <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"  > 
                   <input id='me2' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"   >
 
@@ -589,7 +597,15 @@ text = text.replaceAll('Qualified Dividend','Div');
                
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;"  >' + vNN  + '</div> \n';
-    codeBlock += '         <div class="col-9" style="border: 1px solid black; " >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
+
+/*
+    codeBlock += '         <div class="col-9" style="border: 1px solid black;"                                     >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
+*/
+
+    codeBlock += '         <div class="col-9" style="border: 1px solid black;" onclick="GetChart(\'' + vSymbol + '\');" >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
+
+
+
     codeBlock += '    </div> </div> \n'; 
 
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
@@ -648,14 +664,55 @@ function FindTran2(selSet) {
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
 function FindTran(selSet) {
+
+    var lookFor  = document.getElementById("lookFor"); lookFor.value = selSet;
     var eC = document.getElementsByClassName('tAll');
     for (var eT of eC) { eT.hidden = true;  };    
     var eC = document.getElementsByClassName(selSet);
-    console.log( selSet );
-    console.log( eC );
     for (var eT of eC) { eT.hidden = false; }
  }
 </script>
+
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+function FindType(selSet2) {
+
+    var lookFor  = document.getElementById("lookFor").value; 
+
+    var myActive  = document.getElementById("myActive").checked;
+    var myHistory = document.getElementById("myHistory").checked;
+    var myLot     = document.getElementById("myLot").checked;
+
+    var findMe = lookFor  + '-' + selSet2;
+
+    console.log(selSet2);
+
+    console.log("Act: " + myActive + ' Hist: ' + myHistory + ' Lot: ' + myLot + ' Find: ' + findMe );
+
+    var eC = document.getElementsByClassName('tAll');
+    for (var eT of eC) { eT.hidden = true;  };  
+
+  
+    var eC = document.getElementsByClassName(findMe);
+    for (var eT of eC) { eT.hidden = false; }
+
+ }
+</script>
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+function GetChart(selSet3) {
+
+   console.log('Get Chart ' + selSet3 );
+   if ( selSet3 === 'EXC' ) { selSet3 = 'excelon' ; } ;
+   window.open('https://www.google.com/search?q=stock+chart+' + selSet3, '_blank');
+ }
+</script>
+
+
 
 
 <script type="text/javascript">    
