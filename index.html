@@ -417,13 +417,13 @@
                    <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"      >BUILD</button>
                    <button class="btn border border-light btn-primary btn-SAVE"  type= "button" onclick="saveTrans()"       >SAVE</button>
  
-                   <input type="checkbox" id="myActive"   name="myActive"   value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Act')  ">Active</input>
-                   <input type="checkbox" id="myHistory"  name="myHistory"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">History</input>
-                   <input type="checkbox" id="myLot"  name="myLot"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">Lot</input>
+                   <input type="checkbox" id="myActive"  name="myActive"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Act')  ">Active </input>
+                   <input type="checkbox" id="myHistory" name="myHistory" value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">History</input>
+                   <input type="checkbox" id="myLot"     name="myLot"     value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Lot')  ">Lot    </input>
 
                    <input id='sellDate' type="text"  style="width: 100px" > 
 
-                   <label id='lookFor' hidden="hidden">
+                   <label id="lookFor" for="username" style="border: 1px solid black;">Username:</label>  <label id='lookForx' hidden="hidden"></label>
 
                 </div>
               </div></div>
@@ -587,10 +587,10 @@ text = text.replaceAll('Qualified Dividend','Div');
    else if ( vAction === 'ach' )  { classBlock += ' Fund' } 
    else classBlock += ' Oth'
 
-    if ( vAction === 'Buy'  && vLot.trim() === "" )  { classBlock += ' ' + vSymbol + '-Act'; }
-    if ( vAction === 'Buy'  && vLot.trim() !== "" )  { classBlock += ' ' + vSymbol + '-Lot'; }
-    if ( vAction === 'Sell' && vLot.trim() !== "" )  { classBlock += ' ' + vSymbol + '-Lot'; }
- 
+    if ( vAction === 'Buy'  && vLot.trim() === "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Act ' + vSymbol + '-Act'; }
+    if ( vAction === 'Buy'  && vLot.trim() !== "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
+    if ( vAction === 'Sell' && vLot.trim() !== "" )                             { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
+
     var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: green; ";  } 
 
     codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
@@ -651,53 +651,33 @@ text = text.replaceAll('Qualified Dividend','Div');
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function FindTran2(selSet) {
+     var lookFor  = document.getElementById("lookFor");    lookFor.textContent = selSet;  /* Last pick */
      var eC = document.getElementsByClassName('tAll');
      if        (selSet == 'Hide') {    for (var eT of eC) { eT.hidden = true;  };     } 
-     if        (selSet == 'All')  {    for (var eT of eC) { eT.hidden = false; };     } 
+     if        (selSet == 'All')  {    for (var eT of eC) { eT.hidden = false; };  lookFor.textContent = 'tAll';    } 
+
 }
 </script>
-
-
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function FindTran(selSet) {
-
-    var lookFor  = document.getElementById("lookFor"); lookFor.value = selSet;
-    var eC = document.getElementsByClassName('tAll');
-    for (var eT of eC) { eT.hidden = true;  };    
-    var eC = document.getElementsByClassName(selSet);
-    for (var eT of eC) { eT.hidden = false; }
+    var lookFor  = document.getElementById("lookFor");    lookFor.textContent = selSet;  /* Last pick */
+    var eC = document.getElementsByClassName('tAll');     for (var eT of eC) { eT.hidden = true;  };    
+    var eC = document.getElementsByClassName(selSet);     for (var eT of eC) { eT.hidden = false; }
  }
 </script>
-
-
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
-function FindType(selSet2) {
-
-    var lookFor  = document.getElementById("lookFor").value; 
-
-    var myActive  = document.getElementById("myActive").checked;
-    var myHistory = document.getElementById("myHistory").checked;
-    var myLot     = document.getElementById("myLot").checked;
-
-    var findMe = lookFor  + '-' + selSet2;
-
-    console.log(selSet2);
-
-    console.log("Act: " + myActive + ' Hist: ' + myHistory + ' Lot: ' + myLot + ' Find: ' + findMe );
-
-    var eC = document.getElementsByClassName('tAll');
-    for (var eT of eC) { eT.hidden = true;  };  
-
-  
-    var eC = document.getElementsByClassName(findMe);
-    for (var eT of eC) { eT.hidden = false; }
-
+function FindType(selSet2) { /* Act Hist Lot */
+    var eC = document.getElementsByClassName('tAll');     for (var eT of eC) { eT.hidden = true;  }; 
+    var findMe = '';
+    var lookFor   = document.getElementById("lookFor").textContent;     /* Last pick */
+    findMe = lookFor  + '-Act' ; var eC = document.getElementsByClassName(findMe); if ( document.getElementById("myActive").checked  ) { for (var eT of eC) { eT.hidden = false; } } else  { for (var eT of eC) { eT.hidden = true; } }
+    findMe = lookFor  + '-Hist'; var eC = document.getElementsByClassName(findMe); if ( document.getElementById("myHistory").checked ) { for (var eT of eC) { eT.hidden = false; } } else  { for (var eT of eC) { eT.hidden = true; } }
+    findMe = lookFor  + '-Lot' ; var eC = document.getElementsByClassName(findMe); if ( document.getElementById("myLot").checked     ) { for (var eT of eC) { eT.hidden = false; } } else  { for (var eT of eC) { eT.hidden = true; } }
+    var findMe = lookFor  + '-' + selSet2;   console.log(selSet2); console.log("Act: " + myActive + ' Hist: ' + myHistory + ' Lot: ' + myLot + ' Find: ' + findMe );
+    
  }
 </script>
 
