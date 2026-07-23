@@ -37,3 +37,18 @@ var transIn = `
 02/17 02/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.03
 01/16 01/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.03
 `
+
+var ChartsIn = `
+cSymbol,cDesc,cPer,cxDiv,cAlerts
+EXC,EXELON CORP,3.63%,x0811,35 43 40
+KHC,Hines,6.20%,x0828,22 23 24
+CBRL,CBRL,1.85%,x0717,25 27
+PEG,PEG,,x0310,55 65
+WEN,WEN,~7.22%,x0615,
+SMG,SMG Scott,3.72%,x0828,
+STM,STM,,,22 27 31
+SPCX,SPCX,,,200 150 125 100 50
+NBIS,NBIS,,,
+INTC,INTC,,,
+IRDM,IRDM Satellite (McLean),,,
+`

@@ -414,6 +414,7 @@
                    <button class="btn border border-light btn-primary btn-WEN-Lot" type= "button" onclick="FindTran('WEN-Lot')"  >WEN-Lot</button>
                    <button class="btn border border-light btn-primary btn-SPCX"  type= "button" onclick="FindTran('SPCX')" >SPCX</button>
                    <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
+                   <button class="btn border border-light btn-primary btn-CHARTS" type= "button" onclick="BuildCharts()"      >Charts</button>
                    <button class="btn border border-light btn-primary btn-BUILD" type= "button" onclick="BuildTran()"      >BUILD</button>
                    <button class="btn border border-light btn-primary btn-SAVE"  type= "button" onclick="saveTrans()"       >SAVE</button>
  
@@ -450,6 +451,17 @@
                   </tbody></table>
                   </div></div></div>
               </div>
+
+
+              </div>
+                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+                  <div class="card card-body" style="background-color:#fadadd"> 
+                  <div class="row mr-auto container-fluid">
+                  <div id='myCharts' class="row mr-auto container-fluid px-1">
+                  </div>
+                  </div></div></div>
+              </div>
+
 
               <!-- FOOTER  -->
               <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
@@ -516,10 +528,49 @@ function ckMe() {
     }
  }
 
+ if ( tMe1 === 'cc' && tMe2 === 'cc' ) {
+    if (tMeIn.value.trim() === "") {
+        tMeIn.value = ChartsIn;
+        document.getElementById('myTbl').innerHTML = '';
+        document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ ChartsIn;
+    }
+ }
+
+
+
 }
 
 </script>
 
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+
+function BuildCharts() {
+
+  var textarea = document.getElementById('RawList'); let textCharts = textarea.value.trim();
+
+  aLineCharts = textCharts.split(/\r?\n/);
+  var ChartArray = aLineCharts.map(row => row.split(","));
+
+  console.log(aLineCharts); console.log(ChartArray);
+
+
+  var codeBlockC = '';
+
+  for (var [cSymbol , cDesc , cPer , cxDiv , cAlerts ] of ChartArray ) 
+  {
+     codeBlockC += '<a target="_blank" href="https://www.google.com/search?q=stock+chart+' + cSymbol + '" >' + cSymbol + '</a> <small>' + cxDiv + ' ' + cAlerts +'</small> \n';
+  }
+  console.log(cxDiv);
+  console.log(codeBlockC);
+
+  var myCharts = document.getElementById('myCharts'); 
+  myCharts.insertAdjacentHTML('beforeend', codeBlockC );
+
+}
+
+</script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -547,32 +598,6 @@ text = text.replaceAll('Qualified Dividend','Div');
 
   /* Row and Columns */
   var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
-
-  /*
-  codeBlock += `
-
-<div class="row mr-auto container-fluid px-1"> \n
-    <div class="col-sm-3">  <div class="row"> \n
-         <div class="col-3" style="border: 1px solid black; font-weight: bold;">#</div>  \n
-         <div class="col-9" style="border: 1px solid black; font-weight: bold;">Date Sym Act</div>  \n
-    </div> </div> 
-    <div class="col-sm-3">  <div class="row"> \n
-         <div class="col-3" style="border: 1px solid black; font-weight: bold;">bQ</div>  \n
-         <div class="col-4" style="border: 1px solid black; font-weight: bold;">bPrice</div>  \n
-         <div class="col-5" style="border: 1px solid black; font-weight: bold;">bTot  </div>  \n
-    </div> </div> 
-    <div class="col-sm-3">  <div class="row"> \n
-         <div class="col-3" style="border: 1px solid black; font-weight: bold;background-color: yellow;">sQ</div> 
-         <div class="col-4" style="border: 1px solid black; font-weight: bold;background-color: lightgreen;">sPrice</div> 
-         <div class="col-5" style="border: 1px solid black; font-weight: bold;">sTot</div>  
-    </div> </div> 
-    <div class="col-sm-3">  <div class="row"> \n
-         <div class="col-3" style="border: 1px solid black; font-weight: bold;">Lot     </div>  \n
-         <div class="col-4" style="border: 1px solid black; font-weight: bold;">% in m d</div>  \n
-         <div class="col-5" style="border: 1px solid black; font-weight: bold;">xDiv %  </div>  \n
-    </div> </div> \n
-</div> \n `
-*/
 
   var nn = 0;
   for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays ] of dataArray2 ) 
