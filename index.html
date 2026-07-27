@@ -327,7 +327,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.3)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.5)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -568,6 +568,21 @@ function BuildCharts() {
   var myCharts = document.getElementById('myCharts'); 
   myCharts.insertAdjacentHTML('beforeend', codeBlockC );
 
+
+/*
+  /* List of tags to add buttons for. Sort and remove duplicates. */
+  tagList.sort();                                          / * console.log('tagList: ' + tagList ); * /
+  const tagListUniqueSorted = [...new Set(tagList)];
+  tagListUniqueSorted.sort();                              / * console.log('tagListUniqueSorted: ' + tagListUniqueSorted ); * /
+
+  tagListUniqueSorted.forEach((aItem, index, array) => {
+  
+
+*/
+
+
+
+
 }
 
 </script>
@@ -594,7 +609,7 @@ text = text.replaceAll('Qualified Dividend','Div');
 
   var dataArray = text   .trim()  .split("\n")  .map(row => row.split(",")); 
 
-  var codeBlock = ''; var classBlock = '';
+  var codeBlock = ''; var classBlock = ''; var symbList = [];
 
   /* Row and Columns */
   var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
@@ -604,6 +619,8 @@ text = text.replaceAll('Qualified Dividend','Div');
   {
     if (vJmInfo === 'undefined' ) { vJmInfo = ''; vSplit = ''; vInto = ''; vProf = ''; vLot = ''; vPerDays }
     nn += 1; 
+
+   symbList.push(vSymbol);
 
    classBlock = 'tAll ' + vSymbol; 
    if      ( vAction === 'Buy' )  { classBlock += ' Buy'  } 
@@ -670,6 +687,19 @@ text = text.replaceAll('Qualified Dividend','Div');
   /*  var textarea3 = document.getElementById('CutJSON');   textarea3.value = codeBlock ; */
   var myTrans = document.getElementById('myTbl'); 
   myTrans.insertAdjacentHTML('beforeend', codeBlock );
+
+  console.log(symbList);
+
+  symbList.sort();                                          
+  const symbListUniqueSorted = [...new Set(symbList)];
+  symbListUniqueSorted.sort();                              
+
+  console.log(symbListUniqueSorted);
+
+/*
+  tagListUniqueSorted.forEach((aItem, index, array) => {
+*/
+
 }
 </script>
 
@@ -799,11 +829,11 @@ const getDaysBetween = (date1, date2) => {
      var inD = dd % 30;
 
      eSellDollarE.textContent = nProfit;
-     var nInDays = '% ' + inM + "m" + inD + 'd' ;      eSellPercentDaysE.textContent = nInDays;
+     var nInDays = nPercent + '% ' + inM + "m" + inD + 'd' ;      eSellPercentDaysE.textContent = nInDays;
 
      console.log( eSellPrice +' '+ ePrice  +' '+ nProfitShare.toFixed(2) +' '+ nProfit   ); 
 
-     aLinesPart2[iNN] = ',jmMEME,,,' + nProfit +',Lnn,' + nPercent +'  '+ nInDays;    
+     aLinesPart2[iNN] = ',jmMEME,,,' + nProfit +',eNN,' + nPercent +' '+ nInDays;    
      console.log( aLinesPart2[iNN] ) ;
 
 
