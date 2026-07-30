@@ -320,14 +320,14 @@
   </div> <!-- <div class="modal-body">  -->
   </div> <!-- <div class="modal-content"> -->
   </div> <!-- <div class="modal-dialog modal-lg"> -->
-  </div> <!-- <div class="modal fade" id="myModal" role="dialog">  --
+  </div> <!-- <div class="modal fade" id="myModal" role="dialog">  -->
 
 
               <!-- PRIME UI - BUTTONS MAIN - WEBS - DENNIS - FOOTER -----------------------------------------------------------------------------------------------------  -->
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.0)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -392,12 +392,15 @@
               <h2                       class="         container-fluid text-center collapse cc multi-collapse-Stock .multi-collapse-Stock show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Stock </h2>
 
 
+           <!-- PICK --------------------------------------------------------------------------  -->
            <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-              <div class="card card-body" style="background-color:#fadadd">   
-              <div class="row mr-auto                 container-fluid">
+           <div class="card card-body" style="background-color:#fadadd">   
+           <div class="row mr-auto                 container-fluid">
+
                  <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
                  Pick:
                  </div>
+
                  <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
                    <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
                    <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
@@ -430,34 +433,46 @@
 
                    <label for="lastLot" style="border: 1px solid black;">Lot:</label> 
                    <input  id="lastLot" name="lastLot" type="number" min="1" max="99" step="1" value="1">
-
                 </div>
-              </div></div>
-           </div>
 
-              </div>
-                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-                  <div class="card card-body" style="background-color:#fadadd"> 
-                  <div class="row mr-auto container-fluid">
+           </div></div></div>
+
+           <!-- TRANS --------------------------------------------------------------------------  -->
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+           <div class="card card-body" style="background-color:#fadadd"> 
+           <div class="row mr-auto container-fluid">
+           
                   <table style="border:1px solid black; background-color: white; ">
-
                   <tbody id='myTbl' class="row mr-auto container-fluid px-1">
-
 
                   </tbody></table>
                   <br>
-
                   <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;" >RawCSV</textarea>
                   <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Saved button puts updated trans here.</textarea>
                   <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">JSON for Music Buttons</textarea>
                   <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"  > 
                   <input id='me2' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"   >
 
+           </div></div></div>
+
+
+           <!-- PLAN --------------------------------------------------------------------------  -->
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+           <div class="card card-body" style="background-color:#fadadd"> 
+           <div class="row mr-auto container-fluid">
+           
+               <table style="border:1px solid black; background-color: white; ">
+               <tbody  class="row mr-auto container-fluid px-1">
+                  <div class="row mr-auto container-fluid px-1 tAll KHC KHC-Plan tAll-Act KHC-Act" style="border: 1px solid black;" hidden=""> 
+                      <div class="col-sm-12">  <div class="row"> 
+                           <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart('KHC');">KHC</div> 
+                           <div class="col-9" style="border: 1px solid black;">Keep rest 5 shares for 60</div> 
+                      </div> </div> 
+                  </div>
                   </tbody></table>
-                  </div></div></div>
-              </div>
+           </div></div></div>
 
-
+           <!-- CHARTS --------------------------------------------------------------------------  -->
               </div>
                   <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
                   <div class="card card-body" style="background-color:#fadadd"> 
@@ -625,7 +640,7 @@ text = text.replaceAll('Qualified Dividend','Div');
     if ( vAction === 'Buy'  && vLot.trim() !== "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
     if ( vAction === 'Sell' && vLot.trim() !== "" )                             { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
 
-    var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: green; ";  } 
+    var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: lightgreen; ";  } 
 
     codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
                
@@ -754,45 +769,31 @@ const getDaysBetween = (date1, date2) => {
 };
 
   var eRowT  = e.parentElement.parentElement.parentElement;
-  var aRowTc   = [...eRowT.children];
 
-  var aRowTcc  =  [...aRowTc[0].children];
-  var aRowTccc = [...aRowTcc[0].children];
+  var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
+
+  var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
   var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1;
   var eDateSymAct      = aRowTccc[1].textContent;
 
-  var aRowTcc  =  [...aRowTc[1].children];
-  var aRowTccc = [...aRowTcc[0].children];
+  var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: BUY Quan , Price , Amt */
   var eQuantity        = parseFloat(aRowTccc[0].textContent);
   var ePrice           = parseFloat(aRowTccc[1].textContent);
   var eTotAmt          = parseFloat(aRowTccc[2].textContent);
 
-  var aRowTcc  =  [...aRowTc[2].children];
-  var aRowTccc = [...aRowTcc[0].children];
-  var eSellQuanity     = parseFloat(aRowTccc[0].textContent);      var eSellQuanityE    = aRowTccc[0]; 
-  var eSellPrice       = parseFloat(aRowTccc[1].textContent);      var eSellQuanityE    = aRowTccc[0];
-  var eSellDollar      = aRowTccc[2].textContent;                  var eSellDollarE     = aRowTccc[2];
+  var aRowTcc  =  [...aRowTc[2].children];  /* ROW 3 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: SELL Quan , Price , Amt */
+  var eSellQuanity     = parseFloat(aRowTccc[0].textContent);      var eSellQuanityE    = aRowTccc[0]; /* dup take a look ? */
+  var eSellPrice       = parseFloat(aRowTccc[1].textContent);      var eSellQuanityE    = aRowTccc[0]; /* dup take a look ? */
+  var eSellDollar      = aRowTccc[2].textContent;                  var eSellDollarE     = aRowTccc[0];
 
-  var aRowTcc  =  [...aRowTc[3].children];
-  var aRowTccc = [...aRowTcc[0].children];
+  var aRowTcc  =  [...aRowTc[3].children];  /* ROW 4 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: Lot , Per Days , Xdiv */
   var eLot             = aRowTccc[0].textContent;                  var eLotE             = aRowTccc[0];
   var eSellPercentDays = aRowTccc[1].textContent;                  var eSellPercentDaysE = aRowTccc[1];
   var eXdiv            = aRowTccc[2].textContent;                  var eXdivE            = aRowTccc[2];
-
-  /*
-  var eDateSymAct      = eRow.cells[0].textContent;
-  var eQuantity        = parseFloat(eRow.cells[1].textContent);
-  var ePrice           = parseFloat(eRow.cells[2].textContent);
-  var eTotAmt          = parseFloat(eRow.cells[3].textContent);
-
-  var eSellQuanity     = parseFloat(eRow.cells[4].textContent);
-  var eSellPrice       = parseFloat(eRow.cells[5].textContent);
-  var eSellDollar      = eRow.cells[6].textContent;
-
-  var eSellPercentDays = eRow.cells[7].textContent;
-  var eXdiv            = eRow.cells[8].textContent;
-  var eNNlot           = eRow.cells[9].textContent;
-  */
 
   if ( ( typeof ePrice === 'number' && !isNaN( ePrice ) ) &&  ( typeof eSellPrice === 'number' && !isNaN( eSellPrice ) ) ) {
 
@@ -800,7 +801,11 @@ const getDaysBetween = (date1, date2) => {
 
      var nProfitShare = eSellPrice - ePrice ;
      var nProfit      = ( nProfitShare * eSellQuanity ).toFixed(2);
+     var nProfit0     = ( nProfitShare * eSellQuanity ).toFixed();
+
      var nPercent     = ( ( nProfitShare / ePrice ) * 100 ).toFixed(2);
+     var nPercent0    = ( ( nProfitShare / ePrice ) * 100 ).toFixed(0);
+
 
      var sDateBuymmdd = eDateSymAct .slice(0, 5); 
 
@@ -817,8 +822,8 @@ const getDaysBetween = (date1, date2) => {
      var inM = Math.trunc(dd / 30);
      var inD = dd % 30;
 
-     eSellDollarE.textContent = nProfit;
-     var nInDays = inM + "m" + inD + 'd' ;      eSellPercentDaysE.textContent = nInDays;
+     eSellDollarE.textContent = nProfit0;
+     var nInDays = inM + "m" + inD + 'd' ;      eSellPercentDaysE.textContent = nPercent +'% '+ nInDays;
 
      console.log( eSellPrice +' '+ ePrice  +' '+ nProfitShare.toFixed(2) +' '+ nProfit   ); 
 
