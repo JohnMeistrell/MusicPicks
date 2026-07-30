@@ -327,7 +327,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.2)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -386,16 +386,15 @@
               <textarea id="myTextBox1" rows="5" cols="50" style="display: none;" ></textarea>
               <textarea id="myTextBox2" rows="5" cols="50" style="display: none;" ></textarea>
 
-
-              <div class="card card-body Stock"  style="padding:0px; margin:0px; border:0px; "> 
-              <div class="row mr-auto container-fluid collapse cc multi-collapse-Stock .multi-collapse-Stock show"> 
+              <div class="card card-body Stock"                                                                                                  style="padding:0px; margin:0px; border:0px;" > 
+              <div class="row mr-auto container-fluid collapse cc multi-collapse-Stock .multi-collapse-Stock show"                               style="padding:0px; margin:0px; border:0px;"> 
               <h2                       class="         container-fluid text-center collapse cc multi-collapse-Stock .multi-collapse-Stock show" style=" padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >Stock </h2>
 
 
            <!-- PICK --------------------------------------------------------------------------  -->
-           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-           <div class="card card-body" style="background-color:#fadadd">   
-           <div class="row mr-auto                 container-fluid">
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+           <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+           <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
 
                  <div class="col-xs-5 col-sm-3 col-lg-2 col-xl-2  container-fluid text-nowrap bd-highlight font-weight-bolder">
                  Pick:
@@ -437,29 +436,10 @@
 
            </div></div></div>
 
-           <!-- TRANS --------------------------------------------------------------------------  -->
-           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-           <div class="card card-body" style="background-color:#fadadd"> 
-           <div class="row mr-auto container-fluid">
-           
-                  <table style="border:1px solid black; background-color: white; ">
-                  <tbody id='myTbl' class="row mr-auto container-fluid px-1">
-
-                  </tbody></table>
-                  <br>
-                  <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;" >RawCSV</textarea>
-                  <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Saved button puts updated trans here.</textarea>
-                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">JSON for Music Buttons</textarea>
-                  <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"  > 
-                  <input id='me2' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"   >
-
-           </div></div></div>
-
-
            <!-- PLAN --------------------------------------------------------------------------  -->
-           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-           <div class="card card-body" style="background-color:#fadadd"> 
-           <div class="row mr-auto container-fluid">
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+           <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+           <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
            
                <table style="border:1px solid black; background-color: white; ">
                <tbody  class="row mr-auto container-fluid px-1">
@@ -472,16 +452,33 @@
                   </tbody></table>
            </div></div></div>
 
+
+
+           <!-- TRANS --------------------------------------------------------------------------  -->
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+           <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+           <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
+           
+                  <table                      style="background-color: white;  padding:0px; margin:0px; border:1px solid black; ">
+                  <tbody id='myTbl' class="row mr-auto container-fluid px-1"  style="padding:0px; margin:0px; border:0px;">
+
+                  </tbody></table>
+                  <br>
+                  <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;" >RawCSV</textarea>
+                  <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Saved button puts updated trans here.</textarea>
+                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">JSON for Music Buttons</textarea>
+                  <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"  > 
+                  <input id='me2' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"   >
+
+           </div></div></div>
+
            <!-- CHARTS --------------------------------------------------------------------------  -->
-              </div>
-                  <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-                  <div class="card card-body" style="background-color:#fadadd"> 
-                  <div class="row mr-auto container-fluid">
+           <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+           <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+           <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
                   <div id='myCharts' class="row mr-auto container-fluid px-1">
                   </div>
-                  </div></div></div>
-              </div>
-
+           </div></div></div>
 
               <!-- FOOTER  -->
               <div class="card card-body FOOT" style="background-color:#feeb10; padding:5px;">
