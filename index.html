@@ -477,8 +477,10 @@
 
                    <label id="lookFor" for="lookFor" style="border: 1px solid black;"></label>  <label id='lookForx' hidden="hidden"></label>
 
-                   <label for="lastLot" style="border: 1px solid black;">Lot:</label> 
-                   <input  id="lastLot" name="lastLot" type="number" min="1" max="99" step="1" value="1">
+                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>  <input  id="lastLot" name="lastLot" type="number" min="1" max="99" step="1" value="1">
+                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>  <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0">
+
+
                 </div>
 
               </div></div></div>
@@ -699,7 +701,12 @@ text = text.replaceAll('Qualified Dividend','Div');
     codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
                
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
-    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;"  >' + vNN  + '</div> \n';
+    if ( vAction === 'Sell' && vLot.trim() === "" ) {
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: lightgray;" onclick="useDate(this)"  >' + vNN  + '</div> \n';
+    } else {
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; "  >' + vNN  + '</div> \n';
+
+    }
     codeBlock += '         <div class="col-9" style="border: 1px solid black;" onclick="GetChart(\'' + vSymbol + '\');" >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
     codeBlock += '    </div> </div> \n'; 
 
@@ -714,8 +721,8 @@ text = text.replaceAll('Qualified Dividend','Div');
    
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     if ( vAction === 'Sell' && vLot.trim() === "" ) { 
-    codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: pink;"      contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
-    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightblue;" contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: pink;"       contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightblue;"  contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
     } 
     else if ( vAction === 'Buy' && vLot.trim() === "" && vInto !== 'orig' ) { 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: yellow;"     contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
@@ -790,7 +797,7 @@ function FindType(selSet2) { /* Act Hist Lot */
     findMe = lookFor  + '-Hist'; var eC = document.getElementsByClassName(findMe); if ( document.getElementById("myHistory").checked ) { for (var eT of eC) { eT.hidden = false; } } else  { for (var eT of eC) { eT.hidden = true; } }
     findMe = lookFor  + '-Lot' ; var eC = document.getElementsByClassName(findMe); if ( document.getElementById("myLot").checked     ) { for (var eT of eC) { eT.hidden = false; } } else  { for (var eT of eC) { eT.hidden = true; } }
     var findMe = lookFor  + '-' + selSet2;   console.log(selSet2); console.log("Act: " + myActive + ' Hist: ' + myHistory + ' Lot: ' + myLot + ' Find: ' + findMe );
-    
+
  }
 </script>
 
@@ -805,7 +812,23 @@ function GetChart(selSet3) {
  }
 </script>
 
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
+function useDate(e) {
+
+   console.log(e);
+
+   var vDateSymAct = e.nextElementSibling.textContent; 
+   console.log(  vDateSymAct  );
+   var aTemp = vDateSymAct.split(' '); 
+   var mmdd = aTemp[0];
+   console.log(mmdd)
+
+   document.getElementById('sellDate').value = mmdd +"/2026"; 
+
+}
+</script>
 
 
 <script type="text/javascript">    
