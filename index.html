@@ -369,7 +369,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.4 8/1a)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.5 8/1a 11pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -479,6 +479,9 @@
 
                    <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>  <input  id="lastLot" name="lastLot" type="number" min="1" max="99" step="1" value="1">
                    <label for="showLot" style="border: 1px solid black;">Show Lot:</label>  <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0">
+
+                   <label for="splitQ"  style="border: 1px solid black;">Split Q:</label>  <input  id="splitQ" name="splitQ" type="text"  style="width: 30px"   >
+
 
 
                 </div>
@@ -699,14 +702,16 @@ text = text.replaceAll('Qualified Dividend','Div');
     var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: lightgreen; ";  } 
 
     codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
-               
+             
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
-    if ( vAction === 'Sell' && vLot.trim() === "" ) {
+    if        ( vAction === 'Sell' && vLot.trim() === "" ) {
     codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: lightgray;" onclick="useDate(this)"  >' + vNN  + '</div> \n';
+    } else if ( vAction === 'Buy'  && vLot.trim() === "" ) {
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: orange;" onclick="splitIt(this)"  >' + vNN  + '</div> \n';
     } else {
     codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; "  >' + vNN  + '</div> \n';
-
     }
+
     codeBlock += '         <div class="col-9" style="border: 1px solid black;" onclick="GetChart(\'' + vSymbol + '\');" >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
     codeBlock += '    </div> </div> \n'; 
 
@@ -803,7 +808,6 @@ function FindType(selSet2) { /* Act Hist Lot */
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function GetChart(selSet3) {
 
    console.log('Get Chart ' + selSet3 );
@@ -814,22 +818,52 @@ function GetChart(selSet3) {
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function splitIt(e) {
+   console.log('SplitIT');
 
-function useDate(e) {
+   /* if q not equal splitQ of sell */
 
-   console.log(e);
+  var eRowT  = e.parentElement.parentElement.parentElement;
+  var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
+  var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
+  var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: BUY Quan , Price , Amt */
+  var eQuantity        = parseFloat(aRowTccc[0].textContent);
 
-   var vDateSymAct = e.nextElementSibling.textContent; 
-   console.log(  vDateSymAct  );
-   var aTemp = vDateSymAct.split(' '); 
-   var mmdd = aTemp[0];
-   console.log(mmdd)
+  var splitQ = document.getElementById('splitQ').value;
 
-   document.getElementById('sellDate').value = mmdd +"/2026"; 
+  if ( splitQ && splitQ.trim()) {
+     if ( +eQuantity > +splitQ ) {
+        console.log( 'Split DONE' );
+        /* chg row to orig not edit color. add to array and add row to table. two rows one q selected two left over q */
+
+   
+     }
+  }
 
 }
 </script>
 
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function useDate(e) {
+   var vDateSymAct = e.nextElementSibling.textContent; 
+   var aTemp = vDateSymAct.split(' '); 
+   var mmdd = aTemp[0];
+   document.getElementById('sellDate').value = mmdd +"/2026"; 
+
+  var eRowT  = e.parentElement.parentElement.parentElement;
+  var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
+  var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
+  var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: BUY Quan , Price , Amt */
+  var eQuantity        = parseFloat(aRowTccc[0].textContent);
+  document.getElementById('splitQ').value = eQuantity;
+
+}
+</script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
