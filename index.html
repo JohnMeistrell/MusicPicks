@@ -369,7 +369,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.5 8/1a 11pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.6 8/2u 2pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -482,7 +482,8 @@
 
                    <label for="splitQ"  style="border: 1px solid black;">Split Q:</label>  <input  id="splitQ" name="splitQ" type="text"  style="width: 30px"   >
 
-
+                  <label for="sellPrice"  style="border: 1px solid black;">Sell P:</label>  <input  id="sellPrice" name="sellPrice" type="text"  style="width: 30px"   >
+                  <label for="sellArray"  style="border: 1px solid black;">Sell A:</label>  <input  id="sellArray" name="sellArray" type="text"  style="width: 30px"   >
 
                 </div>
 
@@ -686,6 +687,8 @@ text = text.replaceAll('Qualified Dividend','Div');
     if (vJmInfo === 'undefined' ) { vJmInfo = ''; vSplit = ''; vInto = ''; vProf = ''; vLot = ''; vPerDays }
     nn += 1; 
 
+   var nRowID = 'row' + vNN ;
+
    symbList.push(vSymbol); lotList.push(vLot);
 
    classBlock = 'tAll ' + vSymbol; 
@@ -701,7 +704,7 @@ text = text.replaceAll('Qualified Dividend','Div');
 
     var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: lightgreen; ";  } 
 
-    codeBlock += '<div class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
+    codeBlock += '<div id="' + nRowID +  '" class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
              
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     if        ( vAction === 'Sell' && vLot.trim() === "" ) {
@@ -862,6 +865,15 @@ function useDate(e) {
   var eQuantity        = parseFloat(aRowTccc[0].textContent);
   document.getElementById('splitQ').value = eQuantity;
 
+  var ePrice           = parseFloat(aRowTccc[1].textContent);
+  document.getElementById('sellPrice').value = ePrice; 
+
+  var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1;
+  document.getElementById('sellArray').value = iNN; 
+
+  console.log( aLines[iNN] );
+
+
 }
 </script>
 
@@ -872,20 +884,22 @@ function calcTot(e) {
 
 var sellDate = document.getElementById('sellDate').value; 
 
-const getDaysBetween = (date1, date2) => {
-  const msPerDay = 1000 * 60 * 60 * 24;
-  const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
-  const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
-  return Math.floor(Math.abs(utc2 - utc1) / msPerDay);
-};
+  const getDaysBetween = (date1, date2) => {
+    const msPerDay = 1000 * 60 * 60 * 24;
+    const utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+    const utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+    return Math.floor(Math.abs(utc2 - utc1) / msPerDay);
+  };
+
+  var hPrice = document.getElementById('sellPrice').value; 
+  var hNN = document.getElementById('sellArray').value; var hNNtbl = (+hNN) + 2; console.log( hNNtbl );
 
   var eRowT  = e.parentElement.parentElement.parentElement;
-
   var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
 
   var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
   var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
-  var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1;
+  var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1; 
   var eDateSymAct      = aRowTccc[1].textContent;
 
   var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
@@ -905,6 +919,11 @@ const getDaysBetween = (date1, date2) => {
   var eLot             = aRowTccc[0].textContent;                  var eLotE             = aRowTccc[0];
   var eSellPercentDays = aRowTccc[1].textContent;                  var eSellPercentDaysE = aRowTccc[1];
   var eXdiv            = aRowTccc[2].textContent;                  var eXdivE            = aRowTccc[2];
+  
+  console.log( 'eSellPrice' +' ' + eSellPrice ); 
+  if ( eSellPrice === 0 ) { 
+     eSellPrice = hPrice; eSellPriceE.textContent = hPrice; 
+  }
 
   if ( ( typeof ePrice === 'number' && !isNaN( ePrice ) ) &&  ( typeof eSellPrice === 'number' && !isNaN( eSellPrice ) ) ) {
 
@@ -917,14 +936,12 @@ const getDaysBetween = (date1, date2) => {
      var nPercent     = ( ( nProfitShare / ePrice ) * 100 ).toFixed(2);
      var nPercent0    = ( ( nProfitShare / ePrice ) * 100 ).toFixed(0);
 
-
      var sDateBuymmdd = eDateSymAct .slice(0, 5); 
 
      var [eDate , eSym , eAct] = eDateSymAct.split(' ');
      var ymdBuy = ( '2026/' + eDate ).replace("/", "-"); ;
 
      var ymdSell = ( sellDate ).replace("/", "-"); ;
-
 
      var d1 = new Date("2026-01-01"); d1 = new Date(ymdBuy);
      var d2 = new Date("2026-07-11"); d2 = new Date(ymdSell);
@@ -956,6 +973,21 @@ const getDaysBetween = (date1, date2) => {
      aLinesPart2[iNN] = ',jmMEME,,,' + nProfit + ',' + pad2 + ',' + nPercent +'% '+ nInDays;    
      console.log( aLinesPart2[iNN] ) ;
 
+     aLinesPart2[hNN] = ',jmMEME,,,,' + ',' +  pad2;  
+     console.log( aLinesPart2[hNN] ) ;
+
+     var nRowID = 'row' + hNNtbl ; console.log( 'sell row id: ' + nRowID ) ;
+     var hRowT = document.getElementById(nRowID);
+     var hRowTc   = [...hRowT.children];       /* FOUR ROWS */ 
+
+     var hRowTcc  =  [...hRowTc[3].children];  /* ROW 4 Div wrapper */
+     var hRowTccc = [...hRowTcc[0].children];  /* Cols: Lot , Per Days , Xdiv */
+     var hLot             = hRowTccc[0].textContent;                  var hLotE             = hRowTccc[0]; 
+  
+     hLotE.textContent = pad2;
+
+     console.log( hRowT );
+     console.log( hRowTccc );
 
   }
 
