@@ -821,9 +821,15 @@ function BuildTran() {
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function showThisLot(nLot) {
-  document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = true);
-  var findLot = 'L' + nLot.padStart(2, '0');   
-  document.querySelectorAll(`#myTbl .${findLot}`).forEach(row => row.hidden = false);
+  if (nLot !== "0" && nLot !== "") {
+     document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = true);
+     var findLot = 'L' + nLot.padStart(2, '0');   
+     document.querySelectorAll(`#myTbl .${findLot}`).forEach(row => row.hidden = false);
+  } else {
+     document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = false);
+
+}
+
 }
 
 </script>
