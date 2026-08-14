@@ -369,7 +369,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.0 8/2u 5pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1 8/13r 9pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -715,7 +715,7 @@ function BuildTran() {
   var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
 
   var nn = 0;
-  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays ] of aTransRNmap ) 
+  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays , vSoldPrice ] of aTransRNmap ) 
   {
 
    if ( vLot.trim() !== "" ) { 
@@ -766,7 +766,14 @@ function BuildTran() {
     codeBlock += '    </div> </div> \n'; 
 
     var TempvProf = ''; var TempPrice = '';
-    if ( vAction === 'Buy' && vLot.trim() !== "" )  { TempvProf = vProf ; TempPrice = ( vProf / vQuantity ).toFixed(2); } 
+    if ( vAction === 'Buy' && vLot.trim() !== "" )  { 
+         TempvProf = vProf ; TempPrice = ( vProf / vQuantity ).toFixed(2); 
+         if ( typeof vSoldPrice === "string" && vSoldPrice.trim().length > 0 ) { TempPrice = vSoldPrice; } 
+    } 
+    if ( vAction === 'Sell' && vLot.trim() !== "" )  { 
+         TempvProf = vProf ; TempPrice = ( vProf / vQuantity ).toFixed(2); 
+         if ( typeof vSoldPrice === "string" && vSoldPrice.trim().length > 0 ) { TempPrice = vSoldPrice; } 
+    } 
    
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     if ( vAction === 'Sell' && vLot.trim() === "" ) { 
