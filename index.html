@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <! v3.0 0211w 1109am -->
+    <! v3.0 0211w 1109am BuildTran() -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
 <h3 class="text-center">Johnny's Music Picks - <label id="curTag" >All</label></h3>
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
-<!-- MAIN CONTAINER TOP - Verified TAG match w https://codebeautify.org/htmlviewer  -->
+<!-- MAIN CONTAINER TOP - Verified TAG match w https://codebeautify.org/htmlviewer -->
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
 <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">
 <div class="cc" >
@@ -477,8 +477,8 @@
 
                    <label id="lookFor" for="lookFor" style="border: 1px solid black;"></label>  <label id='lookForx' hidden="hidden"></label>
 
-                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>  <input  id="lastLot" name="lastLot" type="number" min="1" max="99" step="1" value="1">
-                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>  <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0">
+                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>  <input  id="lastLot" name="lastLot" type="number" min="1" max="99"  step="1" value="1">
+                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>  <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0" onchange="showThisLot(this.value)">
 
                    <label for="splitQ"  style="border: 1px solid black;">Split Q:</label>  <input  id="splitQ" name="splitQ" type="text"  style="width: 30px"   >
 
@@ -569,8 +569,8 @@ function windowLoaded()
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   {
 
-var aLinesPart2 =  [];
-var aLines      =  []; 
+var aTransBappend =  [];
+var aTransA      =  []; 
    }
 </script>
 
@@ -627,7 +627,7 @@ function ckMe() {
 
 function sortTrans() {
 
-/* aNewTags2.reverse(); */
+/* aTrans RwN.reverse(); */
 
 
 }
@@ -639,7 +639,7 @@ function sortTrans() {
 
 function BuildCharts() {
 
-  var textarea = document.getElementById('RawList'); let textCharts = textarea.value.trim();
+  var eRawListID = document.getElementById('RawList'); let textCharts = eRawListID.value.trim();
   aLineCharts = textCharts.split(/\r?\n/);
   var ChartArray = aLineCharts.map(row => row.split(","));
   var codeBlockC = '';
@@ -656,25 +656,58 @@ function BuildCharts() {
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function BuildTran() {
 
+  /*
+  transIn - file csv from Schawb - var transIn (New 1st) :
+     "Date","Action","Symbol","Description","Quantity","Price","Fees","Amount",vJmInfo,vSplit,vInto,vProf,vLot,vPerDays
+     07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d 
+     07/28,Sell,SMG,SCOTTS MIRACLEGRO CO,10,70.35,0.01,703.49,jmInfo,,,77.85,L05,12.44% 2m22d
+  vRawTransClean - Raw trans csv cleaned up with \n as one var line (New 1st) : 
+     'Date,Action,Symbol,Des...,vLot,vPerDays\n07/28,Sell,CBRL,CRACKER B....'
+  aTransA - Array match trans (New 1st) : 
+     0:"Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,vProf,vLot,vPerDays"
+     1:"07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d "
+     2:"07/28,Sell,SMG,SCOTTS MIRACLEGRO CO,10,70.35,0.01,703.49,jmInfo,,,77.85,L05,12.44% 2m22d"
+  aTransBappend - Array Init all rows empty - Place for jmInfo ( maybe popluate with transIn )
+  aTransRwN - Array match trans with col-1 ix as table row ID to point back to aTransA for partB jmInfo for SAVE button (Old 1st) : to map search col-1 to find Dnot use array ix
+    ONLY used in build
+    0: "49,02/17 02/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.03,jmInfo,,,,,"
+    1: "48,03/02 02/27,ach,,Tfr POLICE AND FIRE FE, jfm,,,,2000.00,jmInfo,,,,,"
+    2: "47,03/03 03/02,ach,,Tfr POLICE AND FIRE FE, jfm,,,,2000.00,jmInfo,,,,,"
+    3: "46,03/11,Buy,KHC,KRAFT HEINZ CO,50,23.155,,1157.75,jmInfo,split,orig,,,"
+   aTransRNmap - ONLY used in build 
+
+   aTransRwN  use RowID 48 to get/update aTransA 
+0: "48,02/17 02/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.03,jmInfo,,,,,"
+1: "47,03/02 02/27,ach,,Tfr POLICE AND FIRE FE, jfm,,,,2000.00,jmInfo,,,,,"
+2: "46,03/03 03/02,ach,,Tfr POLICE AND FIRE FE, jfm,,,,2000.00,jmInfo,,,,,"
+3: "45,03/11,Buy,KHC,KRAFT HEINZ CO,50,23.155,,1157.75,jmInfo,split,orig,,,"
+47:"1,07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d "
+48: "0,Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,vProf
+
+  */
+
   /* Get raw csv from 1st box. Should be free of commas. Remove double quotes and dollar signs. */
-  var textarea = document.getElementById('RawList'); /* remove($ , -) */ let text = textarea.value.trim();  text = text.replaceAll('"',''); text = text.replaceAll("$",''); text = text.replaceAll("-",''); 
+  var eRawListID = document.getElementById('RawList'); /* remove($ , -) */ let vRawTransClean = eRawListID.value.trim();  vRawTransClean = vRawTransClean.replaceAll('"',''); vRawTransClean = vRawTransClean.replaceAll("$",''); vRawTransClean = vRawTransClean.replaceAll("-",''); 
+     vRawTransClean = vRawTransClean.replaceAll('MoneyLink Transfer','ach');
+     vRawTransClean = vRawTransClean.replaceAll('as of ',''); 
+     vRawTransClean = vRawTransClean.replaceAll('/2026',''); 
+     vRawTransClean = vRawTransClean.replaceAll('JOHN MEISTRELL','jfm'); 
+     vRawTransClean = vRawTransClean.replaceAll('Qualified Dividend','Div'); 
+     vRawTransClean = vRawTransClean.replaceAll("  "," ");
 
-text = text.replaceAll('MoneyLink Transfer','ach');
-text = text.replaceAll('as of ',''); 
-text = text.replaceAll('/2026',''); 
-text = text.replaceAll('JOHN MEISTRELL','jfm'); 
-text = text.replaceAll('Qualified Dividend','Div'); 
+  var aTransRwN = []; /* Trans numbered oldest 1st */ 
+  aTransA = vRawTransClean.split(/\r?\n/); /* Array each line \n */   aTransBappend = Array.from({ length: aTransA.length }, (_, index) => " "); /* Append jmInfo - init rows blank */ 
+  aTransA.forEach((elem1,index) => { 
+       if ( elem1.indexOf("jmInfo") === -1) { elem1 += ',jmInfo,,,,,'; }; 
+       const uniqueId = index; elem2 = uniqueId +","+ elem1;  aTransRwN.push( elem2 ); 
+  }); 
+  aTransRwN.reverse();
 
-  var aNewTags2 = []; aLines = text.split(/\r?\n/); aLinesPart2 = Array.from({ length: aLines.length }, (_, index) => " ");
-  aLines.forEach((elem1,index) => { if ( elem1.indexOf("jmInfo") === -1) { elem1 += ',jmInfo,,,,,'; }; const uniqueId = index + 1; elem2 = uniqueId +","+ elem1;  aNewTags2.push( elem2 );  }); aNewTags2.reverse();
-  var textarea2 = document.getElementById('TagsList');   var newLineString = aNewTags2.join('\n'); textarea2.value = newLineString;
+  var textarea2 = document.getElementById('TagsList');   var newLineString = aTransRwN.join('\n'); textarea2.value = newLineString;
 
-  var dataArray2 = aNewTags2.map(row => row.split(","));
-
-  var dataArray = text   .trim()  .split("\n")  .map(row => row.split(",")); 
+  var aTransRNmap = aTransRwN.map(row => row.split(","));
 
   var codeBlock = ''; var classBlock = ''; var symbList = []; var lotList = [];
 
@@ -682,7 +715,7 @@ text = text.replaceAll('Qualified Dividend','Div');
   var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
 
   var nn = 0;
-  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays ] of dataArray2 ) 
+  for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays ] of aTransRNmap ) 
   {
 
    if ( vLot.trim() !== "" ) { 
@@ -776,14 +809,24 @@ text = text.replaceAll('Qualified Dividend','Div');
    var lotLast3n = lotLast3.slice(1);                                 console.log ( lotLast3n ); 
    var lotNN = parseInt(lotLast3n, 10);                               console.log ( lotNN ); 
 
-
+/*
         var lotInput = document.getElementById('lastLot');
         lotInput.value = lotNN;
-
+*/
 
 }
 </script>
 
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function showThisLot(nLot) {
+  document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = true);
+  var findLot = 'L' + nLot.padStart(2, '0');   
+  document.querySelectorAll(`#myTbl .${findLot}`).forEach(row => row.hidden = false);
+}
+
+</script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -826,11 +869,37 @@ function GetChart(selSet3) {
    window.open('https://www.google.com/search?q=stock+chart+' + selSet3, '_blank');
  }
 </script>
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function cloneAndModifyIds(originalId, newParentId, suffix) {
+    // 1. Get the original element by ID
+    const originalElement = document.getElementById(originalId);
+    if (!originalElement) return null;
+
+    // 2. Deep clone the element (true copies all children)
+    const clonedElement = originalElement.cloneNode(true);
+
+    // 3. Change the ID of the main cloned element
+    clonedElement.id = newParentId;
+
+    // 4. Find all child elements that have an ID attribute
+    const childrenWithIds = clonedElement.querySelectorAll('[id]');
+
+    // 5. Loop through children and update their IDs to keep them unique
+    childrenWithIds.forEach(child => {
+        child.id = `${child.id}_${suffix}`;
+    });
+
+    return clonedElement;
+}
+</script>
+
+
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function splitIt(e) {
-   console.log('SplitIT');
+   console.log('SplitIT start');
 
    /* if q not equal splitQ of sell */
 
@@ -840,18 +909,50 @@ function splitIt(e) {
   var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
   var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
   var aRowTccc = [...aRowTcc[0].children];  /* Cols: BUY Quan , Price , Amt */
+  var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1; 
   var eQuantity        = parseFloat(aRowTccc[0].textContent);
+  var eTotAmt          = parseFloat(aRowTccc[2].textContent);
 
   var splitQ = document.getElementById('splitQ').value;
-
   if ( splitQ && splitQ.trim()) {
      if ( +eQuantity > +splitQ ) {
+
+        console.log('For: ' + aTransA[iNN] ) ;
+        console.log('Bef: ' + aTransBappend[iNN] ) ;
+        aTransBappend[iNN] = ',jmMEME,split,orig,,,';    
+        console.log('Aft: ' + aTransBappend[iNN] ) ;
+
+        console.log('eNN: ' + eNN );
+
+var parentElement = document.getElementById("myTbl");
+var htmlString = '<div id="row42" class="row mr-auto container-fluid px-1 tAl  " style="border: 1px solid black;  ">aaaa</div>';
+parentElement.insertAdjacentHTML("afterbegin", htmlString);
+
+var node = document.getElementById("row24");
+var clone = node.cloneNode(true);
+document.getElementById("row42").appendChild(clone);
+
+ 
+
+
+
+/*
+
+
+03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,25,26.7399,,668.50,jmInfo,split,into,64.88,L02,9.70% 0m10d
+03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,50,26.7399,,1337.00,jmInfo,split,orig,,,
+
+*/
+
+
         console.log( 'Split DONE' );
         /* chg row to orig not edit color. add to array and add row to table. two rows one q selected two left over q */
 
    
      }
   }
+
+   console.log('SplitIT end');
 
 }
 </script>
@@ -879,7 +980,7 @@ function useDate(e) {
   var eNN              = aRowTccc[0].textContent; var iNN = eNN - 1;
   document.getElementById('sellArray').value = iNN; 
 
-  console.log( aLines[iNN] );
+  console.log( aTransA[iNN] );
 
 
 }
@@ -978,11 +1079,11 @@ var sellDate = document.getElementById('sellDate').value;
      }
 
      pad2 = aRowTccc[0].textContent;
-     aLinesPart2[iNN] = ',jmMEME,,,' + nProfit + ',' + pad2 + ',' + nPercent +'% '+ nInDays;    
-     console.log( aLinesPart2[iNN] ) ;
+     aTransBappend[iNN] = ',jmMEME,,,' + nProfit + ',' + pad2 + ',' + nPercent +'% '+ nInDays;    
+     console.log( aTransBappend[iNN] ) ;
 
-     aLinesPart2[hNN] = ',jmMEME,,,,' + ',' +  pad2;  
-     console.log( aLinesPart2[hNN] ) ;
+     aTransBappend[hNN] = ',jmMEME,,,,' + ',' +  pad2;  
+     console.log( aTransBappend[hNN] ) ;
 
      var nRowID = 'row' + hNNtbl ; console.log( 'sell row id: ' + nRowID ) ;
      var hRowT = document.getElementById(nRowID);
@@ -1010,18 +1111,18 @@ var sellDate = document.getElementById('sellDate').value;
 
 function saveTrans() {
 
-  console.log('save Trans () aLines Bef'); console.log( aLines );
-  console.log('save Trans () aLinesPart2 Bef'); console.log( aLinesPart2 );
+  console.log('save Trans () aTransA Bef'); console.log( aTransA );
+  console.log('save Trans () aTransBappend Bef'); console.log( aTransBappend );
 
-  var aLinesSave = []; /* [...aLines]; */
-  aLines.forEach((user, index) => {
-      aLinesSave.push(aLines[index] + aLinesPart2[index]);
+  var aLinesSave = []; /* [...aTransA]; */
+  aTransA.forEach((user, index) => {
+      aTransASave.push(aTransA[index] + aTransBappend[index]);
   });
-  var textarea3 = document.getElementById('CutJSON');   textarea3.value = aLinesSave.join('\n') ;
+  var textarea3 = document.getElementById('CutJSON');   textarea3.value = aTransASave.join('\n') ;
 
 
-  console.log('save Trans () aLines Aft'); console.log( aLines );
-  console.log('save Trans () aLinesSave Aft'); console.log( aLinesSave );
+  console.log('save Trans () aTransA Aft'); console.log( aTransA );
+  console.log('save Trans () aTransASave Aft'); console.log( aTransASave );
 }
 </script>
 
