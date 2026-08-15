@@ -18,6 +18,11 @@
 
     <script src="trans.txt"> </script>
 
+    <style>
+    .noRX { padding-right: 0; margin-right: 0; }
+    .noLX { padding-left:  0; margin-left:  0; }
+    </style>
+
 
 <body style="background-color:#a56ca7; overscroll-behavior-y:none; " onload = "windowLoaded();" >
 
@@ -477,8 +482,11 @@
 
                    <label id="lookFor" for="lookFor" style="border: 1px solid black;"></label>  <label id='lookForx' hidden="hidden"></label>
 
-                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>  <input  id="lastLot" name="lastLot" type="number" min="1" max="99"  step="1" value="1">
-                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>  <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0" onchange="showThisLot(this.value)">
+                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>                 <button class="noR" onclick="nextLot('last','-')">-</button>   
+                   <input  id="lastLot" name="lastLot" type="number" min="1" max="99"  step="1" value="1"> <button class="noL" onclick="nextLot('last','+')">+</button>
+
+                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>                 <button onclick="nextLot('show','-')">-</button>
+                   <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0" onchange="showThisLot(this.value)">  <button onclick="nextLot('show','+')">+</button>
 
                    <label for="splitQ"  style="border: 1px solid black;">Split Q:</label>  <input  id="splitQ" name="splitQ" type="text"  style="width: 30px"   >
 
@@ -824,6 +832,25 @@ function BuildTran() {
 }
 </script>
 
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function nextLot(forWhat,plussMinus) {
+  
+  var lastLotID = document.getElementById('lastLot'); var lastLotN = lastLotID.value; if ( lastLotN === null || lastLotN === undefined || String(lastLotN).trim() === '' ) { lastLotN = 0; }
+  var showLotID = document.getElementById('showLot'); var showLotN = showLotID.value; if ( showLotN === null || showLotN === undefined || String(showLotN).trim() === '' ) { showLotN = 0; }
+
+  if ( forWhat === 'show' ) {
+    if ( plussMinus === '+' ) {  var showLotNN = parseInt(showLotN, 10) + 1; if ( showLotNN > 99 ) { showLotNN = 0 ; }; showLotID.value = showLotNN; }
+    else                      {  var showLotNN = parseInt(showLotN, 10) - 1; if ( showLotNN < 0  ) { showLotNN = 99; }; showLotID.value = showLotNN; }
+
+  }
+  if ( forWhat === 'last' ) {
+    if ( plussMinus === '+' ) {  var lastLotNN = parseInt(lastLotN, 10) + 1; if ( lastLotNN > 99 ) { lastLotNN = 0 ; }; lastLotID.value = lastLotNN; }
+    else                      {  var lastLotNN = parseInt(lastLotN, 10) - 1; if ( lastLotNN < 0  ) { lastLotNN = 99; }; lastLotID.value = lastLotNN; }
+  } 
+
+}
+</script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -834,8 +861,7 @@ function showThisLot(nLot) {
      document.querySelectorAll(`#myTbl .${findLot}`).forEach(row => row.hidden = false);
   } else {
      document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = false);
-
-}
+  }
 
 }
 
