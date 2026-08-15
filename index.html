@@ -374,7 +374,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1 8/13r 9pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.2 8/14a 4pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -664,6 +664,62 @@ function BuildCharts() {
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function GetRowByID(rowID) {
+
+  var eMap = new Map();
+
+  var e = document.getElementById(rowID);
+
+  var eRowT  = e;
+  var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
+
+  var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
+  var eNN              = aRowTccc[0].textContent;                  var eNNE             = aRowTccc[0]; eMap.set('meNNE', eNNE);
+  var eDateSymAct      = aRowTccc[1].textContent;                  var eDateSymActE     = aRowTccc[1]; eMap.set('meDateSymActE', eDateSymActE );
+  var iNN = eNN - 1;  
+
+  var aRowTcc  =  [...aRowTc[1].children];  /* ROW 2 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: BUY Quan , Price , Amt */
+  var eQuantity        = parseFloat(aRowTccc[0].textContent);      var eQuantityE       = aRowTccc[0]; eMap.set('meQuantity', eQuantityE ); 
+  var ePrice           = parseFloat(aRowTccc[1].textContent);      var ePriceE          = aRowTccc[1]; eMap.set('mePrice',    ePriceE    ); 
+  var eTotAmt          = parseFloat(aRowTccc[2].textContent);      var eTotAmtE         = aRowTccc[2]; eMap.set('meTotAmt'  , eTotAmtE   );           
+
+  var aRowTcc  =  [...aRowTc[2].children];  /* ROW 3 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: SELL Quan , Price , Amt */
+  var eSellQuanity     = parseFloat(aRowTccc[0].textContent);      var eSellQuanityE    = aRowTccc[0]; eMap.set('meSellQuanity', eSellQuanityE ); 
+  var eSellPrice       = parseFloat(aRowTccc[1].textContent);      var eSellPriceE      = aRowTccc[1]; eMap.set('meSellPrice'  , eSellPriceE   );      
+  var eSellDollar      = aRowTccc[2].textContent;                  var eSellDollarE     = aRowTccc[2]; eMap.set('meSellDollar' , eSellDollarE  );
+
+  var aRowTcc  =  [...aRowTc[3].children];  /* ROW 4 Div wrapper */
+  var aRowTccc = [...aRowTcc[0].children];  /* Cols: Lot , Per Days , Xdiv */
+  var eLot             = aRowTccc[0].textContent;                  var eLotE             = aRowTccc[0]; eMap.set('meLot',        eLotE         );
+  var eSellPercentDays = aRowTccc[1].textContent;                  var eSellPercentDaysE = aRowTccc[1]; eMap.set('meSellPercentDays', eSellPercentDaysE );
+  var eXdiv            = aRowTccc[2].textContent;                  var eXdivE            = aRowTccc[2]; eMap.set('meXdiv',       eXdivE        );
+
+  eMap.forEach((value, key) => {
+    console.log(`${key.padEnd(30, ' ') } ${value.innerHTML}`);
+  });
+  var oMap = Object.fromEntries(eMap);
+
+  return oMap;
+}
+
+/*
+THIS WORKS
+var hMap = GetRowByID('row46');
+console.log(hMap.mePrice.textContent);
+hMap.meQuantity.textContent = 'uuuuuuuuu';
+hMap.meQuantity.textContent;
+
+*/
+
+</script>
+
+
+
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function BuildTran() {
 
   /*
@@ -726,17 +782,22 @@ function BuildTran() {
   for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays , vSoldPrice ] of aTransRNmap ) 
   {
 
-   if ( vLot.trim() !== "" ) { 
-      vAmount = Number(vAmount).toFixed(0); 
-      vProf   = Number(vProf).toFixed(0); 
-   }
+   if (vJmInfo == null ) { var vJmInfo = ''; var vSplit = ''; var vInto = ''; var vProf = ''; var vLot = ''; var vPerDays = ''; }
+   if (vLot    == null ) { var vLot = ''; } /* 08/15 fix null problem */
 
-   if (vJmInfo === 'undefined' ) { vJmInfo = ''; vSplit = ''; vInto = ''; vProf = ''; vLot = ''; vPerDays }
+   if (typeof vLot === "string" && vLot.trim().length > 0) { 
+     if ( vLot.trim() !== "" ) { 
+        vAmount = Number(vAmount).toFixed(0); 
+        vProf   = Number(vProf).toFixed(0); 
+     }
+   } 
+
    nn += 1; 
 
    var nRowID = 'row' + vNN ;
 
-   symbList.push(vSymbol); lotList.push(vLot);
+   symbList.push(vSymbol); 
+   lotList.push(vLot);
 
    classBlock = 'tAll ' + vSymbol; 
    if      ( vAction === 'Buy' )  { classBlock += ' Buy'  } 
@@ -744,6 +805,9 @@ function BuildTran() {
    else if ( vAction === 'Div' )  { classBlock += ' Div'  } 
    else if ( vAction === 'ach' )  { classBlock += ' Fund' } 
    else classBlock += ' Oth'
+
+
+    if (vLot == null ) { var vLot = ''; }
 
     if ( vAction === 'Buy'  && vLot.trim() === "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Act ' + vSymbol + '-Act'; }
     if ( vAction === 'Buy'  && vLot.trim() !== "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
