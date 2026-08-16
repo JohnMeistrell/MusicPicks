@@ -374,7 +374,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.2 8/14a 4pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.3 8/14a 11pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -577,8 +577,7 @@ function windowLoaded()
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   {
 
-var aTransBappend =  [];
-var aTransA      =  []; 
+var aTransBappend =  []; var aTransA =  []; 
    }
 </script>
 
@@ -586,65 +585,42 @@ var aTransA      =  [];
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
   const today = new Date();
-
-  const formattedDate = new Intl.DateTimeFormat('en-US', {
-    month: '2-digit',
-    day: '2-digit',
-    year: 'numeric'
-  }).format(today); // Outputs: 07/15/2026
-
+  const formattedDate = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(today); // Outputs: 07/15/2026
   var sellDateE = document.getElementById('sellDate'); sellDate.value = formattedDate;  
 
 </script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function ckMe() {
 
- var tMeIn = document.getElementById('RawList');
- var tMe1 = document.getElementById('me1').value;  
- var tMe2 = document.getElementById('me2').value; 
-
+ var tMeIn = document.getElementById('RawList'); var tMe1 = document.getElementById('me1').value; var tMe2 = document.getElementById('me2').value; 
  document.getElementById('CutJSON').value = 'ckMe: step1 ' + tMe1 +' '+ tMe2; 
-
  if ( tMe1 === 'jj' && tMe2 === 'jj' ) {
     if (tMeIn.value.trim() === "") {
         tMeIn.value = transIn;
-        document.getElementById('myTbl').innerHTML = '';
-        document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ transIn;
+        document.getElementById('myTbl').innerHTML = ''; document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ transIn;
     }
  }
-
  if ( tMe1 === 'cc' && tMe2 === 'cc' ) {
     if (tMeIn.value.trim() === "") {
         tMeIn.value = ChartsIn;
-        document.getElementById('myTbl').innerHTML = '';
-        document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ ChartsIn;
+        document.getElementById('myTbl').innerHTML = ''; document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ ChartsIn;
     }
  }
 
-
-
 }
-
 </script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 
-function sortTrans() {
-
-/* aTrans RwN.reverse(); */
-
-
+function sortTrans() { /* aTrans RwN.reverse(); */
 }
-
 </script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
 function BuildCharts() {
 
   var eRawListID = document.getElementById('RawList'); let textCharts = eRawListID.value.trim();
@@ -659,12 +635,11 @@ function BuildCharts() {
   myCharts.insertAdjacentHTML('beforeend', codeBlockC );
 
 }
-
 </script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-function GetRowByID(rowID) {
+function GetRowByID(rowID) { /* oMap objects to get or update html table columns. N Date Sym Quan Price... */
 
   var eMap = new Map();
 
@@ -716,13 +691,12 @@ hMap.meQuantity.textContent;
 
 </script>
 
-
-
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function BuildTran() {
 
   /*
+  ------------------------------------------------------------
   transIn - file csv from Schawb - var transIn (New 1st) :
      "Date","Action","Symbol","Description","Quantity","Price","Fees","Amount",vJmInfo,vSplit,vInto,vProf,vLot,vPerDays
      07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d 
@@ -749,7 +723,7 @@ function BuildTran() {
 3: "45,03/11,Buy,KHC,KRAFT HEINZ CO,50,23.155,,1157.75,jmInfo,split,orig,,,"
 47:"1,07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d "
 48: "0,Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,vProf
-
+  ------------------------------------------------------------
   */
 
   /* Get raw csv from 1st box. Should be free of commas. Remove double quotes and dollar signs. */
@@ -773,70 +747,87 @@ function BuildTran() {
 
   var aTransRNmap = aTransRwN.map(row => row.split(","));
 
+  /* ------------------------------------------------------ */
+  /* Build table html */
+  /* ------------------------------------------------------ */
   var codeBlock = ''; var classBlock = ''; var symbList = []; var lotList = [];
-
-  /* Row and Columns */
   var eTDleft = '<td style="border: 1px solid black;" >'; /* Row */
 
   var nn = 0;
   for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays , vSoldPrice ] of aTransRNmap ) 
   {
 
+  /* ------------------------------------------------------ */
+  /* Loop all rows (Start) */
+  /* ------------------------------------------------------ */ 
+
+   /* Any JmInfo columns null missing... */
    if (vJmInfo == null ) { var vJmInfo = ''; var vSplit = ''; var vInto = ''; var vProf = ''; var vLot = ''; var vPerDays = ''; }
    if (vLot    == null ) { var vLot = ''; } /* 08/15 fix null problem */
 
+   /* Format Amt Profit */
    if (typeof vLot === "string" && vLot.trim().length > 0) { 
-     if ( vLot.trim() !== "" ) { 
-        vAmount = Number(vAmount).toFixed(0); 
-        vProf   = Number(vProf).toFixed(0); 
-     }
+     if ( vLot.trim() !== "" ) {  vAmount = Number(vAmount).toFixed(0); vProf   = Number(vProf).toFixed(0);  }
    } 
 
-   nn += 1; 
+   nn += 1; var nRowID = 'row' + vNN ;                         /* Row Element ID: row1 row2 */
+   symbList.push(vSymbol); lotList.push(vLot);                 /* List symbols and Lots to make buttons and get last Lot */ 
 
-   var nRowID = 'row' + vNN ;
+   classBlock = 'tAll ' + vSymbol;                             /* Row Element Class: Buy Sell Div Fund to find and hide */
+   if      ( vAction === 'Buy' )  { classBlock += ' Buy'  }    else if ( vAction === 'Sell' ) { classBlock += ' Sell' } 
+   else if ( vAction === 'Div' )  { classBlock += ' Div'  }    else if ( vAction === 'ach' )  { classBlock += ' Fund' }    else { classBlock += ' Oth' } /* ck if need {} */
 
-   symbList.push(vSymbol); 
-   lotList.push(vLot);
-
-   classBlock = 'tAll ' + vSymbol; 
-   if      ( vAction === 'Buy' )  { classBlock += ' Buy'  } 
-   else if ( vAction === 'Sell' ) { classBlock += ' Sell' } 
-   else if ( vAction === 'Div' )  { classBlock += ' Div'  } 
-   else if ( vAction === 'ach' )  { classBlock += ' Fund' } 
-   else classBlock += ' Oth'
-
-
-    if (vLot == null ) { var vLot = ''; }
-
+    /* Row Element Class to toggle show hide: Act Lot. Action only for Buy. Lot for Buy and Sell  */
     if ( vAction === 'Buy'  && vLot.trim() === "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Act ' + vSymbol + '-Act'; }
     if ( vAction === 'Buy'  && vLot.trim() !== "" && vInto.trim() !== "orig" )  { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
     if ( vAction === 'Sell' && vLot.trim() !== "" )                             { classBlock += ' tAll-Lot ' + vSymbol + '-Lot'; }
+  
+    if ( vLot.trim() !== "" ) { classBlock += ' '+ vLot; }     /* Row Element class Lot L01 L02... */
 
-    if ( vLot.trim() !== "" ) { classBlock += ' '+ vLot; }
-
+    /* Row Gray:         Original trade that was split into multiple trades. Buy or Sell */
+    /* Row Green(Light): Has Lot. Buy or Sell */ 
     var grayMe = ' '; if ( vInto === 'orig' ) { grayMe = "background-color: gray; ";  } else if ( vLot.trim() !== "" ) { grayMe = "background-color: lightgreen; ";  } 
 
-    codeBlock += '<div id="' + nRowID +  '" class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; /* Columns */
-             
+    /* ------------------------------------------------------ */
+    /* Top: One for each transaction line item. Buy Sell Div Other */
+    /* ------------------------------------------------------ */ 
+    codeBlock += '<div id="' + nRowID +  '" class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black; ' + grayMe + '" > \n'; 
+
+    /* ------------------------------------------------------ */
+    /* Bootstrap ROW 1: Date Symb Action(Buy Sell Div) */
+    /* ------------------------------------------------------ */             
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
+
+    /* ------------------------------------------------------ */
+    /* Col NN: Gray(Light):   Sell without lot. Click to hold/use Sell date on Buy row to calculate 1m12d */
+    /* Col NN: Orange:        Buy  without lot. Click to split trade trans if sold less shares that bought. Adds new html table rows on top to SAVE for file */ 
+    /* ------------------------------------------------------ */
     if        ( vAction === 'Sell' && vLot.trim() === "" ) {
     codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: lightgray;" onclick="useDate(this)"  >' + vNN  + '</div> \n';
     } else if ( vAction === 'Buy'  && vLot.trim() === "" ) {
-    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: orange;" onclick="splitIt(this)"  >' + vNN  + '</div> \n';
+    codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; background-color: orange;"    onclick="splitIt(this)"  >' + vNN  + '</div> \n';
     } else {
     codeBlock += '         <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold; "  >' + vNN  + '</div> \n';
     }
 
+    /* ------------------------------------------------------ */
+    /* Col Date Symb Act(Buy/Sell): Click to get Stock Chart in new window */
+    /* ------------------------------------------------------ */
     codeBlock += '         <div class="col-9" style="border: 1px solid black;" onclick="GetChart(\'' + vSymbol + '\');" >' + vDate + ' ' + vSymbol + ' ' + vAction + '</div> \n'; 
     codeBlock += '    </div> </div> \n'; 
 
+    /* ------------------------------------------------------ */
+    /* Bootstrap ROW 2: Buy Quan(shares) Price(share) Amount(total $ paid) */
+    /* ------------------------------------------------------ */             
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; " >' + vQuantity   +                           '</div> \n';
     codeBlock += '         <div class="col-4" style="border: 1px solid black; " >' + vPrice      +                           '</div> \n'; 
     codeBlock += '         <div class="col-5" style="border: 1px solid black; " >' + vAmount     +                           '</div> \n';
     codeBlock += '    </div> </div> \n'; 
 
+    /* ------------------------------------------------------ */
+    /* Profit Price */
+    /* ------------------------------------------------------ */     
     var TempvProf = ''; var TempPrice = '';
     if ( vAction === 'Buy' && vLot.trim() !== "" )  { 
          TempvProf = vProf ; TempPrice = ( vProf / vQuantity ).toFixed(2); 
@@ -847,15 +838,28 @@ function BuildTran() {
          if ( typeof vSoldPrice === "string" && vSoldPrice.trim().length > 0 ) { TempPrice = vSoldPrice; } 
     } 
    
+    /* ------------------------------------------------------ */
+    /* Bootstrap ROW 3: Sell Quan(shares) Price(share) Amount(total $ got) */
+    /* ------------------------------------------------------ */ 
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
+
+    /* ------------------------------------------------------ */ 
+    /* Col Sell NoLot Quan:         Pink:          Click to calc possible profit % days 1m12d. Calc if Buy Sell shares are different */
+    /* Col Sell NoLot Price(share): Gray(Light):   Click to calc possible profit % days 1m12d. Pink/Gray so update Sell trans with LOT... */
+    /* Col Buy  NoLot Quan:         Yellow:        Click to calc possible profit % days 1m12d. Calc if Buy Sell shares are different */
+    /* Col Buy  NoLot Price(share): Orange:        Click to calc possible profit % days 1m12d */
+    /* ------------------------------------------------------ */  
     if ( vAction === 'Sell' && vLot.trim() === "" ) { 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: pink;"       contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
-    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightblue;"  contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightgray;"  contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
     } 
     else if ( vAction === 'Buy' && vLot.trim() === "" && vInto !== 'orig' ) { 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; background-color: yellow;"     contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
-    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: lightgreen;" contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
+    codeBlock += '         <div class="col-4" style="border: 1px solid black; background-color: orange;"     contenteditable="true" onmouseleave="calcTot(this)" ontouchend="calcTot(this)" ></div> \n';
     } else {
+    /* ------------------------------------------------------ */ 
+    /* Gray default for Original trans Buy/Sell that was split in two or more */
+    /* ------------------------------------------------------ */ 
     codeBlock += '         <div class="col-3" style="border: 1px solid black; min-height: 20px; " >' + vQuantity  + '</div> \n';
     codeBlock += '         <div class="col-4" style="border: 1px solid black; min-height: 20px; " >' + TempPrice + '</div> \n';
 
@@ -863,6 +867,9 @@ function BuildTran() {
     codeBlock += '         <div class="col-5" style="border: 1px solid black; " >' + TempvProf + '</div>  \n'; 
     codeBlock += '    </div> </div> \n'; 
 
+    /* ------------------------------------------------------ */
+    /* Bootstrap ROW 4: Sell Lot % Days 1m12d xDiv */
+    /* ------------------------------------------------------ */
     codeBlock += '    <div class="col-sm-3">  <div class="row"> \n'; 
     codeBlock += '         <div class="col-3"  style="border: 1px solid black;" >' + vLot     + '</div> \n';
     codeBlock += '         <div class="col-4"  style="border: 1px solid black;" >' + vPerDays + '</div> \n';
@@ -872,6 +879,10 @@ function BuildTran() {
     codeBlock += '</div>  \n';
 
   }
+  /* ------------------------------------------------------ */
+  /* Loop all rows (END) */
+  /* ----------------------------------------------------- */ 
+
   /*  var textarea3 = document.getElementById('CutJSON');   textarea3.value = codeBlock ; */
   var myTrans = document.getElementById('myTbl'); 
   myTrans.insertAdjacentHTML('beforeend', codeBlock );
@@ -880,18 +891,12 @@ function BuildTran() {
   const symbListUniqueSorted = [...new Set(symbList)];
   symbListUniqueSorted.sort();                              
 
-
-   lotList.sort();                                          
-   var lotListUSorted = [...new Set(lotList)];
-   lotListUSorted.sort();                                             console.log(  lotListUSorted );
-   var lotLast3 =  lotListUSorted[lotListUSorted.length - 1] ;        console.log ( lotLast3 );
-   var lotLast3n = lotLast3.slice(1);                                 console.log ( lotLast3n ); 
-   var lotNN = parseInt(lotLast3n, 10);                               console.log ( lotNN ); 
-
-/*
-        var lotInput = document.getElementById('lastLot');
-        lotInput.value = lotNN;
-*/
+  lotList.sort();                                          
+  var lotListUSorted = [...new Set(lotList)];
+  lotListUSorted.sort();                                             console.log(  lotListUSorted );
+  var lotLast3 =  lotListUSorted[lotListUSorted.length - 1] ;        console.log ( lotLast3 );
+  var lotLast3n = lotLast3.slice(1);                                 console.log ( lotLast3n ); 
+  var lotNN = parseInt(lotLast3n, 10);                               console.log ( lotNN ); 
 
 }
 </script>
@@ -906,7 +911,7 @@ function nextLot(forWhat,plussMinus) {
   if ( forWhat === 'show' ) {
     if ( plussMinus === '+' ) {  var showLotNN = parseInt(showLotN, 10) + 1; if ( showLotNN > 99 ) { showLotNN = 0 ; }; showLotID.value = showLotNN; }
     else                      {  var showLotNN = parseInt(showLotN, 10) - 1; if ( showLotNN < 0  ) { showLotNN = 99; }; showLotID.value = showLotNN; }
-
+    showThisLot(showLotID.value);
   }
   if ( forWhat === 'last' ) {
     if ( plussMinus === '+' ) {  var lastLotNN = parseInt(lastLotN, 10) + 1; if ( lastLotNN > 99 ) { lastLotNN = 0 ; }; lastLotID.value = lastLotNN; }
@@ -919,6 +924,7 @@ function nextLot(forWhat,plussMinus) {
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function showThisLot(nLot) {
+
   if (nLot !== "0" && nLot !== "") {
      document.querySelectorAll('#myTbl div.tAll').forEach(row => row.hidden = true);
      var findLot = 'L' + nLot.padStart(2, '0');   
@@ -928,7 +934,6 @@ function showThisLot(nLot) {
   }
 
 }
-
 </script>
 
 <script type="text/javascript">    
@@ -941,6 +946,7 @@ function FindTran2(selSet) {
 
 }
 </script>
+
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function FindTran(selSet) {
@@ -949,6 +955,7 @@ function FindTran(selSet) {
     var eC = document.getElementsByClassName(selSet);     for (var eT of eC) { eT.hidden = false; }
  }
 </script>
+
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function FindType(selSet2) { /* Act Hist Lot */
@@ -997,8 +1004,6 @@ function cloneAndModifyIds(originalId, newParentId, suffix) {
 }
 </script>
 
-
-
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function splitIt(e) {
@@ -1027,35 +1032,24 @@ function splitIt(e) {
 
         console.log('eNN: ' + eNN );
 
-var parentElement = document.getElementById("myTbl");
-var htmlString = '<div id="row42" class="row mr-auto container-fluid px-1 tAl  " style="border: 1px solid black;  ">aaaa</div>';
-parentElement.insertAdjacentHTML("afterbegin", htmlString);
+        var parentElement = document.getElementById("myTbl");
+        var htmlString = '<div id="row42" class="row mr-auto container-fluid px-1 tAl  " style="border: 1px solid black;  ">aaaa</div>';
+        parentElement.insertAdjacentHTML("afterbegin", htmlString);
 
-var node = document.getElementById("row24");
-var clone = node.cloneNode(true);
-document.getElementById("row42").appendChild(clone);
+        var node = document.getElementById("row24");
+        var clone = node.cloneNode(true);
+        document.getElementById("row42").appendChild(clone);
 
- 
-
-
-
-/*
-
-
-03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,25,26.7399,,668.50,jmInfo,split,into,64.88,L02,9.70% 0m10d
-03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,50,26.7399,,1337.00,jmInfo,split,orig,,,
-
-*/
-
-
+        /* -----------------------------------------------------------
+        03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,25,26.7399,,668.50,jmInfo,split,into,64.88,L02,9.70% 0m10d
+        03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,50,26.7399,,1337.00,jmInfo,split,orig,,,
+        --------------------------------------------------------------
+        */
         console.log( 'Split DONE' );
         /* chg row to orig not edit color. add to array and add row to table. two rows one q selected two left over q */
-
-   
      }
   }
-
-   console.log('SplitIT end');
+  console.log('SplitIT end');
 
 }
 </script>
@@ -1069,6 +1063,11 @@ function useDate(e) {
    document.getElementById('sellDate').value = mmdd +"/2026"; 
 
   var eRowT  = e.parentElement.parentElement.parentElement;
+
+  console.log('eRowT ID: ' + eRowT.id);
+  var hMap = GetRowByID(eRowT.id);
+  console.log(hMap.mePrice.textContent);
+
   var aRowTc   = [...eRowT.children];       /* FOUR ROWS */
   var aRowTcc  = [...aRowTc[0].children];   /* ROW 1 Div wrapper */
   var aRowTccc = [...aRowTcc[0].children];  /* Cols: nn , DateSymAct */
@@ -1084,8 +1083,6 @@ function useDate(e) {
   document.getElementById('sellArray').value = iNN; 
 
   console.log( aTransA[iNN] );
-
-
 }
 </script>
 
@@ -1170,15 +1167,9 @@ var sellDate = document.getElementById('sellDate').value;
      /* Lot next */
      var padded = ''; var pad2 = '';
      if (!eLot) {
-        var lotInput = document.getElementById('lastLot');
-        var curValue  = lotInput.value;
-        var nextValue = parseInt(lotInput.value, 10) + 1;
-        lotInput.value = nextValue;
-
-        padded = nextValue.toString().padStart(2, '0');
-        var pad2 = 'L' + padded.toString();
-        aRowTccc[0].textContent = pad2;
-
+        var lotInput = document.getElementById('lastLot');  var curValue  = lotInput.value;
+        var nextValue = parseInt(lotInput.value, 10) + 1;  lotInput.value = nextValue;
+        padded = nextValue.toString().padStart(2, '0'); var pad2 = 'L' + padded.toString(); aRowTccc[0].textContent = pad2;
      }
 
      pad2 = aRowTccc[0].textContent;
@@ -1198,20 +1189,14 @@ var sellDate = document.getElementById('sellDate').value;
   
      hLotE.textContent = pad2;
 
-     console.log( hRowT );
-     console.log( hRowTccc );
-
+     console.log( hRowT ); console.log( hRowTccc );
   }
 
-
 }
-
 </script>
 
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
 function saveTrans() {
 
   console.log('save Trans () aTransA Bef'); console.log( aTransA );
@@ -1223,63 +1208,39 @@ function saveTrans() {
   });
   var textarea3 = document.getElementById('CutJSON');   textarea3.value = aTransASave.join('\n') ;
 
-
   console.log('save Trans () aTransA Aft'); console.log( aTransA );
   console.log('save Trans () aTransASave Aft'); console.log( aTransASave );
 }
 </script>
 
-
-
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
-
   const mapRR = mapVideoDetails.map(([ 
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti ]) => ({ 
      vtag, vID , vTitle , vAuthor , vImage , vURL , vTimes , vCat , vMix , vNames , vFingers , vInstrument , vLyrics , vExpert , vRate , vMulti }));
 
-  const mapSet1 = mapRR.filter(user => user.vCat === '1'); /* -Favorite  */
-  const mapSet2 = mapRR.filter(user => user.vCat === '2'); /* -Pianno */
-  const mapSet3 = mapRR.filter(user => user.vCat === '3'); /* -Theory */
-  const mapSet4 = mapRR.filter(user => user.vCat === '4'); /* -Beat   */
-  const mapSet5 = mapRR.filter(user => user.vCat === '5'); /* -Kayla  */
-  const mapSet6 = mapRR.filter(user => user.vCat === '6'); /* -Bands (Stones...) */ 
-  const mapSet7 = mapRR.filter(user => user.vCat === '7'); /* -Nature */
-  const mapSet8 = mapRR.filter(user => user.vCat === '8'); /* -Surf   */
-  const mapSet9 = mapRR.filter(user => user.vCat === '9'); /* -Dennis */
+  const mapSet1 = mapRR.filter(user => user.vCat === '1'); /* -Favorite  */  const mapSet2 = mapRR.filter(user => user.vCat === '2'); /* -Pianno */
+  const mapSet3 = mapRR.filter(user => user.vCat === '3'); /* -Theory    */  const mapSet4 = mapRR.filter(user => user.vCat === '4'); /* -Beat   */
+  const mapSet5 = mapRR.filter(user => user.vCat === '5'); /* -Kayla     */  const mapSet6 = mapRR.filter(user => user.vCat === '6'); /* -Bands (Stones...) */ 
+  const mapSet7 = mapRR.filter(user => user.vCat === '7'); /* -Nature    */  const mapSet8 = mapRR.filter(user => user.vCat === '8'); /* -Surf   */
+  const mapSet9 = mapRR.filter(user => user.vCat === '9'); /* -Dennis    */
   var mapSet  = mapSet3;
 
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
   function playRandom(selSet) {
 
      var idSelBigBox   = document.getElementById("idSelBigBox");
      idSelBigBox.hidden = false;
 
 
-     if        (selSet == '1') { mapSet = mapSet1;
-     } else if (selSet == '2') { mapSet = mapSet2;
-     } else if (selSet == '3') { mapSet = mapSet3;
-     } else if (selSet == '4') { mapSet = mapSet4;
-     } else if (selSet == '5') { mapSet = mapSet5;
-     } else if (selSet == '6') { mapSet = mapSet6;
-     } else if (selSet == '7') { mapSet = mapSet7;
-     } else if (selSet == '8') { mapSet = mapSet8;
-     } else if (selSet == '9') { mapSet = mapSet9;
-
-     } else if (selSet == 'Hide') { 
+     if        (selSet == '1') { mapSet = mapSet1;     } else if (selSet == '2') { mapSet = mapSet2;
+     } else if (selSet == '3') { mapSet = mapSet3;     } else if (selSet == '4') { mapSet = mapSet4;
+     } else if (selSet == '5') { mapSet = mapSet5;     } else if (selSet == '6') { mapSet = mapSet6;
+     } else if (selSet == '7') { mapSet = mapSet7;     } else if (selSet == '8') { mapSet = mapSet8;
+     } else if (selSet == '9') { mapSet = mapSet9;     } else if (selSet == 'Hide') { 
        idSelBigBox.hidden = true;
      } else {                    mapSet = mapSet3;
      }
-
-/*
-     if        (selSet == '1') { mapSet = mapSet1;
-     } else if (selSet == '2') { mapSet = mapSet2;
-     } else if (selSet == '3') { mapSet = mapSet3;
-     } else if (selSet == 'Hide') { 
-       idSelBigBox.hidden = true;
-     } else {                    mapSet = mapSet3;
-     }
-*/
-
 
      var selRow   = Math.floor(Math.random() * mapSet.length);
      var selTitle = mapSet[selRow].vTitle;
@@ -1297,16 +1258,11 @@ function saveTrans() {
      idSelURL.href        = selURL;
      idSelImage.src       = selImage;
 
-
-
   }
-
 </script>
 
-
 <script type="text/javascript">    
-
-
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function Data(el,eItem)
  {
     var itemT =  el.name;
@@ -1316,8 +1272,7 @@ function Data(el,eItem)
 </script>
 
 <script type="text/javascript">    
-
-
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function isNotEmpty(value) {
       return value != null && String(value).trim().length > 0;
 }
@@ -1325,7 +1280,7 @@ function isNotEmpty(value) {
 </script>
 
 <script type="text/javascript">  
-
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
 var saveR = [];
 
   var aTagsList = [];
@@ -1453,7 +1408,6 @@ if ( vMulti       !== '') {
 
         /* console.log('jmTimes: ' + vTimes); */
 
-
         let tagsCOL = "";
         let tagsAdd = "";
         let tagsHDR = "";
@@ -1466,7 +1420,6 @@ if ( vMulti       !== '') {
          /* -------------------------------------------------------------------- */     
         /* 001 COMMON CODE START (MUST COPY see way below in from GITHUB section  */
         /* -------------------------------------------------------------------- */  
-
 
         E2row = E2rowA + " multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagsAdd + E2rowC ;
 
@@ -1493,7 +1446,6 @@ if ( vMulti       !== '') {
         }
 
         lastItemSelectionBuilt = tagClass;
-
 
         /* ROW ------------------------ */
         if (colN == 1 ) { codeBlock += E2row; }
@@ -1546,13 +1498,11 @@ if ( vMulti       !== '') {
        htmlJSbottom  += tempLine + '\n' ;
      });
 
-     console.log(htmlTagButtons);
-     console.log(htmlJSbottom); 
+     console.log(htmlTagButtons);     console.log(htmlJSbottom); 
 
  
   }
   /* Image from GitHub C DRIVE (end) -----------------------------------------------------------------*/
-
 
   codeBlock += 	E7divEF; 
 
@@ -1564,7 +1514,6 @@ if ( vMulti       !== '') {
   tagList.sort();                                          /* console.log('tagList: ' + tagList ); */
   const tagListUniqueSorted = [...new Set(tagList)];
   tagListUniqueSorted.sort();                              /* console.log('tagListUniqueSorted: ' + tagListUniqueSorted ); */
-
 
   tagListUniqueSorted.forEach((aItem, index, array) => {
   
