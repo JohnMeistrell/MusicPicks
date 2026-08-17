@@ -19,8 +19,18 @@
     <script src="trans.txt"> </script>
 
     <style>
+
+    .noLRbor { border-left:  0; border-right:  0; }
+    .noLRpad { padding-left: 0; padding-right: 0; }
+
     .noRX { padding-right: 0; margin-right: 0; }
     .noLX { padding-left:  0; margin-left:  0; }
+
+
+.keep-together {
+  white-space: nowrap; /* Prevents internal elements from breaking onto a new line */
+  border: none; padding: 0;
+}
     </style>
 
 
@@ -374,7 +384,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.3 8/14a 11pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.4 8/16u 11pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -455,43 +465,51 @@
                  <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
                    <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
                    <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
+
                    <button class="btn border border-light btn-primary btn-Buy"   type= "button" onclick="FindTran('Buy')"  >Buy</button>
                    <button class="btn border border-light btn-primary btn-Sell"  type= "button" onclick="FindTran('Sell')" >Sell</button>
                    <button class="btn border border-light btn-primary btn-Div"   type= "button" onclick="FindTran('Div')"  >Div</button>
                    <button class="btn border border-light btn-primary btn-Fund"  type= "button" onclick="FindTran('Fund')" >Fund</button>
+                   <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
+
+                   <span class="keep-together"> <input type="checkbox" id="myActive"  name="myActive"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Act')  ">Active </input> </span>
+                   <span class="keep-together"> <input type="checkbox" id="myHistory" name="myHistory" value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">History</input> </span>
+                   <span class="keep-together"> <input type="checkbox" id="myLot"     name="myLot"     value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Lot')  ">Lot    </input> </span>
+
                    <button class="btn border border-light btn-primary btn-KHC"   type= "button" onclick="FindTran('KHC')"  >KHC</button>
                    <button class="btn border border-light btn-primary btn-SMG"   type= "button" onclick="FindTran('SMG')"  >SMG</button>  
                    <button class="btn border border-light btn-primary btn-CBRL"  type= "button" onclick="FindTran('CBRL')" >CBRL</button>
                    <button class="btn border border-light btn-primary btn-EXC"   type= "button" onclick="FindTran('EXC')"  >EXC</button>
                    <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
-                   <button class="btn border border-light btn-primary btn-WEN-Act" type= "button" onclick="FindTran('WEN-Act')"  >WEN-Act</button>
-                   <button class="btn border border-light btn-primary btn-WEN-Lot" type= "button" onclick="FindTran('WEN-Lot')"  >WEN-Lot</button>
                    <button class="btn border border-light btn-primary btn-SPCX"  type= "button" onclick="FindTran('SPCX')" >SPCX</button>
-                   <button class="btn border border-light btn-primary btn-Oth"   type= "button" onclick="FindTran('Oth')"  >Oth</button>
 
                    <button class="btn border border-light btn-primary btn-SORT"   type= "button" onclick="sortTrans()"      >Sort</button>
                    <button class="btn border border-light btn-primary btn-CHARTS" type= "button" onclick="BuildCharts()"    >Charts</button>
                    <button class="btn border border-light btn-primary btn-BUILD"  type= "button" onclick="BuildTran()"      >BUILD</button>
                    <button class="btn border border-light btn-primary btn-SAVE"   type= "button" onclick="saveTrans()"      >SAVE</button>
- 
-                   <input type="checkbox" id="myActive"  name="myActive"  value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Act')  ">Active </input>
-                   <input type="checkbox" id="myHistory" name="myHistory" value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Hist') ">History</input>
-                   <input type="checkbox" id="myLot"     name="myLot"     value="s" style="margin-left: 0;margin-right: 0;" onclick="FindType('Lot')  ">Lot    </input>
 
-                   <input id='sellDate' type="text"  style="width: 100px" > 
+                   <span class="keep-together container-fluid text-nowrap"> <label for="sellDate"  >Sell DT:</label> <input id='sellDate' type="text"  style="width: 100px" >  </span>
+                   <span class="keep-together container-fluid text-nowrap"> <label for="splitQ"    >Split Q:</label> <input id="splitQ"    name="splitQ"    type="text" style="width: 30px"> </span>
+                   <span class="keep-together container-fluid text-nowrap"> <label for="sellPrice" >Sell P: </label> <input id="sellPrice" name="sellPrice" type="text" style="width: 30px"> </span>
+                   <span class="keep-together container-fluid text-nowrap"> <label for="sellArray" >Sell A: </label> <input id="sellArray" name="sellArray" type="text" style="width: 30px"> </span>
+
+                   <!-- <span class="keep-together container-fluid text-nowrap" style="border: none; width: fit-content; overflow: auto; display: inline-block;">  -->
+
+                   <span class="keep-together container-fluid text-nowrap" style="border: none; width: fit-content; overflow: auto; display: inline-flex; align-items: center; gap: 0;"> 
+                   <label for="lastLot" >Last Lot:</label>                 
+                   <button                             style="height: fit-content;" onclick="nextLot('last','-')">-</button>   
+                   <input  id="lastLot" name="lastLot" style="width: 40px;"         type="number" min="1" max="99"  step="1" value="1"> 
+                   <button                             style="height: fit-content;" onclick="nextLot('last','+')">+</button>
+                   </span>
+
+                   <span class="keep-together container-fluid text-nowrap" style="border: none; width: fit-content; overflow: auto; display: inline-flex; align-items: center; gap: 0;"> 
+                   <label for="showLot" >Show Lot:</label>                 
+                   <button                             style="height: fit-content;" onclick="nextLot('show','-')">-</button>
+                   <input  id="showLot" name="showLot" style="width: 40px;"         type="number" min="0" max="100" step="1" value="0" onchange="showThisLot(this.value)">  
+                   <button                             style="height: fit-content;" onclick="nextLot('show','+')">+</button>
+                   </span>
 
                    <label id="lookFor" for="lookFor" style="border: 1px solid black;"></label>  <label id='lookForx' hidden="hidden"></label>
-
-                   <label for="lastLot" style="border: 1px solid black;">Last Lot:</label>                 <button class="noR" onclick="nextLot('last','-')">-</button>   
-                   <input  id="lastLot" name="lastLot" type="number" min="1" max="99"  step="1" value="1"> <button class="noL" onclick="nextLot('last','+')">+</button>
-
-                   <label for="showLot" style="border: 1px solid black;">Show Lot:</label>                 <button onclick="nextLot('show','-')">-</button>
-                   <input  id="showLot" name="showLot" type="number" min="0" max="100" step="1" value="0" onchange="showThisLot(this.value)">  <button onclick="nextLot('show','+')">+</button>
-
-                   <label for="splitQ"  style="border: 1px solid black;">Split Q:</label>  <input  id="splitQ" name="splitQ" type="text"  style="width: 30px"   >
-
-                  <label for="sellPrice"  style="border: 1px solid black;">Sell P:</label>  <input  id="sellPrice" name="sellPrice" type="text"  style="width: 30px"   >
-                  <label for="sellArray"  style="border: 1px solid black;">Sell A:</label>  <input  id="sellArray" name="sellArray" type="text"  style="width: 30px"   >
 
                 </div>
 
@@ -525,9 +543,8 @@
                   <br>
                   <textarea id="RawList"  name="rawcsv"   rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;" >RawCSV</textarea>
                   <textarea id="TagsList" name="cleancsv" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Saved button puts updated trans here.</textarea>
-                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">JSON for Music Buttons</textarea>
-                  <input id='me1' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"  > 
-                  <input id='me2' type="text"  style="width: 50px" onmouseleave="ckMe()" ontouchend="ckMe()"   >
+                  <textarea id="CutJSON"  name="cutjson1" rows="3" class="container-fluid text-nowrap" style="width: 25%; overflow: hidden;">Updated</textarea>
+
 
               </div></div></div>
 
@@ -588,28 +605,6 @@ var aTransBappend =  []; var aTransA =  [];
   const formattedDate = new Intl.DateTimeFormat('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' }).format(today); // Outputs: 07/15/2026
   var sellDateE = document.getElementById('sellDate'); sellDate.value = formattedDate;  
 
-</script>
-
-<script type="text/javascript">    
-/* -------------------------------------------------------------------------------------------------------------------------------------------*/
-function ckMe() {
-
- var tMeIn = document.getElementById('RawList'); var tMe1 = document.getElementById('me1').value; var tMe2 = document.getElementById('me2').value; 
- document.getElementById('CutJSON').value = 'ckMe: step1 ' + tMe1 +' '+ tMe2; 
- if ( tMe1 === 'jj' && tMe2 === 'jj' ) {
-    if (tMeIn.value.trim() === "") {
-        tMeIn.value = transIn;
-        document.getElementById('myTbl').innerHTML = ''; document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ transIn;
-    }
- }
- if ( tMe1 === 'cc' && tMe2 === 'cc' ) {
-    if (tMeIn.value.trim() === "") {
-        tMeIn.value = ChartsIn;
-        document.getElementById('myTbl').innerHTML = ''; document.getElementById('CutJSON').value = 'ckMe: step2 ' + tMe1 +' '+ tMe2  +' '+ ChartsIn;
-    }
- }
-
-}
 </script>
 
 <script type="text/javascript">    
@@ -727,7 +722,12 @@ function BuildTran() {
   */
 
   /* Get raw csv from 1st box. Should be free of commas. Remove double quotes and dollar signs. */
-  var eRawListID = document.getElementById('RawList'); /* remove($ , -) */ let vRawTransClean = eRawListID.value.trim();  vRawTransClean = vRawTransClean.replaceAll('"',''); vRawTransClean = vRawTransClean.replaceAll("$",''); vRawTransClean = vRawTransClean.replaceAll("-",''); 
+  var eRawListID = document.getElementById('RawList'); 
+  if ( eRawListID.value.trim() === 'jj'     )        { eRawListID.value = transIn; document.getElementById('myTbl').innerHTML = ''; }
+  if ( eRawListID.value.trim() === 'RawCSV'        ) { eRawListID.value = "RawCSV needed"; return }
+  if ( eRawListID.value.trim() === 'RawCSV needed' ) { eRawListID.value = "RawCSV needed"; return }
+
+     /* remove($ , -) */ let vRawTransClean = eRawListID.value.trim();  vRawTransClean = vRawTransClean.replaceAll('"',''); vRawTransClean = vRawTransClean.replaceAll("$",''); vRawTransClean = vRawTransClean.replaceAll("-",''); 
      vRawTransClean = vRawTransClean.replaceAll('MoneyLink Transfer','ach');
      vRawTransClean = vRawTransClean.replaceAll('as of ',''); 
      vRawTransClean = vRawTransClean.replaceAll('/2026',''); 
@@ -897,6 +897,8 @@ function BuildTran() {
   var lotLast3 =  lotListUSorted[lotListUSorted.length - 1] ;        console.log ( lotLast3 );
   var lotLast3n = lotLast3.slice(1);                                 console.log ( lotLast3n ); 
   var lotNN = parseInt(lotLast3n, 10);                               console.log ( lotNN ); 
+
+  eRawListID.value = "RawCSV"; 
 
 }
 </script>
@@ -1199,16 +1201,16 @@ var sellDate = document.getElementById('sellDate').value;
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
 function saveTrans() {
 
-  console.log('save Trans () aTransA Bef'); console.log( aTransA );
+  console.log('save Trans () aTransA Bef');       console.log( aTransA );
   console.log('save Trans () aTransBappend Bef'); console.log( aTransBappend );
 
-  var aLinesSave = []; /* [...aTransA]; */
+  var aTransASave = []; /* [...aTransA]; */
   aTransA.forEach((user, index) => {
       aTransASave.push(aTransA[index] + aTransBappend[index]);
   });
   var textarea3 = document.getElementById('CutJSON');   textarea3.value = aTransASave.join('\n') ;
 
-  console.log('save Trans () aTransA Aft'); console.log( aTransA );
+  console.log('save Trans () aTransA Aft');     console.log( aTransA );
   console.log('save Trans () aTransASave Aft'); console.log( aTransASave );
 }
 </script>
