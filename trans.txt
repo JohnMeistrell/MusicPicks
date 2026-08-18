@@ -1,7 +1,7 @@
 var transIn = `
 Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,vProf,vLot,vPerDays,SellPrice,good,
 08/17,Sell,WEN,WENDYS CO CLASS A,50,8.575,0.02,428.73,jmInfo,,,70.48,L41,19.67% 0m22d,7.165,good,
-08/17,Sell,CBRL,CRACKER BARREL OLD CTRY,5,59.15,0.01,295.74,,jmInfo,,,162.05,L50,121.21% 4m23d,6.7399,good
+08/17,Sell,CBRL,CRACKER BARREL OLD CTRY,5,59.15,0.01,295.74,jmInfo,,,162.05,L50,121.21% 4m23d,6.7399,good
 08/17 08/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.07,,,,,,,,skip,
 08/12,Div,CBRL,CRACKER BARREL OLD CTRY,,,,2.5,,,,,,,,skip,
 07/29,Sell,WEN,WENDYS CO CLASS A,50,7.785,0.02,389.23,,,,,L12,,,FIX,aaaaaaaaaaaaaaaaaaaaaaaaaaaa
