@@ -384,7 +384,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.5 8/17m 10pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.6 8/18t 11am)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -520,7 +520,7 @@
               <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
               <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
            
-                  <table style="border:1px solid black; background-color: white; ">
+                  <table id='myPlan' style="border:1px solid black; background-color: white; ">
                   <tbody  class="row mr-auto container-fluid px-1">
                       <div class="row mr-auto container-fluid px-1 tAll KHC KHC-Plan tAll-Act KHC-Act" style="border: 1px solid black;" hidden=""> 
                           <div class="col-sm-12">  <div class="row"> 
@@ -888,10 +888,9 @@ function BuildTran() {
   var myTrans = document.getElementById('myTbl'); 
   myTrans.insertAdjacentHTML('beforeend', codeBlock );
 
-  symbList.sort();                                          
-  const symbListUniqueSorted = [...new Set(symbList)];               console.log("SYMB array sorted");
-  symbListUniqueSorted.sort();                                       console.log( symbListUniqueSorted );                           
+  eRawListID.value = "RawCSV"; 
 
+  /* ------------------------------------------------------------------------------------------------*/
   lotList.sort();                                          
   var lotListUSorted = [...new Set(lotList)];                        console.log("LOT array sorted");
   lotListUSorted.sort();                                             console.log( lotListUSorted );
@@ -899,12 +898,15 @@ function BuildTran() {
   var lotLast3n = lotLast3.slice(1);                                 console.log( lotLast3n ); 
   var lotNN = parseInt(lotLast3n, 10);                               console.log( lotNN ); 
   var lastLOTis = lotList.at(-1);                                    console.log( lastLOTis );
-
   var lastLotID = document.getElementById('lastLot');  
-
   if ( lastLOTis === null || lastLOTis === undefined || String( lastLOTis ).trim() === '' ) { iLot = 0; } 
   else {  var iLot = parseInt(lastLOTis.replace('L', ''), 10); lastLOTis = iLot; }
   lastLotID.value = iLot;
+
+  /* ------------------------------------------------------------------------------------------------*/
+  symbList.sort();                                          
+  const symbListUniqueSorted = [...new Set(symbList)];               console.log("SYMB array sorted");
+  symbListUniqueSorted.sort();                                       console.log( symbListUniqueSorted );                           
 
   /* ------------------------------------------------------------------------------------------------*/
   var symbProfit  = [...symbListUniqueSorted].fill(0); var tempAmt1 = 0; var tempAmt2 = 0; var tempAmt3 = 0;
@@ -923,17 +925,50 @@ function BuildTran() {
         }
      }
   }
-
   console.log('symbProfit');                                                                                   // console.log( symbProfit );
   var symbProfRounded = symbProfit.map(item => Math.round(Number(item))); 
   console.log('symbProfRounded');                                                                              // console.log( symbProfRounded );
   var grandTotal = symbProfRounded.reduce((accumulator, currentValue) => accumulator + currentValue, 0);         console.log('grand: ' + grandTotal) ; 
   var result2 = symbListUniqueSorted.map((item, index) => [item, symbProfRounded[index]]);                       console.log('both'); console.log(result2);
-
   var profitRpt = result2.join('\n');
   var textarea33 = document.getElementById('CutJSON'); textarea33.value = profitRpt + '\n' + 'GrandTOT:' + grandTotal;
 
-  eRawListID.value = "RawCSV"; 
+
+  /* ------------------------------------------------------------------------------------------------*/
+
+  var aPlansMap = ChartsIn.trim().split("\n").map(row => row.split(","));
+
+  // console.log( 'aPlansMmap '); console.log( aPlansMmap );
+
+  var nn = 0; classBlock = ''; codeBlock = '';
+  for (var [ cSymbol , cDesc , cPer , cxDiv , cAlerts , cPlan] of aPlansMap ) 
+  {
+    if ( cSymbol !== 'cSymbol' ) {
+    classBlock = 'tPlan tAll tAll-Act ' + cSymbol + '-Plan '  + cSymbol + '-Act ' + cSymbol ;  
+    codeBlock += '<div " class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black;"  hidden=""> \n'; 
+         
+    codeBlock += '    <div class="col-sm-12">  <div class="row"> \n'; 
+    codeBlock += '       <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart(\'' + cSymbol + '\');" >' + cSymbol + '</div> \n'; 
+    codeBlock += '       <div class="col-9" style="border: 1px solid black;">' + cxDiv +' '+ cPlan + '</div> \n';
+    codeBlock += '    </div> </div> </div> </div> </div>\n'; 
+    }
+
+  }
+  var myPlans = document.getElementById('myPlan'); 
+  myPlans.insertAdjacentHTML('beforeend', codeBlock );  console.log('codeBlock'); console.log( codeBlock );
+
+/*
+
+                      <div class="row mr-auto container-fluid px-1 tAll KHC KHC-Plan tAll-Act KHC-Act" style="border: 1px solid black;" hidden=""> 
+                          <div class="col-sm-12">  <div class="row"> 
+                              <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart('KHC');">KHC</div> 
+                              <div class="col-9" style="border: 1px solid black;">Keep rest 5 shares for 60</div> 
+                          </div> </div> 
+                      </div>
+*/
+
+
+
 
 /*
 array objects 
