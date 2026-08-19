@@ -61,13 +61,13 @@ var ChartsIn = `
 cSymbol,cDesc,cPer,cxDiv,cAlerts,cPlan
 EXC,EXELON CORP,3.63%,x0811,35 43 40,Keep5 for 60
 KHC,Hines,6.20%,x0828,22 23 24,Keep10 for 26 27 for 34 36 43
-CBRL,CBRL,1.85%,x0717,25 27
-PEG,PEG,,x0310,55 65
-WEN,WEN,~7.22%,x0615,
+CBRL,CBRL,1.85%,x0717,25 27,
+PEG,PEG,,x0310,55 65,
+WEN,WEN,~7.22%,x0615,,
 SMG,SMG Scott,3.72%,x0828,,look 69 70 73 top5y 150
-STM,STM,,,22 27 31
+STM,STM,,,22 27 31,,
 SPCX,SPCX,,,200 150 125 100 50,hit 150 2x 5days - 185 top
-NBIS,NBIS,,,
-INTC,INTC,,,
-IRDM,IRDM Satellite (McLean),,,
+NBIS,NBIS,,,,
+INTC,INTC,,,,
+IRDM,IRDM Satellite (McLean),,,,
 `

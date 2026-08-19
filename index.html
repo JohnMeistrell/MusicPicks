@@ -522,12 +522,6 @@
            
                   <table id='myPlan' style="border:1px solid black; background-color: white; ">
                   <tbody  class="row mr-auto container-fluid px-1">
-                      <div class="row mr-auto container-fluid px-1 tAll KHC KHC-Plan tAll-Act KHC-Act" style="border: 1px solid black;" hidden=""> 
-                          <div class="col-sm-12">  <div class="row"> 
-                              <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart('KHC');">KHC</div> 
-                              <div class="col-9" style="border: 1px solid black;">Keep rest 5 shares for 60</div> 
-                          </div> </div> 
-                      </div>
                   </tbody></table>
               </div></div></div>
 
@@ -891,6 +885,8 @@ function BuildTran() {
   eRawListID.value = "RawCSV"; 
 
   /* ------------------------------------------------------------------------------------------------*/
+  /* ### LOTS */
+  /* ------------------------------------------------------------------------------------------------*/
   lotList.sort();                                          
   var lotListUSorted = [...new Set(lotList)];                        console.log("LOT array sorted");
   lotListUSorted.sort();                                             console.log( lotListUSorted );
@@ -904,10 +900,14 @@ function BuildTran() {
   lastLotID.value = iLot;
 
   /* ------------------------------------------------------------------------------------------------*/
+  /* ### Symbols */
+  /* ------------------------------------------------------------------------------------------------*/
   symbList.sort();                                          
   const symbListUniqueSorted = [...new Set(symbList)];               console.log("SYMB array sorted");
   symbListUniqueSorted.sort();                                       console.log( symbListUniqueSorted );                           
 
+  /* ------------------------------------------------------------------------------------------------*/
+  /* ### Profit - Show box bottom - need to format it */
   /* ------------------------------------------------------------------------------------------------*/
   var symbProfit  = [...symbListUniqueSorted].fill(0); var tempAmt1 = 0; var tempAmt2 = 0; var tempAmt3 = 0;
   for (var [vNN, vDate , vAction , vSymbol , vDescription , vQuantity , vPrice , vFees , vAmount , vJmInfo , vSplit , vInto , vProf , vLot , vPerDays , vSoldPrice ] of aTransRNmap ) 
@@ -933,7 +933,8 @@ function BuildTran() {
   var profitRpt = result2.join('\n');
   var textarea33 = document.getElementById('CutJSON'); textarea33.value = profitRpt + '\n' + 'GrandTOT:' + grandTotal;
 
-
+  /* ------------------------------------------------------------------------------------------------*/
+  /* ### PLAN */
   /* ------------------------------------------------------------------------------------------------*/
 
   var aPlansMap = ChartsIn.trim().split("\n").map(row => row.split(","));
@@ -942,51 +943,21 @@ function BuildTran() {
 
   var nn = 0; classBlock = ''; codeBlock = '';
   for (var [ cSymbol , cDesc , cPer , cxDiv , cAlerts , cPlan] of aPlansMap ) 
-  {
+  { 
     if ( cSymbol !== 'cSymbol' ) {
     classBlock = 'tPlan tAll tAll-Act ' + cSymbol + '-Plan '  + cSymbol + '-Act ' + cSymbol ;  
     codeBlock += '<div " class="row mr-auto container-fluid px-1 ' + classBlock + '" style="border: 1px solid black;"  hidden=""> \n'; 
          
     codeBlock += '    <div class="col-sm-12">  <div class="row"> \n'; 
-    codeBlock += '       <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart(\'' + cSymbol + '\');" >' + cSymbol + '</div> \n'; 
-    codeBlock += '       <div class="col-9" style="border: 1px solid black;">' + cxDiv +' '+ cPlan + '</div> \n';
+    codeBlock += '       <div class="col-2" style="border: 1px solid black; font-style: italic; font-weight: bold;"  onclick="GetChart(\'' + cSymbol + '\');" >' + cSymbol  + '</div> \n'; 
+    codeBlock += '       <div class="col-3" style="border: 1px solid black;">' + cxDiv +' '+ cPer +' '+ '</div> \n'; 
+    codeBlock += '       <div class="col-7" style="border: 1px solid black;">' + cPlan + '</div> \n';
     codeBlock += '    </div> </div> </div> </div> </div>\n'; 
     }
 
   }
   var myPlans = document.getElementById('myPlan'); 
   myPlans.insertAdjacentHTML('beforeend', codeBlock );  console.log('codeBlock'); console.log( codeBlock );
-
-/*
-
-                      <div class="row mr-auto container-fluid px-1 tAll KHC KHC-Plan tAll-Act KHC-Act" style="border: 1px solid black;" hidden=""> 
-                          <div class="col-sm-12">  <div class="row"> 
-                              <div class="col-3" style="border: 1px solid black; font-style: italic; font-weight: bold;  onclick="GetChart('KHC');">KHC</div> 
-                              <div class="col-9" style="border: 1px solid black;">Keep rest 5 shares for 60</div> 
-                          </div> </div> 
-                      </div>
-*/
-
-
-
-
-/*
-array objects 
-const keys = ['id', 'name', 'role'];
-const values = [101, 'Alice', 'Admin'];
-const result = keys.map((item, index) => ({ key: item, value: values[index] }));
-console.log(result);
-// Output: [ { key: 'id', value: 101 }, { key: 'name', value: 'Alice' }, { key: 'role', value: 'Admin' } ]
-
-map:
-const firstNames = ['John', 'Jane', 'Bob'];
-const lastNames = ['Doe', 'Smith', 'Miller'];
-const fullNames = firstNames.map((item, index) => `${item} ${lastNames[index]}`);
-console.log(fullNames);
-// Output: [ 'John Doe', 'Jane Smith', 'Bob Miller' ]
-
-
-*/
 
 }
 </script>
