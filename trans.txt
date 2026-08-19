@@ -4,7 +4,7 @@ Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,v
 08/17,Sell,CBRL,CRACKER BARREL OLD CTRY,5,59.15,0.01,295.74,jmInfo,,,162.05,L50,121.21% 4m23d,6.7399,good
 08/17 08/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.07,,,,,,,,skip,
 08/12,Div,CBRL,CRACKER BARREL OLD CTRY,,,,2.5,,,,,,,,skip,
-07/29,Sell,WEN,WENDYS CO CLASS A,50,7.785,0.02,389.23,,,,,L12,,,FIX,aaaaaaaaaaaaaaaaaaaaaaaaaaaa
+07/29,Sell,WEN,WENDYS CO CLASS A,50,7.785,0.02,389.23,,,,,L12,,,FIX,
 07/28,Sell,CBRL,CRACKER BARREL OLD CTRY,5,51.59,0.01,257.94,jmInfo,,,124.25,L09,92.93% 4m3d ,26.7399,good,
 07/28,Sell,SMG,SCOTTS MIRACLEGRO CO,10,70.35,0.01,703.49,jmInfo,,,77.85,L05,12.44% 2m22d,62.565,good,
 07/27,Buy,WEN,WENDYS CO CLASS A,50,7.165,,358.25,jmInfo,,,70.48,L41,19.67% 0m22d,8.575,good,
@@ -44,7 +44,6 @@ Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,v
 03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,10,26.7399,,267.4,jmInfo,,,271.2,L08,101.42% 4m3d,53.86,good,
 03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,25,26.7399,,668.5,jmInfo,,,64.88,L06,9.70% 2m21d,29.335,good,
 03/27,Buy,CBRL,CRACKER BARREL OLD CTRY,50,26.7399,,1337,jmInfo,split,orig,,,,,,
-
 03/27,Buy,WEN,WENDYS CO CLASS CLASS A,50,6.785,,339.25,jmInfo,,,50.25,L12,14.81% 4m4d @7.79,,,
 03/27,Buy,WEN,WENDYS CO CLASS CLASS A,25,6.785,,169.63,jmInfo,,,32.75,L10,19.31% 1m17d,8.095,good,
 03/27,Buy,WEN,WENDYS CO CLASS CLASS A,75,6.785,,508.88,jmInfo,split,orig,,,,,ORIG,
@@ -56,18 +55,20 @@ Date,Action,Symbol,Description,Quantity,Price,Fees,Amount,vJmInfo,vSplit,vInto,v
 03/03 03/02,ach,,Tfr POLICE AND FIRE FE, jfm,,,2000,,,,,,,,skip,
 03/02 02/27,ach,,Tfr POLICE AND FIRE FE, jfm,,,2000,,,,,,,,skip,
 02/17 02/15,Bank Interest,,BANK INT ...526 TD BANK NA,,,,0.03,,,,,,,,skip,
-`
+` /* END */
+
 var ChartsIn = `
 cSymbol,cDesc,cPer,cxDiv,cAlerts,cPlan
 EXC,EXELON CORP,3.63%,x0811,35 43 40,Keep5 for 60
 KHC,Hines,6.20%,x0828,22 23 24,Keep10 for 26 27 for 34 36 43
 CBRL,CBRL,1.85%,x0717,25 27,
 PEG,PEG,,x0310,55 65,
-WEN,WEN,~7.22%,x0615,,
+WEN,WEN,~7.22%,x0615,7,
 SMG,SMG Scott,3.72%,x0828,,look 69 70 73 top5y 150
 STM,STM,,,22 27 31,,
 SPCX,SPCX,,,200 150 125 100 50,hit 150 2x 5days - 185 top
 NBIS,NBIS,,,,
 INTC,INTC,,,,
-IRDM,IRDM Satellite (McLean),,,,
-`
+IRDM,IRDM,,,,Satellite (McLean)
+ASTS,ASTS,,,,Satellite
+` /* END */
