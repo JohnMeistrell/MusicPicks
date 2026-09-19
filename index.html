@@ -362,7 +362,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.8 8/27w 1pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.9 9/19a 5pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -1400,7 +1400,9 @@ var saveR = [];
   var E2rowB  = '';
   var E2rowC  = '">';
 
-  var E3CatA  = '\n<div class="card card-body"   style="padding:0px; margin:0px; border:0px; ">';
+  var E3CatA1  = '\n<div class="card card-body  container-fluid collapse cc show ';
+  var E3CatA2  = 'style="padding:0px; margin:0px; border:0px; ">';
+
   var E3CatB  = '\n\n     <div class="row mr-auto container-fluid collapse cc ';
   var E3CatC  = '';
   var E3CatD  = ' show">'; 
@@ -1540,7 +1542,8 @@ if ( vMulti       !== '') {
                colN = 1;
                codeBlock += E7divEA; /* </div> Closes off prior Video BOX */
           } 
-               codeBlock += E3CatA;
+               codeBlock += E3CatA1 + "multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagsAdd + '"';
+               codeBlock += E3CatA2;
                codeBlock += E3CatB;
                codeBlock += E3CatC + "multi-collapse-" + tagClass + " .multi-collapse-" + tagClass + tagsAdd;
 
