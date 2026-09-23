@@ -18,6 +18,8 @@
 
     <script src="trans.txt"> </script>
 
+    <script src="ChordsNotesJSON.txt"> </script> 
+
     <style>
 
     .noLRbor { border-left:  0; border-right:  0; }
@@ -96,7 +98,8 @@
                                        <a target="_blank" href="https://portal.barnegatschools.com/schoolfi/portal?tab1=payroll&tab2=timesheets&tab3=list&action=form">BusESY</a></th>
                          <th style="border: 1px solid black; padding:3px;"  >
                                        <a target="_blank" href="https://barnegatschools-nj.safeschools.com/login/">Train</a> -
-                                       <a target="_blank" href="https://www.barnegatschools.com/page/agendas-minutes">Mins</a>
+                                       <a target="_blank" href="https://www.barnegatschools.com/page/agendas-minutes">Mins</a> -
+                                       <a target="_blank" href="https://app.frontlineeducation.com/select/">Out</a>
                         </th>
                          <th style="border: 1px solid black; padding:3px;" >
                                        <a target="_blank" href="https://www.airnow.gov/state/?name=new-jersey"            >AirQ</a> - 
@@ -362,7 +365,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.9 9/19a 5pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.0 9/22t 7pm)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -462,6 +465,10 @@
                    <button class="btn border border-light btn-primary btn-WEN"   type= "button" onclick="FindTran('WEN')"  >WEN</button>
                    <button class="btn border border-light btn-primary btn-SPCX"  type= "button" onclick="FindTran('SPCX')" >SPCX</button>
 
+                   <!-- Add from Javascript  |------------------------------------------------------------------------------------------| -->
+                   <!-- -------------------- |------------------------------------------------------------------------------------------| -->
+                   <span id="wrapperB" class="keep-together container-fluid text-nowrap"> </span>
+
                    <button class="btn border border-light btn-primary btn-SORT"   type= "button" onclick="sortTrans()"      >Sort</button>
                    <button class="btn border border-light btn-primary btn-CHARTS" type= "button" onclick="BuildCharts()"    >Charts</button>
                    <button class="btn border border-light btn-primary btn-BUILD"  type= "button" onclick="BuildTran()"      >BUILD</button>
@@ -529,13 +536,14 @@
                   </div>
               </div></div></div>
 
-
               </div> <!-- class="card card-body Stock"   -->
               </div> <!-- class="row mr-auto container   -->
 
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
               <!-- ###2 STOCK Button (END) verified tag match                                                                                                                                      -->
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
+
+
 
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
               <!-- ###2 SIDE BY SIDE Lyrics Chords Build Button (TOP)    JJJJJ                                                                                                                                    -->
@@ -546,6 +554,8 @@
               <h2                       class="         container-fluid text-center collapse cc multi-collapse-Stock .multi-collapse-Stock show" style="padding:0px; margin:0px; border:5px solid #000000; background-color:#6ca7a5;" >
               Side </h2>
 
+
+
               <!-- BUTTONS --------------------------------------------------------------------------  -->
               <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
               <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
@@ -554,13 +564,81 @@
                  Side By Side:
                  </div>
                  <div class="col-xs-7 col-sm-9 col-lg-10 col-xl-10 container-fluid">
-                   <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
-                   <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
-                   <button class="btn border border-light btn-primary btn-Buy"   type= "button" onclick="FindTran('Buy')"  >Buy</button>
+                    <button class="btn border border-light btn-primary btn-TALL"  type= "button" onclick="FindTran2('All')"  >All</button>
+                    <button class="btn border border-light btn-primary btn-THide" type= "button" onclick="FindTran2('Hide')" >Hide</button>
+                    <button class="btn border border-light btn-primary btn-Buy"   type= "button" onclick="FindTran('Buy')"  >Buy</button>
+
+                    Scale:<select id="mySelChord" onchange="selectedChord(this.value)"></select>
+
+                    Find (Cadd9):
+                    <input  id="findme"  name="findme"  type="text" value="" size="1" style="margin-left: 0;margin-right: 0; max-width: 50px; padding: 0;"   oninput="findIt()" >
+                    <label  id="foundN" ></label>
+
+                    <select id="mySelect" onchange="addRow('list',this)">
+                       <option value="">Choose chord</option>
+                    </select>
+
+                    <span class="keep-together container-fluid text-nowrap" style="border: none; width: fit-content; overflow: auto; display: inline-flex; align-items: center; gap: 0;"> 
+                    <label for="showLot" >Row:</label>                 
+                    <button                             style="height: fit-content;" onclick="nextLot('show','-')">-</button>
+                    <input  id="showLot" name="showLot" style="width: 40px;"         type="number" min="0" max="9" step="1" value="1" onchange="showThisLot(this.value)">  
+                    <button                             style="height: fit-content;" onclick="nextLot('show','+')">+</button>
+                    <div id="capture-target"><p></p></div><button onclick="captureAndSave()">Print</button>
+
                  </div>
               </div></div></div>
+              <!-- BUTTONS END -----------------------------------------------------------------------  -->
 
-              <!-- SHEET CHORDS --------------------------------------------------------------------------  -->
+
+              <!-- MORE ---------------------------------------------------------------------  -->
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+              <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+              <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
+
+              <div id="tttrow331" class="row mr-auto container-fluid px-1" style="border: 1px solid black; background-color: lightgreen; "> 
+              <span>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="A">A</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="B">B</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="C">C</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="D">D</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="E">E</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="F">F</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="G">G</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="#">#</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="b">b</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="*">dom</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="*">maj (*△)</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="m">min</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="5">5</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="6">6</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="7">7</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="7">7</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="9">9</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="11">11</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="13">13</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="6/9">6/9</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="add2">+2 degree</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="add4">+4 perfect</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="add9">+9</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="add11">+11</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="minus">-</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="add">add</label>
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="aug">aug(*+)</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="aug7">aug(*+7)</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="dim">dim(*°)</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="hdim">half-dim(*°)</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="sus2">sus 2nd</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="sus4">sus 4th</label>         
+              <label><input type="checkbox" class="row-checkbox" onclick="onlyOne(this)" value="b5">flat 5(*ø)</label>
+              </span>
+              </div>  
+
+              </div></div></div>
+
+
+
+
+              <!-- LYRICS CHORDS SCROLLS ---------------------------------------------------------------------  -->
               <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
               <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
               <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
@@ -577,23 +655,29 @@
                            </a>
                       </div>
 
-                      <div class="col-sm-5 col-lg-5 col-xl-5 container-fluid  pre-scrollable" style="border: 1px solid black; padding: 1px;" >    
-                          <div style="border: 1px solid black; padding: 1px; "><h3>C minor - cm</h3>        
-                          <iframe width="600" src="https://www.pianochord.org/images/cm.png">Sorry inline frames.</iframe>
-                          </div>
-                          <div style="border: 1px solid black; padding: 1px; "><h3>C minor - cm</h3>        
-                          <iframe width="600" src="https://www.pianochord.org/images/cm11.png">Sorry inline frames.</iframe>
-                          </div>
-                          <div style="border: 1px solid black; padding: 1px; "><h3>C minor - cm</h3> 
-                          <iframe width="600" src="https://www.pianochord.org/images/cm11.png">Sorry inline frames.</iframe>
-                          </div>
+                      <div id="wrapper8" class="col-sm-5 col-lg-5 col-xl-5 container-fluid  pre-scrollable" style="border: 1px solid black; padding: 1px;" >   
                       </div>
 
               </div>  
-              <!-- SHEET CHORDS END ----------------------------------------------------------------------  -->
+              <!-- LYRICS CHORDS SCROLLS END -------------------------------------------------------------  -->
               </div></div></div>
 
-              </div> <!-- class="card card-body Side"   -->
+
+              <!-- LIST FOUND IMAGES ---------------------------------------------------------------------  -->
+              <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"         style="padding:0px; margin:0px; border:0px;">
+              <div class="card card-body"        style="background-color:#fadadd; padding:0px; margin:0px; border:0px;">   
+              <div class="row mr-auto                 container-fluid"     style="padding:0px; margin:0px; border:0px;">
+                 <div id="tttrow53" class="row mr-auto container-fluid px-1" style="border: 1px solid black; background-color: lightgreen; "> 
+                    <label id="lookFor" for="lookFor" style="border: 1px solid black;"></label>  <label id='lookForx' hidden="hidden"></label>
+                    <div class="piano">    <div class="piano-container">    <h1> Found: </h1>       <div id="wrapper6"></div>    </div>    </div>
+                    <div class="piano">    <div class="piano-container">    <h1> ALL built: </h1>   <div id="wrapper4"></div>    </div>    </div>
+                 </div>  
+
+              <!-- LIST FOUND IMAGES END------------------------------------------------------------------  -->
+              </div></div></div>
+
+              <!-- <div class="card card-body Side"      -->
+              </div> <!-- class="card card-body Side"    -->
               </div> <!-- class="row mr-auto container   -->
 
               <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------  -->
@@ -641,7 +725,13 @@ function windowLoaded()
 
 </script>
 
-<script type="text/javascript">    
+<script type="text/javascript">   
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ### 001 STOCKS
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+</script>
+
+<script type="text/javascript">     
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   function sortTrans() { /* aTrans RwN.reverse(); */
   }
@@ -943,7 +1033,27 @@ function BuildTran() {
   /* ------------------------------------------------------------------------------------------------*/
   symbList.sort();                                          
   const symbListUniqueSorted = [...new Set(symbList)];               console.log("SYMB array sorted");
-  symbListUniqueSorted.sort();                                       console.log( symbListUniqueSorted );                           
+  symbListUniqueSorted.sort();                                       console.log( symbListUniqueSorted );    
+
+  var butListCur = ["KHC", "SMG", "CBRL", "EXC", "WEN","SPCX"];
+  var excludeSet = new Set(butListCur);
+  var butAdd = symbListUniqueSorted.filter(item => !excludeSet.has(item));
+
+  console.log(butAdd);
+
+  var codeBut = ''; var ttt = '';  var stockButtons = document.getElementById("wrapperB");   stockButtons.innerHTML = '';
+  for (const sBut of butAdd) {
+    if ( sBut.trim() ) {
+    ttt = '<button class="btn border border-light btn-primary btn-' + sBut + '"  type= "button" onclick="FindTran(' + `'{sBut}'` +')" >' + sBut + '</button>' ; 
+    var bbb = "'";
+    ttt = '<button class="btn border border-light btn-primary btn-' + sBut + '"  type= "button" onclick="FindTran(' + bbb + sBut + bbb + ')" >' + sBut + '</button>' ; 
+ 
+
+    codeBut += ttt; 
+    console.log('BUT add: ' + codeBut);
+    }
+  }
+  stockButtons.innerHTML = codeBut;
 
   /* ------------------------------------------------------------------------------------------------*/
   /* ### Profit - Show box bottom - need to format it */
@@ -1321,6 +1431,13 @@ function saveTrans() {
 }
 </script>
 
+
+<script type="text/javascript">   
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ### 002 MUSIC
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+</script>
+
 <script type="text/javascript">    
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
   const mapRR = mapVideoDetails.map(([ 
@@ -1657,6 +1774,305 @@ const textBox2 = document.getElementById("myTextBox2"); textBox1.value = buttonC
 loadPlan();
 
 </script>
+
+<script type="text/javascript">   
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ### 003 SIDE BY SIDE
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+var aChordList = [];
+
+var selectElement = document.getElementById('mySelChord');
+aScaleW.forEach((value, key) => {
+    selectElement.add(new Option(value, value));
+});
+var selectedValue = selectElement.value;
+var selectedText = selectElement.options[selectElement.selectedIndex].text;
+console.log("Value:", selectedValue);
+console.log("Text:", selectedText);
+
+</script>
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+<script type="text/javascript">    
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+function nextLot(forWhat,plussMinus) {
+  
+  var showLotID = document.getElementById('showLot'); var showLotN = showLotID.value; if ( showLotN === null || showLotN === undefined || String(showLotN).trim() === '' ) { showLotN = 0; }
+
+  if ( forWhat === 'show' ) {
+    if ( plussMinus === '+' ) {  var showLotNN = parseInt(showLotN, 10) + 1; if ( showLotNN > 9 ) { showLotNN = 1 ; }; showLotID.value = showLotNN; }
+    else                      {  var showLotNN = parseInt(showLotN, 10) - 1; if ( showLotNN < 1 ) { showLotNN = 9 ; }; showLotID.value = showLotNN; }
+    showThisLot(showLotID.value);
+  }
+
+}
+</script>
+
+<script type="text/javascript">    
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function findIt() { /* FILTER chords from typed text - Show on top UI */
+
+  var findChordsFilterTypedText  = document.getElementById('findme').value;
+  var aChordsFound = aChordList.filter( item => item.includes(findChordsFilterTypedText) ); /* makes array items found. len is tot new array */
+  console.log(aChordsFound); console.log('end1');
+  var nChordsFoundCount = aChordsFound.length; 
+  var   foundN  = document.getElementById('foundN'); foundN.textContent = nChordsFoundCount;
+  console.log('Find: ' + findChordsFilterTypedText +' '+ nChordsFoundCount ); console.log( aChordsFound ); console.log('end2');
+
+  var codeBlock6 = ''; 
+  var C6AA  = '<div style="width: 705px; border: 1px solid black; padding: 1px"><h3>'; 
+
+  var userName = "'image'"; var userName2 = "'image2'";
+  var C6A  = `<div style="width: 705px; border: 1px solid black; padding: 1px" ><h3 onclick="addRow(${userName},this)" >`; 
+  var C6B  = 'aaaa';
+  var C6C  = `</h3><div style="width: 700px";  ><iframe width="600" src="https://www.pianochord.org/images/`;
+  var C6D  = 'name';  /*       cmaj7 */
+  var C6E  = '.png">Sorry browser does not support inline frames.</iframe></div></div>';
+
+  var CartItem6 =  document.getElementById("wrapper6").innerHTML; CartItem6.innerHTML = "";
+
+const selectElement = document.getElementById("mySelect"); selectElement.options.length = 0;           /* FIX ........  */
+aChordsFound.forEach(row => {
+  const option = document.createElement("option");
+
+  /* cmaj7, CmM7      - C minor major seventh,cmaj7 */  /* RRR: cmaj9, Cmaj9     - C major ninth,cmaj9 cmaj9 */ /* option.dataset.category = row[2]; */
+
+  /* NEW BAD */
+  console.log('row: ' + row );
+
+  var ztemp1 = row.split(",");       var zcol1Chord     = ztemp1[0];   var zcol2Long      = ztemp1[1];  var zcol3WebName   = ztemp1[2];
+  var ztemp2 = zcol2Long.split("-"); var zcol2LongChord = ztemp2[0];   var zcol2LongDesc  = ztemp2[1];
+  clog = 'bad '; console.log( { clog , ztemp1 , zcol1Chord , zcol2Long , zcol3WebName , ztemp2 , zcol2LongChord , zcol2LongDesc } ); 
+
+  var temp1 = row.split(","); var col1 = temp1[0]; var colWebName = temp1[2];  var temp2 = temp1[1].split("-"); var col2 = temp2[0]; var col3 = temp2[1];
+  clog = 'good'; console.log( { clog , temp1 , col1 , colWebName , temp2 , col2 , col3 } ); 
+
+
+/* GOOD 
+  console.log( row +' '+ colWebName);
+  option.value = col2; 
+  option.textContent = col3;                               
+  selectElement.appendChild(option);
+     codeBlock6 += C6A;  codeBlock6 += col3       ; codeBlock6 += C6C; codeBlock6 += colWebName.trim().toLowerCase();   codeBlock6 += C6E;
+*/
+
+/* BAD */
+  option.value       = zcol1Chord; /* zcol3WebName; */ 
+  option.textContent = zcol2LongDesc ;
+  selectElement.appendChild(option);
+     codeBlock6 += C6A; codeBlock6 += zcol2LongDesc + ' - ' + zcol1Chord ; codeBlock6 += C6C; codeBlock6 += zcol1Chord.trim().toLowerCase();  codeBlock6 += C6E;
+
+});
+
+
+  document.getElementById("wrapper6").innerHTML = codeBlock6;
+
+/*
+.dataset.category expression in JavaScript accesses a custom data-category attribute on an HTML element, such as a selected dropdown option.How It Worksdata-* attributes: HTML lets you store extra custom data on standard tags using attributes starting with data-, like <option data-category="fruit">Apple</option>..dataset: This is a JavaScript property that turns all data-* attributes on an element into an accessible object (a DOMStringMap)..category: This targets the specific data-category property inside that map.
+*/
+}
+</script>
+<script type="text/javascript">    
+
+/*       --------------      ------------------------------------------------------------------------------------------ https://www.pianochord.org/images/c7minus5.png */
+function buildArrayChordsForFIND(onScale1) { /* BUILD array for selected chord dropdown C for FIND - Shown top UI  */
+  aChordList = []; 
+  var newS = ""; var webName = ''; var onScale = onScale1 ;  /* need to make it d_flat_ var onScale = 'C';  */
+  var lookFor = ""; lookFor = onScale; var lookTemp = onScale;
+  if (onScale == "C#") { lookFor = "d_flat_" };   if (onScale == "Db") { lookFor = "d_flat_" };   if (onScale == "E#") { lookFor = "e_flat_" }; 
+  if (onScale == "Eb") { lookFor = "e_flat_" };   if (onScale == "F#") { lookFor = "g_flat_" };   if (onScale == "Gb") { lookFor = "g_flat_" };
+  if (onScale == "G#") { lookFor = "a_flat_" };   if (onScale == "Ab") { lookFor = "a_flat_" };   if (onScale == "A#") { lookFor = "b_flat_" };   if (onScale == "Bb") { lookFor = "b_flat_" };
+  aWebChordNamesTemplate.forEach((el,ii) => { /* Z Zm Z6/9 Zadd2 LEV 1 OR 2 */
+     webName = el.replace("Z", onScale); lookTemp = lookFor;
+     if (webName == "C#") { lookTemp = "d_flat" };      if (webName == "Db") { lookTemp = "d_flat" };      if (webName == "E#") { lookTemp = "e_flat" }; 
+     if (webName == "Eb") { lookTemp = "e_flat" };      if (webName == "F#") { lookTemp = "g_flat" };      if (webName == "Gb") { lookTemp = "g_flat" }; 
+     if (webName == "G#") { lookTemp = "a_flat" };      if (webName == "Ab") { lookTemp = "a_flat" };      if (webName == "A#") { lookTemp = "b_flat" };  if (webName == "Bb") { lookTemp = "b_flat" }; 
+     el = el.replace("Z", lookTemp.toLowerCase());      el = el.replace("half_dim", "m7b5");      el = el.replace("-", "minus"); 
+     el = el.replace("+", "plus");                      el = el.replace("/", "_");                el = el.replace("#", "plus"); 
+     var chordLongName = chordShortLongName.get(ii+1)[0].replaceAll("*",onScale);
+     aChordList.push(el +','+ chordLongName +','+ webName.toLowerCase() ); /* cmaj7, CmM7      - C minor major seventh,cmaj7 cmaj7 */
+  });
+  console.log('build Array Chords For FIND: () ' + onScale1 ); console.log(' Web: C7+5 , Long: C7+5 - C seven plus five , Chord: c7plus5 ??? '); console.log(aChordList); 
+}
+</script>
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function buildChordsCODE(onScale1) { /* BUILD CODE for selected chord dropdown C D E F - ALL chords - No filter - Shown bottom UI */
+  var codeBlock4 = '';
+  var C44A  = '<div style="width: 705px; border: 1px solid black; padding: 1px"><h3>';                           var C44B  = 'aaaa';
+  var C44C  = '</h3><div style="width: 700px"; ><iframe width="600" src="https://www.pianochord.org/images/';    var C44D  = 'name';  /*       cmaj7 */
+  var C44E  = '.png">Sorry browser does not support inline frames.</iframe></div></div>';
+  var CartItem4 =  document.getElementById("wrapper4").innerHTML;
+
+  /* DUP from above --------------------------------------------------------------------------------------- */
+  var newS = ""; var webName = ''; var onScale = onScale1 ;  /* need to make it d_flat_ var onScale = 'C';  */
+  var lookFor = ""; lookFor = onScale; var lookTemp = onScale;
+  if (onScale == "C#") { lookFor = "d_flat_" };   if (onScale == "Db") { lookFor = "d_flat_" };   if (onScale == "E#") { lookFor = "e_flat_" }; 
+  if (onScale == "Eb") { lookFor = "e_flat_" };   if (onScale == "F#") { lookFor = "g_flat_" };   if (onScale == "Gb") { lookFor = "g_flat_" };
+  if (onScale == "G#") { lookFor = "a_flat_" };   if (onScale == "Ab") { lookFor = "a_flat_" };   if (onScale == "A#") { lookFor = "b_flat_" };   if (onScale == "Bb") { lookFor = "b_flat_" };
+  aWebChordNamesTemplate.forEach((el,ii) => { /* Z Zm Z6/9 Zadd2 LEV 1 OR 2 */
+     webName = el.replace("Z", onScale); lookTemp = lookFor;
+     if (webName == "C#") { lookTemp = "d_flat" };      if (webName == "Db") { lookTemp = "d_flat" };      if (webName == "E#") { lookTemp = "e_flat" }; 
+     if (webName == "Eb") { lookTemp = "e_flat" };      if (webName == "F#") { lookTemp = "g_flat" };      if (webName == "Gb") { lookTemp = "g_flat" }; 
+     if (webName == "G#") { lookTemp = "a_flat" };      if (webName == "Ab") { lookTemp = "a_flat" };      if (webName == "A#") { lookTemp = "b_flat" };  if (webName == "Bb") { lookTemp = "b_flat" }; 
+     el = el.replace("Z", lookTemp.toLowerCase());      el = el.replace("half_dim", "m7b5");      el = el.replace("-", "minus"); 
+     el = el.replace("+", "plus");                      el = el.replace("/", "_");                el = el.replace("#", "plus"); 
+     var chordLongName = chordShortLongName.get(ii+1)[0].replaceAll("*",onScale);
+     codeBlock4 += C44A;      codeBlock4 += chordLongName ; 
+     codeBlock4 += C44C;      codeBlock4 += el;              codeBlock4 += C44E;
+  });
+  document.getElementById("wrapper4").innerHTML = codeBlock4;
+  }
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+
+  function selectedChord(selectedValue) {
+    const outputSpan = document.getElementById("output");
+    if (selectedValue) {
+      buildChordsCODE(         selectedValue ); /* BUILD CODE for selected chord dropdown C D E F - ALL chords - No filter - Shown bottom UI */
+      buildArrayChordsForFIND( selectedValue ); /* BUILD array for selected chord dropdown C for FIND - Shown top UI - aChordList [] */
+    }
+  }
+
+  /* aScaleW.forEach((eSS) => { onScale = eSS; });  */
+
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function addRow(tag , e) {
+  var sText  = '';   var sValue = ''; console.log(tag); console.log(e);
+  if ( tag === 'list' ) {
+    if (e.value) {
+      sValue = e.value;
+      sText = e.options[e.selectedIndex].text;
+      console.log(e);
+      console.log(sValue);
+      console.log(sText);
+    } 
+  }
+
+  if ( tag === 'image2' ) {  
+      console.log(e);   
+      sText = 'bbb' ; sValue = 'ccc'; 
+  } 
+
+  if ( tag === 'image' ) {  
+      console.log(e);   
+      var temp9 = e.textContent; 
+      var parts = temp9.split('-'); 
+      sText = parts[0] ; sValue = parts[1]; 
+  } 
+
+  var codeBlock8 = ''; 
+  var C6A1 = '<div class="chordsShown" style="width: 705px; border: 1px solid black; padding: 1px">';
+  var ddd1 = "'Delete'";
+  var ddd2 = "'Hide'";
+  var C6A2 = '<span><button class="btn border border-light btn-primary " type= "button" onclick="chordAct(' + ddd1 + ',this)" >X</button><button class="btn border border-light btn-primary " type= "button" onclick="chordAct(' + ddd2 + ',this)" >-</button></span>';
+  var C6A3 = '<h3>';
+  var C6B  = sText.trim() + ' - ' + sValue.trim() ;
+  var C6C  = '</h3><div style="width: 700px"; ><iframe width="600" src="https://www.pianochord.org/images/';
+  var C6D  = sValue.trim();
+  var C6E  = '.png">Sorry browser does not support inline frames.</iframe></div></div>';
+  codeBlock8 += C6A1 + C6A2 + C6A3 + C6B + C6C + C6D + C6E;   
+  console.log(codeBlock8);
+  var CartItem8 =  document.getElementById("wrapper8").innerHTML; 
+  document.getElementById("wrapper8").innerHTML = CartItem8 + codeBlock8;
+
+}
+
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function chordAct(act,e) {
+  console.log(act); console.log(e); console.log(e.parentElement);
+  e.parentElement.parentElement.hidden = true;
+
+/*
+element.style.display = 'none';
+*/
+}
+
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function captureAndSave() {
+    const captureTarget = document.getElementById('capture-target');
+
+    html2canvas(captureTarget).then(canvas => {
+        // Convert the canvas to a data URL
+        const imageDataUrl = canvas.toDataURL('image/png');
+
+        // Create a temporary link element for downloading
+        const link = document.createElement('a');
+        link.href = imageDataUrl;
+        link.download = 'webpage-screenshot.png'; // Set the filename
+
+        // Append link to body, click it, and remove it
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+</script>
+
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function buildChordURL() {
+
+   var ck1 = document.getElementById("flats1").checked;
+   console.log(ck1);
+
+}
+</script>
+
+
+<script>
+/*       --------------      ------------------------------------------------------------------------------------------ */
+function onlyOne(checkbox) {
+    // Find all checkboxes with the same class
+    var checkboxes = document.querySelectorAll('.row-checkbox');
+    
+    // Uncheck all except the one that was just clicked
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false;
+    });
+}
+
+/*
+[24  , [" *7-5      - * seven minus five"                ]] ,
+[25  , [" *7+5      - * seven plus five"                 ]] ,
+[31  , [" *7-9      - * seven minus nine (pg2)"          ]] ,
+[32  , [" *7+9      - * seven plus nine (pg2)"           ]] ,
+[33  , [" *7#11     - * dominant seventh sharp 11th (pg2)" ]] ,
+[34  , [" *m7b5     - * minor seventh flat five (*ø)"    ]] ,
+[35  , [" *aug      - * augmented (*+)"                  ]] ,
+[36  , [" *aug7     - * augmented seventh"               ]] 
+*/
+</script>
+
+<script type="text/javascript">
+/*       --------------      ------------------------------------------------------------------------------------------ */
+  buildArrayChordsForFIND(selectedValue); /* BUILD array for selected chord dropdown C for FIND - Shown top UI - Called one time to Init for C - aChordList [] */
+</script>
+
+
+<script type="text/javascript">   
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+/* ### 004 MUSIC BUTTONS
+/* -------------------------------------------------------------------------------------------------------------------------------------------*/
+</script>
+
 
 <script>
 /* -------------------------------------------------------------------------------------------------------------------------------------------*/
