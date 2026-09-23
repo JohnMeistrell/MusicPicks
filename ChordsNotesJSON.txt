@@ -1,0 +1,288 @@
+var selectSong = 'GballsFire';   var songTitle = 'Great Balls Fire';
+var selectSong = 'HeAintHeavy';  var songTitle = "He Ain't Heavy";
+
+var onChord = Number('0');
+
+const songsDetailList = new Map([
+
+[ "GballsFire-Chords" , [ "G" ,           "C7" ,           "D7" ,          "G" ,           "C7" ,           "G7" ,             "C7" ,             "G" ,             "C7" ,            "G" ,              "C7" ,            "D7" ,             "D7" ,            "G" ,              "C7" ,            "D7" ,             "C7" ] ] ,
+[ "GballsFire-Place"  , [ '0 - 39 - 200', '0 - 208 - 190', '0 - 40 - 303', '0 - 38 - 407', '0 - 457 - 500', '341 - 146 - 292', '341 - 388 - 296', '341 - 45 - 377', '341 - 48 - 453', '341 - 260 - 447', '683 - 50 - 170', '683 - 229 - 170', '683 - 56 - 352', '683 - 338 - 349', '683 - 50 - 487', '683 - 487 - 484', '998 - 46 - 315' ] ] ,
+[ "GballsFire-Word"   , [ "You shake my"  ,"nerves and u" ,"man insane  "  ," Goodness gr","You came along","I changed my min","this love is fine","Goodness grace","Kiss me baby Oh","yo! It feels goo","Hold me baby"    ,"I want to love" ,"mine mine mine", "I chew my nails ","Im real nervous","Oh baby your dr ","crazy Goodness"] ] ,
+[ "GballsFire-Time"   , [  3,              6,               8,              11,             17,              21,                23,                25,               28,               31,                34,               37,                45,               46,                50,               52,                55 ] ] ,
+
+[ "HeAintHeavy-Chords", [ "G"               , "D"               , "C"               , "D7"                     , "G"               , "D"               , "C"               , "Am7"             , "D"               , "E"               , "F"                  , "Am7"             , "Am7-D-D7"        , "G"               , "D"                  , "Em"              , "Eb"              , "G"               , "Am7"             , "D7"              , "G"               , "Am7-D7"            , "G"               , "D"                  , "C"               , "Am7"                , "D"               , "Em"                 , "F"               , "Am7"             , "Am7-D-D7"        , "G"               , "D"               , "Em"              , "Eb"              , "G"               , "Am7"             , "D7"              , "G"               , "Am7-G7"          , "C"               , "D7-D7sus4-D7"                   , "C"               , "D7-D7sus4-D7"    , "Bm"              , "|Dm"                 , "|Cmaj7"          , "B7"              , "Em"              , "G7"                     , "C"               , "A7"             , "Am7"            , "D7"                      , "G"               , "D"                     , "C"               , "Am7"             , "D"               , "Em"              , "F"               , "Am7"             , "Am7-D-D7"        , "G"               , "D"                 , "Em"              , "Eb"              , "G"                , "Am7"             , "D7"              , "G"               , "G"               , "D"               , "C"               , "D7"              , "G"               , "D"               , "EmD7-D7sus4-D7"            , "G"               , "D"               , "Cmaj7"           , "D"               , "G"               , "D"               , "Cmaj7"           , "D"             ] ] ,  
+[ "HeAintHeavy-Place" , [ '0 - 562 - 212', '0 - 614 - 216', '0 - 660 - 216', '0 - 741 - 224', '0 - 328 - 276', '0 - 480 - 275', '0 - 755 - 274', '0 - 1028 - 276', '0 - 174 - 387', '0 - 372 - 399', '0 - 648 - 403', '0 - 1089 - 399', '341 - 32 - 197', '341 - 260 - 230', '341 - 379 - 245', '341 - 809 - 249', '341 - 1025 - 252', '341 - 43 - 351', '341 - 353 - 363', '341 - 500 - 362', '341 - 644 - 373', '341 - 819 - 370', '683 - 261 - 163', '683 - 386 - 156', '683 - 732 - 156', '683 - 983 - 157', '683 - 320 - 273', '683 - 441 - 277', '683 - 804 - 293', '683 - 915 - 281', '683 - 46 - 405', '683 - 187 - 448', '683 - 334 - 456', '683 - 696 - 460', '683 - 965 - 457', '1024 - 26 - 219', '1024 - 355 - 236', '1024 - 481 - 244', '1024 - 661 - 244', '1024 - 39 - 362', '1024 - 150 - 416', '1024 - 383 - 424', '1365 - 136 - 217', '1365 - 329 - 214', '1365 - 61 - 339', '1365 - 211 - 363', '1706 - 34 - 148', '1706 - 240 - 145', '1706 - 305 - 153', '1706 - 128 - 252', '1706 - 289 - 273', '1706 - 453 - 266', '1706 - 724 - 261', '1706 - 412 - 368', '1706 - 545 - 385', '1706 - 912 - 389', '1706 - 1163 - 391', '2048 - 135 - 181', '2048 - 634 - 190', '2048 - 922 - 188', '2048 - 213 - 276', '2048 - 474 - 278', '2048 - 692 - 275', '2048 - 1028 - 277', '2048 - 20 - 413', '2389 - 260 - 163', '2389 - 404 - 159', '2389 - 855 - 161', '2389 - 1070 - 157', '2389 - 114 - 286', '2389 - 384 - 270', '2389 - 563 - 299', '2389 - 809 - 294', '2389 - 20 - 441', '2389 - 98 - 438', '2389 - 186 - 447', '2389 - 356 - 452', '2690 - 209 - 204', '2690 - 421 - 206', '2690 - 523 - 212', '2690 - 1008 - 209', '2690 - 236 - 349', '2690 - 433 - 346', '2690 - 774 - 346', '2690 - 1002 - 338', '2763 - 260 - 427', '2763 - 352 - 424', '2763 - 587 - 432', '2763 - 926 - 415' ] ] ,
+[ "HeAintHeavy-Time"  , [ 2, 4, 7, 10, 14, 18, 20, 23, 25, 27, 30, 33, 36, 39, 44, 46, 48, 52, 55, 57, 58, 61, 64, 69, 71, 74, 76, 80, 83, 86, 88, 90, 93, 96, 99, 104, 106, 108, 109, 112, 115, 119, 122, 124, 127, 129, 130, 132, 132, 134, 137, 137, 138, 140, 144, 145, 158, 161, 164, 166, 169, 172, 177, 184, 189, 193, 193, 195, 197, 198, 199, 201, 204, 206, 223, 225, 226, 228, 235, 241, 243, 244, 250, 253, 254 ] ] , 
+[ "HeAintHeavy-Word"  , [ "Ha             " , "rm             " , "on             " , "ica-solo  The road is " , "long           " , "with many a    " , "winding turns  " , "     That      " , "leads us to    " , "mwho knows     " , "where, who knows w" , "here           " , "But I m st     " , "rong           " , " strong enough to " , "carry hi       " , "m              " , "He ain t heavy " , "               " , "he s my        " , "brother        " , "        So on we " , "go             " , "his welfare is of " , "my concern     " , "     No burden is " , "he to          " , "bear, we ll get th" , "ere            " , "               " , "For I          " , "know           " , " he would not e" , "ncumber        " , " me            " , "He ain t heavy," , "he s           " , " my b          " , "rother         " , "If I m l       " , "aden at all    " , "                        I m la" , "den with s     " , "adness         " , "tha            " , "t everyone s heart " , "Isn t f        " , "ill            " , "ed             " , "with the gladness Of l" , "ove            " , " for           " , "one anot       " , "her It s a long, long r" , "oad            " , " from which there is " , "no return      " , "    While w    " , "e re on the    " , "way to th      " , "ere, why not s " , "hare           " , "And the l      " , "oad            " , "Doesn t weigh me " , "down at        " , "all            " , "He ain t heavy, " , "he s           " , " my br         " , "other          " , "He             " , " s             " , " m             " , "y              " , "brother        " , "               " , "               He ain t h" , "eavy           " , "he s my        " , "brother        " , "   He ain t h  " , "eavy           " , "he s my        " , "brother        " , "             "  ] ] , 
+
+]);
+
+
+const aSong  = songsDetailList.get(selectSong + "-Chords");
+const bTime  = songsDetailList.get(selectSong + "-Time");
+const cWord  = songsDetailList.get(selectSong + "-Word");
+const dPlace = songsDetailList.get(selectSong + "-Place");
+
+console.log("JSON file code BUILT:");  /* console.log(aSong);  console.log(bTime);  console.log(cWord); console.log(dPlace); */
+
+const ChordsNotes = new Map([
+
+[ "Chord" ,["Note1","Note2","Note3","Note4","r1","WebNote1","WebNote2","WebNote3","WebNote4","r2","Info",""   ] ] ,
+[ "C"     ,["C","E","G","",     "|","C","E","G","",           "|",""   ] ] ,
+[ "C#"    ,["C#","F","G#","",   "|","C#","E#","G#","",        "|",""   ] ] ,
+[ "D"     ,["D","F#","A","",    "|","D","F#","A","",          "|",""   ] ] ,
+[ "Eb"    ,["G#","G","A#","",   "|","Eb","G","Bb","",         "|",""   ] ] ,
+[ "E"     ,["E","G#","B","",    "|","E","G#","B","",          "|",""   ] ] ,
+[ "F"     ,["F","A","C","",     "|","F","A","C","",           "|",""   ] ] ,
+[ "F#"    ,["F#","A#","C#","",  "|","F#","A#","C#","",        "|",""   ] ] ,
+[ "G"     ,["G","B","D","",     "|","G","B","D","",           "|",""   ] ] ,
+[ "Ab"    ,["G#","C","D#","",   "|","Ab","C","Eb","",         "|",""   ] ] ,
+[ "A"     ,["A","C#","E","",    "|","A","C#","E","",          "|",""   ] ] ,
+[ "Bb"    ,["A#","D","F","",    "|","Bb","D","F","",          "|",""   ] ] ,
+[ "B"     ,["B","D#","F#","",   "|","B","D#","F#","",         "|",""   ] ] ,
+[ "Cm"    ,["C","D#","G","",    "|","C","Eb","G","",          "|",""   ] ] ,
+[ "C#m"   ,["C#","E","G#","",   "|","C#","E","G#","",         "|",""   ] ] ,
+[ "Dm"    ,["D","F","A","",     "|","D","F","A","",           "|",""   ] ] ,
+[ "Ebm"   ,["G#","F#","A#","",  "|","Eb","Gb","Bb","",        "|",""   ] ] ,
+[ "Em"    ,["E","G","B","",     "|","E","G","B","",           "|",""   ] ] ,
+[ "Fm"    ,["F","G#","C","",    "|","F","Ab","C","",          "|",""   ] ] ,
+[ "F#m"   ,["F#","A","C#","",   "|","F#","A","C#","",         "|",""   ] ] ,
+[ "Gm"    ,["G","A#","D","",    "|","G","Bb","D","",          "|",""   ] ] ,
+[ "Abm"   ,["G#","B","D#","",   "|","Ab","Cb(B)","Eb","",     "|",""   ] ] ,
+[ "Am"    ,["A","C","E","",     "|","A","C","E","",           "|",""   ] ] ,
+[ "Bbm"   ,["A#","C#","F","",   "|","Bb","Db","F","",         "|",""   ] ] ,
+[ "Bm"    ,["B","D","F#","",    "|","B","D","F#","",          "|",""   ] ] ,
+[ "Cdim"  ,["C","D#","F#","",   "|","C","Eb","Gb","",         "|",""   ] ] ,
+[ "C#dim" ,["C#","E","G","",    "|","C#","E","G","",          "|",""   ] ] ,
+[ "Ddim"  ,["D","F","G#","",    "|","D","F","Ab","",          "|",""   ] ] ,
+[ "Ebdim" ,["G#","F#","A","",   "|","Eb","Gb","Bbb(A)","",    "|","Bbb is 5th above root (E not flat) and is A note."   ] ] ,
+[ "Edim"  ,["E","G","A#","",    "|","E","G","Bb","",          "|",""   ] ] ,
+[ "Fdim"  ,["F","G#","B","",    "|","F","Ab","Cb(B)","",      "|",""   ] ] ,
+[ "F#dim" ,["F#","A","C","",    "|","F#","A","C","",          "|",""   ] ] ,
+[ "Gdim"  ,["G","A#","C#","",   "|","G","Bb","Db","",         "|",""   ] ] ,
+[ "Abdim" ,["G#","D#","D","",   "|","Ab","Cb","Ebb(D)","",    "|",""   ] ] ,
+[ "Adim"  ,["A","C","D#","",    "|","A","C","Eb","",          "|",""   ] ] ,
+[ "Bbdim" ,["A#","C#","E","",   "|","Bb","Db","Fb(E)","",     "|",""   ] ] ,
+[ "Bdim"  ,["B","D","F","",     "|","B","D","F","",           "|",""   ] ] ,
+[ "C7"    ,["C","E","G","B",    "|","C","E","G","B",          "|",""   ] ] ,
+[ "C#7"   ,["C#","F","G#","C",  "|","C#","E#(F)","G#","B#(C)","|",""   ] ] ,
+[ "D7"    ,["D","F#","A","Cs",  "|","D","F#","A","C#",        "|",""   ] ] ,
+[ "Eb7"   ,["G#","G","A#","D",  "|","Eb","G","Bb","D",        "|",""   ] ] ,
+[ "E7"    ,["E","G#","B","Ds",  "|","E","G#","B","D#",        "|",""   ] ] ,
+[ "F7"    ,["F","A","C","E",    "|","F","A","C","E",          "|",""   ] ] ,
+[ "F#7"   ,["F#","A#","C#","F", "|","F#","A#","C#","E#(F)",   "|",""   ] ] ,
+[ "G7"    ,["G","B","D","Fs",   "|","G","B","D","F#",         "|",""   ] ] ,
+[ "Ab7"   ,["G#","C","D#","G",  "|","Ab","C","Eb","G",        "|",""   ] ] ,
+[ "A7"    ,["A","C#","E","Gs",  "|","A","C#","E","G#",        "|",""   ] ] ,
+[ "Bb7"   ,["A#","D","F","A",   "|","Bb","D","F","A",         "|",""   ] ] ,
+[ "B7"    ,["B","D#","F#","As", "|","B","D#","F#","A#",       "|",""   ] ] ,
+[ "Cdom7" ,["C","E","G","As",   "|","C","E","G","Bb",         "|",""   ] ] ,
+[ "C#dom7",["C#","F","G#","B",  "|","C#","E#(F)","G#","B",    "|",""   ] ] ,
+[ "Ddom7" ,["D","F#","A","C",   "|","D","F#","A","C",         "|",""   ] ] ,
+[ "Ebdom7",["G#","G","A#","Cs", "|","Eb","G","Bb","Db",       "|",""   ] ] ,
+[ "Edom7" ,["E","G#","B","D",   "|","E","G#","B","D",         "|",""   ] ] ,
+[ "Fdom7" ,["F","A","C","Ds",   "|","F","A","C","Eb",         "|",""   ] ] ,
+[ "F#dom7",["F#","A#","C#","E", "|","F#","A#","C#","E",       "|",""   ] ] ,
+[ "Gdom7" ,["G","B","D","F",    "|","G","B","D","F",          "|",""   ] ] ,
+[ "Abdom7",["G#","C","D#","Fs", "|","Ab","C","Eb","Gb",       "|",""   ] ] ,
+[ "Adom7" ,["A","C#","E","G",   "|","A","C#","E","G",         "|",""   ] ] ,
+[ "Bbdom7",["A#","D","F","Gs",  "|","Bb","D","F","Ab",        "|",""   ] ] ,
+[ "Bdom7" ,["B","D#","F#","A",  "|","B","D#","F#","A",        "|",""   ] ] ,
+[ "Cm7"   ,["C","D#","G","As",  "|","C","Eb","G","Bb",        "|",""   ] ] ,
+[ "C#m7"  ,["C#","E","G#","B",  "|","C#","E","G#","B",        "|",""   ] ] ,
+[ "Dm7"   ,["D","F","A","C",    "|","D","F","A","C",          "|",""   ] ] ,
+[ "Ebm7"  ,["G#","F#","A#","Cs","|","Eb","Gb","Bb","Db",      "|",""   ] ] ,
+[ "Em7"   ,["E","G","B","D",    "|","E","G","B","D",          "|",""   ] ] ,
+[ "Fm7"   ,["F","G#","C","Ds",  "|","F","Ab","C","Eb",        "|",""   ] ] ,
+[ "F#m7"  ,["F#","A","C#","E",  "|","F#","A","C#","E",        "|",""   ] ] ,
+[ "Gm7"   ,["G","A#","D","F",   "|","G","Bb","D","F",         "|",""   ] ] ,
+[ "Abm7"  ,["G#","B","D#","Fs", "|","Ab","Cb(B)","Eb","Gb",   "|",""   ] ] ,
+[ "Am7"   ,["A","C","E","G",    "|","A","C","E","G",          "|",""   ] ] ,
+[ "Bbm7"  ,["A#","C#","F","Gs", "|","Bb","Db","F","Ab",       "|",""   ] ] ,
+[ "Bm7"   ,["B","D","F#","A",   "|","B","D","F#","A",         "|",""   ] ] ,
+[ "Cm7b5" ,["C","D#","F#","As", "|","C","Eb","Gb","Bb",       "|",""   ] ] ,
+[ "C#m7b5",["C#","E","G","B",   "|","C#","E","G","B",         "|",""   ] ] ,
+[ "Dm7b5" ,["D","F","G#","C",   "|","D","F","Ab","C",         "|",""   ] ] ,
+[ "Ebm7b5",["G#","F#","A","Cs", "|","Eb","Gb","Bbb(A)","Db",  "|",""   ] ] ,
+[ "Em7b5" ,["E","G","A#","D",   "|","E","G","Bb","D",         "|",""   ] ] ,
+[ "Fm7b5" ,["F","G#","B","Ds",  "|","F","Ab","Cb(B)","Eb",    "|",""   ] ] ,
+[ "F#m7b5",["F#","A","C","E",   "|","F#","A","C","E",         "|",""   ] ] ,
+[ "Gm7b5" ,["G","A#","C#","F",  "|","G","Bb","Db","F",        "|",""   ] ] ,
+[ "Abm7b5",["G#","D#","D","Fs", "|","Ab","Cb","Ebb(D)","Gb",  "|",""   ] ] ,
+[ "Am7b5" ,["A","C","D#","G",   "|","A","C","Eb","G",         "|",""   ] ] ,
+[ "Bbm7b5",["A#","C#","E","Gs", "|","Bb","Db","Fb(E)","Ab",   "|",""   ] ] ,
+[ "Bm7b5" ,["B","D","F","A",    "|","B","D","F","A",          "|",""   ] ]  
+
+]);
+
+const noteFlatSharp = new Map([
+
+[ "Note" , [ "Flat","Sharp" ] ] ,
+[ "Cb"   , [ "B" ,"C"  ] ] ,  
+[ "C"    , [ "B" ,"C#" ] ] ,  
+[ "C#"   , [ "C" ,"D"  ] ] ,
+[ "Db"   , [ "C#","D"  ] ] ,
+[ "D"    , [ "Eb","D#" ] ] ,
+[ "D#"   , [ "D" ,"E"  ] ] ,
+[ "Eb"   , [ "D#","E"  ] ] ,
+
+[ "E"    , [ "Db","F"  ] ] , 
+[ "Fb"   , [ "E" ,"F"  ] ] , 
+[ "F"    , [ "E" ,"F#" ] ] , 
+
+[ "F#"   , [ "F" ,"G"  ] ] ,
+[ "G"    , [ "Fb","G#" ] ] ,
+[ "G#"   , [ "G" ,"A"  ] ] ,
+[ "A"    , [ "Ab","A#" ] ] ,
+[ "A#"   , [ "A" ,"B"  ] ] ,
+[ "B"    , [ "Bb","C"  ] ] 
+
+]);
+
+const chordScales = new Map([
+
+["Quality-Chord" , ["", "n1" ,"n2" ,"n3" ,"n4" ,"n5" ,"n6" ,"n7" ,"n8" ,"9th" ,"10x" ,"11th" ,"12x" ,"13th" ,"14x" ,"15x" ]] ,
+["C"  , ["", "C" ,"D" ,"E" ,"F" ,"G" ,"A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"A" ,"B" ,"C" ]] ,
+["C#" , ["", "C#" ,"D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ,"B#" ,"C#" ,"D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ,"B#" ,"C#" ]] ,
+["D"  , ["", "D" ,"E" ,"F#" ,"G" ,"A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ,"G" ,"A" ,"B" ,"C#" ,"D" ]] ,
+["D#" , ["", "D#" ,"E#(F)" ,"F##(G)" ,"G#" ,"A#" ,"B#(C)" ,"C##(D)" ,"D#" ,"E#(F)" ,"F##(G)" ,"G#" ,"A#" ,"B#(C)" ,"C##(D)" ,"D#" ]] ,
+["E"  , ["", "E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ,"D#" ,"E" ]] ,
+["F"  , ["", "F" ,"G" ,"A" ,"Bb" ,"C" ,"D" ,"E" ,"F" ,"G" ,"A" ,"Bb" ,"C" ,"D" ,"E" ,"F" ]] ,
+["F#" , ["", "F#" ,"G#" ,"A#" ,"B" ,"C#" ,"D#" ,"E#" ,"F#" ,"G#" ,"A#" ,"B" ,"C#" ,"D#" ,"E#" ,"F#" ]] ,
+["G"  , ["", "G" ,"A" ,"B" ,"C" ,"D" ,"E" ,"F#" ,"G" ,"A" ,"B" ,"C" ,"D" ,"E" ,"F#" ,"G" ]] ,
+["G#" , ["", "G#" ,"A#" ,"B#" ,"C#" ,"D#" ,"E#" ,"F##(G)" ,"G#" ,"A#" ,"B#" ,"C#" ,"D#" ,"E#" ,"F##(G)" ,"G#" ]] ,
+["A"  , ["", "A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ,"G#" ,"A" ]] ,
+["A#" , ["", "A#" ,"B#(C)" ,"C##(D)" ,"D#" ,"E#(F)" ,"F##(G)" ,"G##(A)" ,"A#" ,"B#(C)" ,"C##(D)" ,"D#" ,"E#(F)" ,"F##(G)" ,"G##(A)" ,"A#" ]] ,
+["B"  , ["", "B" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A#" ,"B(Cb" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A#" ,"B(Cb" ]] ,
+["Cm" , ["", "C" ,"D" ,"Eb" ,"F" ,"G" ,"Ab" ,"Bb" ,"C" ,"D" ,"Eb" ,"F" ,"G" ,"Ab" ,"Bb" ,"C" ]] ,
+["C#m", ["", "C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ]] ,
+["Dm" , ["", "D" ,"E" ,"F" ,"G" ,"A" ,"Bb" ,"C" ,"D" ,"E" ,"F" ,"G" ,"A" ,"Bb" ,"C" ,"D" ]] ,
+["D#m", ["", "D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ,"B" ,"C#" ,"D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ,"B" ,"C#" ,"D#" ]] ,
+["Em" , ["", "E" ,"F#" ,"G" ,"A" ,"B" ,"C" ,"D" ,"E" ,"F#" ,"G" ,"A" ,"B" ,"C" ,"D" ,"E" ]] ,
+["Fm" , ["", "F" ,"G" ,"Ab" ,"Bb" ,"C" ,"Db" ,"Eb" ,"F" ,"G" ,"Ab" ,"Bb" ,"C" ,"Db" ,"Eb" ,"F" ]] ,
+["F#m", ["", "F#" ,"G#" ,"A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ,"G#" ,"A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ]] ,
+["Gm" , ["", "G" ,"A" ,"Bb" ,"C" ,"D" ,"Eb" ,"F" ,"G" ,"A" ,"Bb" ,"C" ,"D" ,"Eb" ,"F" ,"G" ]] ,
+["G#m", ["", "G#" ,"A#" ,"B" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ,"A#" ,"B" ,"C#" ,"D#" ,"E" ,"F#" ,"G#" ]] ,
+["Am" , ["", "A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"A" ]] ,
+["A#m", ["", "A#" ,"B#" ,"C#" ,"D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ,"B#" ,"C#" ,"D#" ,"E#(F)" ,"F#" ,"G#" ,"A#" ]] ,
+["Bm" , ["", "B" ,"C#" ,"D" ,"E" ,"F#" ,"G" ,"A" ,"B" ,"C#" ,"D" ,"E" ,"F#" ,"G" ,"A" ,"B" ]] 
+
+]);
+
+const aScaleW = [ "C" , "D" , "E" , "F" , "G" , "A" , "B" , "Db" , "D#" , "E#" , "Eb" , "F#" , "Gb" , "G#" , "Ab" , "A#" , "Bb" ];
+
+/* This has more that web for each cord list - if click on dim get dim2 dim4 - if click filter all get even more */
+const aWebChordNamesTemplate = [
+ "Z"         , /* UI Lev1 */
+ "Zm"        , /* UI Lev1 */
+ "Z7"        , /* UI Lev1 */
+ "Zm7"       , /* UI Lev1 */
+ "Zmaj7"     , /* UI Lev1 */
+ "Zmaj7"     , /* UI Lev1 */
+ "Z6"        , /* UI Lev1 */
+ "Zm6"       , /* UI Lev1 */
+ "Z6/9"      , /* UI Lev1 */
+ "Z5"        , /* UI Lev1 */
+ "Z9"        , /* UI Lev1 */
+ "Zm9"       , /* UI Lev1 */
+ "Zmaj9"     , /* UI Lev1 */
+ "Z11"       , /* UI Lev1 */
+ "Zm11"      , /* UI Lev1 */
+ "Zmaj11"    , /* UI Lev1 */
+ "Z13"       , /* UI Lev1 */
+ "Zm13"      , /* UI Lev1 */
+ "Zmaj13"    , /* UI Lev1 */
+ "Zadd2"     , /* UI Lev2 */
+ "Zadd4"     , /* UI Lev2 */
+ "Zadd9"     , /* UI Lev2 */
+ "Zadd11"    , /* UI Lev2 */
+ "Z7-5"      , /* UI Lev1 */
+ "Z7+5"      , /* UI Lev1 */
+ "Zsus2"     , /* UI Lev2 */   
+ "Zsus4"     , /* UI Lev2 */
+ "Zdim"      , /* UI Lev1 */
+ "Zdim7"     , /* UI Lev1 */
+ "Zhalf_dim" , /* UI Lev2 */
+ "Z7-9"      , /* UI Lev2 */
+ "Z7+9"      , /* UI Lev2 */
+ "Z7#11"     , /* UI Lev2 */
+ "Zm7b5"     , /* UI Lev1 */
+ "Zaug"      , /* UI Lev1 */
+ "Zaug7"       /* UI Lev1 */
+]
+
+/* Build web of all chord images from: https://www.pianochord.org/images/e_flat.png */
+
+const chordListPianoChordWeb = new Map([
+["Scale", ["1"  ,"2"   ,"3"   ,"4"    ,"5"      ,"6"     ,"7"   ,"8"    ,"9"     ,"10"  ,"11"  ,"12"   ,"13"     ,"14"   ,"15"    ,"16"      ,"17"   ,"18"    ,"19"      ,"20"    ,"21"    ,"22"    ,"23"    ,"24"   ,"25"      ,"26"     ,"27"    ,"28"     ]] ,
+["C"    , ["C"  ,"Cm"  ,"C7"  ,"Cm7"  ,"Cmaj7"  ,"CmM7"  ,"C6"  ,"Cm6"  ,"C6/9"  ,"C5"  ,"C9"  ,"Cm9"  ,"Cmaj9"  ,"C11"  ,"Cm11"  ,"Cmaj11"  ,"C13"  ,"Cm13"  ,"Cmaj13"  ,"Cadd"  ,"C7-5"  ,"C7+5"  ,"Csus"  ,"Cdim"  ,"Cdim7"  ,"Cm7b5"  ,"Caug"  ,"Caug7"  ]] ,
+["C#"   , ["C#" ,"C#m" ,"C#7" ,"C#m7" ,"C#maj7" ,"C#mM7" ,"C#6" ,"C#m6" ,"C#6/9" ,"C#5" ,"C#9" ,"C#m9" ,"C#maj9" ,"C#11" ,"C#m11" ,"C#maj11" ,"C#13" ,"C#m13" ,"C#maj11" ,"C#add" ,"C#7-5" ,"C#7+5" ,"C#sus" ,"C#dim" ,"C#dim7" ,"C#m7b5" ,"C#aug" ,"C#aug7" ]] ,
+["Db"   , ["Db" ,"Dbm" ,"Db7" ,"Dbm7" ,"Dbmaj7" ,"DbmM7" ,"Db6" ,"Dbm6" ,"Db6/9" ,"Db5" ,"Db9" ,"Dbm9" ,"Dbmaj9" ,"Db11" ,"Dbm11" ,"Dbmaj11" ,"Db13" ,"Dbm13" ,"Dbmaj13" ,"Dbadd" ,"Db7-5" ,"Db7+5" ,"Dbsus" ,"Dbdim" ,"Dbdim7" ,"Dbm7b5" ,"Dbaug" ,"Dbaug7" ]] ,
+["D"    , ["D"  ,"Dm"  ,"D7"  ,"Dm7"  ,"Dmaj7"  ,"DmM7"  ,"D6"  ,"Dm6"  ,"D6/9"  ,"D5"  ,"D9"  ,"Dm9"  ,"Dmaj9"  ,"D11"  ,"Dm11"  ,"Dmaj11"  ,"D13"  ,"Dm13"  ,"Dmaj13"  ,"Dadd"  ,"D7-5"  ,"D7+5"  ,"Dsus"  ,"Ddim"  ,"Ddim7"  ,"Dm7b5"  ,"Daug"  ,"Daug7"  ]] ,
+["D#"   , ["D#" ,"D#m" ,"D#7" ,"D#m7" ,"D#maj7" ,"D#mM7" ,"D#6" ,"D#m6" ,"D#6/9" ,"D#5" ,"D#9" ,"D#m9" ,"D#maj9" ,"D#11" ,"D#m11" ,"D#maj11" ,"D#13" ,"D#m13" ,"D#maj13" ,"D#add" ,"D#7-5" ,"D#7+5" ,"D#sus" ,"D#dim" ,"D#dim7" ,"D#m7b5" ,"D#aug" ,"D#aug7" ]] ,
+["Eb"   , ["Eb" ,"Ebm" ,"Eb7" ,"Ebm7" ,"Ebmaj7" ,"EbmM7" ,"Eb6" ,"Ebm6" ,"Eb6/9" ,"Eb5" ,"Eb9" ,"Ebm9" ,"Ebmaj9" ,"Eb11" ,"Ebm11" ,"Ebmaj11" ,"Eb13" ,"Ebm13" ,"Ebmaj13" ,"Ebadd" ,"Eb7-5" ,"Eb7+5" ,"Ebsus" ,"Ebdim" ,"Ebdim7" ,"Ebm7b5" ,"Ebaug" ,"Ebaug7" ]] ,
+["E"    , ["E"  ,"Em"  ,"E7"  ,"Em7"  ,"Emaj7"  ,"EmM7"  ,"E6"  ,"Em6"  ,"E6/9"  ,"E5"  ,"E9"  ,"Em9"  ,"Emaj9"  ,"E11"  ,"Em11"  ,"Emaj11"  ,"E13"  ,"Em13"  ,"Emaj13"  ,"Eadd"  ,"E7-5"  ,"E7+5"  ,"Esus"  ,"Edim"  ,"Edim7"  ,"Em7b5"  ,"Eaug"  ,"Eaug7"  ]] ,
+["F"    , ["F"  ,"Fm"  ,"F7"  ,"Fm7"  ,"Fmaj7"  ,"FmM7"  ,"F6"  ,"Fm6"  ,"F6/9"  ,"F5"  ,"F9"  ,"Fm9"  ,"Fmaj9"  ,"F11"  ,"Fm11"  ,"Fmaj11"  ,"F13"  ,"Fm13"  ,"Fmaj13"  ,"Fadd"  ,"F7-5"  ,"F7+5"  ,"Fsus"  ,"Fdim"  ,"Fdim7"  ,"Fm7b5"  ,"Faug"  ,"Faug7"  ]] ,
+["F#"   , ["F#" ,"F#m" ,"F#7" ,"F#m7" ,"F#maj7" ,"F#mM7" ,"F#6" ,"F#m6" ,"F#6/9" ,"F#5" ,"F#9" ,"F#m9" ,"F#maj9" ,"F#11" ,"F#m11" ,"F#maj11" ,"F#13" ,"F#m13" ,"F#maj13" ,"F#add" ,"F#7-5" ,"F#7+5" ,"F#sus" ,"F#dim" ,"F#dim7" ,"F#m7b5" ,"F#aug" ,"F#aug7" ]] ,
+["Gb"   , ["Gb" ,"Gbm" ,"Gb7" ,"Gbm7" ,"Gbmaj7" ,"GbmM7" ,"Gb6" ,"Gbm6" ,"Gb6/9" ,"Gb5" ,"Gb9" ,"Gbm9" ,"Gbmaj9" ,"Gb11" ,"Gbm11" ,"Gbmaj11" ,"Gb13" ,"Gbm13" ,"Gbmaj13" ,"Gbadd" ,"Gb7-5" ,"Gb7+5" ,"Gbsus" ,"Gbdim" ,"Gbdim7" ,"Gbm7b5" ,"Gbaug" ,"Gbaug7" ]] ,
+["G"    , ["G"  ,"Gm"  ,"G7"  ,"Gm7"  ,"Gmaj7"  ,"GmM7"  ,"G6"  ,"Gm6"  ,"G6/9"  ,"G5"  ,"G9"  ,"Gm9"  ,"Gmaj9"  ,"G11"  ,"Gm11"  ,"Gmaj11"  ,"G13"  ,"Gm13"  ,"Gmaj13"  ,"Gadd"  ,"G7-5"  ,"G7+5"  ,"Gsus"  ,"Gdim"  ,"Gdim7"  ,"Gm7b5"  ,"Gaug"  ,"Gaug7"  ]] ,
+["G#"   , ["G#" ,"G#m" ,"G#7" ,"G#m7" ,"G#maj7" ,"G#mM7" ,"G#6" ,"G#m6" ,"G#6/9" ,"G#5" ,"G#9" ,"G#m9" ,"G#maj9" ,"G#11" ,"G#m11" ,"G#maj11" ,"G#13" ,"G#m13" ,"G#maj13" ,"G#add" ,"G#7-5" ,"G#7+5" ,"G#sus" ,"G#dim" ,"G#dim7" ,"G#m7b5" ,"G#aug" ,"G#aug7" ]] ,
+["Ab"   , ["Ab" ,"Abm" ,"Ab7" ,"Abm7" ,"Abmaj7" ,"AbmM7" ,"Ab6" ,"Abm6" ,"Ab6/9" ,"Ab5" ,"Ab9" ,"Abm9" ,"Abmaj9" ,"Ab11" ,"Abm11" ,"Abmaj11" ,"Ab13" ,"Abm13" ,"Abmaj13" ,"Abadd" ,"Ab7-5" ,"Ab7+5" ,"Absus" ,"Abdim" ,"Abdim7" ,"Abm7b5" ,"Abaug" ,"Abaug7" ]] ,
+["A"    , ["A"  ,"Am"  ,"A7"  ,"Am7"  ,"Amaj7"  ,"AmM7"  ,"A6"  ,"Am6"  ,"A6/9"  ,"A5"  ,"A9"  ,"Am9"  ,"Amaj9"  ,"A11"  ,"Am11"  ,"Amaj11"  ,"A13"  ,"Am13"  ,"Amaj13"  ,"Aadd"  ,"A7-5"  ,"A7+5"  ,"Asus"  ,"Adim"  ,"Adim7"  ,"Am7b5"  ,"Aaug"  ,"Aaug7"  ]] ,
+["A#"   , ["A#" ,"A#m" ,"A#7" ,"A#m7" ,"A#maj7" ,"A#mM7" ,"A#6" ,"A#m6" ,"A#6/9" ,"A#5" ,"A#9" ,"A#m9" ,"A#maj9" ,"A#11" ,"A#m11" ,"A#maj11" ,"A#13" ,"A#m13" ,"A#maj13" ,"A#add" ,"A#7-5" ,"A#7+5" ,"A#sus" ,"A#dim" ,"A#dim7" ,"A#m7b5" ,"A#aug" ,"A#aug7" ]] ,
+["Bb"   , ["Bb" ,"Bbm" ,"Bb7" ,"Bbm7" ,"Bbmaj7" ,"BbmM7" ,"Bb6" ,"Bbm6" ,"Bb6/9" ,"Bb5" ,"Bb9" ,"Bbm9" ,"Bbmaj9" ,"Bb11" ,"Bbm11" ,"Bbmaj11" ,"Bb13" ,"Bbm13" ,"Bbmaj13" ,"Bbadd" ,"Bb7-5" ,"Bb7+5" ,"Bbsus" ,"Bbdim" ,"Bbdim7" ,"Bbm7b5" ,"Bbaug" ,"Bbaug7" ]] ,
+["B"    , ["B"  ,"Bm"  ,"B7"  ,"Bm7"  ,"Bmaj7"  ,"BmM7"  ,"B6"  ,"Bm6"  ,"B6/9"  ,"B5"  ,"B9"  ,"Bm9"  ,"Bmaj9"  ,"B11"  ,"Bm11"  ,"Bmaj11"  ,"B13"  ,"Bm13"  ,"Bmaj13"  ,"Badd"  ,"B7-5"  ,"B7+5"  ,"Bsus"  ,"Bdim"  ,"Bdim7"  ,"Bm7b5"  ,"Baug"  ,"Baug7"  ]] 
+]);
+
+const chordShortLongName = new Map([
+[ 0  , [" *         - as Scale"                          ]] ,
+[ 1  , [" *         - * major (*△)"                      ]] ,
+[ 2  , [" *m        - * minor"                           ]] ,
+[ 3  , [" *7        - * dominant seventh"                ]] ,
+[ 4  , [" *m7       - * minor seventh"                   ]] ,
+[ 5  , [" *maj7     - * major seventh (*△7)"             ]] ,
+[ 6  , [" *mM7      - * minor major seventh"             ]] ,
+[ 7  , [" *6        - * major sixth"                     ]] ,
+[ 8  , [" *m6       - * minor sixth"                     ]] ,
+[ 9  , [" *6/9      - * sixth/ninth (sixth added ninth)" ]] ,
+[10  , [" *5        - * fifth"                           ]] ,
+[11  , [" *9        - * dominant ninth"                  ]] ,
+[12  , [" *m9       - * minor ninth"                     ]] ,
+[13  , [" *maj9     - * major ninth"                     ]] ,
+[14  , [" *11       - * eleventh"                        ]] ,
+[15  , [" *m11      - * minor eleventh"                  ]] ,
+[16  , [" *maj11    - * major eleventh"                  ]] ,
+[17  , [" *13       - * thirteenth"                      ]] ,
+[18  , [" *m13      - * minor thirteenth"                ]] ,
+[19  , [" *maj13    - * major thirteenth"                ]] ,
+[20  , [" *add2     - * add second degree (pg2)"         ]] ,
+[21  , [" *add4     - * add perfect fourth (pg2)"        ]] ,
+[22  , [" *add9     - * add 9th (pg2)"                   ]] ,
+[23  , [" *add11    - * add 11th (pg2)"                  ]] ,
+[24  , [" *7-5      - * seven minus five"                ]] ,
+[25  , [" *7+5      - * seven plus five"                 ]] ,
+[26  , [" *sus2     - * suspended 2nd (pg2)"             ]] ,
+[27  , [" *sus4     - * suspended 4th (pg2)"             ]] ,
+[28  , [" *dim      - * diminished (*°)"                 ]] ,
+[29  , [" *dim7     - * diminished seventh (*°7)"        ]] ,
+[30  , [" *half_dim - * half diminished (*ø) (pg2)"      ]] , /*  cm7b5 */
+[31  , [" *7-9      - * seven minus nine (pg2)"          ]] ,
+[32  , [" *7+9      - * seven plus nine (pg2)"           ]] ,
+[33  , [" *7#11     - * dominant seventh sharp 11th (pg2)" ]] ,
+[34  , [" *m7b5     - * minor seventh flat five (*ø)"    ]] ,
+[35  , [" *aug      - * augmented (*+)"                  ]] ,
+[36  , [" *aug7     - * augmented seventh"               ]] 
+]);
+
+
+
+
+
+
+
+
+
+
+
+
+
