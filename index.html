@@ -365,7 +365,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1 9/232 11am)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.2 9/23 1130am)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -1786,7 +1786,7 @@ loadPlan();
 var aChordList = [];
 
 var selectElement = document.getElementById('mySelChord');
-aScaleW.forEach((value, key) => {
+aScaleW.forEach((value, key) => {   /* fix */
     selectElement.add(new Option(value, value));
 });
 var selectedValue = selectElement.value;
@@ -1890,7 +1890,7 @@ function buildArrayChordsForFIND(onScale1) { /* BUILD array for selected chord d
   if (onScale == "C#") { lookFor = "d_flat_" };   if (onScale == "Db") { lookFor = "d_flat_" };   if (onScale == "E#") { lookFor = "e_flat_" }; 
   if (onScale == "Eb") { lookFor = "e_flat_" };   if (onScale == "F#") { lookFor = "g_flat_" };   if (onScale == "Gb") { lookFor = "g_flat_" };
   if (onScale == "G#") { lookFor = "a_flat_" };   if (onScale == "Ab") { lookFor = "a_flat_" };   if (onScale == "A#") { lookFor = "b_flat_" };   if (onScale == "Bb") { lookFor = "b_flat_" };
-  aWebChordNamesTemplate.forEach((el,ii) => { /* Z Zm Z6/9 Zadd2 LEV 1 OR 2 */
+  aWebChordNamesTemplate.forEach((el,ii) => { /* Z Zm Z6/9 Zadd2 LEV 1 OR 2 fix */     
      webName = el.replace("Z", onScale); lookTemp = lookFor;
      if (webName == "C#") { lookTemp = "d_flat" };      if (webName == "Db") { lookTemp = "d_flat" };      if (webName == "E#") { lookTemp = "e_flat" }; 
      if (webName == "Eb") { lookTemp = "e_flat" };      if (webName == "F#") { lookTemp = "g_flat" };      if (webName == "Gb") { lookTemp = "g_flat" }; 
