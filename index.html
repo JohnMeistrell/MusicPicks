@@ -99,7 +99,7 @@
                          <th style="border: 1px solid black; padding:3px;"  >
                                        <a target="_blank" href="https://barnegatschools-nj.safeschools.com/login/">Train</a> -
                                        <a target="_blank" href="https://www.barnegatschools.com/page/agendas-minutes">Mins</a> -
-                                       <a target="_blank" href="https://app.frontlineeducation.com/select/">Out</a>
+                                       <a target="_blank" href="https://app.frontlineeducation.com/select/">Out</a> -
                         </th>
                          <th style="border: 1px solid black; padding:3px;" >
                                        <a target="_blank" href="https://www.airnow.gov/state/?name=new-jersey"            >AirQ</a> - 
@@ -365,7 +365,7 @@
 
               <div class="card card-body sticky-top  BUTTONS" style="background-color:#feeb10; padding:5px;">
               <div class="dropdown">
-                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.0 9/22t 7pm)</span>
+                  <span class="text-nowrap bd-highlight font-weight-bolder">Show: (v3.1 9/232 11am)</span>
                   <button class="btn border border-light btn-primary btn-all"                  type= "button">All</button>
                   <button class="btn border border-light btn-primary btn-Favorite"                type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Favorite"             aria-controls = "multi-collapse-Favorite"       >Favorites</button>
                   <button class="btn border border-light btn-primary btn-Theory"               type= "button"  data-toggle = "collapse" aria-expanded = "false" data-dismiss="modal" data-target = ".multi-collapse-Theory"            aria-controls = "multi-collapse-Theory"      >Theory</button>
@@ -1836,10 +1836,10 @@ function findIt() { /* FILTER chords from typed text - Show on top UI */
 
   var CartItem6 =  document.getElementById("wrapper6").innerHTML; CartItem6.innerHTML = "";
 
-const selectElement = document.getElementById("mySelect"); selectElement.options.length = 0;           /* FIX ........  */
+  const selectElement = document.getElementById("mySelect"); selectElement.options.length = 0; 
+    
 aChordsFound.forEach(row => {
   const option = document.createElement("option");
-
   /* cmaj7, CmM7      - C minor major seventh,cmaj7 */  /* RRR: cmaj9, Cmaj9     - C major ninth,cmaj9 cmaj9 */ /* option.dataset.category = row[2]; */
 
   /* NEW BAD */
@@ -1852,6 +1852,20 @@ aChordsFound.forEach(row => {
   var temp1 = row.split(","); var col1 = temp1[0]; var colWebName = temp1[2];  var temp2 = temp1[1].split("-"); var col2 = temp2[0]; var col3 = temp2[1];
   clog = 'good'; console.log( { clog , temp1 , col1 , colWebName , temp2 , col2 , col3 } ); 
 
+  option.value       = zcol1Chord; 
+  option.textContent = zcol2LongDesc ;
+  selectElement.appendChild(option);
+     codeBlock6 += C6A; codeBlock6 += zcol2LongDesc + ' - ' + zcol1Chord ; codeBlock6 += C6C; codeBlock6 += zcol1Chord.trim().toLowerCase();  codeBlock6 += C6E;
+
+});
+      
+var defaultOption = new Option('Choose chord', '');
+selectElement.insertBefore(defaultOption, selectElement.firstChild);
+defaultOption.selected = true;
+
+
+
+  document.getElementById("wrapper6").innerHTML = codeBlock6;
 
 /* GOOD 
   console.log( row +' '+ colWebName);
@@ -1860,17 +1874,6 @@ aChordsFound.forEach(row => {
   selectElement.appendChild(option);
      codeBlock6 += C6A;  codeBlock6 += col3       ; codeBlock6 += C6C; codeBlock6 += colWebName.trim().toLowerCase();   codeBlock6 += C6E;
 */
-
-/* BAD */
-  option.value       = zcol1Chord; /* zcol3WebName; */ 
-  option.textContent = zcol2LongDesc ;
-  selectElement.appendChild(option);
-     codeBlock6 += C6A; codeBlock6 += zcol2LongDesc + ' - ' + zcol1Chord ; codeBlock6 += C6C; codeBlock6 += zcol1Chord.trim().toLowerCase();  codeBlock6 += C6E;
-
-});
-
-
-  document.getElementById("wrapper6").innerHTML = codeBlock6;
 
 /*
 .dataset.category expression in JavaScript accesses a custom data-category attribute on an HTML element, such as a selected dropdown option.How It Worksdata-* attributes: HTML lets you store extra custom data on standard tags using attributes starting with data-, like <option data-category="fruit">Apple</option>..dataset: This is a JavaScript property that turns all data-* attributes on an element into an accessible object (a DOMStringMap)..category: This targets the specific data-category property inside that map.
